@@ -1,0 +1,248 @@
+<config configName="default" projectName="PIC16F" configVersion="1.1" device="PIC16F18877" deviceLibraryClass="com.microchip.mcc.melody.Library" coreVersion="5.7.0">
+   <usedPackages class="java.util.ArrayList">
+      <package packageName="@mchp-mcc/main-manager" version="3.1.1" contentType="MELODY">
+         <modules class="java.util.ArrayList"/>
+      </package>
+      <package packageName="@mchp-mcc/pic-8bit" version="5.28.0" contentType="MELODY">
+         <modules class="java.util.ArrayList"/>
+      </package>
+      <package packageName="@mchp-mcc/pic16-configuration-bits-v1" version="4.1.4" contentType="MELODY">
+         <modules class="java.util.ArrayList"/>
+      </package>
+      <package packageName="@mchp-mcc/pic16-pin-manager" version="3.6.0" contentType="MELODY">
+         <modules class="java.util.ArrayList"/>
+      </package>
+      <package packageName="@mchp-mcc/pin-content-processor" version="3.8.0" contentType="MELODY">
+         <modules class="java.util.ArrayList"/>
+      </package>
+      <package packageName="@mchp-mcc/scf-pic8-ccp-v1" version="4.0.16" contentType="MELODY">
+         <modules class="java.util.ArrayList"/>
+      </package>
+      <package packageName="@mchp-mcc/scf-pic8-eusart-v1" version="7.1.5" contentType="MELODY">
+         <modules class="java.util.ArrayList"/>
+      </package>
+      <package packageName="@mchp-mcc/scf-pic8-interrupt-v2" version="5.2.11" contentType="MELODY">
+         <modules class="java.util.ArrayList"/>
+      </package>
+      <package packageName="@mchp-mcc/scf-pic8-mssp-v1" version="7.0.1" contentType="MELODY">
+         <modules class="java.util.ArrayList"/>
+      </package>
+      <package packageName="@mchp-mcc/scf-pic8-osc-v1" version="4.3.5" contentType="MELODY">
+         <modules class="java.util.ArrayList"/>
+      </package>
+      <package packageName="@mchp-mcc/scf-pic8-tmr2-v1" version="4.0.18" contentType="MELODY">
+         <modules class="java.util.ArrayList"/>
+      </package>
+      <package packageName="@mchp-mcc/spi-host-driver" version="1.2.0" contentType="MELODY">
+         <modules class="java.util.ArrayList"/>
+      </package>
+      <package packageName="@mchp-mcc/uart-driver" version="1.10.0" contentType="MELODY">
+         <modules class="java.util.ArrayList"/>
+      </package>
+   </usedPackages>
+   <usedClasses class="java.util.TreeMap">
+      <entry>
+         <string>Application Builder</string>
+         <string>class com.microchip.mcc.melody.module.FrameworkModule</string>
+      </entry>
+      <entry>
+         <string>CCP1</string>
+         <string>class com.microchip.mcc.melody.hw.module.HardwareModule</string>
+      </entry>
+      <entry>
+         <string>CLOCK CONTROL</string>
+         <string>class com.microchip.mcc.melody.hw.module.HardwareModule</string>
+      </entry>
+      <entry>
+         <string>Configuration Bits</string>
+         <string>class com.microchip.mcc.melody.hw.module.HardwareModule</string>
+      </entry>
+      <entry>
+         <string>EUSART</string>
+         <string>class com.microchip.mcc.melody.hw.module.HardwareModule</string>
+      </entry>
+      <entry>
+         <string>INTERRUPT MANAGER</string>
+         <string>class com.microchip.mcc.melody.hw.module.HardwareModule</string>
+      </entry>
+      <entry>
+         <string>MAIN MANAGER</string>
+         <string>class com.microchip.mcc.melody.hw.module.HardwareModule</string>
+      </entry>
+      <entry>
+         <string>MSSP1</string>
+         <string>class com.microchip.mcc.melody.hw.module.HardwareModule</string>
+      </entry>
+      <entry>
+         <string>Pin Manager</string>
+         <string>class com.microchip.mcc.melody.hw.module.HardwareModule</string>
+      </entry>
+      <entry>
+         <string>TMR2</string>
+         <string>class com.microchip.mcc.melody.hw.module.HardwareModule</string>
+      </entry>
+      <entry>
+         <string>meta</string>
+         <string>class com.microchip.mcc.melody.hw.module.HardwareModule</string>
+      </entry>
+      <entry>
+         <string>module0</string>
+         <string>class com.microchip.mcc.melody.script.module.ScriptModule</string>
+      </entry>
+      <entry>
+         <string>module1</string>
+         <string>class com.microchip.mcc.melody.script.module.ScriptModule</string>
+      </entry>
+      <entry>
+         <string>module11</string>
+         <string>class com.microchip.mcc.melody.script.module.ScriptModule</string>
+      </entry>
+      <entry>
+         <string>module13</string>
+         <string>class com.microchip.mcc.melody.script.module.ScriptModule</string>
+      </entry>
+      <entry>
+         <string>module2</string>
+         <string>class com.microchip.mcc.melody.script.module.ScriptModule</string>
+      </entry>
+      <entry>
+         <string>module20</string>
+         <string>class com.microchip.mcc.melody.script.module.ScriptModule</string>
+      </entry>
+      <entry>
+         <string>module3</string>
+         <string>class com.microchip.mcc.melody.script.module.ScriptModule</string>
+      </entry>
+      <entry>
+         <string>module4</string>
+         <string>class com.microchip.mcc.melody.script.module.ScriptModule</string>
+      </entry>
+      <entry>
+         <string>module5</string>
+         <string>class com.microchip.mcc.melody.script.module.ScriptModule</string>
+      </entry>
+      <entry>
+         <string>module56</string>
+         <string>class com.microchip.mcc.melody.script.module.ScriptModule</string>
+      </entry>
+      <entry>
+         <string>module6</string>
+         <string>class com.microchip.mcc.melody.script.module.ScriptModule</string>
+      </entry>
+      <entry>
+         <string>module68</string>
+         <string>class com.microchip.mcc.melody.script.module.ScriptModule</string>
+      </entry>
+   </usedClasses>
+   <usedLibraries class="java.util.ArrayList">
+      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.melody.Library" version="2.7.0"/>
+   </usedLibraries>
+   <tokenMap class="java.util.TreeMap">
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Application Builder" name="graph-location-data"/>
+         <value>{&quot;systemGroup&quot;:{&quot;loc&quot;:&quot;428.0477000000001 -315.9796875&quot;,&quot;pos&quot;:&quot;426.0477000000001 -347.9796875&quot;},&quot;mccDevice&quot;:{&quot;loc&quot;:&quot;1372.6148793716159 -247.60903890160176&quot;,&quot;pos&quot;:&quot;1370.6148793716159 -279.60903890160176&quot;},&quot;mccDevice/section/peripherals&quot;:{&quot;loc&quot;:&quot;1387.1148793716159 -203.10903890160176&quot;,&quot;pos&quot;:&quot;1385.1148793716159 -235.10903890160176&quot;},&quot;mccDevice/section/system&quot;:{&quot;loc&quot;:&quot;1385.1148793716159 548.8909610983983&quot;,&quot;pos&quot;:&quot;1385.1148793716159 548.8909610983983&quot;},&quot;mccDevice/section/peripherals/section/ADCC&quot;:{&quot;loc&quot;:&quot;1399.6148793716159 -190.60903890160176&quot;,&quot;pos&quot;:&quot;1399.6148793716159 -190.60903890160176&quot;},&quot;mccDevice/section/peripherals/section/CCP&quot;:{&quot;loc&quot;:&quot;1399.6148793716159 -156.10903890160176&quot;,&quot;pos&quot;:&quot;1399.6148793716159 -156.10903890160176&quot;},&quot;mccDevice/section/peripherals/section/CLC&quot;:{&quot;loc&quot;:&quot;1399.6148793716159 -121.60903890160176&quot;,&quot;pos&quot;:&quot;1399.6148793716159 -121.60903890160176&quot;},&quot;mccDevice/section/peripherals/section/CLKREF&quot;:{&quot;loc&quot;:&quot;1399.6148793716159 -87.10903890160176&quot;,&quot;pos&quot;:&quot;1399.6148793716159 -87.10903890160176&quot;},&quot;mccDevice/section/peripherals/section/CMP&quot;:{&quot;loc&quot;:&quot;1399.6148793716159 -52.609038901601764&quot;,&quot;pos&quot;:&quot;1399.6148793716159 -52.609038901601764&quot;},&quot;mccDevice/section/peripherals/section/CRC&quot;:{&quot;loc&quot;:&quot;1399.6148793716159 -18.109038901601764&quot;,&quot;pos&quot;:&quot;1399.6148793716159 -18.109038901601764&quot;},&quot;mccDevice/section/peripherals/section/CWG&quot;:{&quot;loc&quot;:&quot;1399.6148793716159 16.390961098398236&quot;,&quot;pos&quot;:&quot;1399.6148793716159 16.390961098398236&quot;},&quot;mccDevice/section/peripherals/section/DAC&quot;:{&quot;loc&quot;:&quot;1399.6148793716159 50.890961098398236&quot;,&quot;pos&quot;:&quot;1399.6148793716159 50.890961098398236&quot;},&quot;mccDevice/section/peripherals/section/DSM&quot;:{&quot;loc&quot;:&quot;1399.6148793716159 85.39096109839824&quot;,&quot;pos&quot;:&quot;1399.6148793716159 85.39096109839824&quot;},&quot;mccDevice/section/peripherals/section/EUSART&quot;:{&quot;loc&quot;:&quot;1399.6148793716159 119.89096109839824&quot;,&quot;pos&quot;:&quot;1399.6148793716159 119.89096109839824&quot;},&quot;mccDevice/section/peripherals/section/FVR&quot;:{&quot;loc&quot;:&quot;1399.6148793716159 154.39096109839824&quot;,&quot;pos&quot;:&quot;1399.6148793716159 154.39096109839824&quot;},&quot;mccDevice/section/peripherals/section/MEMORY&quot;:{&quot;loc&quot;:&quot;1399.6148793716159 188.89096109839824&quot;,&quot;pos&quot;:&quot;1399.6148793716159 188.89096109839824&quot;},&quot;mccDevice/section/peripherals/section/MSSP&quot;:{&quot;loc&quot;:&quot;1399.6148793716159 223.39096109839824&quot;,&quot;pos&quot;:&quot;1399.6148793716159 223.39096109839824&quot;},&quot;mccDevice/section/peripherals/section/NCO&quot;:{&quot;loc&quot;:&quot;1399.6148793716159 257.89096109839824&quot;,&quot;pos&quot;:&quot;1399.6148793716159 257.89096109839824&quot;},&quot;mccDevice/section/peripherals/section/PMD&quot;:{&quot;loc&quot;:&quot;1399.6148793716159 292.39096109839824&quot;,&quot;pos&quot;:&quot;1399.6148793716159 292.39096109839824&quot;},&quot;mccDevice/section/peripherals/section/PWM&quot;:{&quot;loc&quot;:&quot;1399.6148793716159 326.89096109839824&quot;,&quot;pos&quot;:&quot;1399.6148793716159 326.89096109839824&quot;},&quot;mccDevice/section/peripherals/section/RESET&quot;:{&quot;loc&quot;:&quot;1399.6148793716159 361.39096109839824&quot;,&quot;pos&quot;:&quot;1399.6148793716159 361.39096109839824&quot;},&quot;mccDevice/section/peripherals/section/SMT&quot;:{&quot;loc&quot;:&quot;1399.6148793716159 395.89096109839824&quot;,&quot;pos&quot;:&quot;1399.6148793716159 395.89096109839824&quot;},&quot;mccDevice/section/peripherals/section/TMR&quot;:{&quot;loc&quot;:&quot;1399.6148793716159 430.39096109839824&quot;,&quot;pos&quot;:&quot;1399.6148793716159 430.39096109839824&quot;},&quot;mccDevice/section/peripherals/section/WWDT&quot;:{&quot;loc&quot;:&quot;1399.6148793716159 464.89096109839824&quot;,&quot;pos&quot;:&quot;1399.6148793716159 464.89096109839824&quot;},&quot;mccDevice/section/peripherals/section/ZCD&quot;:{&quot;loc&quot;:&quot;1399.6148793716159 499.39096109839824&quot;,&quot;pos&quot;:&quot;1399.6148793716159 499.39096109839824&quot;},&quot;module5&quot;:{&quot;loc&quot;:&quot;440.5477000000001 -303.4796875&quot;,&quot;pos&quot;:&quot;440.5477000000001 -303.4796875&quot;},&quot;module1&quot;:{&quot;loc&quot;:&quot;440.5477000000001 -268.9796875&quot;,&quot;pos&quot;:&quot;440.5477000000001 -268.9796875&quot;},&quot;module4&quot;:{&quot;loc&quot;:&quot;440.5477000000001 -228.48984375&quot;,&quot;pos&quot;:&quot;440.5477000000001 -228.48984375&quot;},&quot;module0&quot;:{&quot;loc&quot;:&quot;440.5477000000001 -55.92892250676823&quot;,&quot;pos&quot;:&quot;440.5477000000001 -55.92892250676823&quot;},&quot;module3&quot;:{&quot;loc&quot;:&quot;440.5477000000001 -21.42892250676823&quot;,&quot;pos&quot;:&quot;440.5477000000001 -21.42892250676823&quot;},&quot;module2&quot;:{&quot;loc&quot;:&quot;440.5477000000001 13.071077493231769&quot;,&quot;pos&quot;:&quot;440.5477000000001 13.071077493231769&quot;},&quot;module68&quot;:{&quot;loc&quot;:&quot;1156.3316374999995 80.77568749999978&quot;,&quot;pos&quot;:&quot;1156.3316374999995 80.77568749999978&quot;},&quot;module6&quot;:{&quot;loc&quot;:&quot;925.9328762466158 67.57009374999993&quot;,&quot;pos&quot;:&quot;925.9328762466158 67.57009374999993&quot;},&quot;module20&quot;:{&quot;loc&quot;:&quot;1071.8341874999992 -224.84099999999972&quot;,&quot;pos&quot;:&quot;1071.8341874999992 -224.84099999999972&quot;},&quot;module11&quot;:{&quot;loc&quot;:&quot;1025.046194996615 373.6456562499999&quot;,&quot;pos&quot;:&quot;1025.046194996615 373.6456562499999&quot;},&quot;module56&quot;:{&quot;loc&quot;:&quot;1217.3083499999993 183.64565625&quot;,&quot;pos&quot;:&quot;1217.3083499999993 183.64565625&quot;},&quot;module13&quot;:{&quot;loc&quot;:&quot;1015.6726312499994 177.85491249999978&quot;,&quot;pos&quot;:&quot;1015.6726312499994 177.85491249999978&quot;}}</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Application Builder" name="state"/>
+         <value>{&quot;userAddedModules&quot;:[&quot;module5&quot;,&quot;module4&quot;,&quot;module20&quot;,&quot;module68&quot;,&quot;module56&quot;,&quot;module1&quot;,&quot;module0&quot;,&quot;module3&quot;,&quot;module2&quot;],&quot;version&quot;:&quot;CURRENT&quot;,&quot;modules&quot;:{&quot;module5&quot;:{&quot;scriptId&quot;:&quot;@mchp-mcc/scf-pic8-osc-v1&quot;,&quot;imports&quot;:{&quot;pin_standard&quot;:{&quot;interfaceId&quot;:{&quot;name&quot;:&quot;pin-standard&quot;,&quot;version&quot;:&quot;^0.1.0&quot;},&quot;handle&quot;:{&quot;providerId&quot;:&quot;module3&quot;,&quot;exportId&quot;:&quot;pin-standard&quot;}},&quot;device_meta&quot;:{&quot;interfaceId&quot;:{&quot;name&quot;:&quot;device-meta&quot;,&quot;version&quot;:&quot;1.0.0&quot;},&quot;handle&quot;:{&quot;providerId&quot;:&quot;mccDevice&quot;,&quot;exportId&quot;:&quot;meta&quot;}},&quot;scf_pic8_osc_v1&quot;:{&quot;interfaceId&quot;:{&quot;name&quot;:&quot;scf-pic8-osc-v1&quot;,&quot;version&quot;:&quot;1.0.0&quot;},&quot;handle&quot;:{&quot;providerId&quot;:&quot;mccDevice&quot;,&quot;exportId&quot;:&quot;CLOCK CONTROL&quot;}},&quot;config_device&quot;:{&quot;interfaceId&quot;:{&quot;name&quot;:&quot;config-device&quot;,&quot;version&quot;:&quot;^1.1.1&quot;},&quot;handle&quot;:{&quot;providerId&quot;:&quot;module1&quot;,&quot;exportId&quot;:&quot;config_device&quot;}},&quot;initializer_system&quot;:{&quot;interfaceId&quot;:{&quot;name&quot;:&quot;initializer-system&quot;,&quot;version&quot;:&quot;^0.5.3&quot;},&quot;handle&quot;:{&quot;providerId&quot;:&quot;module1&quot;,&quot;exportId&quot;:&quot;initializer_system&quot;}},&quot;config_request&quot;:{&quot;interfaceId&quot;:{&quot;name&quot;:&quot;config-request&quot;,&quot;version&quot;:&quot;^2.0.1&quot;},&quot;handle&quot;:{&quot;providerId&quot;:&quot;module1&quot;,&quot;exportId&quot;:&quot;config_request&quot;}}},&quot;framewSpecificState&quot;:{&quot;userEditedImports&quot;:[]},&quot;payload&quot;:{}},&quot;module4&quot;:{&quot;scriptId&quot;:&quot;@mchp-mcc/scf-pic8-interrupt-v2&quot;,&quot;imports&quot;:{&quot;device_meta&quot;:{&quot;interfaceId&quot;:{&quot;name&quot;:&quot;device-meta&quot;,&quot;version&quot;:&quot;^1&quot;},&quot;handle&quot;:{&quot;providerId&quot;:&quot;mccDevice&quot;,&quot;exportId&quot;:&quot;meta&quot;}},&quot;scf_pic8_interrupt_v2&quot;:{&quot;interfaceId&quot;:{&quot;name&quot;:&quot;scf-pic8-interrupt-v2&quot;,&quot;version&quot;:&quot;1.0.0&quot;},&quot;handle&quot;:{&quot;providerId&quot;:&quot;mccDevice&quot;,&quot;exportId&quot;:&quot;INTERRUPT MANAGER&quot;}},&quot;initializer_main&quot;:{&quot;interfaceId&quot;:{&quot;name&quot;:&quot;initializer-main&quot;,&quot;version&quot;:&quot;^0&quot;},&quot;handle&quot;:{&quot;providerId&quot;:&quot;module0&quot;,&quot;exportId&quot;:&quot;initializer_main&quot;}},&quot;pin_standard&quot;:{&quot;interfaceId&quot;:{&quot;name&quot;:&quot;pin-standard&quot;,&quot;version&quot;:&quot;^0&quot;},&quot;handle&quot;:{&quot;providerId&quot;:&quot;module3&quot;,&quot;exportId&quot;:&quot;pin-standard&quot;}},&quot;initializer_system&quot;:{&quot;interfaceId&quot;:{&quot;name&quot;:&quot;initializer-system&quot;,&quot;version&quot;:&quot;^0&quot;},&quot;handle&quot;:{&quot;providerId&quot;:&quot;module1&quot;,&quot;exportId&quot;:&quot;initializer_system&quot;}}},&quot;framewSpecificState&quot;:{&quot;userEditedImports&quot;:[]},&quot;payload&quot;:{}},&quot;module6&quot;:{&quot;scriptId&quot;:&quot;@mchp-mcc/scf-pic8-eusart-v1&quot;,&quot;imports&quot;:{&quot;pin_standard&quot;:{&quot;interfaceId&quot;:{&quot;name&quot;:&quot;pin-standard&quot;,&quot;version&quot;:&quot;^0&quot;},&quot;handle&quot;:{&quot;providerId&quot;:&quot;module3&quot;,&quot;exportId&quot;:&quot;pin-standard&quot;}},&quot;interrupt_standard&quot;:{&quot;interfaceId&quot;:{&quot;name&quot;:&quot;interrupt-standard&quot;,&quot;version&quot;:&quot;^1&quot;},&quot;handle&quot;:{&quot;providerId&quot;:&quot;module4&quot;,&quot;exportId&quot;:&quot;interrupt&quot;}},&quot;device_meta&quot;:{&quot;interfaceId&quot;:{&quot;name&quot;:&quot;device-meta&quot;,&quot;version&quot;:&quot;^1&quot;},&quot;handle&quot;:{&quot;providerId&quot;:&quot;mccDevice&quot;,&quot;exportId&quot;:&quot;meta&quot;}},&quot;osc_clocks&quot;:{&quot;interfaceId&quot;:{&quot;name&quot;:&quot;osc-clocks&quot;,&quot;version&quot;:&quot;^0&quot;},&quot;handle&quot;:{&quot;providerId&quot;:&quot;module5&quot;,&quot;exportId&quot;:&quot;osc_clocks&quot;}},&quot;initializer_system&quot;:{&quot;interfaceId&quot;:{&quot;name&quot;:&quot;initializer-system&quot;,&quot;version&quot;:&quot;^0&quot;},&quot;handle&quot;:{&quot;providerId&quot;:&quot;module1&quot;,&quot;exportId&quot;:&quot;initializer_system&quot;}},&quot;scf_pic8_eusart_v1&quot;:{&quot;interfaceId&quot;:{&quot;name&quot;:&quot;scf-pic8-eusart-v1&quot;,&quot;version&quot;:&quot;^1.0.0&quot;},&quot;handle&quot;:{&quot;providerId&quot;:&quot;mccDevice&quot;,&quot;exportId&quot;:&quot;EUSART&quot;}}},&quot;framewSpecificState&quot;:{&quot;userEditedImports&quot;:[]},&quot;payload&quot;:{&quot;main&quot;:{&quot;hardware&quot;:{&quot;txenTxsta&quot;:false,&quot;receiveEnable&quot;:true},&quot;advanced&quot;:{&quot;wueBaudcon&quot;:false,&quot;brg16Baudcon&quot;:&quot;16bit_generator&quot;}}}},&quot;module1&quot;:{&quot;scriptId&quot;:&quot;@mchp-mcc/pic16-configuration-bits-v1&quot;,&quot;imports&quot;:{&quot;device_meta&quot;:{&quot;interfaceId&quot;:{&quot;name&quot;:&quot;device-meta&quot;,&quot;version&quot;:&quot;1.0.0&quot;},&quot;handle&quot;:{&quot;providerId&quot;:&quot;mccDevice&quot;,&quot;exportId&quot;:&quot;meta&quot;}},&quot;initializer_main&quot;:{&quot;interfaceId&quot;:{&quot;name&quot;:&quot;initializer-main&quot;,&quot;version&quot;:&quot;^0&quot;},&quot;handle&quot;:{&quot;providerId&quot;:&quot;module0&quot;,&quot;exportId&quot;:&quot;initializer_main&quot;}},&quot;pic16_configuration_bits_v1&quot;:{&quot;interfaceId&quot;:{&quot;name&quot;:&quot;pic16-configuration-bits-v1&quot;,&quot;version&quot;:&quot;1.0.0&quot;},&quot;handle&quot;:{&quot;providerId&quot;:&quot;mccDevice&quot;,&quot;exportId&quot;:&quot;Configuration Bits&quot;}}},&quot;framewSpecificState&quot;:{&quot;userEditedImports&quot;:[]},&quot;payload&quot;:{}},&quot;module0&quot;:{&quot;scriptId&quot;:&quot;@mchp-mcc/main-manager&quot;,&quot;imports&quot;:{&quot;main&quot;:{&quot;interfaceId&quot;:{&quot;name&quot;:&quot;main-manager&quot;,&quot;version&quot;:&quot;^1.*&quot;},&quot;handle&quot;:{&quot;providerId&quot;:&quot;mccDevice&quot;,&quot;exportId&quot;:&quot;MAIN MANAGER&quot;}}},&quot;framewSpecificState&quot;:{&quot;userEditedImports&quot;:[]},&quot;payload&quot;:{}},&quot;module3&quot;:{&quot;scriptId&quot;:&quot;@mchp-mcc/pin-content-processor&quot;,&quot;imports&quot;:{&quot;device-meta&quot;:{&quot;interfaceId&quot;:{&quot;name&quot;:&quot;device-meta&quot;,&quot;version&quot;:&quot;1.0.0&quot;},&quot;handle&quot;:{&quot;providerId&quot;:&quot;mccDevice&quot;,&quot;exportId&quot;:&quot;meta&quot;}},&quot;pin-architecture&quot;:{&quot;interfaceId&quot;:{&quot;name&quot;:&quot;pin-architecture&quot;,&quot;version&quot;:&quot;1.0.0&quot;},&quot;handle&quot;:{&quot;providerId&quot;:&quot;module2&quot;,&quot;exportId&quot;:&quot;pin-architecture&quot;}}},&quot;framewSpecificState&quot;:{&quot;userEditedImports&quot;:[]},&quot;payload&quot;:{&quot;saved&quot;:{&quot;rows&quot;:{&quot;pcp&quot;:{&quot;GPIO$GPIO$input&quot;:{&quot;pins&quot;:{&quot;RB0&quot;:{&quot;state&quot;:&quot;UL&quot;}}},&quot;GPIO$GPIO$output&quot;:{&quot;pins&quot;:{&quot;RB0&quot;:{&quot;state&quot;:&quot;UL&quot;}}}},&quot;module13&quot;:{&quot;MSSP1$SDO1$output&quot;:{&quot;pins&quot;:{&quot;RB0&quot;:{&quot;state&quot;:&quot;L&quot;}}}}},&quot;userEditedData&quot;:{&quot;inputPPSState&quot;:{&quot;module13&quot;:{&quot;MSSP1&quot;:{&quot;SDI1&quot;:&quot;&quot;,&quot;SCK1&quot;:&quot;&quot;}},&quot;module20&quot;:{&quot;CCP1&quot;:{&quot;CCP&quot;:&quot;RB1&quot;}}},&quot;cname&quot;:{&quot;eview&quot;:{&quot;RB0&quot;:&quot;SPI_MOSI&quot;,&quot;RB1&quot;:&quot;PWM_OUTPUT&quot;,&quot;RC7&quot;:&quot;UART_RX&quot;}},&quot;analog&quot;:{&quot;eview&quot;:{&quot;RB0&quot;:false}}}}}},&quot;module2&quot;:{&quot;scriptId&quot;:&quot;@mchp-mcc/pic16-pin-manager&quot;,&quot;imports&quot;:{&quot;pic16-pin-manager&quot;:{&quot;interfaceId&quot;:{&quot;name&quot;:&quot;pic16-pin-manager&quot;,&quot;version&quot;:&quot;1.0.0&quot;},&quot;handle&quot;:{&quot;providerId&quot;:&quot;mccDevice&quot;,&quot;exportId&quot;:&quot;Pin Manager&quot;}},&quot;initializer_system&quot;:{&quot;interfaceId&quot;:{&quot;name&quot;:&quot;initializer-system&quot;,&quot;version&quot;:&quot;^0.*&quot;},&quot;handle&quot;:{&quot;providerId&quot;:&quot;module1&quot;,&quot;exportId&quot;:&quot;initializer_system&quot;}}},&quot;framewSpecificState&quot;:{&quot;userEditedImports&quot;:[]},&quot;payload&quot;:{&quot;adapterdata&quot;:{&quot;pps&quot;:{&quot;data&quot;:{&quot;MSSP&quot;:{&quot;SDI1&quot;:&quot;&quot;,&quot;SCK1&quot;:&quot;&quot;},&quot;MSSP1&quot;:{&quot;SDI1&quot;:&quot;&quot;,&quot;SCK1&quot;:&quot;&quot;},&quot;CCP&quot;:{&quot;CCP1&quot;:&quot;RB1&quot;},&quot;CCP1&quot;:{&quot;CCP1&quot;:&quot;RB1&quot;}},&quot;users&quot;:{&quot;module13&quot;:{&quot;mod_name&quot;:&quot;MSSP1&quot;},&quot;module20&quot;:{&quot;mod_name&quot;:&quot;CCP1&quot;}}},&quot;cname&quot;:{&quot;eview&quot;:{&quot;dataMap&quot;:{&quot;RB0&quot;:{&quot;value&quot;:&quot;SPI_MOSI&quot;},&quot;RB1&quot;:{&quot;value&quot;:&quot;PWM_OUTPUT&quot;},&quot;RC7&quot;:{&quot;value&quot;:&quot;UART_RX&quot;}}}},&quot;analog&quot;:{&quot;eview&quot;:{&quot;dataMap&quot;:{&quot;RB0&quot;:{&quot;value&quot;:false}}}}}}},&quot;module20&quot;:{&quot;scriptId&quot;:&quot;@mchp-mcc/scf-pic8-ccp-v1&quot;,&quot;imports&quot;:{&quot;pin_standard&quot;:{&quot;interfaceId&quot;:{&quot;name&quot;:&quot;pin-standard&quot;,&quot;version&quot;:&quot;^0.*&quot;},&quot;handle&quot;:{&quot;providerId&quot;:&quot;module3&quot;,&quot;exportId&quot;:&quot;pin-standard&quot;}},&quot;scf_pic8_ccp_v1&quot;:{&quot;interfaceId&quot;:{&quot;name&quot;:&quot;scf-pic8-ccp-v1&quot;,&quot;version&quot;:&quot;1.0.0&quot;},&quot;handle&quot;:{&quot;providerId&quot;:&quot;mccDevice&quot;,&quot;exportId&quot;:&quot;CCP1&quot;}},&quot;interrupt_standard&quot;:{&quot;interfaceId&quot;:{&quot;name&quot;:&quot;interrupt-standard&quot;,&quot;version&quot;:&quot;^1.*&quot;},&quot;handle&quot;:{&quot;providerId&quot;:&quot;module4&quot;,&quot;exportId&quot;:&quot;interrupt&quot;}},&quot;device_meta&quot;:{&quot;interfaceId&quot;:{&quot;name&quot;:&quot;device-meta&quot;,&quot;version&quot;:&quot;1.0.0&quot;},&quot;handle&quot;:{&quot;providerId&quot;:&quot;mccDevice&quot;,&quot;exportId&quot;:&quot;meta&quot;}},&quot;TMR2_4_6&quot;:{&quot;interfaceId&quot;:{&quot;name&quot;:&quot;timer-2-4-6-general-parameters&quot;,&quot;version&quot;:&quot;^0.*&quot;},&quot;handle&quot;:{&quot;providerId&quot;:&quot;module11&quot;,&quot;exportId&quot;:&quot;timer_2_4_6_general_params&quot;,&quot;label&quot;:&quot;TMR2&quot;}},&quot;osc_clocks&quot;:{&quot;interfaceId&quot;:{&quot;name&quot;:&quot;osc-clocks&quot;,&quot;version&quot;:&quot;^0.*&quot;},&quot;handle&quot;:{&quot;providerId&quot;:&quot;module5&quot;,&quot;exportId&quot;:&quot;osc_clocks&quot;}},&quot;initializer_system&quot;:{&quot;interfaceId&quot;:{&quot;name&quot;:&quot;initializer-system&quot;,&quot;version&quot;:&quot;^0.*&quot;},&quot;handle&quot;:{&quot;providerId&quot;:&quot;module1&quot;,&quot;exportId&quot;:&quot;initializer_system&quot;}},&quot;config_request&quot;:{&quot;interfaceId&quot;:{&quot;name&quot;:&quot;config-request&quot;,&quot;version&quot;:&quot;^2.*&quot;},&quot;handle&quot;:{&quot;providerId&quot;:&quot;module1&quot;,&quot;exportId&quot;:&quot;config_request&quot;}}},&quot;framewSpecificState&quot;:{&quot;userEditedImports&quot;:[&quot;TMR2_4_6&quot;]},&quot;payload&quot;:{&quot;main&quot;:{&quot;hardware&quot;:{&quot;enCcpcon&quot;:true,&quot;ccpMode&quot;:&quot;PWM&quot;,&quot;fmtCcpcon&quot;:&quot;left_aligned&quot;}}}},&quot;module68&quot;:{&quot;scriptId&quot;:&quot;@mchp-mcc/uart-driver&quot;,&quot;imports&quot;:{&quot;device_meta&quot;:{&quot;interfaceId&quot;:{&quot;name&quot;:&quot;device-meta&quot;,&quot;version&quot;:&quot;^1.0.0&quot;},&quot;handle&quot;:{&quot;providerId&quot;:&quot;mccDevice&quot;,&quot;exportId&quot;:&quot;meta&quot;}},&quot;uart_basic&quot;:{&quot;interfaceId&quot;:{&quot;name&quot;:&quot;uart-basic&quot;,&quot;version&quot;:&quot;^6.0.0&quot;},&quot;handle&quot;:{&quot;providerId&quot;:&quot;module6&quot;,&quot;exportId&quot;:&quot;uart_basic&quot;}}},&quot;framewSpecificState&quot;:{&quot;userEditedImports&quot;:[]},&quot;payload&quot;:{&quot;main&quot;:{&quot;software&quot;:{&quot;baudrate&quot;:115200.0,&quot;redirectPrintf&quot;:false},&quot;interrupt&quot;:{&quot;interruptDriven&quot;:false}}}},&quot;module13&quot;:{&quot;scriptId&quot;:&quot;@mchp-mcc/scf-pic8-mssp-v1&quot;,&quot;imports&quot;:{&quot;pin_standard&quot;:{&quot;interfaceId&quot;:{&quot;name&quot;:&quot;pin-standard&quot;,&quot;version&quot;:&quot;^0&quot;},&quot;handle&quot;:{&quot;providerId&quot;:&quot;module3&quot;,&quot;exportId&quot;:&quot;pin-standard&quot;}},&quot;device_meta&quot;:{&quot;interfaceId&quot;:{&quot;name&quot;:&quot;device-meta&quot;,&quot;version&quot;:&quot;^1.*&quot;},&quot;handle&quot;:{&quot;providerId&quot;:&quot;mccDevice&quot;,&quot;exportId&quot;:&quot;meta&quot;}},&quot;interrupt_standard&quot;:{&quot;interfaceId&quot;:{&quot;name&quot;:&quot;interrupt-standard&quot;,&quot;version&quot;:&quot;^1.0.1&quot;},&quot;handle&quot;:{&quot;providerId&quot;:&quot;module4&quot;,&quot;exportId&quot;:&quot;interrupt&quot;}},&quot;osc_clocks&quot;:{&quot;interfaceId&quot;:{&quot;name&quot;:&quot;osc-clocks&quot;,&quot;version&quot;:&quot;^0&quot;},&quot;handle&quot;:{&quot;providerId&quot;:&quot;module5&quot;,&quot;exportId&quot;:&quot;osc_clocks&quot;}},&quot;initializer_system&quot;:{&quot;interfaceId&quot;:{&quot;name&quot;:&quot;initializer-system&quot;,&quot;version&quot;:&quot;^0.5.5&quot;},&quot;handle&quot;:{&quot;providerId&quot;:&quot;module1&quot;,&quot;exportId&quot;:&quot;initializer_system&quot;}},&quot;scf_pic8_mssp_v1&quot;:{&quot;interfaceId&quot;:{&quot;name&quot;:&quot;scf-pic8-mssp-v1&quot;,&quot;version&quot;:&quot;^1.0.0&quot;},&quot;handle&quot;:{&quot;providerId&quot;:&quot;mccDevice&quot;,&quot;exportId&quot;:&quot;MSSP1&quot;}}},&quot;framewSpecificState&quot;:{&quot;userEditedImports&quot;:[]},&quot;payload&quot;:{&quot;main&quot;:{&quot;hardware&quot;:{&quot;advancedConfigurations&quot;:[{&quot;rowId&quot;:1.0,&quot;uid&quot;:&quot;HOST_CONFIG_1&quot;,&quot;configClockSource&quot;:&quot;FOSC/4&quot;}]},&quot;software&quot;:{&quot;sdoPinKey&quot;:{&quot;RB0&quot;:{&quot;cname&quot;:&quot;SPI_MOSI&quot;,&quot;state&quot;:&quot;&quot;}},&quot;sckPinKey&quot;:{},&quot;sdiPinKey&quot;:{}}}}},&quot;module56&quot;:{&quot;scriptId&quot;:&quot;@mchp-mcc/spi-host-driver&quot;,&quot;imports&quot;:{&quot;basic_spi_master&quot;:{&quot;interfaceId&quot;:{&quot;name&quot;:&quot;spi-master-basic&quot;,&quot;version&quot;:&quot;^1.1.0&quot;},&quot;handle&quot;:{&quot;providerId&quot;:&quot;module13&quot;,&quot;exportId&quot;:&quot;spi&quot;,&quot;label&quot;:&quot;MSSP1 (SPI)&quot;}}},&quot;framewSpecificState&quot;:{&quot;userEditedImports&quot;:[&quot;basic_spi_master&quot;]},&quot;payload&quot;:{}},&quot;module11&quot;:{&quot;scriptId&quot;:&quot;@mchp-mcc/scf-pic8-tmr2-v1&quot;,&quot;imports&quot;:{&quot;pin_standard&quot;:{&quot;interfaceId&quot;:{&quot;name&quot;:&quot;pin-standard&quot;,&quot;version&quot;:&quot;^0&quot;},&quot;handle&quot;:{&quot;providerId&quot;:&quot;module3&quot;,&quot;exportId&quot;:&quot;pin-standard&quot;}},&quot;interrupt_standard&quot;:{&quot;interfaceId&quot;:{&quot;name&quot;:&quot;interrupt-standard&quot;,&quot;version&quot;:&quot;^1&quot;},&quot;handle&quot;:{&quot;providerId&quot;:&quot;module4&quot;,&quot;exportId&quot;:&quot;interrupt&quot;}},&quot;device_meta&quot;:{&quot;interfaceId&quot;:{&quot;name&quot;:&quot;device-meta&quot;,&quot;version&quot;:&quot;^1&quot;},&quot;handle&quot;:{&quot;providerId&quot;:&quot;mccDevice&quot;,&quot;exportId&quot;:&quot;meta&quot;}},&quot;osc_clocks&quot;:{&quot;interfaceId&quot;:{&quot;name&quot;:&quot;osc-clocks&quot;,&quot;version&quot;:&quot;^0&quot;},&quot;handle&quot;:{&quot;providerId&quot;:&quot;module5&quot;,&quot;exportId&quot;:&quot;osc_clocks&quot;}},&quot;scf_pic8_tmr2_v1&quot;:{&quot;interfaceId&quot;:{&quot;name&quot;:&quot;scf-pic8-tmr2-v1&quot;,&quot;version&quot;:&quot;^1.0.0&quot;},&quot;handle&quot;:{&quot;providerId&quot;:&quot;mccDevice&quot;,&quot;exportId&quot;:&quot;TMR2&quot;}},&quot;initializer_system&quot;:{&quot;interfaceId&quot;:{&quot;name&quot;:&quot;initializer-system&quot;,&quot;version&quot;:&quot;^0&quot;},&quot;handle&quot;:{&quot;providerId&quot;:&quot;module1&quot;,&quot;exportId&quot;:&quot;initializer_system&quot;}}},&quot;framewSpecificState&quot;:{&quot;userEditedImports&quot;:[]},&quot;payload&quot;:{&quot;main&quot;:{&quot;hardware&quot;:{&quot;controlMode&quot;:&quot;One shot&quot;},&quot;timerClock&quot;:{&quot;enableClkSync&quot;:false,&quot;tcsTclkcon&quot;:&quot;FOSC/4&quot;}}}}},&quot;content&quot;:{&quot;@mchp-mcc/pic-8bit&quot;:&quot;5.28.0&quot;,&quot;@mchp-mcc/scf-pic8-mssp-v1&quot;:&quot;7.0.1&quot;,&quot;@mchp-mcc/pic16-pin-manager&quot;:&quot;3.6.0&quot;,&quot;@mchp-mcc/spi-host-driver&quot;:&quot;1.2.0&quot;,&quot;@mchp-mcc/pin-content-processor&quot;:&quot;3.8.0&quot;,&quot;@mchp-mcc/pic16-configuration-bits-v1&quot;:&quot;4.1.4&quot;,&quot;@mchp-mcc/scf-pic8-eusart-v1&quot;:&quot;7.1.5&quot;,&quot;@mchp-mcc/scf-pic8-interrupt-v2&quot;:&quot;5.2.11&quot;,&quot;@mchp-mcc/scf-pic8-tmr2-v1&quot;:&quot;4.0.18&quot;,&quot;@mchp-mcc/uart-driver&quot;:&quot;1.10.0&quot;,&quot;@mchp-mcc/scf-pic8-ccp-v1&quot;:&quot;4.0.16&quot;,&quot;@mchp-mcc/scf-pic8-osc-v1&quot;:&quot;4.3.5&quot;,&quot;@mchp-mcc/main-manager&quot;:&quot;3.1.1&quot;}}</value>
+      </entry>
+   </tokenMap>
+   <generatedFileHashHistoryMap class="java.util.TreeMap">
+      <entry>
+         <file>main.c</file>
+         <hash>9f7a9ee9174864acfff8de11d8b7598074ac47dba3ee2d455e3498fc7839c205</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files\pwm\ccp1.h</file>
+         <hash>91904803fc0657894efdbd784bca1a4bd2f6a018f858dd7fd0e036b557ef1339</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files\pwm\src\ccp1.c</file>
+         <hash>4ff88193d60c722e26f486e5598e4256308074e6faff1973dfee2c74244b6496</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files\spi\mssp1.h</file>
+         <hash>ce0b2b22e3cc77b07daec5687078e8b9858cfc98ff3c8cdf707af80d59f348b8</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files\spi\spi_interface.h</file>
+         <hash>6d468d06ece90b49f46258cb868231d341cd3e5fc17215a1445f81b2d42b0ce1</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files\spi\spi_polling_types.h</file>
+         <hash>4ba1aa5d728964fcc35bf4a5d057b39369d50bc334d6a6b34a0314d8ac7385f4</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files\spi\src\mssp1.c</file>
+         <hash>9c1a2bba8044a19d6fb4403d0dc187e383dd5c6f78629b9de135f72d973118bb</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files\system\clock.h</file>
+         <hash>2abe9fa0fdf61f4d342afdd8c87c95304aac3a9482eb6cf7c6a08b7a4285dbb8</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files\system\config_bits.h</file>
+         <hash>d1b2c9c88e5a0541da83ae1b28e71f4988834b939072098d96e218c2118a54f9</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files\system\interrupt.h</file>
+         <hash>17d1f7fd9ffe4fbbf95c5a61bf661b1346c10c7dd38b6aea88693a63540f698e</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files\system\pins.h</file>
+         <hash>34f3f67d1a760e3328bfdc71844d1afb03f01031a4834c443a90b1986fe576eb</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files\system\src\clock.c</file>
+         <hash>9d15c0c886b56f39e90f17eee5375c3fdbc5da1db597e17f8786c5becaf26114</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files\system\src\config_bits.c</file>
+         <hash>3466d2b8eedd211d4380a932bd6b6a6c57efe93a74c693d4a2749d5f2b028753</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files\system\src\interrupt.c</file>
+         <hash>00c94d9611ac8f1f6856c4dd93442135da79b1d1759f2724564f65da83d243a2</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files\system\src\pins.c</file>
+         <hash>8de7dd2517933abbde0a2396d6542026ba2e4e28b9c12493e4d3a6165617a41b</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files\system\src\system.c</file>
+         <hash>55a4717100d07764946fac83d125eac2c42a3ee1c9d51dbbc831a26af14b1bc5</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files\system\system.h</file>
+         <hash>661d6c3c550748ed861f0092b87ec261bdc6643b4889749675b67e8b43e1dc77</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files\timer\src\tmr2.c</file>
+         <hash>f49b802da9fe8e419e94bf845d4fabce1d9a28fd742de00492f141af5d0be3c5</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files\timer\timer_interface.h</file>
+         <hash>a4d378f645d42fd44e09983310e5da2de850bc3c6b6e24152a1e3d3b5121f4a7</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files\timer\tmr2.h</file>
+         <hash>b75ca1850efbedea1de8b7c65c80c7bf4de4b264a537e6a5914c37ed29777950</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files\uart\eusart.h</file>
+         <hash>f417ca75555f8a8e9b2e466a35e6e0dc43aba05c4917cb4008856e4b9a466910</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files\uart\src\eusart.c</file>
+         <hash>146ea2d3b0eb2af1dfa0101f93a25eaeead927cb134a5a692cf9fc99e5845f94</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files\uart\uart_drv_interface.h</file>
+         <hash>2a19b965bdc9cca49850cc71afaaadf1267237ddd489f94e07bfe99f54fde2dd</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files\uart\uart_types.h</file>
+         <hash>a3f934c393037430338c7d67e434217195caf06111b676a6463a0dc3173bc565</hash>
+      </entry>
+   </generatedFileHashHistoryMap>
+</config>
