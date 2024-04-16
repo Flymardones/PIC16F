@@ -55,6 +55,14 @@
  * @param None.
  * @return None.
 */
+
+
+#define RX_BUFF_SIZE 128
+
+extern uint8_t rxBuff[RX_BUFF_SIZE];
+extern bool fade_flag;
+extern uint16_t fade_time;
+
 void SYSTEM_Initialize(void);
 
 #endif	/* SYSTEM_H */

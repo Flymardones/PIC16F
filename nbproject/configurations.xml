@@ -79,9 +79,22 @@
           </logicalFolder>
         </logicalFolder>
       </logicalFolder>
+      <logicalFolder name="ws2812" displayName="ws2812" projectFiles="true">
+        <logicalFolder name="Inc" displayName="Inc" projectFiles="true">
+        </logicalFolder>
+        <logicalFolder name="Src" displayName="Src" projectFiles="true">
+          <itemPath>ws2812/Src/ws2812.c</itemPath>
+          <itemPath>ws2812/Src/ws2812_pwm.c</itemPath>
+          <itemPath>ws2812/Src/ws2812_spi.c</itemPath>
+          <itemPath>ws2812/Src/ws2812_uart.c</itemPath>
+        </logicalFolder>
+      </logicalFolder>
       <itemPath>main.c</itemPath>
     </logicalFolder>
   </logicalFolder>
+  <sourceRootList>
+    <Elem>ws2812</Elem>
+  </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
     <conf name="default" type="2">

@@ -1,7 +1,10 @@
 Version 4.0 HI-TECH Software Intermediate Code
+"20 ./ws2812/Inc/ws2812.h
+[; ;./ws2812/Inc/ws2812.h: 20: typedef struct {
+[s S1618 `*v 1 `uc 1 `uc 1 `ui 1 `*v 1 `uc 1 ]
+[n S1618 . handle led_num brightness buffer_size buffer dma ]
 [p mainexit ]
-"58 ./mcc_generated_files/system/../uart/../system/system.h
-[; ;./mcc_generated_files/system/../uart/../system/system.h: 58: void SYSTEM_Initialize(void);
+"58 ./ws2812/Inc/../../mcc_generated_files/system/system.h
 [v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
 "54 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 54: __asm("INDF0 equ 00h");
@@ -1638,31 +1641,37 @@ Version 4.0 HI-TECH Software Intermediate Code
 "36289
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 36289: __asm("TOSH equ 01FEFh");
 [; <" TOSH equ 01FEFh ;# ">
+"42 main.c
+[; ;main.c: 42: ws2812_configuration ws2812_spi;
+[v _ws2812_spi `S1618 ~T0 @X0 1 e ]
+"43
+[; ;main.c: 43: ws2812_configuration ws2812_pwm;
+[v _ws2812_pwm `S1618 ~T0 @X0 1 e ]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"39 main.c
-[; ;main.c: 39: int main(void)
+"46
+[; ;main.c: 46: int main(void)
 [v _main `(i ~T0 @X0 1 ef ]
-"40
-[; ;main.c: 40: {
+"47
+[; ;main.c: 47: {
 {
 [e :U _main ]
 [f ]
-"41
-[; ;main.c: 41:     SYSTEM_Initialize();
+"48
+[; ;main.c: 48:     SYSTEM_Initialize();
 [e ( _SYSTEM_Initialize ..  ]
-"60
-[; ;main.c: 60:     while(1)
-[e :U 1620 ]
-"61
-[; ;main.c: 61:     {
+"67
+[; ;main.c: 67:     while(1)
+[e :U 1622 ]
+"68
+[; ;main.c: 68:     {
 {
-"62
-[; ;main.c: 62:     }
+"69
+[; ;main.c: 69:     }
 }
-[e :U 1619 ]
-[e $U 1620  ]
 [e :U 1621 ]
-"63
-[; ;main.c: 63: }
-[e :UE 1618 ]
+[e $U 1622  ]
+[e :U 1623 ]
+"70
+[; ;main.c: 70: }
+[e :UE 1620 ]
 }

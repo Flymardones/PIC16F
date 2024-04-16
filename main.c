@@ -31,15 +31,25 @@
     THIS SOFTWARE.
 */
 #include "mcc_generated_files/system/system.h"
+#include "ws2812/Inc/ws2812_spi.h"
+#include "ws2812/Inc/ws2812_pwm.h"
+#include "ws2812/Inc/ws2812_uart.h"
 
 /*
     Main application
 */
 
+ws2812_configuration ws2812_spi;
+ws2812_configuration ws2812_pwm;
+
+bool fade_flag = 0;
+uint16_t fade_time = 0;
+uint8_t rxBuff[RX_BUFF_SIZE];
+
 int main(void)
 {
     SYSTEM_Initialize();
-
+ 
     // If using interrupts in PIC18 High/Low Priority Mode you need to enable the Global High and Low Interrupts 
     // If using interrupts in PIC Mid-Range Compatibility Mode you need to enable the Global and Peripheral Interrupts 
     // Use the following macros to: 

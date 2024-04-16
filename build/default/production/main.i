@@ -21468,15 +21468,122 @@ void INT_DefaultInterruptHandler(void);
 void SYSTEM_Initialize(void);
 # 33 "main.c" 2
 
+# 1 "./ws2812/Inc/ws2812_spi.h" 1
+# 11 "./ws2812/Inc/ws2812_spi.h"
+# 1 "./ws2812/Inc/ws2812.h" 1
+# 13 "./ws2812/Inc/ws2812.h"
+typedef enum {
+    ws2812_ok,
+    ws2812_error,
+    ws2812_dma_error,
+} ws2812_status_t;
+
+
+typedef struct {
 
 
 
+
+    void* handle;
+
+
+
+
+    uint8_t led_num;
+
+
+
+
+    uint8_t brightness;
+
+
+
+
+    size_t buffer_size;
+
+
+
+
+    void* buffer;
+
+
+
+
+    uint8_t dma;
+
+} ws2812_configuration;
+# 64 "./ws2812/Inc/ws2812.h"
+void ws2812_set_led(ws2812_configuration* ws2812_conf, uint8_t led, uint8_t red, uint8_t green, uint8_t blue);
+
+
+
+
+
+
+
+void ws2812_delay_us(uint16_t us);
+# 11 "./ws2812/Inc/ws2812_spi.h" 2
+
+
+extern ws2812_configuration ws2812_spi;
+
+_Bool ws2812_spi_init(ws2812_configuration* ws2812_conf);
+
+void ws2812_spi_send(ws2812_configuration* ws2812_conf);
+
+void ws2812_spi_data(ws2812_configuration* ws2812_conf, uint8_t green, uint8_t red, uint8_t blue, uint8_t brightness);
+
+void ws2812_spi_fade(ws2812_configuration* ws2812_conf, uint16_t fade_time_ms);
+
+void ws2812_spi_send_single(ws2812_configuration* ws2812_conf);
+
+void ws2812_spi_clear(ws2812_configuration* ws2812_conf);
+
+void ws2812_spi_deinit(ws2812_configuration* ws2812_conf);
+# 34 "main.c" 2
+
+# 1 "./ws2812/Inc/ws2812_pwm.h" 1
+# 12 "./ws2812/Inc/ws2812_pwm.h"
+extern ws2812_configuration ws2812_pwm;
+
+void ws2812_pwm_send(ws2812_configuration* ws2812_conf, uint8_t brightness);
+
+_Bool ws2812_pwm_init(ws2812_configuration* ws2812_conf);
+
+void ws2812_pwm_send_single(ws2812_configuration* ws2812_conf);
+
+void ws2812_pwm_data(ws2812_configuration* ws2812_conf, uint8_t green, uint8_t red, uint8_t blue, uint8_t brightness);
+
+void ws2812_pwm_fade(ws2812_configuration* ws2812_conf, uint16_t fade_time_ms);
+
+void ws2812_pwm_clear(ws2812_configuration* ws2812_conf);
+
+void ws2812_pwm_deinit(ws2812_configuration* ws2812_conf);
+# 35 "main.c" 2
+
+# 1 "./ws2812/Inc/ws2812_uart.h" 1
+# 13 "./ws2812/Inc/ws2812_uart.h"
+typedef struct {
+    _Bool dataReceived;
+    uint16_t dataSize;
+} uart_data;
+
+void ws2812_uart_commands(uint8_t* data, uint16_t size);
+# 36 "main.c" 2
+
+
+
+
+
+
+ws2812_configuration ws2812_spi;
+ws2812_configuration ws2812_pwm;
 
 
 int main(void)
 {
     SYSTEM_Initialize();
-# 60 "main.c"
+# 67 "main.c"
     while(1)
     {
     }

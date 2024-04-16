@@ -13,4 +13,8 @@ mcc_generated_files/system/../spi/mssp1.h  \
 mcc_generated_files/system/../spi/spi_interface.h  \
 mcc_generated_files/system/../timer/tmr2.h  \
 mcc_generated_files/system/../timer/timer_interface.h  \
-mcc_generated_files/system/../system/interrupt.h 
+mcc_generated_files/system/../system/interrupt.h  \
+ws2812/Inc/ws2812_spi.h  \
+ws2812/Inc/ws2812.h  \
+ws2812/Inc/ws2812_pwm.h  \
+ws2812/Inc/ws2812_uart.h 
