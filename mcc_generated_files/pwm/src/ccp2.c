@@ -1,13 +1,13 @@
 /**
- * PWM1 Generated Driver API Header File.
+ * PWM2 Generated Driver File.
  * 
- * @file ccp1.h
+ * @file ccp2.c
  * 
- * @defgroup pwm1 PWM1
+ * @ingroup pwm2
  * 
- * @brief This file contains the API prototypes for the PWM1 module.
+ * @brief This file contains the API implementations for the PWM2 driver.
  *
- * @version PWM1 Driver Version 2.0.2
+ * @version PWM2 Driver Version 2.0.2
 */
 /*
 © [2024] Microchip Technology Inc. and its subsidiaries.
@@ -30,46 +30,62 @@
     THIS SOFTWARE.
 */
 
-#ifndef PWM1_H
-#define PWM1_H
-
  /**
    Section: Included Files
  */
 
 #include <xc.h>
-#include <stdint.h>
-#include <stdbool.h>
+#include "../ccp2.h"
 
-#define PWM1_Initialize CCP1_Initialize
-#define PWM1_LoadDutyValue CCP1_LoadDutyValue
-#define PWM1_OutputStatusGet  CCP1_OutputStatusGet
+/**
+  Section: Macro Declarations
+*/
 
- /**
- * @ingroup pwm1
- * @brief Initializes the CCP1 module. This is called only once before calling other CCP1 APIs.
- * @param None.
- * @return None.
- */
-void CCP1_Initialize(void);
+#define PWM2_INITIALIZE_DUTY_VALUE    0
+
 /**
- * @ingroup pwm1
- * @brief Loads the 16-bit duty cycle value.
- * @pre CCP1_Initialize() is already called.
- * @param dutyValue - 16-bit duty cycle value.
- * @return None.
- */
-void CCP1_LoadDutyValue(uint16_t dutyValue);
-/**
- * @ingroup pwm1
- * @brief Returns the PWM output status.
- * @pre CCP1_Initialize() is already called.
- * @param None.
- * @retval True - CCP1 PWM output is high
- * @retval False - CCP1 PWM output is low
- */
-bool CCP1_OutputStatusGet(void);
-#endif //PWM1_H
+  Section: PWM2 Module APIs
+*/
+
+void CCP2_Initialize(void)
+{
+    // Set the PWM2 to the options selected in the User Interface
+    
+    // CCPM PWM; EN enabled; FMT right_aligned; 
+    CCP2CON = 0x8F;
+    
+    // CCPRH 0; 
+    CCPR2H = 0x0;
+    
+    // CCPRL 0; 
+    CCPR2L = 0x0;
+    
+    // Selecting Timer 4
+    CCPTMRS0bits.C2TSEL = 0x2;
+}
+
+void CCP2_LoadDutyValue(uint16_t dutyValue)
+{
+	  dutyValue &= 0x03FF;
+    
+    // Load duty cycle value
+    if(CCP2CONbits.CCP2FMT)
+    {
+        dutyValue <<= 6;
+        CCPR2H = (uint8_t)(dutyValue >> 8);
+        CCPR2L = (uint8_t)dutyValue;
+    }
+    else
+    {
+        CCPR2H = (uint8_t)(dutyValue >> 8);
+        CCPR2L = (uint8_t)dutyValue;
+    }
+}
+bool CCP2_OutputStatusGet(void)
+{
+    // Returns the output status
+    return(CCP2CONbits.OUT);
+}
 /**
  End of File
 */

@@ -20775,7 +20775,7 @@ struct SPI_INTERFACE
 extern const struct SPI_INTERFACE SPI1_Host;
 # 115 "mcc_generated_files/spi/src/../mssp1.h"
 typedef enum {
-    HOST_CONFIG,
+    WS2812_SPI,
     MSSP1_DEFAULT
 } spi1_configuration_name_t;
 
@@ -20864,7 +20864,7 @@ const struct SPI_INTERFACE SPI1_Host = {
 };
 
 static const spi_configuration_t spi1_configuration[] = {
-    { 0x0, 0xa, 0x10, 0x1 },
+    { 0x40, 0xa, 0x10, 0x1 },
     { 0x64, 0x0, 0x10, 0x1 }
 };
 
@@ -20937,14 +20937,14 @@ void SPI1_BufferWrite(void *bufferData, size_t bufferSize)
 {
     uint8_t *bufferInput = bufferData;
     size_t bufferInputSize = bufferSize;
-    while (0U != bufferInputSize)
+    while (bufferInputSize > 0)
     {
-        SSP1BUF = *bufferInput;
-        while (!PIR3bits.SSP1IF)
-        {
 
-        }
-        PIR3bits.SSP1IF = 0;
+
+
+
+        SSP1BUF = *bufferInput;
+
         bufferInput++;
         bufferInputSize--;
     }

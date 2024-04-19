@@ -27,7 +27,7 @@ void ws2812_pwm_fade(ws2812_configuration* ws2812_conf, uint16_t fade_time_ms) {
 	//   ws2812_pwm_data(ws2812_conf, led_data[i][0], led_data[i][1], led_data[i][2], (uint8_t)fade);
 	// }
     ws2812_pwm_send(ws2812_conf, (uint8_t)fade);
-	__delay_ms(fade_delay);
+//	__delay_ms(fade_delay);
   }
   
   for (int fade = 0; fade < ws2812_conf->brightness; fade++) {
@@ -35,7 +35,7 @@ void ws2812_pwm_fade(ws2812_configuration* ws2812_conf, uint16_t fade_time_ms) {
 	//   ws2812_pwm_data(ws2812_conf, led_data[i][0] , led_data[i][1], led_data[i][2], (uint8_t)fade);
 	// }
     ws2812_pwm_send(ws2812_conf, (uint8_t)fade);
-	__delay_ms(fade_delay);
+//	__delay_ms(fade_delay);
   }
 
 }
@@ -47,20 +47,20 @@ void ws2812_pwm_data(ws2812_configuration* ws2812_conf, uint8_t green, uint8_t r
 	red = red * brightness / 100;
 	blue = blue * brightness / 100;
 
-	uint16_t send_data[24];
+	uint8_t send_data[24];
 
     if (ws2812_conf->dma) {
         for (int i = 0; i < 8; i++) {
-            send_data[i] = (green & (1 << (7 - i))) ? 36 : 16;
-            send_data[i + 8] = (red & (1 << (7 - i))) ? 36 : 16;
-            send_data[i + 16] = (blue & (1 << (7 - i))) ? 36 : 16;
+            send_data[i] = (green & (1 << (7 - i))) ? 0x14 : 0xA;
+            send_data[i + 8] = (red & (1 << (7 - i))) ? 0x14 : 0xA;
+            send_data[i + 16] = (blue & (1 << (7 - i))) ? 0x14 : 0xA;
         }
     }
     else {
         for (int i = 0; i < 8; i++) {
-            send_data[i] = (green & (1 << (7 - i))) ? 20 : 44;
-            send_data[i + 8] = (red & (1 << (7 - i))) ? 20 : 44;
-            send_data[i + 16] = (blue & (1 << (7 - i))) ? 20 : 44;
+            send_data[i] = (green & (1 << (7 - i))) ? 0x14 : 0xA;
+            send_data[i + 8] = (red & (1 << (7 - i))) ? 0x14 : 0xA;
+            send_data[i + 16] = (blue & (1 << (7 - i))) ? 0x14 : 0xA;
         }
      }
 
@@ -70,7 +70,8 @@ void ws2812_pwm_data(ws2812_configuration* ws2812_conf, uint8_t green, uint8_t r
 	}
 	else {
         for (int i = 0; i < 24; i++) {
-
+            CCP2_LoadDutyValue((uint16_t)send_data[i]);
+            CCP2CONbits.EN = 1;
         }
 	}
 }
@@ -91,7 +92,7 @@ void ws2812_pwm_send(ws2812_configuration* ws2812_conf, uint8_t brightness) {
     uint8_t (*led_data)[3] = (uint8_t(*)[3])ws2812_conf->buffer;
     uint8_t green, red, blue;
     
-    uint16_t *send_data = (uint16_t*) malloc(ws2812_conf->led_num * 24);
+    uint8_t *send_data = (uint8_t*) malloc(ws2812_conf->led_num * 24);
     
     if (send_data == NULL) {
         return;
@@ -105,17 +106,17 @@ void ws2812_pwm_send(ws2812_configuration* ws2812_conf, uint8_t brightness) {
         if (ws2812_conf->dma) {
             for (int j = 0; j < 8; j++) {
                 int index = i * 24 + j;
-                send_data[index] = (green & (1 << (7 - j))) ? 36 : 16;
-                send_data[index + 8] = (red & (1 << (7 - j))) ? 36 : 16;
-                send_data[index + 16] = (blue & (1 << (7 - j))) ? 36 : 16;
+                send_data[index] = (green & (1 << (7 - j))) ? 0x14 : 0xA;
+                send_data[index + 8] = (red & (1 << (7 - j))) ? 0x14 : 0xA;
+                send_data[index + 16] = (blue & (1 << (7 - j))) ? 0x14 : 0xA;
             }
         }
         else {
             for (int j = 0; j < 8; j++) {
                 int index = i * 24 + j;
-                send_data[index] = (green & (1 << (7 - j))) ? 20 : 44;
-                send_data[index + 8] = (red & (1 << (7 - j))) ? 20 : 44;
-                send_data[index + 16] = (blue & (1 << (7 - j))) ? 20 : 44;
+                send_data[index] = (green & (1 << (7 - j))) ? 0x14 : 0xA;
+                send_data[index + 8] = (red & (1 << (7 - j))) ? 0x14 : 0xA;
+                send_data[index + 16] = (blue & (1 << (7 - j))) ? 0x14 : 0xA;
             }
         }
     }
@@ -125,11 +126,14 @@ void ws2812_pwm_send(ws2812_configuration* ws2812_conf, uint8_t brightness) {
     }
     else {
         for (int i = 0; i < (ws2812_conf->led_num * 24); i++) {
-
+            CCP2_LoadDutyValue((uint16_t)send_data[i]);
+            T4CON |= 0x80;
+            CCP2CON |= 0x80;
+            
         }
     }
-    ws2812_delay_us(280);
     free(send_data);
+    __delay_us(285);
 
 }
 

@@ -1,4 +1,4 @@
-# 1 "mcc_generated_files/pwm/src/ccp1.c"
+# 1 "mcc_generated_files/timer/src/tmr4.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,8 +6,8 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "mcc_generated_files/pwm/src/ccp1.c" 2
-# 37 "mcc_generated_files/pwm/src/ccp1.c"
+# 1 "mcc_generated_files/timer/src/tmr4.c" 2
+# 38 "mcc_generated_files/timer/src/tmr4.c"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\xc.h" 1 3
 # 18 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -20724,14 +20724,22 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 28 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\xc.h" 2 3
-# 37 "mcc_generated_files/pwm/src/ccp1.c" 2
+# 38 "mcc_generated_files/timer/src/tmr4.c" 2
 
-# 1 "mcc_generated_files/pwm/src/../ccp1.h" 1
-# 42 "mcc_generated_files/pwm/src/../ccp1.h"
+# 1 "mcc_generated_files/timer/src/../tmr4.h" 1
+# 38 "mcc_generated_files/timer/src/../tmr4.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stdbool.h" 1 3
-# 42 "mcc_generated_files/pwm/src/../ccp1.h" 2
-# 54 "mcc_generated_files/pwm/src/../ccp1.h"
-void CCP1_Initialize(void);
+# 38 "mcc_generated_files/timer/src/../tmr4.h" 2
+
+# 1 "mcc_generated_files/timer/src/../timer_interface.h" 1
+# 42 "mcc_generated_files/timer/src/../timer_interface.h"
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stddef.h" 1 3
+# 19 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stddef.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 1 3
+# 138 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef int ptrdiff_t;
+# 20 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stddef.h" 2 3
+# 42 "mcc_generated_files/timer/src/../timer_interface.h" 2
 
 
 
@@ -20739,47 +20747,339 @@ void CCP1_Initialize(void);
 
 
 
-void CCP1_LoadDutyValue(uint16_t dutyValue);
-# 71 "mcc_generated_files/pwm/src/../ccp1.h"
-_Bool CCP1_OutputStatusGet(void);
-# 38 "mcc_generated_files/pwm/src/ccp1.c" 2
-# 50 "mcc_generated_files/pwm/src/ccp1.c"
-void CCP1_Initialize(void)
+
+struct TMR_INTERFACE
+{
+    void (*Initialize)(void);
+    void (*Start)(void);
+    void (*Stop)(void);
+    void (*PeriodCountSet)(size_t count);
+    void (*TimeoutCallbackRegister)(void (* CallbackHandler)(void));
+    void (*Tasks)(void);
+};
+# 39 "mcc_generated_files/timer/src/../tmr4.h" 2
+# 107 "mcc_generated_files/timer/src/../tmr4.h"
+extern const struct TMR_INTERFACE Timer4;
+
+
+
+
+
+
+typedef enum
+{
+# 124 "mcc_generated_files/timer/src/../tmr4.h"
+   TMR4_ROP_STARTS_TMRON,
+
+
+
+
+   TMR4_ROP_STARTS_TMRON_ERSHIGH,
+
+
+
+
+   TMR4_ROP_STARTS_TMRON_ERSLOW,
+
+
+
+
+   TMR4_ROP_RESETS_ERSBOTHEDGE,
+
+
+
+
+   TMR4_ROP_RESETS_ERSRISINGEDGE,
+
+
+
+
+   TMR4_ROP_RESETS_ERSFALLINGEDGE,
+
+
+
+
+   TMR4_ROP_RESETS_ERSLOW,
+
+
+
+
+   TMR4_ROP_RESETS_ERSHIGH,
+# 170 "mcc_generated_files/timer/src/../tmr4.h"
+   TMR4_OS_STARTS_TMRON,
+
+
+
+
+   TMR4_OS_STARTS_ERSRISINGEDGE ,
+
+
+
+
+   TMR4_OS_STARTS_ERSFALLINGEDGE ,
+
+
+
+
+   TMR4_OS_STARTS_ERSBOTHEDGE,
+
+
+
+
+
+   TMR4_OS_STARTS_ERSFIRSTRISINGEDGE,
+
+
+
+
+
+   TMR4_OS_STARTS_ERSFIRSTFALLINGEDGE,
+
+
+
+
+
+   TMR4_OS_STARTS_ERSRISINGEDGEDETECT,
+
+
+
+
+   TMR4_OS_STARTS_ERSFALLINGEDGEDETECT,
+
+
+
+
+   TMR4_OS_STARTS_TMRON_ERSHIGH = 0x16,
+
+
+
+
+   TMR4_OS_STARTS_TMRON_ERSLOW = 0x17,
+# 227 "mcc_generated_files/timer/src/../tmr4.h"
+   TMR4_MS_STARTS_TMRON_ERSRISINGEDGEDETECT = 0x11,
+
+
+
+
+   TMR4_MS_STARTS_TMRON_ERSFALLINGEDGEDETECT = 0x12,
+
+
+
+
+
+   TMR4_MS_STARTS_TMRON_ERSBOTHEDGE = 0x13
+
+} TMR4_HLT_MODE;
+
+
+
+
+
+
+typedef enum
 {
 
 
 
-    CCP1CON = 0x9F;
+    TMR4_T4CKIPPS_PIN = 0x0,
 
 
-    CCPR1H = 0x0;
+
+    TMR4_TMR2_POSTSCALED = 0x1,
 
 
-    CCPR1L = 0x0;
+
+    TMR4_TMR6_POSTSCALED = 0x3,
 
 
-    CCPTMRS0bits.C1TSEL = 0x1;
+
+    TMR4_CCP1_OUT = 0x4,
+
+
+
+    TMR4_CCP2_OUT = 0x5,
+
+
+
+    TMR4_CCP3_OUT = 0x6,
+
+
+
+    TMR4_CCP4_OUT = 0x7,
+
+
+
+    TMR4_CCP5_OUT = 0x8,
+
+
+
+    TMR4_PWM6_OUT = 0x9,
+
+
+
+    TMR4_PWM7_OUT = 0xa,
+
+
+
+    TMR4_SYNC_C1OUT = 0xb,
+
+
+
+    TMR4_SYNC_C2OUT = 0xc,
+
+
+
+    TMR4_ZCD_OUT = 0xd,
+
+
+
+    TMR4_LC1_OUT = 0xe,
+
+
+
+    TMR4_LC2_OUT = 0xf,
+
+
+
+    TMR4_LC3_OUT = 0x10,
+
+
+
+    TMR4_LC4_OUT = 0x11
+} TMR4_HLT_EXT_RESET_SOURCE;
+# 329 "mcc_generated_files/timer/src/../tmr4.h"
+void TMR4_Initialize(void);
+# 338 "mcc_generated_files/timer/src/../tmr4.h"
+void TMR4_ModeSet(TMR4_HLT_MODE mode);
+# 347 "mcc_generated_files/timer/src/../tmr4.h"
+void TMR4_ExtResetSourceSet(TMR4_HLT_EXT_RESET_SOURCE reset);
+# 356 "mcc_generated_files/timer/src/../tmr4.h"
+void TMR4_Start(void);
+# 365 "mcc_generated_files/timer/src/../tmr4.h"
+void TMR4_Stop(void);
+# 374 "mcc_generated_files/timer/src/../tmr4.h"
+uint8_t TMR4_Read(void);
+# 383 "mcc_generated_files/timer/src/../tmr4.h"
+void TMR4_Write(uint8_t timerVal);
+# 392 "mcc_generated_files/timer/src/../tmr4.h"
+void TMR4_PeriodCountSet(size_t periodVal);
+
+
+
+
+
+
+
+void TMR4_OverflowCallbackRegister(void (* InterruptHandler)(void));
+
+
+
+
+
+
+
+void TMR4_Tasks(void);
+# 39 "mcc_generated_files/timer/src/tmr4.c" 2
+
+
+const struct TMR_INTERFACE Timer4 = {
+    .Initialize = TMR4_Initialize,
+    .Start = TMR4_Start,
+    .Stop = TMR4_Stop,
+    .PeriodCountSet = TMR4_PeriodCountSet,
+    .TimeoutCallbackRegister = TMR4_OverflowCallbackRegister,
+    .Tasks = TMR4_Tasks
+};
+
+static void (*TMR4_OverflowCallback)(void);
+static void TMR4_DefaultOverflowCallback(void);
+
+
+
+
+
+void TMR4_Initialize(void){
+
+
+
+    T4CLKCON = 0x1;
+
+    T4HLT = 0x17;
+
+    T4RST = 0x0;
+
+    T4PR = 0x9;
+
+    T4TMR = 0x0;
+
+
+    TMR4_OverflowCallbackRegister(TMR4_DefaultOverflowCallback);
+
+
+    PIR4bits.TMR4IF = 0;
+
+    T4CON = 0x80;
 }
 
-void CCP1_LoadDutyValue(uint16_t dutyValue)
+void TMR4_ModeSet(TMR4_HLT_MODE mode)
 {
-   dutyValue &= 0x03FF;
 
-
-    if(CCP1CONbits.CCP1FMT)
-    {
-        dutyValue <<= 6;
-        CCPR1H = (uint8_t)(dutyValue >> 8);
-        CCPR1L = (uint8_t)dutyValue;
-    }
-    else
-    {
-        CCPR1H = (uint8_t)(dutyValue >> 8);
-        CCPR1L = (uint8_t)dutyValue;
-    }
+    T4HLTbits.T4MODE = mode;
 }
-_Bool CCP1_OutputStatusGet(void)
+
+void TMR4_ExtResetSourceSet(TMR4_HLT_EXT_RESET_SOURCE reset)
 {
 
-    return(CCP1CONbits.OUT);
+    T4RSTbits.T4RSEL = reset;
+}
+
+void TMR4_Start(void)
+{
+
+    T4CONbits.TMR4ON = 1;
+}
+
+void TMR4_Stop(void)
+{
+
+    T4CONbits.TMR4ON = 0;
+}
+
+uint8_t TMR4_Read(void)
+{
+    uint8_t readVal;
+    readVal = TMR4;
+    return readVal;
+}
+
+void TMR4_Write(uint8_t timerVal)
+{
+
+    TMR4 = timerVal;;
+}
+
+void TMR4_PeriodCountSet(size_t periodVal)
+{
+   PR4 = (uint8_t) periodVal;
+}
+
+void TMR4_OverflowCallbackRegister(void (* InterruptHandler)(void))
+{
+   TMR4_OverflowCallback = InterruptHandler;
+}
+
+static void TMR4_DefaultOverflowCallback(void)
+{
+
+
+}
+
+void TMR4_Tasks(void)
+{
+    if(PIR4bits.TMR4IF)
+    {
+
+        PIR4bits.TMR4IF = 0;
+       TMR4_OverflowCallback();
+    }
 }

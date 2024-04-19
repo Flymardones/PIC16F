@@ -1,13 +1,13 @@
 /**
- * PWM1 Generated Driver File.
+ * PWM2 Generated Driver API Header File.
  * 
- * @file ccp1.c
+ * @file ccp2.h
  * 
- * @ingroup pwm1
+ * @defgroup pwm2 PWM2
  * 
- * @brief This file contains the API implementations for the PWM1 driver.
+ * @brief This file contains the API prototypes for the PWM2 module.
  *
- * @version PWM1 Driver Version 2.0.2
+ * @version PWM2 Driver Version 2.0.2
 */
 /*
 © [2024] Microchip Technology Inc. and its subsidiaries.
@@ -30,62 +30,46 @@
     THIS SOFTWARE.
 */
 
+#ifndef PWM2_H
+#define PWM2_H
+
  /**
    Section: Included Files
  */
 
 #include <xc.h>
-#include "../ccp1.h"
+#include <stdint.h>
+#include <stdbool.h>
 
+#define PWM2_Initialize CCP2_Initialize
+#define PWM2_LoadDutyValue CCP2_LoadDutyValue
+#define PWM2_OutputStatusGet  CCP2_OutputStatusGet
+
+ /**
+ * @ingroup pwm2
+ * @brief Initializes the CCP2 module. This is called only once before calling other CCP2 APIs.
+ * @param None.
+ * @return None.
+ */
+void CCP2_Initialize(void);
 /**
-  Section: Macro Declarations
-*/
-
-#define PWM1_INITIALIZE_DUTY_VALUE    0
-
+ * @ingroup pwm2
+ * @brief Loads the 16-bit duty cycle value.
+ * @pre CCP2_Initialize() is already called.
+ * @param dutyValue - 16-bit duty cycle value.
+ * @return None.
+ */
+void CCP2_LoadDutyValue(uint16_t dutyValue);
 /**
-  Section: PWM1 Module APIs
-*/
-
-void CCP1_Initialize(void)
-{
-    // Set the PWM1 to the options selected in the User Interface
-    
-    // CCPM PWM; EN enabled; FMT left_aligned; 
-    CCP1CON = 0x9F;
-    
-    // CCPRH 0; 
-    CCPR1H = 0x0;
-    
-    // CCPRL 0; 
-    CCPR1L = 0x0;
-    
-    // Selecting Timer 2
-    CCPTMRS0bits.C1TSEL = 0x1;
-}
-
-void CCP1_LoadDutyValue(uint16_t dutyValue)
-{
-	  dutyValue &= 0x03FF;
-    
-    // Load duty cycle value
-    if(CCP1CONbits.CCP1FMT)
-    {
-        dutyValue <<= 6;
-        CCPR1H = (uint8_t)(dutyValue >> 8);
-        CCPR1L = (uint8_t)dutyValue;
-    }
-    else
-    {
-        CCPR1H = (uint8_t)(dutyValue >> 8);
-        CCPR1L = (uint8_t)dutyValue;
-    }
-}
-bool CCP1_OutputStatusGet(void)
-{
-    // Returns the output status
-    return(CCP1CONbits.OUT);
-}
+ * @ingroup pwm2
+ * @brief Returns the PWM output status.
+ * @pre CCP2_Initialize() is already called.
+ * @param None.
+ * @retval True - CCP2 PWM output is high
+ * @retval False - CCP2 PWM output is low
+ */
+bool CCP2_OutputStatusGet(void);
+#endif //PWM2_H
 /**
  End of File
 */

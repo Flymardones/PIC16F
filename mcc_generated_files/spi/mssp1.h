@@ -113,7 +113,7 @@ extern const struct SPI_INTERFACE SPI1_Host;
  * and is used by the function to set SPI parameters as specified by the configuration.
  */
 typedef enum {
-    HOST_CONFIG,
+    WS2812_SPI,
     MSSP1_DEFAULT
 } spi1_configuration_name_t;
 

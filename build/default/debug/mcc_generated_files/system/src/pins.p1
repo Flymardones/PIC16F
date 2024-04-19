@@ -110,9 +110,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "32132
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 32132: extern volatile unsigned char RB0PPS __attribute__((address(0x1F18)));
 [v _RB0PPS `Vuc ~T0 @X0 0 e@7960 ]
-"30270
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 30270: extern volatile unsigned char CCP1PPS __attribute__((address(0x1EA1)));
-[v _CCP1PPS `Vuc ~T0 @X0 0 e@7841 ]
+"30322
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 30322: extern volatile unsigned char CCP2PPS __attribute__((address(0x1EA2)));
+[v _CCP2PPS `Vuc ~T0 @X0 0 e@7842 ]
 "32182
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 32182: extern volatile unsigned char RB1PPS __attribute__((address(0x1F19)));
 [v _RB1PPS `Vuc ~T0 @X0 0 e@7961 ]
@@ -1829,11 +1829,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/system/src/pins.c: 61:     ANSELA = 0xFF;
 [e = _ANSELA -> -> 255 `i `uc ]
 "62
-[; ;mcc_generated_files/system/src/pins.c: 62:     ANSELB = 0xFE;
-[e = _ANSELB -> -> 254 `i `uc ]
+[; ;mcc_generated_files/system/src/pins.c: 62:     ANSELB = 0xFA;
+[e = _ANSELB -> -> 250 `i `uc ]
 "63
-[; ;mcc_generated_files/system/src/pins.c: 63:     ANSELC = 0x7F;
-[e = _ANSELC -> -> 127 `i `uc ]
+[; ;mcc_generated_files/system/src/pins.c: 63:     ANSELC = 0xFF;
+[e = _ANSELC -> -> 255 `i `uc ]
 "64
 [; ;mcc_generated_files/system/src/pins.c: 64:     ANSELD = 0xFF;
 [e = _ANSELD -> -> 255 `i `uc ]
@@ -1901,17 +1901,17 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/system/src/pins.c: 100:     INLVLE = 0xF;
 [e = _INLVLE -> -> 15 `i `uc ]
 "105
-[; ;mcc_generated_files/system/src/pins.c: 105:     RXPPS = 0x17;
-[e = _RXPPS -> -> 23 `i `uc ]
+[; ;mcc_generated_files/system/src/pins.c: 105:     RXPPS = 0xA;
+[e = _RXPPS -> -> 10 `i `uc ]
 "106
 [; ;mcc_generated_files/system/src/pins.c: 106:     RB0PPS = 0x15;
 [e = _RB0PPS -> -> 21 `i `uc ]
 "107
-[; ;mcc_generated_files/system/src/pins.c: 107:     CCP1PPS = 0x9;
-[e = _CCP1PPS -> -> 9 `i `uc ]
+[; ;mcc_generated_files/system/src/pins.c: 107:     CCP2PPS = 0x9;
+[e = _CCP2PPS -> -> 9 `i `uc ]
 "108
-[; ;mcc_generated_files/system/src/pins.c: 108:     RB1PPS = 0x09;
-[e = _RB1PPS -> -> 9 `i `uc ]
+[; ;mcc_generated_files/system/src/pins.c: 108:     RB1PPS = 0x0A;
+[e = _RB1PPS -> -> 10 `i `uc ]
 "117
 [; ;mcc_generated_files/system/src/pins.c: 117:     IOCAP = 0x0;
 [e = _IOCAP -> -> 0 `i `uc ]

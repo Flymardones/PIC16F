@@ -21103,9 +21103,9 @@ void EUSART_FramingErrorCallbackRegister(void (* callbackHandler)(void));
 void EUSART_OverrunErrorCallbackRegister(void (* callbackHandler)(void));
 # 45 "ws2812/Src/../Inc/../../mcc_generated_files/system/../uart/../system/system.h" 2
 
-# 1 "ws2812/Src/../Inc/../../mcc_generated_files/system/../pwm/ccp1.h" 1
-# 54 "ws2812/Src/../Inc/../../mcc_generated_files/system/../pwm/ccp1.h"
-void CCP1_Initialize(void);
+# 1 "ws2812/Src/../Inc/../../mcc_generated_files/system/../pwm/ccp2.h" 1
+# 54 "ws2812/Src/../Inc/../../mcc_generated_files/system/../pwm/ccp2.h"
+void CCP2_Initialize(void);
 
 
 
@@ -21113,9 +21113,9 @@ void CCP1_Initialize(void);
 
 
 
-void CCP1_LoadDutyValue(uint16_t dutyValue);
-# 71 "ws2812/Src/../Inc/../../mcc_generated_files/system/../pwm/ccp1.h"
-_Bool CCP1_OutputStatusGet(void);
+void CCP2_LoadDutyValue(uint16_t dutyValue);
+# 71 "ws2812/Src/../Inc/../../mcc_generated_files/system/../pwm/ccp2.h"
+_Bool CCP2_OutputStatusGet(void);
 # 46 "ws2812/Src/../Inc/../../mcc_generated_files/system/../uart/../system/system.h" 2
 
 # 1 "ws2812/Src/../Inc/../../mcc_generated_files/system/../spi/mssp1.h" 1
@@ -21164,7 +21164,7 @@ struct SPI_INTERFACE
 extern const struct SPI_INTERFACE SPI1_Host;
 # 115 "ws2812/Src/../Inc/../../mcc_generated_files/system/../spi/mssp1.h"
 typedef enum {
-    HOST_CONFIG,
+    WS2812_SPI,
     MSSP1_DEFAULT
 } spi1_configuration_name_t;
 
@@ -21223,8 +21223,8 @@ _Bool SPI1_IsRxReady(void);
 _Bool SPI1_IsTxReady(void);
 # 47 "ws2812/Src/../Inc/../../mcc_generated_files/system/../uart/../system/system.h" 2
 
-# 1 "ws2812/Src/../Inc/../../mcc_generated_files/system/../timer/tmr2.h" 1
-# 39 "ws2812/Src/../Inc/../../mcc_generated_files/system/../timer/tmr2.h"
+# 1 "ws2812/Src/../Inc/../../mcc_generated_files/system/../timer/tmr4.h" 1
+# 39 "ws2812/Src/../Inc/../../mcc_generated_files/system/../timer/tmr4.h"
 # 1 "ws2812/Src/../Inc/../../mcc_generated_files/system/../timer/timer_interface.h" 1
 # 50 "ws2812/Src/../Inc/../../mcc_generated_files/system/../timer/timer_interface.h"
 struct TMR_INTERFACE
@@ -21236,9 +21236,9 @@ struct TMR_INTERFACE
     void (*TimeoutCallbackRegister)(void (* CallbackHandler)(void));
     void (*Tasks)(void);
 };
-# 39 "ws2812/Src/../Inc/../../mcc_generated_files/system/../timer/tmr2.h" 2
-# 107 "ws2812/Src/../Inc/../../mcc_generated_files/system/../timer/tmr2.h"
-extern const struct TMR_INTERFACE Timer2;
+# 39 "ws2812/Src/../Inc/../../mcc_generated_files/system/../timer/tmr4.h" 2
+# 107 "ws2812/Src/../Inc/../../mcc_generated_files/system/../timer/tmr4.h"
+extern const struct TMR_INTERFACE Timer4;
 
 
 
@@ -21247,108 +21247,108 @@ extern const struct TMR_INTERFACE Timer2;
 
 typedef enum
 {
-# 124 "ws2812/Src/../Inc/../../mcc_generated_files/system/../timer/tmr2.h"
-   TMR2_ROP_STARTS_TMRON,
+# 124 "ws2812/Src/../Inc/../../mcc_generated_files/system/../timer/tmr4.h"
+   TMR4_ROP_STARTS_TMRON,
 
 
 
 
-   TMR2_ROP_STARTS_TMRON_ERSHIGH,
+   TMR4_ROP_STARTS_TMRON_ERSHIGH,
 
 
 
 
-   TMR2_ROP_STARTS_TMRON_ERSLOW,
+   TMR4_ROP_STARTS_TMRON_ERSLOW,
 
 
 
 
-   TMR2_ROP_RESETS_ERSBOTHEDGE,
+   TMR4_ROP_RESETS_ERSBOTHEDGE,
 
 
 
 
-   TMR2_ROP_RESETS_ERSRISINGEDGE,
+   TMR4_ROP_RESETS_ERSRISINGEDGE,
 
 
 
 
-   TMR2_ROP_RESETS_ERSFALLINGEDGE,
+   TMR4_ROP_RESETS_ERSFALLINGEDGE,
 
 
 
 
-   TMR2_ROP_RESETS_ERSLOW,
+   TMR4_ROP_RESETS_ERSLOW,
 
 
 
 
-   TMR2_ROP_RESETS_ERSHIGH,
-# 170 "ws2812/Src/../Inc/../../mcc_generated_files/system/../timer/tmr2.h"
-   TMR2_OS_STARTS_TMRON,
+   TMR4_ROP_RESETS_ERSHIGH,
+# 170 "ws2812/Src/../Inc/../../mcc_generated_files/system/../timer/tmr4.h"
+   TMR4_OS_STARTS_TMRON,
 
 
 
 
-   TMR2_OS_STARTS_ERSRISINGEDGE ,
+   TMR4_OS_STARTS_ERSRISINGEDGE ,
 
 
 
 
-   TMR2_OS_STARTS_ERSFALLINGEDGE ,
+   TMR4_OS_STARTS_ERSFALLINGEDGE ,
 
 
 
 
-   TMR2_OS_STARTS_ERSBOTHEDGE,
+   TMR4_OS_STARTS_ERSBOTHEDGE,
 
 
 
 
 
-   TMR2_OS_STARTS_ERSFIRSTRISINGEDGE,
+   TMR4_OS_STARTS_ERSFIRSTRISINGEDGE,
 
 
 
 
 
-   TMR2_OS_STARTS_ERSFIRSTFALLINGEDGE,
+   TMR4_OS_STARTS_ERSFIRSTFALLINGEDGE,
 
 
 
 
 
-   TMR2_OS_STARTS_ERSRISINGEDGEDETECT,
+   TMR4_OS_STARTS_ERSRISINGEDGEDETECT,
 
 
 
 
-   TMR2_OS_STARTS_ERSFALLINGEDGEDETECT,
+   TMR4_OS_STARTS_ERSFALLINGEDGEDETECT,
 
 
 
 
-   TMR2_OS_STARTS_TMRON_ERSHIGH = 0x16,
+   TMR4_OS_STARTS_TMRON_ERSHIGH = 0x16,
 
 
 
 
-   TMR2_OS_STARTS_TMRON_ERSLOW = 0x17,
-# 227 "ws2812/Src/../Inc/../../mcc_generated_files/system/../timer/tmr2.h"
-   TMR2_MS_STARTS_TMRON_ERSRISINGEDGEDETECT = 0x11,
+   TMR4_OS_STARTS_TMRON_ERSLOW = 0x17,
+# 227 "ws2812/Src/../Inc/../../mcc_generated_files/system/../timer/tmr4.h"
+   TMR4_MS_STARTS_TMRON_ERSRISINGEDGEDETECT = 0x11,
 
 
 
 
-   TMR2_MS_STARTS_TMRON_ERSFALLINGEDGEDETECT = 0x12,
+   TMR4_MS_STARTS_TMRON_ERSFALLINGEDGEDETECT = 0x12,
 
 
 
 
 
-   TMR2_MS_STARTS_TMRON_ERSBOTHEDGE = 0x13
+   TMR4_MS_STARTS_TMRON_ERSBOTHEDGE = 0x13
 
-} TMR2_HLT_MODE;
+} TMR4_HLT_MODE;
 
 
 
@@ -21360,96 +21360,88 @@ typedef enum
 
 
 
-    TMR2_T2CKIPPS_PIN = 0x0,
+    TMR4_T4CKIPPS_PIN = 0x0,
 
 
 
-    TMR2_TMR4_POSTSCALED = 0x2,
+    TMR4_TMR2_POSTSCALED = 0x1,
 
 
 
-    TMR2_TMR6_POSTSCALED = 0x3,
+    TMR4_TMR6_POSTSCALED = 0x3,
 
 
 
-    TMR2_CCP1_OUT = 0x4,
+    TMR4_CCP1_OUT = 0x4,
 
 
 
-    TMR2_CCP2_OUT = 0x5,
+    TMR4_CCP2_OUT = 0x5,
 
 
 
-    TMR2_CCP3_OUT = 0x6,
+    TMR4_CCP3_OUT = 0x6,
 
 
 
-    TMR2_CCP4_OUT = 0x7,
+    TMR4_CCP4_OUT = 0x7,
 
 
 
-    TMR2_CCP5_OUT = 0x8,
+    TMR4_CCP5_OUT = 0x8,
 
 
 
-    TMR2_PWM6_OUT = 0x9,
+    TMR4_PWM6_OUT = 0x9,
 
 
 
-    TMR2_PWM7_OUT = 0xa,
+    TMR4_PWM7_OUT = 0xa,
 
 
 
-    TMR2_SYNC_C1OUT = 0xb,
+    TMR4_SYNC_C1OUT = 0xb,
 
 
 
-    TMR2_SYNC_C2OUT = 0xc,
+    TMR4_SYNC_C2OUT = 0xc,
 
 
 
-    TMR2_ZCD_OUT = 0xd,
+    TMR4_ZCD_OUT = 0xd,
 
 
 
-    TMR2_LC1_OUT = 0xe,
+    TMR4_LC1_OUT = 0xe,
 
 
 
-    TMR2_LC2_OUT = 0xf,
+    TMR4_LC2_OUT = 0xf,
 
 
 
-    TMR2_LC3_OUT = 0x10,
+    TMR4_LC3_OUT = 0x10,
 
 
 
-    TMR2_LC4_OUT = 0x11
-} TMR2_HLT_EXT_RESET_SOURCE;
-# 329 "ws2812/Src/../Inc/../../mcc_generated_files/system/../timer/tmr2.h"
-void TMR2_Initialize(void);
-# 338 "ws2812/Src/../Inc/../../mcc_generated_files/system/../timer/tmr2.h"
-void TMR2_ModeSet(TMR2_HLT_MODE mode);
-# 347 "ws2812/Src/../Inc/../../mcc_generated_files/system/../timer/tmr2.h"
-void TMR2_ExtResetSourceSet(TMR2_HLT_EXT_RESET_SOURCE reset);
-# 356 "ws2812/Src/../Inc/../../mcc_generated_files/system/../timer/tmr2.h"
-void TMR2_Start(void);
-# 365 "ws2812/Src/../Inc/../../mcc_generated_files/system/../timer/tmr2.h"
-void TMR2_Stop(void);
-# 374 "ws2812/Src/../Inc/../../mcc_generated_files/system/../timer/tmr2.h"
-uint8_t TMR2_Read(void);
-# 383 "ws2812/Src/../Inc/../../mcc_generated_files/system/../timer/tmr2.h"
-void TMR2_Write(uint8_t timerVal);
-# 392 "ws2812/Src/../Inc/../../mcc_generated_files/system/../timer/tmr2.h"
-void TMR2_PeriodCountSet(size_t periodVal);
-
-
-
-
-
-
-
-void TMR2_OverflowCallbackRegister(void (* InterruptHandler)(void));
+    TMR4_LC4_OUT = 0x11
+} TMR4_HLT_EXT_RESET_SOURCE;
+# 329 "ws2812/Src/../Inc/../../mcc_generated_files/system/../timer/tmr4.h"
+void TMR4_Initialize(void);
+# 338 "ws2812/Src/../Inc/../../mcc_generated_files/system/../timer/tmr4.h"
+void TMR4_ModeSet(TMR4_HLT_MODE mode);
+# 347 "ws2812/Src/../Inc/../../mcc_generated_files/system/../timer/tmr4.h"
+void TMR4_ExtResetSourceSet(TMR4_HLT_EXT_RESET_SOURCE reset);
+# 356 "ws2812/Src/../Inc/../../mcc_generated_files/system/../timer/tmr4.h"
+void TMR4_Start(void);
+# 365 "ws2812/Src/../Inc/../../mcc_generated_files/system/../timer/tmr4.h"
+void TMR4_Stop(void);
+# 374 "ws2812/Src/../Inc/../../mcc_generated_files/system/../timer/tmr4.h"
+uint8_t TMR4_Read(void);
+# 383 "ws2812/Src/../Inc/../../mcc_generated_files/system/../timer/tmr4.h"
+void TMR4_Write(uint8_t timerVal);
+# 392 "ws2812/Src/../Inc/../../mcc_generated_files/system/../timer/tmr4.h"
+void TMR4_PeriodCountSet(size_t periodVal);
 
 
 
@@ -21457,7 +21449,15 @@ void TMR2_OverflowCallbackRegister(void (* InterruptHandler)(void));
 
 
 
-void TMR2_Tasks(void);
+void TMR4_OverflowCallbackRegister(void (* InterruptHandler)(void));
+
+
+
+
+
+
+
+void TMR4_Tasks(void);
 # 48 "ws2812/Src/../Inc/../../mcc_generated_files/system/../uart/../system/system.h" 2
 
 # 1 "ws2812/Src/../Inc/../../mcc_generated_files/system/../system/interrupt.h" 1
@@ -21474,7 +21474,7 @@ extern void (*INT_InterruptHandler)(void);
 # 175 "ws2812/Src/../Inc/../../mcc_generated_files/system/../system/interrupt.h"
 void INT_DefaultInterruptHandler(void);
 # 49 "ws2812/Src/../Inc/../../mcc_generated_files/system/../uart/../system/system.h" 2
-# 62 "ws2812/Src/../Inc/../../mcc_generated_files/system/../uart/../system/system.h"
+# 66 "ws2812/Src/../Inc/../../mcc_generated_files/system/../uart/../system/system.h"
 extern uint8_t rxBuff[128];
 extern _Bool fade_flag;
 extern uint16_t fade_time;
@@ -21602,7 +21602,36 @@ size_t strxfrm_l (char *restrict, const char *restrict, size_t, locale_t);
 
 void *memccpy (void *restrict, const void *restrict, int, size_t);
 # 9 "ws2812/Src/ws2812_uart.c" 2
-# 23 "ws2812/Src/ws2812_uart.c"
+
+
+
+
+
+
+
+
+# 1 "ws2812/Src/../Inc/ws2812_pwm.h" 1
+# 12 "ws2812/Src/../Inc/ws2812_pwm.h"
+extern ws2812_configuration ws2812_pwm;
+
+void ws2812_pwm_send(ws2812_configuration* ws2812_conf, uint8_t brightness);
+
+_Bool ws2812_pwm_init(ws2812_configuration* ws2812_conf);
+
+void ws2812_pwm_send_single(ws2812_configuration* ws2812_conf);
+
+void ws2812_pwm_data(ws2812_configuration* ws2812_conf, uint8_t green, uint8_t red, uint8_t blue, uint8_t brightness);
+
+void ws2812_pwm_fade(ws2812_configuration* ws2812_conf, uint16_t fade_time_ms);
+
+void ws2812_pwm_clear(ws2812_configuration* ws2812_conf);
+
+void ws2812_pwm_deinit(ws2812_configuration* ws2812_conf);
+# 17 "ws2812/Src/ws2812_uart.c" 2
+
+
+
+
 uint8_t initialized = 0;
 
 void ws2812_uart_commands(uint8_t* data, uint16_t size) {
@@ -21619,30 +21648,101 @@ void ws2812_uart_commands(uint8_t* data, uint16_t size) {
     }
 
     if (strcmp(tokenizedInput[0], "INIT") == 0) {
-# 73 "ws2812/Src/ws2812_uart.c"
+# 55 "ws2812/Src/ws2812_uart.c"
+        if (initialized) {
+            ws2812_pwm_deinit(&ws2812_pwm);
+            initialized = 0;
+        }
+        ws2812_pwm.handle = 0;
+        ws2812_pwm.led_num = (uint8_t)atoi(tokenizedInput[1]);
+        ws2812_pwm.brightness = (uint8_t)atoi(tokenizedInput[2]);
+        ws2812_pwm.dma = 0;
+
+
+        if(ws2812_pwm_init(&ws2812_pwm)) {
+            initialized = 1;
+        }
+
+
+
     }
     else if (strcmp(tokenizedInput[0], "DEINIT") == 0) {
-# 84 "ws2812/Src/ws2812_uart.c"
+
+
+
+
+
+
+        ws2812_pwm_clear(&ws2812_pwm);
+        ws2812_pwm_deinit(&ws2812_pwm);
+
         initialized = 0;
         fade_flag = 0;
     }
     else if (strcmp(tokenizedInput[0], "SET_ALL") == 0 && initialized) {
-# 102 "ws2812/Src/ws2812_uart.c"
+# 94 "ws2812/Src/ws2812_uart.c"
+        for (int i = 0; i < ws2812_pwm.led_num; i++) {
+            ws2812_set_led(&ws2812_pwm, (uint8_t)i, (uint8_t)atoi(tokenizedInput[1]), (uint8_t)atoi(tokenizedInput[2]), (uint8_t)atoi(tokenizedInput[3]));
+        }
+        ws2812_pwm_send(&ws2812_pwm, ws2812_pwm.brightness);
+
+
     }
     else if (strcmp(tokenizedInput[0], "SET_SINGLE") == 0 && initialized) {
-# 114 "ws2812/Src/ws2812_uart.c"
+
+
+
+
+
+
+        ws2812_set_led(&ws2812_pwm, (uint8_t)atoi(tokenizedInput[1]), (uint8_t)atoi(tokenizedInput[2]), (uint8_t)atoi(tokenizedInput[3]), (uint8_t)atoi(tokenizedInput[4]));
+        ws2812_pwm_send_single(&ws2812_pwm);
+
+
     }
     else if (strcmp(tokenizedInput[0], "SET_BRIGHTNESS") == 0 && initialized) {
-# 125 "ws2812/Src/ws2812_uart.c"
+
+
+
+
+
+
+        ws2812_pwm.brightness = (uint8_t)atoi(tokenizedInput[1]);
+        ws2812_pwm_send(&ws2812_pwm, ws2812_pwm.brightness);
+
     }
     else if (strcmp(tokenizedInput[0], "CLEAR_ALL") == 0 && initialized) {
-# 140 "ws2812/Src/ws2812_uart.c"
+# 133 "ws2812/Src/ws2812_uart.c"
+        for (int i = 0; i < ws2812_pwm.led_num; i++) {
+            ws2812_set_led(&ws2812_pwm, (uint8_t)i, 0, 0, 0);
+        }
+        ws2812_pwm_send(&ws2812_pwm, ws2812_pwm.brightness);
+
     }
     else if (strcmp(tokenizedInput[0], "CLEAR_SINGLE") == 0 && initialized) {
-# 151 "ws2812/Src/ws2812_uart.c"
+
+
+
+
+
+
+        ws2812_set_led(&ws2812_pwm, (uint8_t)atoi(tokenizedInput[1]), 0, 0, 0);
+        ws2812_pwm_send_single(&ws2812_pwm);
+
     }
     else if (strcmp(tokenizedInput[0], "START_FADE_ALL") == 0 && initialized) {
-# 165 "ws2812/Src/ws2812_uart.c"
+
+
+
+
+
+
+
+        for (i = 0; i < ws2812_pwm.led_num; i++) {
+            ws2812_set_led(&ws2812_pwm, (uint8_t)i, (uint8_t)atoi(tokenizedInput[1]), (uint8_t)atoi(tokenizedInput[2]), (uint8_t)atoi(tokenizedInput[3]));
+        }
+
+
         fade_time = (uint16_t)atoi(tokenizedInput[4]);
         fade_flag = 1;
     }
@@ -21650,7 +21750,14 @@ void ws2812_uart_commands(uint8_t* data, uint16_t size) {
         fade_flag = 0;
     }
     else if (strcmp(tokenizedInput[0], "START_FADE_SINGLE") == 0 && initialized) {
-# 180 "ws2812/Src/ws2812_uart.c"
+
+
+
+
+
+        ws2812_set_led(&ws2812_pwm, (uint8_t)atoi(tokenizedInput[1]), (uint8_t)atoi(tokenizedInput[2]), (uint8_t)atoi(tokenizedInput[3]), (uint8_t)atoi(tokenizedInput[4]));
+
+
         fade_time = (uint16_t)atoi(tokenizedInput[5]);
         fade_flag = 1;
     }
@@ -21660,7 +21767,7 @@ void ws2812_uart_commands(uint8_t* data, uint16_t size) {
 
 
 
-
+        ws2812_set_led(&ws2812_pwm, (uint8_t)atoi(tokenizedInput[1]), 0, 0, 0);
 
     }
 

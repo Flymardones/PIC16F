@@ -1,13 +1,13 @@
 /**
- * TMR2 Generated Driver API Header File
+ * TMR4 Generated Driver API Header File
  *
- * @file tmr2.h
+ * @file tmr4.h
  *  
- * @defgroup tmr2 TMR2
+ * @defgroup tmr4 TMR4
  *
- * @brief This file contains the API Prototypes and other data types for the TMR2 driver.
+ * @brief This file contains the API Prototypes and other data types for the TMR4 driver.
  *
- * @version TMR2 Driver Version 3.0.4
+ * @version TMR4 Driver Version 3.0.4
  */
  
 /*
@@ -31,8 +31,8 @@
     THIS SOFTWARE.
 */
 
-#ifndef TMR2_H
-#define TMR2_H
+#ifndef TMR4_H
+#define TMR4_H
 
 #include <stdint.h>
 #include <stdbool.h>
@@ -40,75 +40,75 @@
 
 
 /**
- * @ingroup tmr2
- * @brief Defines the Custom Name for the \ref TMR2_Initialize API
+ * @ingroup tmr4
+ * @brief Defines the Custom Name for the \ref TMR4_Initialize API
  */
-#define Timer2_Initialize TMR2_Initialize
+#define Timer4_Initialize TMR4_Initialize
 
 /**
- * @ingroup tmr2
- * @brief Defines the Custom Name for the \ref TMR2_ModeSet API
+ * @ingroup tmr4
+ * @brief Defines the Custom Name for the \ref TMR4_ModeSet API
  */
-#define Timer2_ModeSet TMR2_ModeSet
+#define Timer4_ModeSet TMR4_ModeSet
 
 /**
- * @ingroup tmr2
- * @brief Defines the Custom Name for the \ref TMR2_ExtResetSourceSet API
+ * @ingroup tmr4
+ * @brief Defines the Custom Name for the \ref TMR4_ExtResetSourceSet API
  */
-#define Timer2_ExtResetSourceSet TMR2_ExtResetSourceSet
+#define Timer4_ExtResetSourceSet TMR4_ExtResetSourceSet
 
 /**
- * @ingroup tmr2
- * @brief Defines the Custom Name for the \ref TMR2_Start API
+ * @ingroup tmr4
+ * @brief Defines the Custom Name for the \ref TMR4_Start API
  */
-#define Timer2_Start TMR2_Start
+#define Timer4_Start TMR4_Start
 
 /**
- * @ingroup tmr2
- * @brief Defines the Custom Name for the \ref TMR2_Stop API
+ * @ingroup tmr4
+ * @brief Defines the Custom Name for the \ref TMR4_Stop API
  */
-#define Timer2_Stop TMR2_Stop
+#define Timer4_Stop TMR4_Stop
 
 /**
- * @ingroup tmr2
- * @brief Defines the Custom Name for the \ref TMR2_Read API
+ * @ingroup tmr4
+ * @brief Defines the Custom Name for the \ref TMR4_Read API
  */
-#define Timer2_Read TMR2_Read
+#define Timer4_Read TMR4_Read
 
 /**
- * @ingroup tmr2
- * @brief Defines the Custom Name for the \ref TMR2_Write API
+ * @ingroup tmr4
+ * @brief Defines the Custom Name for the \ref TMR4_Write API
  */
-#define Timer2_Write TMR2_Write
+#define Timer4_Write TMR4_Write
 
 /**
- * @ingroup tmr2
- * @brief Defines the Custom Name for the \ref TMR2_PeriodCountSet API
+ * @ingroup tmr4
+ * @brief Defines the Custom Name for the \ref TMR4_PeriodCountSet API
  */
-#define Timer2_PeriodCountSet TMR2_PeriodCountSet
+#define Timer4_PeriodCountSet TMR4_PeriodCountSet
 
 /**
- * @ingroup tmr2
- * @brief Defines the Custom Name for the \ref TMR2_OverflowCallbackRegister API
+ * @ingroup tmr4
+ * @brief Defines the Custom Name for the \ref TMR4_OverflowCallbackRegister API
  */
-#define Timer2_OverflowCallbackRegister TMR2_OverflowCallbackRegister
+#define Timer4_OverflowCallbackRegister TMR4_OverflowCallbackRegister
 
 /**
- * @ingroup tmr2
- * @brief Defines the Custom Name for the \ref TMR2_Tasks API
+ * @ingroup tmr4
+ * @brief Defines the Custom Name for the \ref TMR4_Tasks API
  */
-#define Timer2_Tasks TMR2_Tasks
+#define Timer4_Tasks TMR4_Tasks
 
 /**
- @ingroup tmr2
+ @ingroup tmr4
  @struct TMR_INTERFACE
- @brief This is an instance of TMR_INTERFACE for TMR2 module.
+ @brief This is an instance of TMR_INTERFACE for TMR4 module.
  */
-extern const struct TMR_INTERFACE Timer2;
+extern const struct TMR_INTERFACE Timer4;
 
 /**
- * @ingroup tmr2
- * @enum TMR2_HLT_EXT_RESET_SOURCE
+ * @ingroup tmr4
+ * @enum TMR4_HLT_EXT_RESET_SOURCE
  * @brief Defines the several modes of operation of the timer with the HLT extension.
  */
 typedef enum
@@ -121,42 +121,42 @@ typedef enum
    /* Roll-over Pulse mode indicates that Timer starts
    immediately upon ON = 1 (Software Control)
    */
-   TMR2_ROP_STARTS_TMRON,
+   TMR4_ROP_STARTS_TMRON,
 
    /* Roll-over Pulse mode indicates that the Timer starts
        when ON = 1 and TMRx_ers = 1. Stops when TMRx_ers = 0
      */
-   TMR2_ROP_STARTS_TMRON_ERSHIGH,
+   TMR4_ROP_STARTS_TMRON_ERSHIGH,
 
    /* Roll-over Pulse mode indicates that the Timer starts
       when ON = 1 and TMRx_ers = 0. Stops when TMRx_ers = 1
      */
-   TMR2_ROP_STARTS_TMRON_ERSLOW,
+   TMR4_ROP_STARTS_TMRON_ERSLOW,
 
    /* Roll-over Pulse mode indicates that the Timer resets
    upon rising or falling edge of TMRx_ers
      */
-   TMR2_ROP_RESETS_ERSBOTHEDGE,
+   TMR4_ROP_RESETS_ERSBOTHEDGE,
 
    /* Roll-over Pulse mode indicates that the Timer resets
     upon rising edge of TMRx_ers
      */
-   TMR2_ROP_RESETS_ERSRISINGEDGE,
+   TMR4_ROP_RESETS_ERSRISINGEDGE,
 
    /* Roll-over Pulse mode indicates that the Timer resets
    upon falling edge of TMRx_ers
      */
-   TMR2_ROP_RESETS_ERSFALLINGEDGE,
+   TMR4_ROP_RESETS_ERSFALLINGEDGE,
 
    /* Roll-over Pulse mode indicates that the Timer resets
    upon TMRx_ers = 0
      */
-   TMR2_ROP_RESETS_ERSLOW,
+   TMR4_ROP_RESETS_ERSLOW,
 
    /* Roll-over Pulse mode indicates that the Timer resets
    upon TMRx_ers = 1
      */
-   TMR2_ROP_RESETS_ERSHIGH,
+   TMR4_ROP_RESETS_ERSHIGH,
 
     /*In all One-Shot mode the timer resets and the ON bit is
 	cleared when the timer value matches the PRx period
@@ -167,55 +167,55 @@ typedef enum
    /* One shot mode indicates that the Timer starts
     immediately upon ON = 1 (Software Control)
      */
-   TMR2_OS_STARTS_TMRON,
+   TMR4_OS_STARTS_TMRON,
 
    /* One shot mode indicates that the Timer starts
     when a rising edge is detected on the TMRx_ers
      */
-   TMR2_OS_STARTS_ERSRISINGEDGE ,
+   TMR4_OS_STARTS_ERSRISINGEDGE ,
 
    /* One shot mode indicates that the Timer starts
     when a falling edge is detected on the TMRx_ers
      */
-   TMR2_OS_STARTS_ERSFALLINGEDGE ,
+   TMR4_OS_STARTS_ERSFALLINGEDGE ,
 
    /* One shot mode indicates that the Timer starts
     when either a rising or falling edge is detected on TMRx_ers
      */
-   TMR2_OS_STARTS_ERSBOTHEDGE,
+   TMR4_OS_STARTS_ERSBOTHEDGE,
 
    /* One shot mode indicates that the Timer starts
     upon first TMRx_ers rising edge and resets on all
 	subsequent TMRx_ers rising edges
      */
-   TMR2_OS_STARTS_ERSFIRSTRISINGEDGE,
+   TMR4_OS_STARTS_ERSFIRSTRISINGEDGE,
 
    /* One shot mode indicates that the Timer starts
     upon first TMRx_ers falling edge and restarts on all
 	subsequent TMRx_ers falling edges
      */
-   TMR2_OS_STARTS_ERSFIRSTFALLINGEDGE,
+   TMR4_OS_STARTS_ERSFIRSTFALLINGEDGE,
 
    /* One shot mode indicates that the Timer starts
     when a rising edge is detected on the TMRx_ers,
 	resets upon TMRx_ers = 0
      */
-   TMR2_OS_STARTS_ERSRISINGEDGEDETECT,
+   TMR4_OS_STARTS_ERSRISINGEDGEDETECT,
      /* One shot mode indicates that the Timer starts
     when a falling edge is detected on the TMRx_ers,
 	resets upon TMRx_ers = 1
      */
-   TMR2_OS_STARTS_ERSFALLINGEDGEDETECT,
+   TMR4_OS_STARTS_ERSFALLINGEDGEDETECT,
    
    /* One shot mode indicates that the Timer starts
     when a TMRx_ers = 1,ON =1 and resets upon TMRx_ers =0
     */
-   TMR2_OS_STARTS_TMRON_ERSHIGH = 0x16,
+   TMR4_OS_STARTS_TMRON_ERSHIGH = 0x16,
            
    /* One shot mode indicates that the Timer starts
      when a TMRx_ers = 0,ON = 1 and resets upon TMRx_ers =1 
     */
-   TMR2_OS_STARTS_TMRON_ERSLOW = 0x17,
+   TMR4_OS_STARTS_TMRON_ERSLOW = 0x17,
         
    /*In all Mono-Stable mode the ON bit must be initially set,but
      not cleared upon the TMRx = PRx, and the timer will start upon
@@ -224,190 +224,190 @@ typedef enum
    /* Mono Stable mode indicates that the Timer starts
       when a rising edge is detected on the TMRx_ers and ON = 1
     */
-   TMR2_MS_STARTS_TMRON_ERSRISINGEDGEDETECT = 0x11,
+   TMR4_MS_STARTS_TMRON_ERSRISINGEDGEDETECT = 0x11,
            
    /* Mono Stable mode indicates that the Timer starts
       when a falling edge is detected on the TMRx_ers and ON = 1
     */
-   TMR2_MS_STARTS_TMRON_ERSFALLINGEDGEDETECT = 0x12,
+   TMR4_MS_STARTS_TMRON_ERSFALLINGEDGEDETECT = 0x12,
            
    /* Mono Stable mode indicates that the Timer starts
       when  either a rising or falling edge is detected on TMRx_ers 
       and ON = 1
     */
-   TMR2_MS_STARTS_TMRON_ERSBOTHEDGE = 0x13
+   TMR4_MS_STARTS_TMRON_ERSBOTHEDGE = 0x13
            
-} TMR2_HLT_MODE;
+} TMR4_HLT_MODE;
 
 /**
- * @ingroup tmr2
- * @enum TMR2_HLT_EXT_RESET_SOURCE
+ * @ingroup tmr4
+ * @enum TMR4_HLT_EXT_RESET_SOURCE
  * @brief Defines the different reset sources of the HLT.
  */
 typedef enum
 {
     /*
-     * T2CKIPPS_PIN as the Timer external reset source
+     * T4CKIPPS_PIN as the Timer external reset source
      */
-    TMR2_T2CKIPPS_PIN =  0x0,   
+    TMR4_T4CKIPPS_PIN =  0x0,   
     /*
-     * TMR4_POSTSCALED as the Timer external reset source
+     * TMR2_POSTSCALED as the Timer external reset source
      */
-    TMR2_TMR4_POSTSCALED =  0x2,   
+    TMR4_TMR2_POSTSCALED =  0x1,   
     /*
      * TMR6_POSTSCALED as the Timer external reset source
      */
-    TMR2_TMR6_POSTSCALED =  0x3,   
+    TMR4_TMR6_POSTSCALED =  0x3,   
     /*
      * CCP1_OUT as the Timer external reset source
      */
-    TMR2_CCP1_OUT =  0x4,   
+    TMR4_CCP1_OUT =  0x4,   
     /*
      * CCP2_OUT as the Timer external reset source
      */
-    TMR2_CCP2_OUT =  0x5,   
+    TMR4_CCP2_OUT =  0x5,   
     /*
      * CCP3_OUT as the Timer external reset source
      */
-    TMR2_CCP3_OUT =  0x6,   
+    TMR4_CCP3_OUT =  0x6,   
     /*
      * CCP4_OUT as the Timer external reset source
      */
-    TMR2_CCP4_OUT =  0x7,   
+    TMR4_CCP4_OUT =  0x7,   
     /*
      * CCP5_OUT as the Timer external reset source
      */
-    TMR2_CCP5_OUT =  0x8,   
+    TMR4_CCP5_OUT =  0x8,   
     /*
      * PWM6_OUT as the Timer external reset source
      */
-    TMR2_PWM6_OUT =  0x9,   
+    TMR4_PWM6_OUT =  0x9,   
     /*
      * PWM7_OUT as the Timer external reset source
      */
-    TMR2_PWM7_OUT =  0xa,   
+    TMR4_PWM7_OUT =  0xa,   
     /*
      * SYNC_C1OUT as the Timer external reset source
      */
-    TMR2_SYNC_C1OUT =  0xb,   
+    TMR4_SYNC_C1OUT =  0xb,   
     /*
      * SYNC_C2OUT as the Timer external reset source
      */
-    TMR2_SYNC_C2OUT =  0xc,   
+    TMR4_SYNC_C2OUT =  0xc,   
     /*
      * ZCD_OUT as the Timer external reset source
      */
-    TMR2_ZCD_OUT =  0xd,   
+    TMR4_ZCD_OUT =  0xd,   
     /*
      * LC1_OUT as the Timer external reset source
      */
-    TMR2_LC1_OUT =  0xe,   
+    TMR4_LC1_OUT =  0xe,   
     /*
      * LC2_OUT as the Timer external reset source
      */
-    TMR2_LC2_OUT =  0xf,   
+    TMR4_LC2_OUT =  0xf,   
     /*
      * LC3_OUT as the Timer external reset source
      */
-    TMR2_LC3_OUT =  0x10,   
+    TMR4_LC3_OUT =  0x10,   
     /*
      * LC4_OUT as the Timer external reset source
      */
-    TMR2_LC4_OUT =  0x11   
-} TMR2_HLT_EXT_RESET_SOURCE;
+    TMR4_LC4_OUT =  0x11   
+} TMR4_HLT_EXT_RESET_SOURCE;
 
 /**
-  Section: TMR2 APIs
+  Section: TMR4 APIs
 */
 
 /**
- * @ingroup tmr2
- * @brief Initializes the TMR2 module. This routine must be called before any other timer routines.
+ * @ingroup tmr4
+ * @brief Initializes the TMR4 module. This routine must be called before any other timer routines.
  * @param None.
  * @return None.
  */
-void TMR2_Initialize(void);
+void TMR4_Initialize(void);
 
 /**
- * @ingroup tmr2
+ * @ingroup tmr4
  * @brief Configures the Hardware Limit Timer (HLT) mode.
- * @pre The TMR2 should be initialized with TMR2_Initialize after calling this API.
- * @param mode - Value to write into T2HLTbits.MODE bits.
+ * @pre The TMR4 should be initialized with TMR4_Initialize after calling this API.
+ * @param mode - Value to write into T4HLTbits.MODE bits.
  * @return None.
  */
-void TMR2_ModeSet(TMR2_HLT_MODE mode);
+void TMR4_ModeSet(TMR4_HLT_MODE mode);
 
 /**
- * @ingroup tmr2
+ * @ingroup tmr4
  * @brief Configures the HLT external reset source.
- * @pre The TMR2 should be initialized with TMR2_Initialize after calling this API.
- * @param reset - Value to write into T2RSTbits.RSEL bits.
+ * @pre The TMR4 should be initialized with TMR4_Initialize after calling this API.
+ * @param reset - Value to write into T4RSTbits.RSEL bits.
  * @return None.
  */
-void TMR2_ExtResetSourceSet(TMR2_HLT_EXT_RESET_SOURCE reset);
+void TMR4_ExtResetSourceSet(TMR4_HLT_EXT_RESET_SOURCE reset);
 
 /**
- * @ingroup tmr2
- * @brief Starts TMR2.
- * @pre The TMR2 should be initialized with TMR2_Initialize() before calling this API.
+ * @ingroup tmr4
+ * @brief Starts TMR4.
+ * @pre The TMR4 should be initialized with TMR4_Initialize() before calling this API.
  * @param None.
  * @return None.
  */
-void TMR2_Start(void);
+void TMR4_Start(void);
 
 /**
- * @ingroup tmr2
- * @brief Stops TMR2.
- * @pre The TMR2 should be initialized with TMR2_Initialize() before calling this API.
+ * @ingroup tmr4
+ * @brief Stops TMR4.
+ * @pre The TMR4 should be initialized with TMR4_Initialize() before calling this API.
  * @param None.
  * @return None.
  */
-void TMR2_Stop(void);
+void TMR4_Stop(void);
 
 /**
- * @ingroup tmr2
- * @brief Reads the 8-bit from the TMR2 register.
- * @pre The TMR2 should be initialized with TMR2_Initialize() before calling this API.
+ * @ingroup tmr4
+ * @brief Reads the 8-bit from the TMR4 register.
+ * @pre The TMR4 should be initialized with TMR4_Initialize() before calling this API.
  * @param None.
- * @return 8-bit data from the TMR2 register.
+ * @return 8-bit data from the TMR4 register.
  */
-uint8_t TMR2_Read(void);
+uint8_t TMR4_Read(void);
 
 /**
- * @ingroup tmr2
- * @brief Writes the 8-bit value to the TMR2 register.
- * @pre The TMR2 should be initialized with TMR2_Initialize() before calling this API.
- * @param timerVal - 8-bit value written to the TMR2 register.
+ * @ingroup tmr4
+ * @brief Writes the 8-bit value to the TMR4 register.
+ * @pre The TMR4 should be initialized with TMR4_Initialize() before calling this API.
+ * @param timerVal - 8-bit value written to the TMR4 register.
  * @return None.
  */
-void TMR2_Write(uint8_t timerVal);
+void TMR4_Write(uint8_t timerVal);
 
 /**
- * @ingroup tmr2
- * @brief Loads the 8-bit value to the PR2 register.
- * @pre The TMR2 should be initialized with TMR2_Initialize() before calling this API.
- * @param periodVal - 8-bit value written to the PR2 register.
+ * @ingroup tmr4
+ * @brief Loads the 8-bit value to the PR4 register.
+ * @pre The TMR4 should be initialized with TMR4_Initialize() before calling this API.
+ * @param periodVal - 8-bit value written to the PR4 register.
  * @return None.
  */
-void TMR2_PeriodCountSet(size_t periodVal);
+void TMR4_PeriodCountSet(size_t periodVal);
 
 /**
- * @ingroup tmr2
- * @brief Setter function for the TMR2 overflow callback.
+ * @ingroup tmr4
+ * @brief Setter function for the TMR4 overflow callback.
  * @param CallbackHandler - Pointer to the custom callback.
  * @return None.
  */
-void TMR2_OverflowCallbackRegister(void (* InterruptHandler)(void));
+void TMR4_OverflowCallbackRegister(void (* InterruptHandler)(void));
 
 /**
- * @ingroup tmr2
+ * @ingroup tmr4
  * @brief Performs the tasks to be executed on timer overflow event.
  * @param None.
  * @return None.
  */
-void TMR2_Tasks(void);
+void TMR4_Tasks(void);
 
-#endif // TMR2_H
+#endif // TMR4_H
 /**
  End of File
 */

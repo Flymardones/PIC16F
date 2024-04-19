@@ -53,7 +53,7 @@ const struct SPI_INTERFACE SPI1_Host = {
 };
 
 static const spi_configuration_t spi1_configuration[] = {
-    { 0x0, 0xa, 0x10, 0x1 },
+    { 0x40, 0xa, 0x10, 0x1 },
     { 0x64, 0x0, 0x10, 0x1 }
 };
 
@@ -126,14 +126,14 @@ void SPI1_BufferWrite(void *bufferData, size_t bufferSize)
 {
     uint8_t *bufferInput = bufferData;
     size_t bufferInputSize = bufferSize;
-    while (0U != bufferInputSize)
+    while (bufferInputSize > 0)
     {
+        // Wait for the transmit buffer to be empty
+        //while (!SSP1STATbits.BF); // Wait until transmit buffer is empty
+        
+        // Write data to SPI buffer
         SSP1BUF = *bufferInput;
-        while (!PIR3bits.SSP1IF)
-        {
-            // Wait for flag to get set
-        }
-        PIR3bits.SSP1IF = 0;
+        
         bufferInput++;
         bufferInputSize--;
     }

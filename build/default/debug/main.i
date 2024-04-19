@@ -21093,9 +21093,9 @@ void EUSART_FramingErrorCallbackRegister(void (* callbackHandler)(void));
 void EUSART_OverrunErrorCallbackRegister(void (* callbackHandler)(void));
 # 45 "./mcc_generated_files/system/../uart/../system/system.h" 2
 
-# 1 "./mcc_generated_files/system/../pwm/ccp1.h" 1
-# 54 "./mcc_generated_files/system/../pwm/ccp1.h"
-void CCP1_Initialize(void);
+# 1 "./mcc_generated_files/system/../pwm/ccp2.h" 1
+# 54 "./mcc_generated_files/system/../pwm/ccp2.h"
+void CCP2_Initialize(void);
 
 
 
@@ -21103,9 +21103,9 @@ void CCP1_Initialize(void);
 
 
 
-void CCP1_LoadDutyValue(uint16_t dutyValue);
-# 71 "./mcc_generated_files/system/../pwm/ccp1.h"
-_Bool CCP1_OutputStatusGet(void);
+void CCP2_LoadDutyValue(uint16_t dutyValue);
+# 71 "./mcc_generated_files/system/../pwm/ccp2.h"
+_Bool CCP2_OutputStatusGet(void);
 # 46 "./mcc_generated_files/system/../uart/../system/system.h" 2
 
 # 1 "./mcc_generated_files/system/../spi/mssp1.h" 1
@@ -21154,7 +21154,7 @@ struct SPI_INTERFACE
 extern const struct SPI_INTERFACE SPI1_Host;
 # 115 "./mcc_generated_files/system/../spi/mssp1.h"
 typedef enum {
-    HOST_CONFIG,
+    WS2812_SPI,
     MSSP1_DEFAULT
 } spi1_configuration_name_t;
 
@@ -21213,8 +21213,8 @@ _Bool SPI1_IsRxReady(void);
 _Bool SPI1_IsTxReady(void);
 # 47 "./mcc_generated_files/system/../uart/../system/system.h" 2
 
-# 1 "./mcc_generated_files/system/../timer/tmr2.h" 1
-# 39 "./mcc_generated_files/system/../timer/tmr2.h"
+# 1 "./mcc_generated_files/system/../timer/tmr4.h" 1
+# 39 "./mcc_generated_files/system/../timer/tmr4.h"
 # 1 "./mcc_generated_files/system/../timer/timer_interface.h" 1
 # 50 "./mcc_generated_files/system/../timer/timer_interface.h"
 struct TMR_INTERFACE
@@ -21226,9 +21226,9 @@ struct TMR_INTERFACE
     void (*TimeoutCallbackRegister)(void (* CallbackHandler)(void));
     void (*Tasks)(void);
 };
-# 39 "./mcc_generated_files/system/../timer/tmr2.h" 2
-# 107 "./mcc_generated_files/system/../timer/tmr2.h"
-extern const struct TMR_INTERFACE Timer2;
+# 39 "./mcc_generated_files/system/../timer/tmr4.h" 2
+# 107 "./mcc_generated_files/system/../timer/tmr4.h"
+extern const struct TMR_INTERFACE Timer4;
 
 
 
@@ -21237,108 +21237,108 @@ extern const struct TMR_INTERFACE Timer2;
 
 typedef enum
 {
-# 124 "./mcc_generated_files/system/../timer/tmr2.h"
-   TMR2_ROP_STARTS_TMRON,
+# 124 "./mcc_generated_files/system/../timer/tmr4.h"
+   TMR4_ROP_STARTS_TMRON,
 
 
 
 
-   TMR2_ROP_STARTS_TMRON_ERSHIGH,
+   TMR4_ROP_STARTS_TMRON_ERSHIGH,
 
 
 
 
-   TMR2_ROP_STARTS_TMRON_ERSLOW,
+   TMR4_ROP_STARTS_TMRON_ERSLOW,
 
 
 
 
-   TMR2_ROP_RESETS_ERSBOTHEDGE,
+   TMR4_ROP_RESETS_ERSBOTHEDGE,
 
 
 
 
-   TMR2_ROP_RESETS_ERSRISINGEDGE,
+   TMR4_ROP_RESETS_ERSRISINGEDGE,
 
 
 
 
-   TMR2_ROP_RESETS_ERSFALLINGEDGE,
+   TMR4_ROP_RESETS_ERSFALLINGEDGE,
 
 
 
 
-   TMR2_ROP_RESETS_ERSLOW,
+   TMR4_ROP_RESETS_ERSLOW,
 
 
 
 
-   TMR2_ROP_RESETS_ERSHIGH,
-# 170 "./mcc_generated_files/system/../timer/tmr2.h"
-   TMR2_OS_STARTS_TMRON,
+   TMR4_ROP_RESETS_ERSHIGH,
+# 170 "./mcc_generated_files/system/../timer/tmr4.h"
+   TMR4_OS_STARTS_TMRON,
 
 
 
 
-   TMR2_OS_STARTS_ERSRISINGEDGE ,
+   TMR4_OS_STARTS_ERSRISINGEDGE ,
 
 
 
 
-   TMR2_OS_STARTS_ERSFALLINGEDGE ,
+   TMR4_OS_STARTS_ERSFALLINGEDGE ,
 
 
 
 
-   TMR2_OS_STARTS_ERSBOTHEDGE,
+   TMR4_OS_STARTS_ERSBOTHEDGE,
 
 
 
 
 
-   TMR2_OS_STARTS_ERSFIRSTRISINGEDGE,
+   TMR4_OS_STARTS_ERSFIRSTRISINGEDGE,
 
 
 
 
 
-   TMR2_OS_STARTS_ERSFIRSTFALLINGEDGE,
+   TMR4_OS_STARTS_ERSFIRSTFALLINGEDGE,
 
 
 
 
 
-   TMR2_OS_STARTS_ERSRISINGEDGEDETECT,
+   TMR4_OS_STARTS_ERSRISINGEDGEDETECT,
 
 
 
 
-   TMR2_OS_STARTS_ERSFALLINGEDGEDETECT,
+   TMR4_OS_STARTS_ERSFALLINGEDGEDETECT,
 
 
 
 
-   TMR2_OS_STARTS_TMRON_ERSHIGH = 0x16,
+   TMR4_OS_STARTS_TMRON_ERSHIGH = 0x16,
 
 
 
 
-   TMR2_OS_STARTS_TMRON_ERSLOW = 0x17,
-# 227 "./mcc_generated_files/system/../timer/tmr2.h"
-   TMR2_MS_STARTS_TMRON_ERSRISINGEDGEDETECT = 0x11,
+   TMR4_OS_STARTS_TMRON_ERSLOW = 0x17,
+# 227 "./mcc_generated_files/system/../timer/tmr4.h"
+   TMR4_MS_STARTS_TMRON_ERSRISINGEDGEDETECT = 0x11,
 
 
 
 
-   TMR2_MS_STARTS_TMRON_ERSFALLINGEDGEDETECT = 0x12,
+   TMR4_MS_STARTS_TMRON_ERSFALLINGEDGEDETECT = 0x12,
 
 
 
 
 
-   TMR2_MS_STARTS_TMRON_ERSBOTHEDGE = 0x13
+   TMR4_MS_STARTS_TMRON_ERSBOTHEDGE = 0x13
 
-} TMR2_HLT_MODE;
+} TMR4_HLT_MODE;
 
 
 
@@ -21350,96 +21350,88 @@ typedef enum
 
 
 
-    TMR2_T2CKIPPS_PIN = 0x0,
+    TMR4_T4CKIPPS_PIN = 0x0,
 
 
 
-    TMR2_TMR4_POSTSCALED = 0x2,
+    TMR4_TMR2_POSTSCALED = 0x1,
 
 
 
-    TMR2_TMR6_POSTSCALED = 0x3,
+    TMR4_TMR6_POSTSCALED = 0x3,
 
 
 
-    TMR2_CCP1_OUT = 0x4,
+    TMR4_CCP1_OUT = 0x4,
 
 
 
-    TMR2_CCP2_OUT = 0x5,
+    TMR4_CCP2_OUT = 0x5,
 
 
 
-    TMR2_CCP3_OUT = 0x6,
+    TMR4_CCP3_OUT = 0x6,
 
 
 
-    TMR2_CCP4_OUT = 0x7,
+    TMR4_CCP4_OUT = 0x7,
 
 
 
-    TMR2_CCP5_OUT = 0x8,
+    TMR4_CCP5_OUT = 0x8,
 
 
 
-    TMR2_PWM6_OUT = 0x9,
+    TMR4_PWM6_OUT = 0x9,
 
 
 
-    TMR2_PWM7_OUT = 0xa,
+    TMR4_PWM7_OUT = 0xa,
 
 
 
-    TMR2_SYNC_C1OUT = 0xb,
+    TMR4_SYNC_C1OUT = 0xb,
 
 
 
-    TMR2_SYNC_C2OUT = 0xc,
+    TMR4_SYNC_C2OUT = 0xc,
 
 
 
-    TMR2_ZCD_OUT = 0xd,
+    TMR4_ZCD_OUT = 0xd,
 
 
 
-    TMR2_LC1_OUT = 0xe,
+    TMR4_LC1_OUT = 0xe,
 
 
 
-    TMR2_LC2_OUT = 0xf,
+    TMR4_LC2_OUT = 0xf,
 
 
 
-    TMR2_LC3_OUT = 0x10,
+    TMR4_LC3_OUT = 0x10,
 
 
 
-    TMR2_LC4_OUT = 0x11
-} TMR2_HLT_EXT_RESET_SOURCE;
-# 329 "./mcc_generated_files/system/../timer/tmr2.h"
-void TMR2_Initialize(void);
-# 338 "./mcc_generated_files/system/../timer/tmr2.h"
-void TMR2_ModeSet(TMR2_HLT_MODE mode);
-# 347 "./mcc_generated_files/system/../timer/tmr2.h"
-void TMR2_ExtResetSourceSet(TMR2_HLT_EXT_RESET_SOURCE reset);
-# 356 "./mcc_generated_files/system/../timer/tmr2.h"
-void TMR2_Start(void);
-# 365 "./mcc_generated_files/system/../timer/tmr2.h"
-void TMR2_Stop(void);
-# 374 "./mcc_generated_files/system/../timer/tmr2.h"
-uint8_t TMR2_Read(void);
-# 383 "./mcc_generated_files/system/../timer/tmr2.h"
-void TMR2_Write(uint8_t timerVal);
-# 392 "./mcc_generated_files/system/../timer/tmr2.h"
-void TMR2_PeriodCountSet(size_t periodVal);
-
-
-
-
-
-
-
-void TMR2_OverflowCallbackRegister(void (* InterruptHandler)(void));
+    TMR4_LC4_OUT = 0x11
+} TMR4_HLT_EXT_RESET_SOURCE;
+# 329 "./mcc_generated_files/system/../timer/tmr4.h"
+void TMR4_Initialize(void);
+# 338 "./mcc_generated_files/system/../timer/tmr4.h"
+void TMR4_ModeSet(TMR4_HLT_MODE mode);
+# 347 "./mcc_generated_files/system/../timer/tmr4.h"
+void TMR4_ExtResetSourceSet(TMR4_HLT_EXT_RESET_SOURCE reset);
+# 356 "./mcc_generated_files/system/../timer/tmr4.h"
+void TMR4_Start(void);
+# 365 "./mcc_generated_files/system/../timer/tmr4.h"
+void TMR4_Stop(void);
+# 374 "./mcc_generated_files/system/../timer/tmr4.h"
+uint8_t TMR4_Read(void);
+# 383 "./mcc_generated_files/system/../timer/tmr4.h"
+void TMR4_Write(uint8_t timerVal);
+# 392 "./mcc_generated_files/system/../timer/tmr4.h"
+void TMR4_PeriodCountSet(size_t periodVal);
 
 
 
@@ -21447,7 +21439,15 @@ void TMR2_OverflowCallbackRegister(void (* InterruptHandler)(void));
 
 
 
-void TMR2_Tasks(void);
+void TMR4_OverflowCallbackRegister(void (* InterruptHandler)(void));
+
+
+
+
+
+
+
+void TMR4_Tasks(void);
 # 48 "./mcc_generated_files/system/../uart/../system/system.h" 2
 
 # 1 "./mcc_generated_files/system/../system/interrupt.h" 1
@@ -21464,7 +21464,7 @@ extern void (*INT_InterruptHandler)(void);
 # 175 "./mcc_generated_files/system/../system/interrupt.h"
 void INT_DefaultInterruptHandler(void);
 # 49 "./mcc_generated_files/system/../uart/../system/system.h" 2
-# 62 "./mcc_generated_files/system/../uart/../system/system.h"
+# 66 "./mcc_generated_files/system/../uart/../system/system.h"
 extern uint8_t rxBuff[128];
 extern _Bool fade_flag;
 extern uint16_t fade_time;
@@ -21472,8 +21472,10 @@ extern uint16_t fade_time;
 void SYSTEM_Initialize(void);
 # 33 "main.c" 2
 
-# 1 "./ws2812/Inc/ws2812_spi.h" 1
-# 11 "./ws2812/Inc/ws2812_spi.h"
+
+
+# 1 "./ws2812/Inc/ws2812_uart.h" 1
+# 11 "./ws2812/Inc/ws2812_uart.h"
 # 1 "./ws2812/Inc/ws2812.h" 1
 # 13 "./ws2812/Inc/ws2812.h"
 typedef enum {
@@ -21526,25 +21528,22 @@ void ws2812_set_led(ws2812_configuration* ws2812_conf, uint8_t led, uint8_t red,
 
 
 void ws2812_delay_us(uint16_t us);
-# 11 "./ws2812/Inc/ws2812_spi.h" 2
+# 11 "./ws2812/Inc/ws2812_uart.h" 2
 
 
-extern ws2812_configuration ws2812_spi;
+typedef struct {
+    _Bool dataReceived;
+    uint16_t dataSize;
+} uart_data;
 
-_Bool ws2812_spi_init(ws2812_configuration* ws2812_conf);
+void ws2812_uart_commands(uint8_t* data, uint16_t size);
+# 36 "main.c" 2
 
-void ws2812_spi_send(ws2812_configuration* ws2812_conf);
 
-void ws2812_spi_data(ws2812_configuration* ws2812_conf, uint8_t green, uint8_t red, uint8_t blue, uint8_t brightness);
 
-void ws2812_spi_fade(ws2812_configuration* ws2812_conf, uint16_t fade_time_ms);
 
-void ws2812_spi_send_single(ws2812_configuration* ws2812_conf);
 
-void ws2812_spi_clear(ws2812_configuration* ws2812_conf);
 
-void ws2812_spi_deinit(ws2812_configuration* ws2812_conf);
-# 34 "main.c" 2
 
 # 1 "./ws2812/Inc/ws2812_pwm.h" 1
 # 12 "./ws2812/Inc/ws2812_pwm.h"
@@ -21563,17 +21562,9 @@ void ws2812_pwm_fade(ws2812_configuration* ws2812_conf, uint16_t fade_time_ms);
 void ws2812_pwm_clear(ws2812_configuration* ws2812_conf);
 
 void ws2812_pwm_deinit(ws2812_configuration* ws2812_conf);
-# 35 "main.c" 2
+# 43 "main.c" 2
 
-# 1 "./ws2812/Inc/ws2812_uart.h" 1
-# 13 "./ws2812/Inc/ws2812_uart.h"
-typedef struct {
-    _Bool dataReceived;
-    uint16_t dataSize;
-} uart_data;
 
-void ws2812_uart_commands(uint8_t* data, uint16_t size);
-# 36 "main.c" 2
 
 
 
@@ -21586,12 +21577,45 @@ ws2812_configuration ws2812_pwm;
 _Bool fade_flag = 0;
 uint16_t fade_time = 0;
 uint8_t rxBuff[128];
+uint8_t buffer[24] = {
+    0b1110, 0b100, 0b1110, 0b100, 0b1110, 0b100,
+    0b1110, 0b100, 0b1110, 0b100, 0b1110, 0b100,
+    0b1110, 0b100, 0b1110, 0b100, 0b1110, 0b100,
+};
+
+static void spi_write(uint8_t data) {
+    SSP1BUF = data;
+
+    while(!PIR3bits.SSP1IF) {
+
+    }
+    PIR3bits.SSP1IF = 0;
+}
 
 int main(void)
 {
     SYSTEM_Initialize();
-# 70 "main.c"
+# 113 "main.c"
+    ws2812_pwm.handle = 0;
+    ws2812_pwm.led_num = 25;
+    ws2812_pwm.brightness = 50;
+    ws2812_pwm.dma = 0;
+
+    TMR4_Start();
+
+    ws2812_pwm_init(&ws2812_pwm);
+
+    for (uint8_t i = 0; i < ws2812_pwm.led_num; i++) {
+        ws2812_set_led(&ws2812_spi, i, 0, 255, 0);
+    }
+
+
+
     while(1)
     {
+# 144 "main.c"
+    ws2812_pwm_send(&ws2812_pwm, ws2812_pwm.brightness);
+
+
     }
 }

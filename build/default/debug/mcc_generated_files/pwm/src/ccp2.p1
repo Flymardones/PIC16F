@@ -1,13 +1,13 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"11180 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 11180: extern volatile unsigned char CCP1CON __attribute__((address(0x30E)));
-[v _CCP1CON `Vuc ~T0 @X0 0 e@782 ]
-"11160
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 11160: extern volatile unsigned char CCPR1H __attribute__((address(0x30D)));
-[v _CCPR1H `Vuc ~T0 @X0 0 e@781 ]
-"11140
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 11140: extern volatile unsigned char CCPR1L __attribute__((address(0x30C)));
-[v _CCPR1L `Vuc ~T0 @X0 0 e@780 ]
+"11413 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 11413: extern volatile unsigned char CCP2CON __attribute__((address(0x312)));
+[v _CCP2CON `Vuc ~T0 @X0 0 e@786 ]
+"11393
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 11393: extern volatile unsigned char CCPR2H __attribute__((address(0x311)));
+[v _CCPR2H `Vuc ~T0 @X0 0 e@785 ]
+"11373
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 11373: extern volatile unsigned char CCPR2L __attribute__((address(0x310)));
+[v _CCPR2L `Vuc ~T0 @X0 0 e@784 ]
 "9181
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 9181:     struct {
 [s S409 :2 `uc 1 :2 `uc 1 :2 `uc 1 :2 `uc 1 ]
@@ -23,29 +23,29 @@ Version 4.0 HI-TECH Software Intermediate Code
 "9198
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 9198: extern volatile CCPTMRS0bits_t CCPTMRS0bits __attribute__((address(0x21E)));
 [v _CCPTMRS0bits `VS408 ~T0 @X0 0 e@542 ]
-"11186
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 11186:     struct {
-[s S518 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S518 . MODE FMT OUT . EN ]
-"11193
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 11193:     struct {
-[s S519 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S519 . MODE0 MODE1 MODE2 MODE3 ]
-"11199
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 11199:     struct {
-[s S520 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S520 . CCP1MODE CCP1FMT CCP1OUT . CCP1EN ]
-"11206
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 11206:     struct {
-[s S521 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S521 . CCP1MODE0 CCP1MODE1 CCP1MODE2 CCP1MODE3 ]
-"11185
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 11185: typedef union {
-[u S517 `S518 1 `S519 1 `S520 1 `S521 1 ]
-[n S517 . . . . . ]
-"11213
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 11213: extern volatile CCP1CONbits_t CCP1CONbits __attribute__((address(0x30E)));
-[v _CCP1CONbits `VS517 ~T0 @X0 0 e@782 ]
+"11419
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 11419:     struct {
+[s S532 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S532 . MODE FMT OUT . EN ]
+"11426
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 11426:     struct {
+[s S533 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S533 . MODE0 MODE1 MODE2 MODE3 ]
+"11432
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 11432:     struct {
+[s S534 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S534 . CCP2MODE CCP2FMT CCP2OUT . CCP2EN ]
+"11439
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 11439:     struct {
+[s S535 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S535 . CCP2MODE0 CCP2MODE1 CCP2MODE2 CCP2MODE3 ]
+"11418
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 11418: typedef union {
+[u S531 `S532 1 `S533 1 `S534 1 `S535 1 ]
+[n S531 . . . . . ]
+"11446
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 11446: extern volatile CCP2CONbits_t CCP2CONbits __attribute__((address(0x312)));
+[v _CCP2CONbits `VS531 ~T0 @X0 0 e@786 ]
 "54 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 54: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -1681,98 +1681,98 @@ Version 4.0 HI-TECH Software Intermediate Code
 "36289
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 36289: __asm("TOSH equ 01FEFh");
 [; <" TOSH equ 01FEFh ;# ">
-"50 mcc_generated_files/pwm/src/ccp1.c
-[; ;mcc_generated_files/pwm/src/ccp1.c: 50: void CCP1_Initialize(void)
-[v _CCP1_Initialize `(v ~T0 @X0 1 ef ]
+"50 mcc_generated_files/pwm/src/ccp2.c
+[; ;mcc_generated_files/pwm/src/ccp2.c: 50: void CCP2_Initialize(void)
+[v _CCP2_Initialize `(v ~T0 @X0 1 ef ]
 "51
-[; ;mcc_generated_files/pwm/src/ccp1.c: 51: {
+[; ;mcc_generated_files/pwm/src/ccp2.c: 51: {
 {
-[e :U _CCP1_Initialize ]
+[e :U _CCP2_Initialize ]
 [f ]
 "55
-[; ;mcc_generated_files/pwm/src/ccp1.c: 55:     CCP1CON = 0x9F;
-[e = _CCP1CON -> -> 159 `i `uc ]
+[; ;mcc_generated_files/pwm/src/ccp2.c: 55:     CCP2CON = 0x8F;
+[e = _CCP2CON -> -> 143 `i `uc ]
 "58
-[; ;mcc_generated_files/pwm/src/ccp1.c: 58:     CCPR1H = 0x0;
-[e = _CCPR1H -> -> 0 `i `uc ]
+[; ;mcc_generated_files/pwm/src/ccp2.c: 58:     CCPR2H = 0x0;
+[e = _CCPR2H -> -> 0 `i `uc ]
 "61
-[; ;mcc_generated_files/pwm/src/ccp1.c: 61:     CCPR1L = 0x0;
-[e = _CCPR1L -> -> 0 `i `uc ]
+[; ;mcc_generated_files/pwm/src/ccp2.c: 61:     CCPR2L = 0x0;
+[e = _CCPR2L -> -> 0 `i `uc ]
 "64
-[; ;mcc_generated_files/pwm/src/ccp1.c: 64:     CCPTMRS0bits.C1TSEL = 0x1;
-[e = . . _CCPTMRS0bits 0 0 -> -> 1 `i `uc ]
+[; ;mcc_generated_files/pwm/src/ccp2.c: 64:     CCPTMRS0bits.C2TSEL = 0x2;
+[e = . . _CCPTMRS0bits 0 1 -> -> 2 `i `uc ]
 "65
-[; ;mcc_generated_files/pwm/src/ccp1.c: 65: }
+[; ;mcc_generated_files/pwm/src/ccp2.c: 65: }
 [e :UE 1611 ]
 }
 "67
-[; ;mcc_generated_files/pwm/src/ccp1.c: 67: void CCP1_LoadDutyValue(uint16_t dutyValue)
-[v _CCP1_LoadDutyValue `(v ~T0 @X0 1 ef1`us ]
+[; ;mcc_generated_files/pwm/src/ccp2.c: 67: void CCP2_LoadDutyValue(uint16_t dutyValue)
+[v _CCP2_LoadDutyValue `(v ~T0 @X0 1 ef1`us ]
 "68
-[; ;mcc_generated_files/pwm/src/ccp1.c: 68: {
+[; ;mcc_generated_files/pwm/src/ccp2.c: 68: {
 {
-[e :U _CCP1_LoadDutyValue ]
+[e :U _CCP2_LoadDutyValue ]
 "67
-[; ;mcc_generated_files/pwm/src/ccp1.c: 67: void CCP1_LoadDutyValue(uint16_t dutyValue)
+[; ;mcc_generated_files/pwm/src/ccp2.c: 67: void CCP2_LoadDutyValue(uint16_t dutyValue)
 [v _dutyValue `us ~T0 @X0 1 r1 ]
 "68
-[; ;mcc_generated_files/pwm/src/ccp1.c: 68: {
+[; ;mcc_generated_files/pwm/src/ccp2.c: 68: {
 [f ]
 "69
-[; ;mcc_generated_files/pwm/src/ccp1.c: 69:    dutyValue &= 0x03FF;
+[; ;mcc_generated_files/pwm/src/ccp2.c: 69:    dutyValue &= 0x03FF;
 [e =& _dutyValue -> -> 1023 `i `us ]
 "72
-[; ;mcc_generated_files/pwm/src/ccp1.c: 72:     if(CCP1CONbits.CCP1FMT)
-[e $ ! != -> . . _CCP1CONbits 2 1 `i -> 0 `i 1613  ]
+[; ;mcc_generated_files/pwm/src/ccp2.c: 72:     if(CCP2CONbits.CCP2FMT)
+[e $ ! != -> . . _CCP2CONbits 2 1 `i -> 0 `i 1613  ]
 "73
-[; ;mcc_generated_files/pwm/src/ccp1.c: 73:     {
+[; ;mcc_generated_files/pwm/src/ccp2.c: 73:     {
 {
 "74
-[; ;mcc_generated_files/pwm/src/ccp1.c: 74:         dutyValue <<= 6;
+[; ;mcc_generated_files/pwm/src/ccp2.c: 74:         dutyValue <<= 6;
 [e =<< _dutyValue -> -> 6 `i `us ]
 "75
-[; ;mcc_generated_files/pwm/src/ccp1.c: 75:         CCPR1H = (uint8_t)(dutyValue >> 8);
-[e = _CCPR1H -> >> -> _dutyValue `ui -> 8 `i `uc ]
+[; ;mcc_generated_files/pwm/src/ccp2.c: 75:         CCPR2H = (uint8_t)(dutyValue >> 8);
+[e = _CCPR2H -> >> -> _dutyValue `ui -> 8 `i `uc ]
 "76
-[; ;mcc_generated_files/pwm/src/ccp1.c: 76:         CCPR1L = (uint8_t)dutyValue;
-[e = _CCPR1L -> _dutyValue `uc ]
+[; ;mcc_generated_files/pwm/src/ccp2.c: 76:         CCPR2L = (uint8_t)dutyValue;
+[e = _CCPR2L -> _dutyValue `uc ]
 "77
-[; ;mcc_generated_files/pwm/src/ccp1.c: 77:     }
+[; ;mcc_generated_files/pwm/src/ccp2.c: 77:     }
 }
 [e $U 1614  ]
 "78
-[; ;mcc_generated_files/pwm/src/ccp1.c: 78:     else
+[; ;mcc_generated_files/pwm/src/ccp2.c: 78:     else
 [e :U 1613 ]
 "79
-[; ;mcc_generated_files/pwm/src/ccp1.c: 79:     {
+[; ;mcc_generated_files/pwm/src/ccp2.c: 79:     {
 {
 "80
-[; ;mcc_generated_files/pwm/src/ccp1.c: 80:         CCPR1H = (uint8_t)(dutyValue >> 8);
-[e = _CCPR1H -> >> -> _dutyValue `ui -> 8 `i `uc ]
+[; ;mcc_generated_files/pwm/src/ccp2.c: 80:         CCPR2H = (uint8_t)(dutyValue >> 8);
+[e = _CCPR2H -> >> -> _dutyValue `ui -> 8 `i `uc ]
 "81
-[; ;mcc_generated_files/pwm/src/ccp1.c: 81:         CCPR1L = (uint8_t)dutyValue;
-[e = _CCPR1L -> _dutyValue `uc ]
+[; ;mcc_generated_files/pwm/src/ccp2.c: 81:         CCPR2L = (uint8_t)dutyValue;
+[e = _CCPR2L -> _dutyValue `uc ]
 "82
-[; ;mcc_generated_files/pwm/src/ccp1.c: 82:     }
+[; ;mcc_generated_files/pwm/src/ccp2.c: 82:     }
 }
 [e :U 1614 ]
 "83
-[; ;mcc_generated_files/pwm/src/ccp1.c: 83: }
+[; ;mcc_generated_files/pwm/src/ccp2.c: 83: }
 [e :UE 1612 ]
 }
 "84
-[; ;mcc_generated_files/pwm/src/ccp1.c: 84: _Bool CCP1_OutputStatusGet(void)
-[v _CCP1_OutputStatusGet `(a ~T0 @X0 1 ef ]
+[; ;mcc_generated_files/pwm/src/ccp2.c: 84: _Bool CCP2_OutputStatusGet(void)
+[v _CCP2_OutputStatusGet `(a ~T0 @X0 1 ef ]
 "85
-[; ;mcc_generated_files/pwm/src/ccp1.c: 85: {
+[; ;mcc_generated_files/pwm/src/ccp2.c: 85: {
 {
-[e :U _CCP1_OutputStatusGet ]
+[e :U _CCP2_OutputStatusGet ]
 [f ]
 "87
-[; ;mcc_generated_files/pwm/src/ccp1.c: 87:     return(CCP1CONbits.OUT);
-[e ) -> . . _CCP1CONbits 0 2 `a ]
+[; ;mcc_generated_files/pwm/src/ccp2.c: 87:     return(CCP2CONbits.OUT);
+[e ) -> . . _CCP2CONbits 0 2 `a ]
 [e $UE 1615  ]
 "88
-[; ;mcc_generated_files/pwm/src/ccp1.c: 88: }
+[; ;mcc_generated_files/pwm/src/ccp2.c: 88: }
 [e :UE 1615 ]
 }

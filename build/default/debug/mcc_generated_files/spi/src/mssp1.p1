@@ -1783,7 +1783,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [i _spi1_configuration
 :U ..
 :U ..
--> -> 0 `i `uc
+-> -> 64 `i `uc
 -> -> 10 `i `uc
 -> -> 16 `i `uc
 -> -> 1 `i `uc
@@ -2025,33 +2025,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _bufferInputSize `ui ~T0 @X0 1 a ]
 [e = _bufferInputSize _bufferSize ]
 "129
-[; ;mcc_generated_files/spi/src/mssp1.c: 129:     while (0U != bufferInputSize)
+[; ;mcc_generated_files/spi/src/mssp1.c: 129:     while (bufferInputSize > 0)
 [e $U 1627  ]
 [e :U 1628 ]
 "130
 [; ;mcc_generated_files/spi/src/mssp1.c: 130:     {
 {
-"131
-[; ;mcc_generated_files/spi/src/mssp1.c: 131:         SSP1BUF = *bufferInput;
-[e = _SSP1BUF *U _bufferInput ]
-"132
-[; ;mcc_generated_files/spi/src/mssp1.c: 132:         while (!PIR3bits.SSP1IF)
-[e $U 1630  ]
-[e :U 1631 ]
-"133
-[; ;mcc_generated_files/spi/src/mssp1.c: 133:         {
-{
 "135
-[; ;mcc_generated_files/spi/src/mssp1.c: 135:         }
-}
-[e :U 1630 ]
-"132
-[; ;mcc_generated_files/spi/src/mssp1.c: 132:         while (!PIR3bits.SSP1IF)
-[e $ ! != -> . . _PIR3bits 0 0 `i -> 0 `i 1631  ]
-[e :U 1632 ]
-"136
-[; ;mcc_generated_files/spi/src/mssp1.c: 136:         PIR3bits.SSP1IF = 0;
-[e = . . _PIR3bits 0 0 -> -> 0 `i `uc ]
+[; ;mcc_generated_files/spi/src/mssp1.c: 135:         SSP1BUF = *bufferInput;
+[e = _SSP1BUF *U _bufferInput ]
 "137
 [; ;mcc_generated_files/spi/src/mssp1.c: 137:         bufferInput++;
 [e ++ _bufferInput * -> -> 1 `i `x -> -> # *U _bufferInput `i `x ]
@@ -2063,8 +2045,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e :U 1627 ]
 "129
-[; ;mcc_generated_files/spi/src/mssp1.c: 129:     while (0U != bufferInputSize)
-[e $ != -> 0 `ui _bufferInputSize 1628  ]
+[; ;mcc_generated_files/spi/src/mssp1.c: 129:     while (bufferInputSize > 0)
+[e $ > _bufferInputSize -> -> 0 `i `ui 1628  ]
 [e :U 1629 ]
 "140
 [; ;mcc_generated_files/spi/src/mssp1.c: 140: }
@@ -2094,8 +2076,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _bufferInputSize _bufferSize ]
 "146
 [; ;mcc_generated_files/spi/src/mssp1.c: 146:     while (0U != bufferInputSize)
-[e $U 1634  ]
-[e :U 1635 ]
+[e $U 1631  ]
+[e :U 1632 ]
 "147
 [; ;mcc_generated_files/spi/src/mssp1.c: 147:     {
 {
@@ -2104,19 +2086,19 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _SSP1BUF -> -> 0 `i `uc ]
 "149
 [; ;mcc_generated_files/spi/src/mssp1.c: 149:         while (!PIR3bits.SSP1IF)
-[e $U 1637  ]
-[e :U 1638 ]
+[e $U 1634  ]
+[e :U 1635 ]
 "150
 [; ;mcc_generated_files/spi/src/mssp1.c: 150:         {
 {
 "152
 [; ;mcc_generated_files/spi/src/mssp1.c: 152:         }
 }
-[e :U 1637 ]
+[e :U 1634 ]
 "149
 [; ;mcc_generated_files/spi/src/mssp1.c: 149:         while (!PIR3bits.SSP1IF)
-[e $ ! != -> . . _PIR3bits 0 0 `i -> 0 `i 1638  ]
-[e :U 1639 ]
+[e $ ! != -> . . _PIR3bits 0 0 `i -> 0 `i 1635  ]
+[e :U 1636 ]
 "153
 [; ;mcc_generated_files/spi/src/mssp1.c: 153:         PIR3bits.SSP1IF = 0;
 [e = . . _PIR3bits 0 0 -> -> 0 `i `uc ]
@@ -2132,14 +2114,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 "157
 [; ;mcc_generated_files/spi/src/mssp1.c: 157:     }
 }
-[e :U 1634 ]
+[e :U 1631 ]
 "146
 [; ;mcc_generated_files/spi/src/mssp1.c: 146:     while (0U != bufferInputSize)
-[e $ != -> 0 `ui _bufferInputSize 1635  ]
-[e :U 1636 ]
+[e $ != -> 0 `ui _bufferInputSize 1632  ]
+[e :U 1633 ]
 "158
 [; ;mcc_generated_files/spi/src/mssp1.c: 158: }
-[e :UE 1633 ]
+[e :UE 1630 ]
 }
 "160
 [; ;mcc_generated_files/spi/src/mssp1.c: 160: uint8_t SPI1_ByteExchange(uint8_t byteData)
@@ -2159,29 +2141,29 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _SSP1BUF _byteData ]
 "163
 [; ;mcc_generated_files/spi/src/mssp1.c: 163:     while (!PIR3bits.SSP1IF)
-[e $U 1641  ]
-[e :U 1642 ]
+[e $U 1638  ]
+[e :U 1639 ]
 "164
 [; ;mcc_generated_files/spi/src/mssp1.c: 164:     {
 {
 "166
 [; ;mcc_generated_files/spi/src/mssp1.c: 166:     }
 }
-[e :U 1641 ]
+[e :U 1638 ]
 "163
 [; ;mcc_generated_files/spi/src/mssp1.c: 163:     while (!PIR3bits.SSP1IF)
-[e $ ! != -> . . _PIR3bits 0 0 `i -> 0 `i 1642  ]
-[e :U 1643 ]
+[e $ ! != -> . . _PIR3bits 0 0 `i -> 0 `i 1639  ]
+[e :U 1640 ]
 "167
 [; ;mcc_generated_files/spi/src/mssp1.c: 167:     PIR3bits.SSP1IF = 0;
 [e = . . _PIR3bits 0 0 -> -> 0 `i `uc ]
 "168
 [; ;mcc_generated_files/spi/src/mssp1.c: 168:     return SSP1BUF;
 [e ) _SSP1BUF ]
-[e $UE 1640  ]
+[e $UE 1637  ]
 "169
 [; ;mcc_generated_files/spi/src/mssp1.c: 169: }
-[e :UE 1640 ]
+[e :UE 1637 ]
 }
 "171
 [; ;mcc_generated_files/spi/src/mssp1.c: 171: void SPI1_ByteWrite(uint8_t byteData)
@@ -2201,7 +2183,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _SSP1BUF _byteData ]
 "174
 [; ;mcc_generated_files/spi/src/mssp1.c: 174: }
-[e :UE 1644 ]
+[e :UE 1641 ]
 }
 "176
 [; ;mcc_generated_files/spi/src/mssp1.c: 176: uint8_t SPI1_ByteRead(void)
@@ -2213,7 +2195,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "178
 [; ;mcc_generated_files/spi/src/mssp1.c: 178:     if (1U == PIR3bits.SSP1IF)
-[e $ ! == -> 1 `ui -> . . _PIR3bits 0 0 `ui 1646  ]
+[e $ ! == -> 1 `ui -> . . _PIR3bits 0 0 `ui 1643  ]
 "179
 [; ;mcc_generated_files/spi/src/mssp1.c: 179:     {
 {
@@ -2223,14 +2205,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 "181
 [; ;mcc_generated_files/spi/src/mssp1.c: 181:     }
 }
-[e :U 1646 ]
+[e :U 1643 ]
 "182
 [; ;mcc_generated_files/spi/src/mssp1.c: 182:     return SSP1BUF;
 [e ) _SSP1BUF ]
-[e $UE 1645  ]
+[e $UE 1642  ]
 "183
 [; ;mcc_generated_files/spi/src/mssp1.c: 183: }
-[e :UE 1645 ]
+[e :UE 1642 ]
 }
 "185
 [; ;mcc_generated_files/spi/src/mssp1.c: 185: _Bool SPI1_IsRxReady(void)
@@ -2246,7 +2228,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _returnValue -> -> 0 `i `a ]
 "188
 [; ;mcc_generated_files/spi/src/mssp1.c: 188:     if (SSP1CON1bits.SSPEN == 1)
-[e $ ! == -> . . _SSP1CON1bits 0 2 `i -> 1 `i 1648  ]
+[e $ ! == -> . . _SSP1CON1bits 0 2 `i -> 1 `i 1645  ]
 "189
 [; ;mcc_generated_files/spi/src/mssp1.c: 189:     {
 {
@@ -2256,10 +2238,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "191
 [; ;mcc_generated_files/spi/src/mssp1.c: 191:     }
 }
-[e $U 1649  ]
+[e $U 1646  ]
 "192
 [; ;mcc_generated_files/spi/src/mssp1.c: 192:     else
-[e :U 1648 ]
+[e :U 1645 ]
 "193
 [; ;mcc_generated_files/spi/src/mssp1.c: 193:     {
 {
@@ -2269,14 +2251,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 "195
 [; ;mcc_generated_files/spi/src/mssp1.c: 195:     }
 }
-[e :U 1649 ]
+[e :U 1646 ]
 "196
 [; ;mcc_generated_files/spi/src/mssp1.c: 196:     return returnValue;
 [e ) _returnValue ]
-[e $UE 1647  ]
+[e $UE 1644  ]
 "197
 [; ;mcc_generated_files/spi/src/mssp1.c: 197: }
-[e :UE 1647 ]
+[e :UE 1644 ]
 }
 "199
 [; ;mcc_generated_files/spi/src/mssp1.c: 199: _Bool SPI1_IsTxReady(void)
@@ -2292,7 +2274,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _returnValue -> -> 0 `i `a ]
 "202
 [; ;mcc_generated_files/spi/src/mssp1.c: 202:     if (SSP1CON1bits.SSPEN == 1)
-[e $ ! == -> . . _SSP1CON1bits 0 2 `i -> 1 `i 1651  ]
+[e $ ! == -> . . _SSP1CON1bits 0 2 `i -> 1 `i 1648  ]
 "203
 [; ;mcc_generated_files/spi/src/mssp1.c: 203:     {
 {
@@ -2302,10 +2284,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "205
 [; ;mcc_generated_files/spi/src/mssp1.c: 205:     }
 }
-[e $U 1652  ]
+[e $U 1649  ]
 "206
 [; ;mcc_generated_files/spi/src/mssp1.c: 206:     else
-[e :U 1651 ]
+[e :U 1648 ]
 "207
 [; ;mcc_generated_files/spi/src/mssp1.c: 207:     {
 {
@@ -2315,12 +2297,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 "209
 [; ;mcc_generated_files/spi/src/mssp1.c: 209:     }
 }
-[e :U 1652 ]
+[e :U 1649 ]
 "210
 [; ;mcc_generated_files/spi/src/mssp1.c: 210:     return returnValue;
 [e ) _returnValue ]
-[e $UE 1650  ]
+[e $UE 1647  ]
 "211
 [; ;mcc_generated_files/spi/src/mssp1.c: 211: }
-[e :UE 1650 ]
+[e :UE 1647 ]
 }

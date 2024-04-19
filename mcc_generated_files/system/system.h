@@ -43,9 +43,9 @@
 #include "../system/clock.h"
 #include "../system/pins.h"
 #include "../uart/eusart.h"
-#include "../pwm/ccp1.h"
+#include "../pwm/ccp2.h"
 #include "../spi/mssp1.h"
-#include "../timer/tmr2.h"
+#include "../timer/tmr4.h"
 #include "../system/interrupt.h"
 
 /**
@@ -55,6 +55,10 @@
  * @param None.
  * @return None.
 */
+
+
+#define SPI 0
+#define PWM 1
 
 
 #define RX_BUFF_SIZE 128

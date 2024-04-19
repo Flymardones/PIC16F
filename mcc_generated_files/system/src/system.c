@@ -41,9 +41,14 @@ void SYSTEM_Initialize(void)
     CLOCK_Initialize();
     PIN_MANAGER_Initialize();
     EUSART_Initialize();
-    PWM1_Initialize();
+#if SPI
     SPI1_Initialize();
-    TMR2_Initialize();
+    
+#endif
+#if PWM
+    PWM2_Initialize();
+    TMR4_Initialize();
+#endif
     INTERRUPT_Initialize();
 }
 

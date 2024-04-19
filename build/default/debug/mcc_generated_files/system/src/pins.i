@@ -20765,8 +20765,8 @@ void PIN_MANAGER_Initialize(void)
 
 
     ANSELA = 0xFF;
-    ANSELB = 0xFE;
-    ANSELC = 0x7F;
+    ANSELB = 0xFA;
+    ANSELC = 0xFF;
     ANSELD = 0xFF;
     ANSELE = 0x7;
 
@@ -20808,10 +20808,10 @@ void PIN_MANAGER_Initialize(void)
 
 
 
-    RXPPS = 0x17;
+    RXPPS = 0xA;
     RB0PPS = 0x15;
-    CCP1PPS = 0x9;
-    RB1PPS = 0x09;
+    CCP2PPS = 0x9;
+    RB1PPS = 0x0A;
 # 117 "mcc_generated_files/system/src/pins.c"
     IOCAP = 0x0;
     IOCAN = 0x0;

@@ -31,9 +31,18 @@
     THIS SOFTWARE.
 */
 #include "mcc_generated_files/system/system.h"
-#include "ws2812/Inc/ws2812_spi.h"
-#include "ws2812/Inc/ws2812_pwm.h"
+
+
 #include "ws2812/Inc/ws2812_uart.h"
+
+#if SPI
+#include "ws2812/Inc/ws2812_spi.h"
+#endif
+
+#if PWM
+#include "ws2812/Inc/ws2812_pwm.h"
+#endif
+
 
 /*
     Main application
@@ -45,6 +54,20 @@ ws2812_configuration ws2812_pwm;
 bool fade_flag = 0;
 uint16_t fade_time = 0;
 uint8_t rxBuff[RX_BUFF_SIZE];
+uint8_t buffer[24] = {
+    0b1110, 0b100, 0b1110, 0b100, 0b1110, 0b100, // First 18 bits
+    0b1110, 0b100, 0b1110, 0b100, 0b1110, 0b100, // Next 6 bits
+    0b1110, 0b100, 0b1110, 0b100, 0b1110, 0b100, // Last 6 bits
+};
+
+static void spi_write(uint8_t data) {
+    SSP1BUF = data;
+    
+    while(!PIR3bits.SSP1IF) {
+        
+    }
+    PIR3bits.SSP1IF = 0;
+}
 
 int main(void)
 {
@@ -66,8 +89,60 @@ int main(void)
     // Disable the Peripheral Interrupts 
     //INTERRUPT_PeripheralInterruptDisable(); 
 
+#if SPI
+    ws2812_spi.handle = (void*)WS2812_SPI;
+    ws2812_spi.led_num = 25;
+    ws2812_spi.brightness = 50;
+    ws2812_spi.dma = 0;
+   
+    SPI1_Open((uint8_t)ws2812_spi.handle);
+    
+    ws2812_spi_init(&ws2812_spi);
+    
+    for (uint8_t i = 0; i < ws2812_spi.led_num; i++) {
+        ws2812_set_led(&ws2812_spi, i, 255, 0, 0);
+    }
+    
+   
+
+#endif
+    
+    
+    
+#if PWM
+    ws2812_pwm.handle = 0;
+    ws2812_pwm.led_num = 25;
+    ws2812_pwm.brightness = 50;
+    ws2812_pwm.dma = 0;
+    
+    TMR4_Start();
+    
+    ws2812_pwm_init(&ws2812_pwm);
+    
+    for (uint8_t i = 0; i < ws2812_pwm.led_num; i++) {
+        ws2812_set_led(&ws2812_spi, i, 0, 255, 0);
+    }
+#endif
+    
 
     while(1)
     {
+        
+#if SPI
+    
+    ws2812_spi_send(&ws2812_spi);
+
+        
+    
+
+
+#endif
+        
+        
+#if PWM
+    
+    ws2812_pwm_send(&ws2812_pwm, ws2812_pwm.brightness);
+#endif
+        
     }    
 }

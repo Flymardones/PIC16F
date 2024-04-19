@@ -11,6 +11,15 @@
 #include "stdlib.h"
 
 
+static void spi_write(uint8_t data) {
+    SSP1BUF = data;
+    
+    //while(!PIR3bits.SSP1IF) {
+        
+    //}
+    //PIR3bits.SSP1IF = 0;
+}
+
 void ws2812_spi_fade(ws2812_configuration* ws2812_conf, uint16_t fade_time_ms) {
 
   uint16_t fade_delay = 0;
@@ -27,53 +36,52 @@ void ws2812_spi_fade(ws2812_configuration* ws2812_conf, uint16_t fade_time_ms) {
 	for (int i = 0; i < ws2812_conf->led_num; i++) {
 	  ws2812_spi_data(ws2812_conf, led_data[i][0], led_data[i][1], led_data[i][2], (uint8_t)fade);
 	}
-	__delay_ms(fade_delay);
+//	__delay_ms(fade_delay);
   }
   
   for (int fade = 0; fade < ws2812_conf->brightness; fade++) {
 	for (int i = 0; i < ws2812_conf->led_num; i++) {
 	  ws2812_spi_data(ws2812_conf, led_data[i][0] , led_data[i][1], led_data[i][2], (uint8_t)fade);
 	}
-	__delay_ms(fade_delay);
+//	__delay_ms(fade_delay);
   }
 
 }
 
-#pragma GCC optimize ("O3")
 void ws2812_spi_data(ws2812_configuration* ws2812_conf, uint8_t green, uint8_t red, uint8_t blue, uint8_t brightness) {
 
-	green = green * brightness / 100;
+    uint8_t send_data[24];
+	
+    green = green * brightness / 100;
 	red = red * brightness / 100;
 	blue = blue * brightness / 100;
 
-	uint8_t send_data[24];
-
 	for (int i = 0; i < 8; i++) {
-		send_data[i] = (green & (1 << (7 - i))) ? 0b110 : 0b100;
-		send_data[i + 8] = (red & (1 << (7 - i))) ? 0b110 : 0b100;
-		send_data[i + 16] = (blue & (1 << (7 - i))) ? 0b110 : 0b100;
+		send_data[i] = (green & (1 << (7 - i))) ? 0b1110 : 0b100;
+		send_data[i + 8] = (red & (1 << (7 - i))) ? 0b1110 : 0b100;
+		send_data[i + 16] = (blue & (1 << (7 - i))) ? 0b1110 : 0b100;
 	}
 
 	if (ws2812_conf->dma) {
         
 	}
 	else {
-		
+        SPI1_BufferWrite(send_data, 24);
 	}
 }
 
-#pragma GCC optimize ("O3")
 void ws2812_spi_send_single(ws2812_configuration* ws2812_conf) {
 	uint8_t (*led_data)[3] = (uint8_t(*)[3])ws2812_conf->buffer;
 
 	for (int i = 0; i < ws2812_conf->led_num; i++) {
 		ws2812_spi_data(ws2812_conf, led_data[i][0], led_data[i][1], led_data[i][2], ws2812_conf->brightness);
 	}
-    ws2812_delay_us(280);
+    //ws2812_delay_us(280);
+    __delay_us(285);
 }
 
 
-//#pragma GCC optimize ("O3")
+
 void ws2812_spi_send(ws2812_configuration* ws2812_conf) {
 	
 	uint8_t (*led_data)[3] = (uint8_t(*)[3])ws2812_conf->buffer;
@@ -88,9 +96,9 @@ void ws2812_spi_send(ws2812_configuration* ws2812_conf) {
 
         for (int j = 0; j < 8; j++) {
 			int index = i * 24 + j;
-			send_data[index] = (green & (1 << (7 - j))) ? 0b110 : 0b100;
-			send_data[index + 8] = (red & (1 << (7 - j))) ? 0b110 : 0b100;
-			send_data[index + 16] = (blue & (1 << (7 - j))) ? 0b110 : 0b100;
+			send_data[index] = (green & (1 << (7 - j))) ? 0b1110 : 0b100;
+			send_data[index + 8] = (red & (1 << (7 - j))) ? 0b1110 : 0b100;
+			send_data[index + 16] = (blue & (1 << (7 - j))) ? 0b1110 : 0b100;
         }
     }
 
@@ -98,9 +106,16 @@ void ws2812_spi_send(ws2812_configuration* ws2812_conf) {
 
     }
     else {
-
+        SPI1_BufferWrite(send_data, ws2812_conf->led_num * 24);
+        //for (int i = 0; i < (ws2812_conf->led_num * 24); i++) {
+           //SSP1BUF = send_data[i];
+        //}
     }
-	ws2812_delay_us(280);
+    free(send_data);
+	//ws2812_delay_us(280);
+    //__delay_us(285);
+    
+    
 }
 
 
@@ -119,7 +134,7 @@ bool ws2812_spi_init(ws2812_configuration* ws2812_conf) {
 	// Set all leds to 0
     ws2812_spi_send(ws2812_conf);
 
-	return 1;
+	return true;
 }
 
 void ws2812_spi_clear(ws2812_configuration* ws2812_conf) {

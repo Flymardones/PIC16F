@@ -1,4 +1,4 @@
-# 1 "mcc_generated_files/timer/src/tmr2.c"
+# 1 "ws2812/Src/ws2812_uart.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,8 +6,20 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "mcc_generated_files/timer/src/tmr2.c" 2
-# 38 "mcc_generated_files/timer/src/tmr2.c"
+# 1 "ws2812/Src/ws2812_uart.c" 2
+
+
+
+
+
+
+
+# 1 "ws2812/Src/../Inc/ws2812_uart.h" 1
+# 11 "ws2812/Src/../Inc/ws2812_uart.h"
+# 1 "ws2812/Src/../Inc/ws2812.h" 1
+# 11 "ws2812/Src/../Inc/ws2812.h"
+# 1 "ws2812/Src/../Inc/../../mcc_generated_files/system/system.h" 1
+# 39 "ws2812/Src/../Inc/../../mcc_generated_files/system/system.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\xc.h" 1 3
 # 18 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -20724,22 +20736,399 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 28 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\xc.h" 2 3
-# 38 "mcc_generated_files/timer/src/tmr2.c" 2
+# 39 "ws2812/Src/../Inc/../../mcc_generated_files/system/system.h" 2
 
-# 1 "mcc_generated_files/timer/src/../tmr2.h" 1
-# 38 "mcc_generated_files/timer/src/../tmr2.h"
+
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stdbool.h" 1 3
-# 38 "mcc_generated_files/timer/src/../tmr2.h" 2
+# 41 "ws2812/Src/../Inc/../../mcc_generated_files/system/system.h" 2
 
-# 1 "mcc_generated_files/timer/src/../timer_interface.h" 1
-# 42 "mcc_generated_files/timer/src/../timer_interface.h"
+# 1 "ws2812/Src/../Inc/../../mcc_generated_files/system/config_bits.h" 1
+# 39 "ws2812/Src/../Inc/../../mcc_generated_files/system/config_bits.h"
+# 1 "ws2812/Src/../Inc/../../mcc_generated_files/system/../system/clock.h" 1
+# 48 "ws2812/Src/../Inc/../../mcc_generated_files/system/../system/clock.h"
+void CLOCK_Initialize(void);
+# 39 "ws2812/Src/../Inc/../../mcc_generated_files/system/config_bits.h" 2
+# 42 "ws2812/Src/../Inc/../../mcc_generated_files/system/system.h" 2
+
+
+# 1 "ws2812/Src/../Inc/../../mcc_generated_files/system/../system/pins.h" 1
+# 115 "ws2812/Src/../Inc/../../mcc_generated_files/system/../system/pins.h"
+void PIN_MANAGER_Initialize (void);
+
+
+
+
+
+
+
+void PIN_MANAGER_IOC(void);
+# 44 "ws2812/Src/../Inc/../../mcc_generated_files/system/system.h" 2
+
+# 1 "ws2812/Src/../Inc/../../mcc_generated_files/system/../uart/eusart.h" 1
+# 42 "ws2812/Src/../Inc/../../mcc_generated_files/system/../uart/eusart.h"
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stdio.h" 1 3
+# 24 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stdio.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 1 3
+# 12 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef void * va_list[1];
+
+
+
+
+typedef void * __isoc_va_list[1];
+# 143 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef short ssize_t;
+# 255 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long long off_t;
+# 409 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef struct _IO_FILE FILE;
+# 25 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stdio.h" 2 3
+# 52 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stdio.h" 3
+typedef union _G_fpos64_t {
+ char __opaque[16];
+ double __align;
+} fpos_t;
+
+extern FILE *const stdin;
+extern FILE *const stdout;
+extern FILE *const stderr;
+
+
+
+
+
+FILE *fopen(const char *restrict, const char *restrict);
+FILE *freopen(const char *restrict, const char *restrict, FILE *restrict);
+int fclose(FILE *);
+
+int remove(const char *);
+int rename(const char *, const char *);
+
+int feof(FILE *);
+int ferror(FILE *);
+int fflush(FILE *);
+void clearerr(FILE *);
+
+int fseek(FILE *, long, int);
+long ftell(FILE *);
+void rewind(FILE *);
+
+int fgetpos(FILE *restrict, fpos_t *restrict);
+int fsetpos(FILE *, const fpos_t *);
+
+size_t fread(void *restrict, size_t, size_t, FILE *restrict);
+size_t fwrite(const void *restrict, size_t, size_t, FILE *restrict);
+
+int fgetc(FILE *);
+int getc(FILE *);
+int getchar(void);
+
+
+
+
+
+int ungetc(int, FILE *);
+int getch(void);
+
+int fputc(int, FILE *);
+int putc(int, FILE *);
+int putchar(int);
+
+
+
+
+
+void putch(char);
+
+char *fgets(char *restrict, int, FILE *restrict);
+
+char *gets(char *);
+
+
+int fputs(const char *restrict, FILE *restrict);
+int puts(const char *);
+
+__attribute__((__format__(__printf__, 1, 2)))
+int printf(const char *restrict, ...);
+__attribute__((__format__(__printf__, 2, 3)))
+int fprintf(FILE *restrict, const char *restrict, ...);
+__attribute__((__format__(__printf__, 2, 3)))
+int sprintf(char *restrict, const char *restrict, ...);
+__attribute__((__format__(__printf__, 3, 4)))
+int snprintf(char *restrict, size_t, const char *restrict, ...);
+
+__attribute__((__format__(__printf__, 1, 0)))
+int vprintf(const char *restrict, __isoc_va_list);
+int vfprintf(FILE *restrict, const char *restrict, __isoc_va_list);
+__attribute__((__format__(__printf__, 2, 0)))
+int vsprintf(char *restrict, const char *restrict, __isoc_va_list);
+__attribute__((__format__(__printf__, 3, 0)))
+int vsnprintf(char *restrict, size_t, const char *restrict, __isoc_va_list);
+
+__attribute__((__format__(__scanf__, 1, 2)))
+int scanf(const char *restrict, ...);
+__attribute__((__format__(__scanf__, 2, 3)))
+int fscanf(FILE *restrict, const char *restrict, ...);
+__attribute__((__format__(__scanf__, 2, 3)))
+int sscanf(const char *restrict, const char *restrict, ...);
+
+__attribute__((__format__(__scanf__, 1, 0)))
+int vscanf(const char *restrict, __isoc_va_list);
+int vfscanf(FILE *restrict, const char *restrict, __isoc_va_list);
+__attribute__((__format__(__scanf__, 2, 0)))
+int vsscanf(const char *restrict, const char *restrict, __isoc_va_list);
+
+void perror(const char *);
+
+int setvbuf(FILE *restrict, char *restrict, int, size_t);
+void setbuf(FILE *restrict, char *restrict);
+
+char *tmpnam(char *);
+FILE *tmpfile(void);
+
+
+
+
+FILE *fmemopen(void *restrict, size_t, const char *restrict);
+FILE *open_memstream(char **, size_t *);
+FILE *fdopen(int, const char *);
+FILE *popen(const char *, const char *);
+int pclose(FILE *);
+int fileno(FILE *);
+int fseeko(FILE *, off_t, int);
+off_t ftello(FILE *);
+int dprintf(int, const char *restrict, ...);
+int vdprintf(int, const char *restrict, __isoc_va_list);
+void flockfile(FILE *);
+int ftrylockfile(FILE *);
+void funlockfile(FILE *);
+int getc_unlocked(FILE *);
+int getchar_unlocked(void);
+int putc_unlocked(int, FILE *);
+int putchar_unlocked(int);
+ssize_t getdelim(char **restrict, size_t *restrict, int, FILE *restrict);
+ssize_t getline(char **restrict, size_t *restrict, FILE *restrict);
+int renameat(int, const char *, int, const char *);
+char *ctermid(char *);
+
+
+
+
+
+
+
+char *tempnam(const char *, const char *);
+# 42 "ws2812/Src/../Inc/../../mcc_generated_files/system/../uart/eusart.h" 2
+
+# 1 "ws2812/Src/../Inc/../../mcc_generated_files/system/../uart/../system/system.h" 1
+# 43 "ws2812/Src/../Inc/../../mcc_generated_files/system/../uart/eusart.h" 2
+
+# 1 "ws2812/Src/../Inc/../../mcc_generated_files/system/../uart/uart_drv_interface.h" 1
+# 41 "ws2812/Src/../Inc/../../mcc_generated_files/system/../uart/uart_drv_interface.h"
+# 1 "ws2812/Src/../Inc/../../mcc_generated_files/system/../uart/uart_types.h" 1
+# 57 "ws2812/Src/../Inc/../../mcc_generated_files/system/../uart/uart_types.h"
+enum UART_STANDARD_BAUDS{
+UART_110 = 0,
+UART_300 = 1,
+UART_600 = 2,
+UART_1200 = 3,
+UART_2400 = 4,
+UART_4800 = 5,
+UART_9600 = 6,
+UART_14400 = 7,
+UART_19200 = 8,
+UART_38400 = 9,
+UART_57600 = 10,
+UART_115200 = 11,
+UART_230400 = 12,
+UART_460800 = 13,
+UART_921600 = 14,
+};
+# 41 "ws2812/Src/../Inc/../../mcc_generated_files/system/../uart/uart_drv_interface.h" 2
+# 57 "ws2812/Src/../Inc/../../mcc_generated_files/system/../uart/uart_drv_interface.h"
+typedef struct {
+void (*Initialize)(void);
+void (*Deinitialize)(void);
+uint8_t (*Read)(void);
+void (*Write)(uint8_t);
+_Bool (*IsRxReady)(void);
+_Bool (*IsTxReady)(void);
+_Bool (*IsTxDone)(void);
+void (*TransmitEnable)(void);
+void (*TransmitDisable)(void);
+void (*AutoBaudSet)(_Bool enable);
+_Bool (*AutoBaudQuery)(void);
+_Bool (*AutoBaudEventEnableGet)(void);
+void (*BRGCountSet)(uint32_t brgValue);
+uint32_t (*BRGCountGet)(void);
+void (*BaudRateSet)(uint32_t baudRate);
+uint32_t (*BaudRateGet)(void);
+size_t (*ErrorGet)(void);
+void (*TxCompleteCallbackRegister)(void (*CallbackHandler) (void));
+void (*RxCompleteCallbackRegister)(void (*CallbackHandler) (void));
+void (*TxCollisionCallbackRegister)(void (*CallbackHandler) (void));
+void (*FramingErrorCallbackRegister)(void (*CallbackHandler) (void));
+void (*OverrunErrorCallbackRegister)(void (*CallbackHandler) (void));
+void (*ParityErrorCallbackRegister)(void (*CallbackHandler) (void));
+void (*EventCallbackRegister)(void (*CallbackHandler) (void));
+}uart_drv_interface_t;
+# 44 "ws2812/Src/../Inc/../../mcc_generated_files/system/../uart/eusart.h" 2
+# 89 "ws2812/Src/../Inc/../../mcc_generated_files/system/../uart/eusart.h"
+typedef union {
+    struct {
+        uint8_t perr : 1;
+        uint8_t ferr : 1;
+        uint8_t oerr : 1;
+        uint8_t reserved : 5;
+    };
+    size_t status;
+}eusart_status_t;
+# 109 "ws2812/Src/../Inc/../../mcc_generated_files/system/../uart/eusart.h"
+extern const uart_drv_interface_t UART1;
+# 120 "ws2812/Src/../Inc/../../mcc_generated_files/system/../uart/eusart.h"
+void EUSART_Initialize(void);
+# 129 "ws2812/Src/../Inc/../../mcc_generated_files/system/../uart/eusart.h"
+void EUSART_Deinitialize(void);
+
+
+
+
+
+
+
+__attribute__((inline)) void EUSART_Enable(void);
+
+
+
+
+
+
+
+__attribute__((inline)) void EUSART_Disable(void);
+# 154 "ws2812/Src/../Inc/../../mcc_generated_files/system/../uart/eusart.h"
+__attribute__((inline)) void EUSART_TransmitEnable(void);
+
+
+
+
+
+
+
+__attribute__((inline)) void EUSART_TransmitDisable(void);
+# 171 "ws2812/Src/../Inc/../../mcc_generated_files/system/../uart/eusart.h"
+__attribute__((inline)) void EUSART_ReceiveEnable(void);
+
+
+
+
+
+
+
+__attribute__((inline)) void EUSART_ReceiveDisable(void);
+# 188 "ws2812/Src/../Inc/../../mcc_generated_files/system/../uart/eusart.h"
+__attribute__((inline)) void EUSART_SendBreakControlEnable(void);
+
+
+
+
+
+
+
+__attribute__((inline)) void EUSART_SendBreakControlDisable(void);
+
+
+
+
+
+
+
+__attribute__((inline)) void EUSART_AutoBaudSet(_Bool enable);
+
+
+
+
+
+
+
+__attribute__((inline)) _Bool EUSART_AutoBaudQuery(void);
+
+
+
+
+
+
+
+__attribute__((inline)) _Bool EUSART_IsAutoBaudDetectOverflow(void);
+
+
+
+
+
+
+
+__attribute__((inline)) void EUSART_AutoBaudDetectOverflowReset(void);
+# 237 "ws2812/Src/../Inc/../../mcc_generated_files/system/../uart/eusart.h"
+_Bool EUSART_IsRxReady(void);
+# 246 "ws2812/Src/../Inc/../../mcc_generated_files/system/../uart/eusart.h"
+_Bool EUSART_IsTxReady(void);
+# 255 "ws2812/Src/../Inc/../../mcc_generated_files/system/../uart/eusart.h"
+_Bool EUSART_IsTxDone(void);
+
+
+
+
+
+
+
+size_t EUSART_ErrorGet(void);
+# 273 "ws2812/Src/../Inc/../../mcc_generated_files/system/../uart/eusart.h"
+uint8_t EUSART_Read(void);
+# 283 "ws2812/Src/../Inc/../../mcc_generated_files/system/../uart/eusart.h"
+void EUSART_Write(uint8_t txData);
+
+
+
+
+
+
+
+void EUSART_FramingErrorCallbackRegister(void (* callbackHandler)(void));
+
+
+
+
+
+
+
+void EUSART_OverrunErrorCallbackRegister(void (* callbackHandler)(void));
+# 45 "ws2812/Src/../Inc/../../mcc_generated_files/system/../uart/../system/system.h" 2
+
+# 1 "ws2812/Src/../Inc/../../mcc_generated_files/system/../pwm/ccp2.h" 1
+# 54 "ws2812/Src/../Inc/../../mcc_generated_files/system/../pwm/ccp2.h"
+void CCP2_Initialize(void);
+
+
+
+
+
+
+
+void CCP2_LoadDutyValue(uint16_t dutyValue);
+# 71 "ws2812/Src/../Inc/../../mcc_generated_files/system/../pwm/ccp2.h"
+_Bool CCP2_OutputStatusGet(void);
+# 46 "ws2812/Src/../Inc/../../mcc_generated_files/system/../uart/../system/system.h" 2
+
+# 1 "ws2812/Src/../Inc/../../mcc_generated_files/system/../spi/mssp1.h" 1
+# 38 "ws2812/Src/../Inc/../../mcc_generated_files/system/../spi/mssp1.h"
+# 1 "ws2812/Src/../Inc/../../mcc_generated_files/system/../spi/spi_interface.h" 1
+# 39 "ws2812/Src/../Inc/../../mcc_generated_files/system/../spi/spi_interface.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stddef.h" 1 3
 # 19 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stddef.h" 3
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 1 3
 # 138 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 3
 typedef int ptrdiff_t;
 # 20 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stddef.h" 2 3
-# 42 "mcc_generated_files/timer/src/../timer_interface.h" 2
+# 39 "ws2812/Src/../Inc/../../mcc_generated_files/system/../spi/spi_interface.h" 2
 
 
 
@@ -20747,7 +21136,97 @@ typedef int ptrdiff_t;
 
 
 
+struct SPI_INTERFACE
+{
+    void (*Initialize)(void);
+    void (*Deinitialize)(void);
+    _Bool (*Open)(uint8_t spiConfigIndex);
+    void (*Close)(void);
+    void (*BufferExchange)(void *bufferData, size_t bufferSize);
+    void (*BufferRead)(void *bufferData, size_t bufferSize);
+    void (*BufferWrite)(void *bufferData, size_t bufferSize);
+    uint8_t (*ByteExchange)(uint8_t byteData);
+    uint8_t (*ByteRead)(void);
+    void (*ByteWrite)(uint8_t byteData);
+    _Bool (*IsRxReady)(void);
+    _Bool (*IsTxReady)(void);
+    void (*RxCompleteCallbackRegister)(void (*callbackHandler)(void));
+    void (*TxCompleteCallbackRegister)(void (*callbackHandler)(void));
+};
+# 38 "ws2812/Src/../Inc/../../mcc_generated_files/system/../spi/mssp1.h" 2
 
+
+
+
+
+
+
+extern const struct SPI_INTERFACE SPI1_Host;
+# 115 "ws2812/Src/../Inc/../../mcc_generated_files/system/../spi/mssp1.h"
+typedef enum {
+    WS2812_SPI,
+    MSSP1_DEFAULT
+} spi1_configuration_name_t;
+
+
+
+
+
+
+
+void SPI1_Initialize(void);
+
+
+
+
+
+
+
+void SPI1_Deinitialize(void);
+# 144 "ws2812/Src/../Inc/../../mcc_generated_files/system/../spi/mssp1.h"
+_Bool SPI1_Open(uint8_t spiConfigIndex);
+
+
+
+
+
+
+
+void SPI1_Close(void);
+# 161 "ws2812/Src/../Inc/../../mcc_generated_files/system/../spi/mssp1.h"
+void SPI1_BufferExchange(void *bufferData, size_t bufferSize);
+# 170 "ws2812/Src/../Inc/../../mcc_generated_files/system/../spi/mssp1.h"
+void SPI1_BufferWrite(void *bufferData, size_t bufferSize);
+# 179 "ws2812/Src/../Inc/../../mcc_generated_files/system/../spi/mssp1.h"
+void SPI1_BufferRead(void *bufferData, size_t bufferSize);
+
+
+
+
+
+
+
+uint8_t SPI1_ByteExchange(uint8_t byteData);
+# 197 "ws2812/Src/../Inc/../../mcc_generated_files/system/../spi/mssp1.h"
+void SPI1_ByteWrite(uint8_t byteData);
+
+
+
+
+
+
+
+uint8_t SPI1_ByteRead(void);
+# 214 "ws2812/Src/../Inc/../../mcc_generated_files/system/../spi/mssp1.h"
+_Bool SPI1_IsRxReady(void);
+# 223 "ws2812/Src/../Inc/../../mcc_generated_files/system/../spi/mssp1.h"
+_Bool SPI1_IsTxReady(void);
+# 47 "ws2812/Src/../Inc/../../mcc_generated_files/system/../uart/../system/system.h" 2
+
+# 1 "ws2812/Src/../Inc/../../mcc_generated_files/system/../timer/tmr4.h" 1
+# 39 "ws2812/Src/../Inc/../../mcc_generated_files/system/../timer/tmr4.h"
+# 1 "ws2812/Src/../Inc/../../mcc_generated_files/system/../timer/timer_interface.h" 1
+# 50 "ws2812/Src/../Inc/../../mcc_generated_files/system/../timer/timer_interface.h"
 struct TMR_INTERFACE
 {
     void (*Initialize)(void);
@@ -20757,9 +21236,9 @@ struct TMR_INTERFACE
     void (*TimeoutCallbackRegister)(void (* CallbackHandler)(void));
     void (*Tasks)(void);
 };
-# 39 "mcc_generated_files/timer/src/../tmr2.h" 2
-# 107 "mcc_generated_files/timer/src/../tmr2.h"
-extern const struct TMR_INTERFACE Timer2;
+# 39 "ws2812/Src/../Inc/../../mcc_generated_files/system/../timer/tmr4.h" 2
+# 107 "ws2812/Src/../Inc/../../mcc_generated_files/system/../timer/tmr4.h"
+extern const struct TMR_INTERFACE Timer4;
 
 
 
@@ -20768,108 +21247,108 @@ extern const struct TMR_INTERFACE Timer2;
 
 typedef enum
 {
-# 124 "mcc_generated_files/timer/src/../tmr2.h"
-   TMR2_ROP_STARTS_TMRON,
+# 124 "ws2812/Src/../Inc/../../mcc_generated_files/system/../timer/tmr4.h"
+   TMR4_ROP_STARTS_TMRON,
 
 
 
 
-   TMR2_ROP_STARTS_TMRON_ERSHIGH,
+   TMR4_ROP_STARTS_TMRON_ERSHIGH,
 
 
 
 
-   TMR2_ROP_STARTS_TMRON_ERSLOW,
+   TMR4_ROP_STARTS_TMRON_ERSLOW,
 
 
 
 
-   TMR2_ROP_RESETS_ERSBOTHEDGE,
+   TMR4_ROP_RESETS_ERSBOTHEDGE,
 
 
 
 
-   TMR2_ROP_RESETS_ERSRISINGEDGE,
+   TMR4_ROP_RESETS_ERSRISINGEDGE,
 
 
 
 
-   TMR2_ROP_RESETS_ERSFALLINGEDGE,
+   TMR4_ROP_RESETS_ERSFALLINGEDGE,
 
 
 
 
-   TMR2_ROP_RESETS_ERSLOW,
+   TMR4_ROP_RESETS_ERSLOW,
 
 
 
 
-   TMR2_ROP_RESETS_ERSHIGH,
-# 170 "mcc_generated_files/timer/src/../tmr2.h"
-   TMR2_OS_STARTS_TMRON,
+   TMR4_ROP_RESETS_ERSHIGH,
+# 170 "ws2812/Src/../Inc/../../mcc_generated_files/system/../timer/tmr4.h"
+   TMR4_OS_STARTS_TMRON,
 
 
 
 
-   TMR2_OS_STARTS_ERSRISINGEDGE ,
+   TMR4_OS_STARTS_ERSRISINGEDGE ,
 
 
 
 
-   TMR2_OS_STARTS_ERSFALLINGEDGE ,
+   TMR4_OS_STARTS_ERSFALLINGEDGE ,
 
 
 
 
-   TMR2_OS_STARTS_ERSBOTHEDGE,
+   TMR4_OS_STARTS_ERSBOTHEDGE,
 
 
 
 
 
-   TMR2_OS_STARTS_ERSFIRSTRISINGEDGE,
+   TMR4_OS_STARTS_ERSFIRSTRISINGEDGE,
 
 
 
 
 
-   TMR2_OS_STARTS_ERSFIRSTFALLINGEDGE,
+   TMR4_OS_STARTS_ERSFIRSTFALLINGEDGE,
 
 
 
 
 
-   TMR2_OS_STARTS_ERSRISINGEDGEDETECT,
+   TMR4_OS_STARTS_ERSRISINGEDGEDETECT,
 
 
 
 
-   TMR2_OS_STARTS_ERSFALLINGEDGEDETECT,
+   TMR4_OS_STARTS_ERSFALLINGEDGEDETECT,
 
 
 
 
-   TMR2_OS_STARTS_TMRON_ERSHIGH = 0x16,
+   TMR4_OS_STARTS_TMRON_ERSHIGH = 0x16,
 
 
 
 
-   TMR2_OS_STARTS_TMRON_ERSLOW = 0x17,
-# 227 "mcc_generated_files/timer/src/../tmr2.h"
-   TMR2_MS_STARTS_TMRON_ERSRISINGEDGEDETECT = 0x11,
+   TMR4_OS_STARTS_TMRON_ERSLOW = 0x17,
+# 227 "ws2812/Src/../Inc/../../mcc_generated_files/system/../timer/tmr4.h"
+   TMR4_MS_STARTS_TMRON_ERSRISINGEDGEDETECT = 0x11,
 
 
 
 
-   TMR2_MS_STARTS_TMRON_ERSFALLINGEDGEDETECT = 0x12,
+   TMR4_MS_STARTS_TMRON_ERSFALLINGEDGEDETECT = 0x12,
 
 
 
 
 
-   TMR2_MS_STARTS_TMRON_ERSBOTHEDGE = 0x13
+   TMR4_MS_STARTS_TMRON_ERSBOTHEDGE = 0x13
 
-} TMR2_HLT_MODE;
+} TMR4_HLT_MODE;
 
 
 
@@ -20881,88 +21360,88 @@ typedef enum
 
 
 
-    TMR2_T2CKIPPS_PIN = 0x0,
+    TMR4_T4CKIPPS_PIN = 0x0,
 
 
 
-    TMR2_TMR4_POSTSCALED = 0x2,
+    TMR4_TMR2_POSTSCALED = 0x1,
 
 
 
-    TMR2_TMR6_POSTSCALED = 0x3,
+    TMR4_TMR6_POSTSCALED = 0x3,
 
 
 
-    TMR2_CCP1_OUT = 0x4,
+    TMR4_CCP1_OUT = 0x4,
 
 
 
-    TMR2_CCP2_OUT = 0x5,
+    TMR4_CCP2_OUT = 0x5,
 
 
 
-    TMR2_CCP3_OUT = 0x6,
+    TMR4_CCP3_OUT = 0x6,
 
 
 
-    TMR2_CCP4_OUT = 0x7,
+    TMR4_CCP4_OUT = 0x7,
 
 
 
-    TMR2_CCP5_OUT = 0x8,
+    TMR4_CCP5_OUT = 0x8,
 
 
 
-    TMR2_PWM6_OUT = 0x9,
+    TMR4_PWM6_OUT = 0x9,
 
 
 
-    TMR2_PWM7_OUT = 0xa,
+    TMR4_PWM7_OUT = 0xa,
 
 
 
-    TMR2_SYNC_C1OUT = 0xb,
+    TMR4_SYNC_C1OUT = 0xb,
 
 
 
-    TMR2_SYNC_C2OUT = 0xc,
+    TMR4_SYNC_C2OUT = 0xc,
 
 
 
-    TMR2_ZCD_OUT = 0xd,
+    TMR4_ZCD_OUT = 0xd,
 
 
 
-    TMR2_LC1_OUT = 0xe,
+    TMR4_LC1_OUT = 0xe,
 
 
 
-    TMR2_LC2_OUT = 0xf,
+    TMR4_LC2_OUT = 0xf,
 
 
 
-    TMR2_LC3_OUT = 0x10,
+    TMR4_LC3_OUT = 0x10,
 
 
 
-    TMR2_LC4_OUT = 0x11
-} TMR2_HLT_EXT_RESET_SOURCE;
-# 329 "mcc_generated_files/timer/src/../tmr2.h"
-void TMR2_Initialize(void);
-# 338 "mcc_generated_files/timer/src/../tmr2.h"
-void TMR2_ModeSet(TMR2_HLT_MODE mode);
-# 347 "mcc_generated_files/timer/src/../tmr2.h"
-void TMR2_ExtResetSourceSet(TMR2_HLT_EXT_RESET_SOURCE reset);
-# 356 "mcc_generated_files/timer/src/../tmr2.h"
-void TMR2_Start(void);
-# 365 "mcc_generated_files/timer/src/../tmr2.h"
-void TMR2_Stop(void);
-# 374 "mcc_generated_files/timer/src/../tmr2.h"
-uint8_t TMR2_Read(void);
-# 383 "mcc_generated_files/timer/src/../tmr2.h"
-void TMR2_Write(uint8_t timerVal);
-# 392 "mcc_generated_files/timer/src/../tmr2.h"
-void TMR2_PeriodCountSet(size_t periodVal);
+    TMR4_LC4_OUT = 0x11
+} TMR4_HLT_EXT_RESET_SOURCE;
+# 329 "ws2812/Src/../Inc/../../mcc_generated_files/system/../timer/tmr4.h"
+void TMR4_Initialize(void);
+# 338 "ws2812/Src/../Inc/../../mcc_generated_files/system/../timer/tmr4.h"
+void TMR4_ModeSet(TMR4_HLT_MODE mode);
+# 347 "ws2812/Src/../Inc/../../mcc_generated_files/system/../timer/tmr4.h"
+void TMR4_ExtResetSourceSet(TMR4_HLT_EXT_RESET_SOURCE reset);
+# 356 "ws2812/Src/../Inc/../../mcc_generated_files/system/../timer/tmr4.h"
+void TMR4_Start(void);
+# 365 "ws2812/Src/../Inc/../../mcc_generated_files/system/../timer/tmr4.h"
+void TMR4_Stop(void);
+# 374 "ws2812/Src/../Inc/../../mcc_generated_files/system/../timer/tmr4.h"
+uint8_t TMR4_Read(void);
+# 383 "ws2812/Src/../Inc/../../mcc_generated_files/system/../timer/tmr4.h"
+void TMR4_Write(uint8_t timerVal);
+# 392 "ws2812/Src/../Inc/../../mcc_generated_files/system/../timer/tmr4.h"
+void TMR4_PeriodCountSet(size_t periodVal);
 
 
 
@@ -20970,7 +21449,7 @@ void TMR2_PeriodCountSet(size_t periodVal);
 
 
 
-void TMR2_OverflowCallbackRegister(void (* InterruptHandler)(void));
+void TMR4_OverflowCallbackRegister(void (* InterruptHandler)(void));
 
 
 
@@ -20978,108 +21457,320 @@ void TMR2_OverflowCallbackRegister(void (* InterruptHandler)(void));
 
 
 
-void TMR2_Tasks(void);
-# 39 "mcc_generated_files/timer/src/tmr2.c" 2
+void TMR4_Tasks(void);
+# 48 "ws2812/Src/../Inc/../../mcc_generated_files/system/../uart/../system/system.h" 2
 
+# 1 "ws2812/Src/../Inc/../../mcc_generated_files/system/../system/interrupt.h" 1
+# 85 "ws2812/Src/../Inc/../../mcc_generated_files/system/../system/interrupt.h"
+void INTERRUPT_Initialize (void);
+# 139 "ws2812/Src/../Inc/../../mcc_generated_files/system/../system/interrupt.h"
+void INT_ISR(void);
+# 148 "ws2812/Src/../Inc/../../mcc_generated_files/system/../system/interrupt.h"
+void INT_CallBack(void);
+# 157 "ws2812/Src/../Inc/../../mcc_generated_files/system/../system/interrupt.h"
+void INT_SetInterruptHandler(void (* InterruptHandler)(void));
+# 166 "ws2812/Src/../Inc/../../mcc_generated_files/system/../system/interrupt.h"
+extern void (*INT_InterruptHandler)(void);
+# 175 "ws2812/Src/../Inc/../../mcc_generated_files/system/../system/interrupt.h"
+void INT_DefaultInterruptHandler(void);
+# 49 "ws2812/Src/../Inc/../../mcc_generated_files/system/../uart/../system/system.h" 2
+# 66 "ws2812/Src/../Inc/../../mcc_generated_files/system/../uart/../system/system.h"
+extern uint8_t rxBuff[128];
+extern _Bool fade_flag;
+extern uint16_t fade_time;
 
-const struct TMR_INTERFACE Timer2 = {
-    .Initialize = TMR2_Initialize,
-    .Start = TMR2_Start,
-    .Stop = TMR2_Stop,
-    .PeriodCountSet = TMR2_PeriodCountSet,
-    .TimeoutCallbackRegister = TMR2_OverflowCallbackRegister,
-    .Tasks = TMR2_Tasks
-};
+void SYSTEM_Initialize(void);
+# 11 "ws2812/Src/../Inc/ws2812.h" 2
 
-static void (*TMR2_OverflowCallback)(void);
-static void TMR2_DefaultOverflowCallback(void);
 
+typedef enum {
+    ws2812_ok,
+    ws2812_error,
+    ws2812_dma_error,
+} ws2812_status_t;
 
 
+typedef struct {
 
 
-void TMR2_Initialize(void){
 
 
+    void* handle;
 
-    T2CLKCON = 0x1;
 
-    T2HLT = 0x8;
 
-    T2RST = 0x0;
 
-    T2PR = 0xFF;
+    uint8_t led_num;
 
-    T2TMR = 0x0;
 
 
-    TMR2_OverflowCallbackRegister(TMR2_DefaultOverflowCallback);
 
+    uint8_t brightness;
 
-    PIR4bits.TMR2IF = 0;
 
-    T2CON = 0x80;
-}
 
-void TMR2_ModeSet(TMR2_HLT_MODE mode)
-{
 
-    T2HLTbits.T2MODE = mode;
-}
+    size_t buffer_size;
 
-void TMR2_ExtResetSourceSet(TMR2_HLT_EXT_RESET_SOURCE reset)
-{
 
-    T2RSTbits.T2RSEL = reset;
-}
 
-void TMR2_Start(void)
-{
 
-    T2CONbits.TMR2ON = 1;
-}
+    void* buffer;
 
-void TMR2_Stop(void)
-{
 
-    T2CONbits.TMR2ON = 0;
-}
 
-uint8_t TMR2_Read(void)
-{
-    uint8_t readVal;
-    readVal = TMR2;
-    return readVal;
-}
 
-void TMR2_Write(uint8_t timerVal)
-{
+    uint8_t dma;
 
-    TMR2 = timerVal;;
-}
+} ws2812_configuration;
+# 64 "ws2812/Src/../Inc/ws2812.h"
+void ws2812_set_led(ws2812_configuration* ws2812_conf, uint8_t led, uint8_t red, uint8_t green, uint8_t blue);
 
-void TMR2_PeriodCountSet(size_t periodVal)
-{
-   PR2 = (uint8_t) periodVal;
-}
 
-void TMR2_OverflowCallbackRegister(void (* InterruptHandler)(void))
-{
-   TMR2_OverflowCallback = InterruptHandler;
-}
 
-static void TMR2_DefaultOverflowCallback(void)
-{
 
 
-}
 
-void TMR2_Tasks(void)
-{
-    if(PIR4bits.TMR2IF)
-    {
 
-        PIR4bits.TMR2IF = 0;
-       TMR2_OverflowCallback();
+void ws2812_delay_us(uint16_t us);
+# 11 "ws2812/Src/../Inc/ws2812_uart.h" 2
+
+
+typedef struct {
+    _Bool dataReceived;
+    uint16_t dataSize;
+} uart_data;
+
+void ws2812_uart_commands(uint8_t* data, uint16_t size);
+# 8 "ws2812/Src/ws2812_uart.c" 2
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\string.h" 1 3
+# 25 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\string.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 1 3
+# 421 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef struct __locale_struct * locale_t;
+# 26 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\string.h" 2 3
+
+void *memcpy (void *restrict, const void *restrict, size_t);
+void *memmove (void *, const void *, size_t);
+void *memset (void *, int, size_t);
+int memcmp (const void *, const void *, size_t);
+void *memchr (const void *, int, size_t);
+
+char *strcpy (char *restrict, const char *restrict);
+char *strncpy (char *restrict, const char *restrict, size_t);
+
+char *strcat (char *restrict, const char *restrict);
+char *strncat (char *restrict, const char *restrict, size_t);
+
+int strcmp (const char *, const char *);
+int strncmp (const char *, const char *, size_t);
+
+int strcoll (const char *, const char *);
+size_t strxfrm (char *restrict, const char *restrict, size_t);
+
+char *strchr (const char *, int);
+char *strrchr (const char *, int);
+
+size_t strcspn (const char *, const char *);
+size_t strspn (const char *, const char *);
+char *strpbrk (const char *, const char *);
+char *strstr (const char *, const char *);
+char *strtok (char *restrict, const char *restrict);
+
+size_t strlen (const char *);
+
+char *strerror (int);
+
+
+
+
+char *strtok_r (char *restrict, const char *restrict, char **restrict);
+int strerror_r (int, char *, size_t);
+char *stpcpy(char *restrict, const char *restrict);
+char *stpncpy(char *restrict, const char *restrict, size_t);
+size_t strnlen (const char *, size_t);
+char *strdup (const char *);
+char *strndup (const char *, size_t);
+char *strsignal(int);
+char *strerror_l (int, locale_t);
+int strcoll_l (const char *, const char *, locale_t);
+size_t strxfrm_l (char *restrict, const char *restrict, size_t, locale_t);
+
+
+
+
+void *memccpy (void *restrict, const void *restrict, int, size_t);
+# 9 "ws2812/Src/ws2812_uart.c" 2
+
+
+
+
+
+
+
+
+# 1 "ws2812/Src/../Inc/ws2812_pwm.h" 1
+# 12 "ws2812/Src/../Inc/ws2812_pwm.h"
+extern ws2812_configuration ws2812_pwm;
+
+void ws2812_pwm_send(ws2812_configuration* ws2812_conf, uint8_t brightness);
+
+_Bool ws2812_pwm_init(ws2812_configuration* ws2812_conf);
+
+void ws2812_pwm_send_single(ws2812_configuration* ws2812_conf);
+
+void ws2812_pwm_data(ws2812_configuration* ws2812_conf, uint8_t green, uint8_t red, uint8_t blue, uint8_t brightness);
+
+void ws2812_pwm_fade(ws2812_configuration* ws2812_conf, uint16_t fade_time_ms);
+
+void ws2812_pwm_clear(ws2812_configuration* ws2812_conf);
+
+void ws2812_pwm_deinit(ws2812_configuration* ws2812_conf);
+# 17 "ws2812/Src/ws2812_uart.c" 2
+
+
+
+
+uint8_t initialized = 0;
+
+void ws2812_uart_commands(uint8_t* data, uint16_t size) {
+
+    char *token;
+    char *tokenizedInput[10];
+    int i = 0;
+
+
+    token = strtok((char *)data, ",");
+    while (token != ((void*)0)) {
+        tokenizedInput[i++] = token;
+        token = strtok(((void*)0), ",");
     }
+
+    if (strcmp(tokenizedInput[0], "INIT") == 0) {
+# 55 "ws2812/Src/ws2812_uart.c"
+        if (initialized) {
+            ws2812_pwm_deinit(&ws2812_pwm);
+            initialized = 0;
+        }
+        ws2812_pwm.handle = 0;
+        ws2812_pwm.led_num = (uint8_t)atoi(tokenizedInput[1]);
+        ws2812_pwm.brightness = (uint8_t)atoi(tokenizedInput[2]);
+        ws2812_pwm.dma = 0;
+
+
+        if(ws2812_pwm_init(&ws2812_pwm)) {
+            initialized = 1;
+        }
+
+
+
+    }
+    else if (strcmp(tokenizedInput[0], "DEINIT") == 0) {
+
+
+
+
+
+
+        ws2812_pwm_clear(&ws2812_pwm);
+        ws2812_pwm_deinit(&ws2812_pwm);
+
+        initialized = 0;
+        fade_flag = 0;
+    }
+    else if (strcmp(tokenizedInput[0], "SET_ALL") == 0 && initialized) {
+# 94 "ws2812/Src/ws2812_uart.c"
+        for (int i = 0; i < ws2812_pwm.led_num; i++) {
+            ws2812_set_led(&ws2812_pwm, (uint8_t)i, (uint8_t)atoi(tokenizedInput[1]), (uint8_t)atoi(tokenizedInput[2]), (uint8_t)atoi(tokenizedInput[3]));
+        }
+        ws2812_pwm_send(&ws2812_pwm, ws2812_pwm.brightness);
+
+
+    }
+    else if (strcmp(tokenizedInput[0], "SET_SINGLE") == 0 && initialized) {
+
+
+
+
+
+
+        ws2812_set_led(&ws2812_pwm, (uint8_t)atoi(tokenizedInput[1]), (uint8_t)atoi(tokenizedInput[2]), (uint8_t)atoi(tokenizedInput[3]), (uint8_t)atoi(tokenizedInput[4]));
+        ws2812_pwm_send_single(&ws2812_pwm);
+
+
+    }
+    else if (strcmp(tokenizedInput[0], "SET_BRIGHTNESS") == 0 && initialized) {
+
+
+
+
+
+
+        ws2812_pwm.brightness = (uint8_t)atoi(tokenizedInput[1]);
+        ws2812_pwm_send(&ws2812_pwm, ws2812_pwm.brightness);
+
+    }
+    else if (strcmp(tokenizedInput[0], "CLEAR_ALL") == 0 && initialized) {
+# 133 "ws2812/Src/ws2812_uart.c"
+        for (int i = 0; i < ws2812_pwm.led_num; i++) {
+            ws2812_set_led(&ws2812_pwm, (uint8_t)i, 0, 0, 0);
+        }
+        ws2812_pwm_send(&ws2812_pwm, ws2812_pwm.brightness);
+
+    }
+    else if (strcmp(tokenizedInput[0], "CLEAR_SINGLE") == 0 && initialized) {
+
+
+
+
+
+
+        ws2812_set_led(&ws2812_pwm, (uint8_t)atoi(tokenizedInput[1]), 0, 0, 0);
+        ws2812_pwm_send_single(&ws2812_pwm);
+
+    }
+    else if (strcmp(tokenizedInput[0], "START_FADE_ALL") == 0 && initialized) {
+
+
+
+
+
+
+
+        for (i = 0; i < ws2812_pwm.led_num; i++) {
+            ws2812_set_led(&ws2812_pwm, (uint8_t)i, (uint8_t)atoi(tokenizedInput[1]), (uint8_t)atoi(tokenizedInput[2]), (uint8_t)atoi(tokenizedInput[3]));
+        }
+
+
+        fade_time = (uint16_t)atoi(tokenizedInput[4]);
+        fade_flag = 1;
+    }
+    else if (strcmp(tokenizedInput[0], "STOP_FADE_ALL") == 0 && initialized) {
+        fade_flag = 0;
+    }
+    else if (strcmp(tokenizedInput[0], "START_FADE_SINGLE") == 0 && initialized) {
+
+
+
+
+
+        ws2812_set_led(&ws2812_pwm, (uint8_t)atoi(tokenizedInput[1]), (uint8_t)atoi(tokenizedInput[2]), (uint8_t)atoi(tokenizedInput[3]), (uint8_t)atoi(tokenizedInput[4]));
+
+
+        fade_time = (uint16_t)atoi(tokenizedInput[5]);
+        fade_flag = 1;
+    }
+    else if (strcmp(tokenizedInput[0], "STOP_FADE_SINGLE") == 0 && initialized) {
+
+
+
+
+
+        ws2812_set_led(&ws2812_pwm, (uint8_t)atoi(tokenizedInput[1]), 0, 0, 0);
+
+    }
+
+    token = ((void*)0);
+    memset(rxBuff, 0, 128);
 }
