@@ -1,4 +1,5 @@
 Version 4.0 HI-TECH Software Intermediate Code
+[v F12619 `(v ~T0 @X0 0 tf ]
 "52 C:\Program Files\Microchip\xc8\v2.46\pic\include\c99\string.h
 [; ;C:\Program Files\Microchip\xc8\v2.46\pic\include\c99\string.h: 52: char *strtok (char *restrict, const char *restrict);
 [v _strtok `(*uc ~T0 @X0 0 ef2`*uc`*Cuc ]
@@ -1680,6 +1681,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "36289
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 36289: __asm("TOSH equ 01FEFh");
 [; <" TOSH equ 01FEFh ;# ">
+"324 ws2812/Src/../Inc/../../mcc_generated_files/system/../uart/eusart.h
+[; ;ws2812/Src/../Inc/../../mcc_generated_files/system/../uart/eusart.h: 324: void (*EUSART_RxInterruptHandler)(void);
+[v _EUSART_RxInterruptHandler `*F12619 ~T0 @X0 1 e ]
 "21 ws2812/Src/ws2812_uart.c
 [; ;ws2812/Src/ws2812_uart.c: 21: uint8_t initialized = 0;
 [v _initialized `uc ~T0 @X0 1 e ]

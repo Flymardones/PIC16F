@@ -1,4 +1,5 @@
 Version 4.0 HI-TECH Software Intermediate Code
+[v F12619 `(v ~T0 @X0 0 tf ]
 "4598 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 4598: extern volatile unsigned char SSP1BUF __attribute__((address(0x18C)));
 [v _SSP1BUF `Vuc ~T0 @X0 0 e@396 ]
@@ -1663,6 +1664,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "36289
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 36289: __asm("TOSH equ 01FEFh");
 [; <" TOSH equ 01FEFh ;# ">
+"324 ws2812/Src/../Inc/../../mcc_generated_files/system/../uart/eusart.h
+[; ;ws2812/Src/../Inc/../../mcc_generated_files/system/../uart/eusart.h: 324: void (*EUSART_RxInterruptHandler)(void);
+[v _EUSART_RxInterruptHandler `*F12619 ~T0 @X0 1 e ]
 "14 ws2812/Src/ws2812_spi.c
 [; ;ws2812/Src/ws2812_spi.c: 14: static void spi_write(uint8_t data) {
 [v _spi_write `(v ~T0 @X0 1 sf1`uc ]
@@ -1689,12 +1693,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;ws2812/Src/ws2812_spi.c: 25:   uint16_t fade_delay = 0;
 [v _fade_delay `us ~T0 @X0 1 a ]
 [e = _fade_delay -> -> 0 `i `us ]
-[v F12994 `uc ~T0 @X0 -> 3 `i t ]
+[v F13002 `uc ~T0 @X0 -> 3 `i t ]
 "26
 [; ;ws2812/Src/ws2812_spi.c: 26:   uint8_t (*led_data)[3] = (uint8_t(*)[3])ws2812_conf->buffer;
-[v _led_data `*F12994 ~T0 @X0 1 a ]
-[v F12995 `uc ~T0 @X0 -> 3 `i t ]
-[e = _led_data -> . *U _ws2812_conf 4 `*F12995 ]
+[v _led_data `*F13002 ~T0 @X0 1 a ]
+[v F13003 `uc ~T0 @X0 -> 3 `i t ]
+[e = _led_data -> . *U _ws2812_conf 4 `*F13003 ]
 "29
 [; ;ws2812/Src/ws2812_spi.c: 29:   if (fade_time_ms < ws2812_conf->brightness) {
 [e $ ! < -> _fade_time_ms `ui -> . *U _ws2812_conf 2 `ui 1622  ]
@@ -1861,12 +1865,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _ws2812_spi_send_single ]
 [v _ws2812_conf `*S1618 ~T0 @X0 1 r1 ]
 [f ]
-[v F13012 `uc ~T0 @X0 -> 3 `i t ]
+[v F13020 `uc ~T0 @X0 -> 3 `i t ]
 "74
 [; ;ws2812/Src/ws2812_spi.c: 74:  uint8_t (*led_data)[3] = (uint8_t(*)[3])ws2812_conf->buffer;
-[v _led_data `*F13012 ~T0 @X0 1 a ]
-[v F13013 `uc ~T0 @X0 -> 3 `i t ]
-[e = _led_data -> . *U _ws2812_conf 4 `*F13013 ]
+[v _led_data `*F13020 ~T0 @X0 1 a ]
+[v F13021 `uc ~T0 @X0 -> 3 `i t ]
+[e = _led_data -> . *U _ws2812_conf 4 `*F13021 ]
 "76
 [; ;ws2812/Src/ws2812_spi.c: 76:  for (int i = 0; i < ws2812_conf->led_num; i++) {
 {
@@ -1900,12 +1904,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _ws2812_spi_send ]
 [v _ws2812_conf `*S1618 ~T0 @X0 1 r1 ]
 [f ]
-[v F13019 `uc ~T0 @X0 -> 3 `i t ]
+[v F13027 `uc ~T0 @X0 -> 3 `i t ]
 "87
 [; ;ws2812/Src/ws2812_spi.c: 87:  uint8_t (*led_data)[3] = (uint8_t(*)[3])ws2812_conf->buffer;
-[v _led_data `*F13019 ~T0 @X0 1 a ]
-[v F13020 `uc ~T0 @X0 -> 3 `i t ]
-[e = _led_data -> . *U _ws2812_conf 4 `*F13020 ]
+[v _led_data `*F13027 ~T0 @X0 1 a ]
+[v F13028 `uc ~T0 @X0 -> 3 `i t ]
+[e = _led_data -> . *U _ws2812_conf 4 `*F13028 ]
 "88
 [; ;ws2812/Src/ws2812_spi.c: 88:  uint8_t green, red, blue;
 [v _green `uc ~T0 @X0 1 a ]
@@ -2002,16 +2006,16 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _ws2812_spi_init ]
 [v _ws2812_conf `*S1618 ~T0 @X0 1 r1 ]
 [f ]
-[v F13032 `uc ~T0 @X0 -> 3 `i t ]
+[v F13040 `uc ~T0 @X0 -> 3 `i t ]
 "125
 [; ;ws2812/Src/ws2812_spi.c: 125:  uint8_t (*led_data)[3] = malloc(ws2812_conf->led_num * sizeof(*led_data));
-[v _led_data `*F13032 ~T0 @X0 1 a ]
-[v F13033 `uc ~T0 @X0 -> 3 `i t ]
-[e = _led_data -> ( _malloc (1 * -> . *U _ws2812_conf 1 `ui * -> # *U &U *U _led_data `ui -> -> 3 `i `ui `*F13033 ]
-[v F13035 `uc ~T0 @X0 -> 3 `i t ]
+[v _led_data `*F13040 ~T0 @X0 1 a ]
+[v F13041 `uc ~T0 @X0 -> 3 `i t ]
+[e = _led_data -> ( _malloc (1 * -> . *U _ws2812_conf 1 `ui * -> # *U &U *U _led_data `ui -> -> 3 `i `ui `*F13041 ]
+[v F13043 `uc ~T0 @X0 -> 3 `i t ]
 "127
 [; ;ws2812/Src/ws2812_spi.c: 127:  if (led_data == ((void*)0)) {
-[e $ ! == _led_data -> -> -> 0 `i `*v `*F13035 1660  ]
+[e $ ! == _led_data -> -> -> 0 `i `*v `*F13043 1660  ]
 {
 "128
 [; ;ws2812/Src/ws2812_spi.c: 128:   return 0;

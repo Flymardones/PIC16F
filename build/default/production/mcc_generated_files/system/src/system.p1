@@ -1,4 +1,5 @@
 Version 4.0 HI-TECH Software Intermediate Code
+[v F12619 `(v ~T0 @X0 0 tf ]
 "48 mcc_generated_files/system/src/../../system/clock.h
 [; ;mcc_generated_files/system/src/../../system/clock.h: 48: void CLOCK_Initialize(void);
 [v _CLOCK_Initialize `(v ~T0 @X0 0 ef ]
@@ -8,12 +9,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 "120 mcc_generated_files/system/src/../../uart/eusart.h
 [; ;mcc_generated_files/system/src/../../uart/eusart.h: 120: void EUSART_Initialize(void);
 [v _EUSART_Initialize `(v ~T0 @X0 0 ef ]
-"54 mcc_generated_files/system/src/../../pwm/ccp2.h
-[; ;mcc_generated_files/system/src/../../pwm/ccp2.h: 54: void CCP2_Initialize(void);
-[v _CCP2_Initialize `(v ~T0 @X0 0 ef ]
-"329 mcc_generated_files/system/src/../../timer/tmr4.h
-[; ;mcc_generated_files/system/src/../../timer/tmr4.h: 329: void TMR4_Initialize(void);
-[v _TMR4_Initialize `(v ~T0 @X0 0 ef ]
+"57 mcc_generated_files/system/src/../../pwm/pwm6.h
+[; ;mcc_generated_files/system/src/../../pwm/pwm6.h: 57:  void PWM6_Initialize(void);
+[v _PWM6_Initialize `(v ~T0 @X0 0 ef ]
+"329 mcc_generated_files/system/src/../../timer/tmr2.h
+[; ;mcc_generated_files/system/src/../../timer/tmr2.h: 329: void TMR2_Initialize(void);
+[v _TMR2_Initialize `(v ~T0 @X0 0 ef ]
 "85 mcc_generated_files/system/src/../../system/interrupt.h
 [; ;mcc_generated_files/system/src/../../system/interrupt.h: 85: void INTERRUPT_Initialize (void);
 [v _INTERRUPT_Initialize `(v ~T0 @X0 0 ef ]
@@ -1652,6 +1653,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "36289
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 36289: __asm("TOSH equ 01FEFh");
 [; <" TOSH equ 01FEFh ;# ">
+"324 mcc_generated_files/system/src/../../uart/eusart.h
+[; ;mcc_generated_files/system/src/../../uart/eusart.h: 324: void (*EUSART_RxInterruptHandler)(void);
+[v _EUSART_RxInterruptHandler `*F12619 ~T0 @X0 1 e ]
 "39 mcc_generated_files/system/src/system.c
 [; ;mcc_generated_files/system/src/system.c: 39: void SYSTEM_Initialize(void)
 [v _SYSTEM_Initialize `(v ~T0 @X0 1 ef ]
@@ -1669,12 +1673,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 "43
 [; ;mcc_generated_files/system/src/system.c: 43:     EUSART_Initialize();
 [e ( _EUSART_Initialize ..  ]
-"49
-[; ;mcc_generated_files/system/src/system.c: 49:     CCP2_Initialize();
-[e ( _CCP2_Initialize ..  ]
-"50
-[; ;mcc_generated_files/system/src/system.c: 50:     TMR4_Initialize();
-[e ( _TMR4_Initialize ..  ]
+"45
+[; ;mcc_generated_files/system/src/system.c: 45:     PWM6_Initialize();
+[e ( _PWM6_Initialize ..  ]
+"46
+[; ;mcc_generated_files/system/src/system.c: 46:     TMR2_Initialize();
+[e ( _TMR2_Initialize ..  ]
 "52
 [; ;mcc_generated_files/system/src/system.c: 52:     INTERRUPT_Initialize();
 [e ( _INTERRUPT_Initialize ..  ]

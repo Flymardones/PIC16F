@@ -9,9 +9,9 @@ ws2812/Src/../Inc/../../mcc_generated_files/system/../uart/eusart.h  \
 ws2812/Src/../Inc/../../mcc_generated_files/system/../uart/../system/system.h  \
 ws2812/Src/../Inc/../../mcc_generated_files/system/../uart/uart_drv_interface.h  \
 ws2812/Src/../Inc/../../mcc_generated_files/system/../uart/uart_types.h  \
-ws2812/Src/../Inc/../../mcc_generated_files/system/../pwm/ccp2.h  \
+ws2812/Src/../Inc/../../mcc_generated_files/system/../pwm/pwm6.h  \
 ws2812/Src/../Inc/../../mcc_generated_files/system/../spi/mssp1.h  \
 ws2812/Src/../Inc/../../mcc_generated_files/system/../spi/spi_interface.h  \
-ws2812/Src/../Inc/../../mcc_generated_files/system/../timer/tmr4.h  \
+ws2812/Src/../Inc/../../mcc_generated_files/system/../timer/tmr2.h  \
 ws2812/Src/../Inc/../../mcc_generated_files/system/../timer/timer_interface.h  \
 ws2812/Src/../Inc/../../mcc_generated_files/system/../system/interrupt.h 

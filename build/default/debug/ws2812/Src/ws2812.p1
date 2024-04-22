@@ -1,4 +1,5 @@
 Version 4.0 HI-TECH Software Intermediate Code
+[v F12619 `(v ~T0 @X0 0 tf ]
 "20 ws2812/Src/../Inc/ws2812.h
 [; ;ws2812/Src/../Inc/ws2812.h: 20: typedef struct {
 [s S1618 `*v 1 `uc 1 `uc 1 `ui 1 `*v 1 `uc 1 ]
@@ -1638,6 +1639,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "36289
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 36289: __asm("TOSH equ 01FEFh");
 [; <" TOSH equ 01FEFh ;# ">
+"324 ws2812/Src/../Inc/../../mcc_generated_files/system/../uart/eusart.h
+[; ;ws2812/Src/../Inc/../../mcc_generated_files/system/../uart/eusart.h: 324: void (*EUSART_RxInterruptHandler)(void);
+[v _EUSART_RxInterruptHandler `*F12619 ~T0 @X0 1 e ]
 "12 ws2812/Src/ws2812.c
 [; ;ws2812/Src/ws2812.c: 12: void ws2812_set_led(ws2812_configuration* ws2812_conf, uint8_t led, uint8_t red, uint8_t green, uint8_t blue) {
 [v _ws2812_set_led `(v ~T0 @X0 1 ef5`*S1618`uc`uc`uc`uc ]
@@ -1660,12 +1664,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;ws2812/Src/ws2812.c: 16:     }
 }
 [e :U 1620 ]
-[v F12807 `uc ~T0 @X0 -> 3 `i t ]
+[v F12815 `uc ~T0 @X0 -> 3 `i t ]
 "17
 [; ;ws2812/Src/ws2812.c: 17:     uint8_t (*led_data)[3] = ws2812_conf->buffer;
-[v _led_data `*F12807 ~T0 @X0 1 a ]
-[v F12808 `uc ~T0 @X0 -> 3 `i t ]
-[e = _led_data -> . *U _ws2812_conf 4 `*F12808 ]
+[v _led_data `*F12815 ~T0 @X0 1 a ]
+[v F12816 `uc ~T0 @X0 -> 3 `i t ]
+[e = _led_data -> . *U _ws2812_conf 4 `*F12816 ]
 "19
 [; ;ws2812/Src/ws2812.c: 19:     led_data[led][0] = green;
 [e = *U + &U *U + _led_data * -> _led `ux -> * -> # *U &U *U _led_data `ui -> -> 3 `i `ui `ux * -> -> 0 `i `x -> -> # *U &U *U + _led_data * -> _led `ux -> * -> # *U &U *U _led_data `ui -> -> 3 `i `ui `ux `i `x _green ]

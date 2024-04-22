@@ -104,15 +104,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 "35910
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 35910: extern volatile unsigned char INLVLE __attribute__((address(0x1F68)));
 [v _INLVLE `Vuc ~T0 @X0 0 e@8040 ]
-"30166
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 30166: extern volatile unsigned char T4AINPPS __attribute__((address(0x1E9D)));
-[v _T4AINPPS `Vuc ~T0 @X0 0 e@7837 ]
 "31628
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 31628: extern volatile unsigned char RXPPS __attribute__((address(0x1ECB)));
 [v _RXPPS `Vuc ~T0 @X0 0 e@7883 ]
 "32132
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 32132: extern volatile unsigned char RB0PPS __attribute__((address(0x1F18)));
 [v _RB0PPS `Vuc ~T0 @X0 0 e@7960 ]
+"31982
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 31982: extern volatile unsigned char RA5PPS __attribute__((address(0x1F15)));
+[v _RA5PPS `Vuc ~T0 @X0 0 e@7957 ]
 "33792
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 33792: extern volatile unsigned char IOCAP __attribute__((address(0x1F3D)));
 [v _IOCAP `Vuc ~T0 @X0 0 e@7997 ]
@@ -1808,8 +1808,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/system/src/pins.c: 47:     LATE = 0x0;
 [e = _LATE -> -> 0 `i `uc ]
 "52
-[; ;mcc_generated_files/system/src/pins.c: 52:     TRISA = 0xFF;
-[e = _TRISA -> -> 255 `i `uc ]
+[; ;mcc_generated_files/system/src/pins.c: 52:     TRISA = 0xDF;
+[e = _TRISA -> -> 223 `i `uc ]
 "53
 [; ;mcc_generated_files/system/src/pins.c: 53:     TRISB = 0xFE;
 [e = _TRISB -> -> 254 `i `uc ]
@@ -1826,8 +1826,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/system/src/pins.c: 61:     ANSELA = 0xFF;
 [e = _ANSELA -> -> 255 `i `uc ]
 "62
-[; ;mcc_generated_files/system/src/pins.c: 62:     ANSELB = 0xF8;
-[e = _ANSELB -> -> 248 `i `uc ]
+[; ;mcc_generated_files/system/src/pins.c: 62:     ANSELB = 0xFA;
+[e = _ANSELB -> -> 250 `i `uc ]
 "63
 [; ;mcc_generated_files/system/src/pins.c: 63:     ANSELC = 0xFF;
 [e = _ANSELC -> -> 255 `i `uc ]
@@ -1898,14 +1898,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/system/src/pins.c: 100:     INLVLE = 0xF;
 [e = _INLVLE -> -> 15 `i `uc ]
 "105
-[; ;mcc_generated_files/system/src/pins.c: 105:     T4AINPPS = 0x9;
-[e = _T4AINPPS -> -> 9 `i `uc ]
-"106
-[; ;mcc_generated_files/system/src/pins.c: 106:     RXPPS = 0xA;
+[; ;mcc_generated_files/system/src/pins.c: 105:     RXPPS = 0xA;
 [e = _RXPPS -> -> 10 `i `uc ]
-"107
-[; ;mcc_generated_files/system/src/pins.c: 107:     RB0PPS = 0x15;
+"106
+[; ;mcc_generated_files/system/src/pins.c: 106:     RB0PPS = 0x15;
 [e = _RB0PPS -> -> 21 `i `uc ]
+"107
+[; ;mcc_generated_files/system/src/pins.c: 107:     RA5PPS = 0x0E;
+[e = _RA5PPS -> -> 14 `i `uc ]
 "116
 [; ;mcc_generated_files/system/src/pins.c: 116:     IOCAP = 0x0;
 [e = _IOCAP -> -> 0 `i `uc ]

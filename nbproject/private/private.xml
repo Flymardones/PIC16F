@@ -3,14 +3,19 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/Program%20Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8/pic/include/proc/pic16f18877.h</file>
             <file>file:/C:/Users/chris/Desktop/PIC16F/PIC16F.X/main.c</file>
-            <file>file:/C:/Users/chris/Desktop/PIC16F/PIC16F.X/ws2812/Inc/ws2812_uart.h</file>
-            <file>file:/C:/Users/chris/Desktop/PIC16F/PIC16F.X/ws2812/Inc/ws2812.h</file>
-            <file>file:/C:/Users/chris/Desktop/PIC16F/PIC16F.X/ws2812/Src/ws2812_uart.c</file>
             <file>file:/C:/Users/chris/Desktop/PIC16F/PIC16F.X/ws2812/Src/ws2812_pwm.c</file>
             <file>file:/C:/Users/chris/Desktop/PIC16F/PIC16F.X/mcc_generated_files/system/src/system.c</file>
             <file>file:/C:/Users/chris/Desktop/PIC16F/PIC16F.X/mcc_generated_files/system/pins.h</file>
             <file>file:/C:/Users/chris/Desktop/PIC16F/PIC16F.X/mcc_generated_files/spi/src/mssp1.c</file>
+            <file>file:/C:/Users/chris/Desktop/PIC16F/PIC16F.X/mcc_generated_files/system/interrupt.h</file>
+            <file>file:/C:/Users/chris/Desktop/PIC16F/PIC16F.X/ws2812/Inc/ws2812_uart.h</file>
+            <file>file:/C:/Users/chris/Desktop/PIC16F/PIC16F.X/mcc_generated_files/uart/eusart.h</file>
+            <file>file:/C:/Users/chris/Desktop/PIC16F/PIC16F.X/mcc_generated_files/uart/src/eusart.c</file>
+            <file>file:/C:/Users/chris/Desktop/PIC16F/PIC16F.X/ws2812/Inc/ws2812.h</file>
+            <file>file:/C:/Users/chris/Desktop/PIC16F/PIC16F.X/ws2812/Src/ws2812_uart.c</file>
+            <file>file:/C:/Users/chris/Desktop/PIC16F/PIC16F.X/mcc_generated_files/uart/src/input.txt</file>
             <file>file:/C:/Users/chris/Desktop/PIC16F/PIC16F.X/ws2812/Src/ws2812_spi.c</file>
             <file>file:/C:/Users/chris/Desktop/PIC16F/PIC16F.X/ws2812/Src/ws2812.c</file>
         </group>

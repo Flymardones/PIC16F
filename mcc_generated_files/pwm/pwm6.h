@@ -1,14 +1,15 @@
 /**
- * PWM2 Generated Driver File.
- * 
- * @file ccp2.c
- * 
- * @ingroup pwm2
- * 
- * @brief This file contains the API implementations for the PWM2 driver.
+ * PWM6 Generated Driver API Header File
  *
- * @version PWM2 Driver Version 2.0.2
+ * @file pwm6.h
+ *
+ * @defgroup pwm6 PWM6
+ *
+ * @brief This file contains the API prototypes for the PWM6 driver.
+ *
+ * @version PWM6 Driver Version 2.0.4
 */
+
 /*
 © [2024] Microchip Technology Inc. and its subsidiaries.
 
@@ -30,62 +31,37 @@
     THIS SOFTWARE.
 */
 
+#ifndef PWM6_H
+ #define PWM6_H
+ 
  /**
-   Section: Included Files
+  * Section: Included Files
+  */
+
+ #include <xc.h>
+ #include <stdint.h>
+
+ /**
+  * Section: Macro Declarations
  */
 
-#include <xc.h>
-#include "../ccp2.h"
+ #define PWM6_INITIALIZE_DUTY_VALUE    0
+
 
 /**
-  Section: Macro Declarations
-*/
+ * @ingroup pwm6
+ * @brief Initializes the PWM6 interface.
+ * @param None.
+ * @return None.
+ */
+ void PWM6_Initialize(void);
 
-#define PWM2_INITIALIZE_DUTY_VALUE    0
-
-/**
-  Section: PWM2 Module APIs
-*/
-
-void CCP2_Initialize(void)
-{
-    // Set the PWM2 to the options selected in the User Interface
-    
-    // CCPM PWM; EN enabled; FMT right_aligned; 
-    CCP2CON = 0x8F;
-    
-    // CCPRH 0; 
-    CCPR2H = 0x0;
-    
-    // CCPRL 0; 
-    CCPR2L = 0x0;
-    
-    // Selecting Timer 4
-    CCPTMRS0bits.C2TSEL = 0x2;
-}
-
-void CCP2_LoadDutyValue(uint16_t dutyValue)
-{
-	  dutyValue &= 0x03FF;
-    
-    // Load duty cycle value
-    if(CCP2CONbits.CCP2FMT)
-    {
-        dutyValue <<= 6;
-        CCPR2H = (uint8_t)(dutyValue >> 8);
-        CCPR2L = (uint8_t)dutyValue;
-    }
-    else
-    {
-        CCPR2H = (uint8_t)(dutyValue >> 8);
-        CCPR2L = (uint8_t)dutyValue;
-    }
-}
-bool CCP2_OutputStatusGet(void)
-{
-    // Returns the output status
-    return(CCP2CONbits.OUT);
-}
-/**
- End of File
-*/
+ /**
+ * @ingroup pwm6
+ * @brief Loads the 16-bit duty cycle value.
+ * @param uint16_t dutyValue - PWM6 duty cycle value to be loaded.
+ * @return None.
+ */
+ void PWM6_LoadDutyValue(uint16_t dutyValue);
+ 
+ #endif	//PWM6_H

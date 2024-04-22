@@ -34,6 +34,8 @@
 
 
 #include "ws2812/Inc/ws2812_uart.h"
+#include "string.h"
+
 
 #if SPI
 #include "ws2812/Inc/ws2812_spi.h"
@@ -51,23 +53,32 @@
 ws2812_configuration ws2812_spi;
 ws2812_configuration ws2812_pwm;
 
+char c;
+uint8_t index = 0;
 bool fade_flag = 0;
 uint16_t fade_time = 0;
 uint8_t rxBuff[RX_BUFF_SIZE];
-uint8_t buffer[24] = {
-    0b1110, 0b100, 0b1110, 0b100, 0b1110, 0b100, // First 18 bits
-    0b1110, 0b100, 0b1110, 0b100, 0b1110, 0b100, // Next 6 bits
-    0b1110, 0b100, 0b1110, 0b100, 0b1110, 0b100, // Last 6 bits
-};
 
-static void spi_write(uint8_t data) {
-    SSP1BUF = data;
+
+
+static void Handle_UART_Data(void) {
+
     
-    while(!PIR3bits.SSP1IF) {
-        
+    while(!EUSART_IsRxReady());
+    c = EUSART_Read();
+    rxBuff[index++] = c;
+    if (index > RX_BUFF_SIZE) {
+        index = 0;
     }
-    PIR3bits.SSP1IF = 0;
+
+    if (c == '\n') {
+        ws2812_uart_commands(rxBuff, index);
+        memset(rxBuff, 0, RX_BUFF_SIZE);
+        index = 0;
+    }
+    
 }
+
 
 int main(void)
 {
@@ -78,32 +89,20 @@ int main(void)
     // Use the following macros to: 
 
     // Enable the Global Interrupts 
-    //INTERRUPT_GlobalInterruptEnable(); 
+    INTERRUPT_GlobalInterruptEnable(); 
 
     // Disable the Global Interrupts 
     //INTERRUPT_GlobalInterruptDisable(); 
 
     // Enable the Peripheral Interrupts 
-    //INTERRUPT_PeripheralInterruptEnable(); 
+    INTERRUPT_PeripheralInterruptEnable(); 
 
     // Disable the Peripheral Interrupts 
     //INTERRUPT_PeripheralInterruptDisable(); 
 
 #if SPI
-    ws2812_spi.handle = (void*)WS2812_SPI;
-    ws2812_spi.led_num = 25;
-    ws2812_spi.brightness = 50;
-    ws2812_spi.dma = 0;
-   
+
     SPI1_Open((uint8_t)ws2812_spi.handle);
-    
-    ws2812_spi_init(&ws2812_spi);
-    
-    for (uint8_t i = 0; i < ws2812_spi.led_num; i++) {
-        ws2812_set_led(&ws2812_spi, i, 255, 0, 0);
-    }
-    
-   
 
 #endif
     
@@ -115,13 +114,16 @@ int main(void)
     ws2812_pwm.brightness = 50;
     ws2812_pwm.dma = 0;
     
-    TMR4_Start();
+    //TMR2_Start();
     
     ws2812_pwm_init(&ws2812_pwm);
     
     for (uint8_t i = 0; i < ws2812_pwm.led_num; i++) {
         ws2812_set_led(&ws2812_spi, i, 0, 255, 0);
     }
+    
+    TMR2_Stop();
+
 #endif
     
 
@@ -130,9 +132,9 @@ int main(void)
         
 #if SPI
     
-    ws2812_spi_send(&ws2812_spi);
-
-        
+    
+    
+    Handle_UART_Data(); 
     
 
 
@@ -142,6 +144,13 @@ int main(void)
 #if PWM
     
     ws2812_pwm_send(&ws2812_pwm, ws2812_pwm.brightness);
+    //PWM6_LoadDutyValue(0x0A);
+    //__delay_us(625);
+    //T2CON = 0x80;
+    
+    //__delay_ms(100);
+
+
 #endif
         
     }    

@@ -1,4 +1,5 @@
 Version 4.0 HI-TECH Software Intermediate Code
+[v F12619 `(v ~T0 @X0 0 tf ]
 "20 ws2812/Src/../Inc/ws2812.h
 [; ;ws2812/Src/../Inc/ws2812.h: 20: typedef struct {
 [s S1618 `*v 1 `uc 1 `uc 1 `ui 1 `*v 1 `uc 1 ]
@@ -6,44 +7,18 @@ Version 4.0 HI-TECH Software Intermediate Code
 "14 ws2812/Src/../Inc/ws2812_pwm.h
 [; ;ws2812/Src/../Inc/ws2812_pwm.h: 14: void ws2812_pwm_send(ws2812_configuration* ws2812_conf, uint8_t brightness);
 [v _ws2812_pwm_send `(v ~T0 @X0 0 ef2`*S1618`uc ]
-"62 ws2812/Src/../Inc/../../mcc_generated_files/system/../pwm/ccp2.h
-[; ;ws2812/Src/../Inc/../../mcc_generated_files/system/../pwm/ccp2.h: 62: void CCP2_LoadDutyValue(uint16_t dutyValue);
-[v _CCP2_LoadDutyValue `(v ~T0 @X0 0 ef1`us ]
-"11419 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 11419:     struct {
-[s S532 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S532 . MODE FMT OUT . EN ]
-"11426
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 11426:     struct {
-[s S533 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S533 . MODE0 MODE1 MODE2 MODE3 ]
-"11432
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 11432:     struct {
-[s S534 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S534 . CCP2MODE CCP2FMT CCP2OUT . CCP2EN ]
-"11439
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 11439:     struct {
-[s S535 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S535 . CCP2MODE0 CCP2MODE1 CCP2MODE2 CCP2MODE3 ]
-"11418
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 11418: typedef union {
-[u S531 `S532 1 `S533 1 `S534 1 `S535 1 ]
-[n S531 . . . . . ]
-"11446
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 11446: extern volatile CCP2CONbits_t CCP2CONbits __attribute__((address(0x312)));
-[v _CCP2CONbits `VS531 ~T0 @X0 0 e@786 ]
 "72 ws2812/Src/../Inc/ws2812.h
 [; ;ws2812/Src/../Inc/ws2812.h: 72: void ws2812_delay_us(uint16_t us);
 [v _ws2812_delay_us `(v ~T0 @X0 0 ef1`us ]
 "58 C:\Program Files\Microchip\xc8\v2.46\pic\include\c99\stdlib.h
 [; ;C:\Program Files\Microchip\xc8\v2.46\pic\include\c99\stdlib.h: 58: void *malloc (size_t);
 [v _malloc `(*v ~T0 @X0 0 ef1`ui ]
-"10009 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 10009: extern volatile unsigned char T4CON __attribute__((address(0x294)));
-[v _T4CON `Vuc ~T0 @X0 0 e@660 ]
-"11413
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 11413: extern volatile unsigned char CCP2CON __attribute__((address(0x312)));
-[v _CCP2CON `Vuc ~T0 @X0 0 e@786 ]
+"65 ws2812/Src/../Inc/../../mcc_generated_files/system/../pwm/pwm6.h
+[; ;ws2812/Src/../Inc/../../mcc_generated_files/system/../pwm/pwm6.h: 65:  void PWM6_LoadDutyValue(uint16_t dutyValue);
+[v _PWM6_LoadDutyValue `(v ~T0 @X0 0 ef1`us ]
+"9409 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 9409: extern volatile unsigned char T2CON __attribute__((address(0x28E)));
+[v _T2CON `Vuc ~T0 @X0 0 e@654 ]
 "61 C:\Program Files\Microchip\xc8\v2.46\pic\include\c99\stdlib.h
 [; ;C:\Program Files\Microchip\xc8\v2.46\pic\include\c99\stdlib.h: 61: void free (void *);
 [v _free `(v ~T0 @X0 0 ef1`*v ]
@@ -1692,6 +1667,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "36289
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 36289: __asm("TOSH equ 01FEFh");
 [; <" TOSH equ 01FEFh ;# ">
+"324 ws2812/Src/../Inc/../../mcc_generated_files/system/../uart/eusart.h
+[; ;ws2812/Src/../Inc/../../mcc_generated_files/system/../uart/eusart.h: 324: void (*EUSART_RxInterruptHandler)(void);
+[v _EUSART_RxInterruptHandler `*F12619 ~T0 @X0 1 e ]
 "13 ws2812/Src/ws2812_pwm.c
 [v _ws2812_pwm_fade `(v ~T0 @X0 1 ef2`*S1618`us ]
 {
@@ -1702,11 +1680,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 "15
 [v _fade_delay `us ~T0 @X0 1 a ]
 [e = _fade_delay -> -> 0 `i `us ]
-[v F12993 `uc ~T0 @X0 -> 3 `i t ]
+[v F13001 `uc ~T0 @X0 -> 3 `i t ]
 "16
-[v _led_data `*F12993 ~T0 @X0 1 a ]
-[v F12994 `uc ~T0 @X0 -> 3 `i t ]
-[e = _led_data -> . *U _ws2812_conf 4 `*F12994 ]
+[v _led_data `*F13001 ~T0 @X0 1 a ]
+[v F13002 `uc ~T0 @X0 -> 3 `i t ]
+[e = _led_data -> . *U _ws2812_conf 4 `*F13002 ]
 "19
 [e $ ! < -> _fade_time_ms `ui -> . *U _ws2812_conf 2 `ui 1621  ]
 {
@@ -1839,98 +1817,94 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $U 1641  ]
 [e :U 1640 ]
 {
-"73
-[e ( _CCP2_LoadDutyValue (1 -> *U + &U _send_data * -> -> _i `ui `ux -> -> # *U &U _send_data `ui `ux `us ]
 "74
-[e = . . _CCP2CONbits 0 4 -> -> 1 `i `uc ]
-"75
 }
 [e ++ _i -> 1 `i ]
 [e $ < _i -> 24 `i 1640  ]
 [e :U 1641 ]
 }
-"76
+"75
 }
 [e :U 1639 ]
-"77
+"76
 [e :UE 1629 ]
 }
-"79
+"78
 [v _ws2812_pwm_send_single `(v ~T0 @X0 1 ef1`*S1618 ]
 {
 [e :U _ws2812_pwm_send_single ]
 [v _ws2812_conf `*S1618 ~T0 @X0 1 r1 ]
 [f ]
-[v F13011 `uc ~T0 @X0 -> 3 `i t ]
-"80
-[v _led_data `*F13011 ~T0 @X0 1 a ]
-[v F13012 `uc ~T0 @X0 -> 3 `i t ]
-[e = _led_data -> . *U _ws2812_conf 4 `*F13012 ]
-"82
+[v F13019 `uc ~T0 @X0 -> 3 `i t ]
+"79
+[v _led_data `*F13019 ~T0 @X0 1 a ]
+[v F13020 `uc ~T0 @X0 -> 3 `i t ]
+[e = _led_data -> . *U _ws2812_conf 4 `*F13020 ]
+"81
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
 [e $U 1647  ]
 [e :U 1644 ]
 {
-"83
+"82
 [e ( _ws2812_pwm_data (4 , , , , _ws2812_conf *U + &U *U + _led_data * -> _i `x -> * -> # *U &U *U _led_data `ui -> 3 `i `x * -> -> 0 `i `x -> -> # *U &U *U + _led_data * -> _i `x -> * -> # *U &U *U _led_data `ui -> 3 `i `x `i `x *U + &U *U + _led_data * -> _i `x -> * -> # *U &U *U _led_data `ui -> 3 `i `x * -> -> 1 `i `x -> -> # *U &U *U + _led_data * -> _i `x -> * -> # *U &U *U _led_data `ui -> 3 `i `x `i `x *U + &U *U + _led_data * -> _i `x -> * -> # *U &U *U _led_data `ui -> 3 `i `x * -> -> 2 `i `x -> -> # *U &U *U + _led_data * -> _i `x -> * -> # *U &U *U _led_data `ui -> 3 `i `x `i `x . *U _ws2812_conf 2 ]
-"84
+"83
 }
 [e ++ _i -> 1 `i ]
 [e :U 1647 ]
 [e $ < _i -> . *U _ws2812_conf 1 `i 1644  ]
 [e :U 1645 ]
 }
-"86
+"85
 [e ( _ws2812_delay_us (1 -> -> 280 `i `us ]
-"87
+"86
 [e :UE 1643 ]
 }
-"90
+"89
 [v _ws2812_pwm_send `(v ~T0 @X0 1 ef2`*S1618`uc ]
 {
 [e :U _ws2812_pwm_send ]
 [v _ws2812_conf `*S1618 ~T0 @X0 1 r1 ]
 [v _brightness `uc ~T0 @X0 1 r2 ]
 [f ]
-[v F13019 `uc ~T0 @X0 -> 3 `i t ]
+[v F13027 `uc ~T0 @X0 -> 3 `i t ]
+"91
+[v _led_data `*F13027 ~T0 @X0 1 a ]
+[v F13028 `uc ~T0 @X0 -> 3 `i t ]
+[e = _led_data -> . *U _ws2812_conf 4 `*F13028 ]
 "92
-[v _led_data `*F13019 ~T0 @X0 1 a ]
-[v F13020 `uc ~T0 @X0 -> 3 `i t ]
-[e = _led_data -> . *U _ws2812_conf 4 `*F13020 ]
-"93
 [v _green `uc ~T0 @X0 1 a ]
 [v _red `uc ~T0 @X0 1 a ]
 [v _blue `uc ~T0 @X0 1 a ]
-"95
+"94
 [v _send_data `*uc ~T0 @X0 1 a ]
 [e = _send_data -> ( _malloc (1 -> * -> . *U _ws2812_conf 1 `i -> 24 `i `ui `*uc ]
-"97
+"96
 [e $ ! == _send_data -> -> -> 0 `i `*v `*uc 1649  ]
 {
-"98
+"97
 [e $UE 1648  ]
-"99
+"98
 }
 [e :U 1649 ]
-"101
+"100
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
 [e $U 1653  ]
 [e :U 1650 ]
 {
-"102
+"101
 [e = _green -> / * -> *U + &U *U + _led_data * -> _i `x -> * -> # *U &U *U _led_data `ui -> 3 `i `x * -> -> 0 `i `x -> -> # *U &U *U + _led_data * -> _i `x -> * -> # *U &U *U _led_data `ui -> 3 `i `x `i `x `i -> _brightness `i -> 100 `i `uc ]
-"103
+"102
 [e = _red -> / * -> *U + &U *U + _led_data * -> _i `x -> * -> # *U &U *U _led_data `ui -> 3 `i `x * -> -> 1 `i `x -> -> # *U &U *U + _led_data * -> _i `x -> * -> # *U &U *U _led_data `ui -> 3 `i `x `i `x `i -> _brightness `i -> 100 `i `uc ]
-"104
+"103
 [e = _blue -> / * -> *U + &U *U + _led_data * -> _i `x -> * -> # *U &U *U _led_data `ui -> 3 `i `x * -> -> 2 `i `x -> -> # *U &U *U + _led_data * -> _i `x -> * -> # *U &U *U _led_data `ui -> 3 `i `x `i `x `i -> _brightness `i -> 100 `i `uc ]
-"106
+"105
 [e $ ! != -> . *U _ws2812_conf 5 `i -> 0 `i 1654  ]
 {
-"107
+"106
 {
 [v _j `i ~T0 @X0 1 a ]
 [e = _j -> 0 `i ]
@@ -1938,28 +1912,28 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $U 1656  ]
 [e :U 1655 ]
 {
-"108
+"107
 [v _index `i ~T0 @X0 1 a ]
 [e = _index + * _i -> 24 `i _j ]
-"109
+"108
 [e = *U + _send_data * -> _index `x -> -> # *U _send_data `i `x -> ? != & -> _green `i << -> 1 `i - -> 7 `i _j -> 0 `i : -> 20 `i -> 10 `i `uc ]
-"110
+"109
 [e = *U + _send_data * -> + _index -> 8 `i `x -> -> # *U _send_data `i `x -> ? != & -> _red `i << -> 1 `i - -> 7 `i _j -> 0 `i : -> 20 `i -> 10 `i `uc ]
-"111
+"110
 [e = *U + _send_data * -> + _index -> 16 `i `x -> -> # *U _send_data `i `x -> ? != & -> _blue `i << -> 1 `i - -> 7 `i _j -> 0 `i : -> 20 `i -> 10 `i `uc ]
-"112
+"111
 }
 [e ++ _j -> 1 `i ]
 [e $ < _j -> 8 `i 1655  ]
 [e :U 1656 ]
 }
-"113
+"112
 }
 [e $U 1658  ]
-"114
+"113
 [e :U 1654 ]
 {
-"115
+"114
 {
 [v _j `i ~T0 @X0 1 a ]
 [e = _j -> 0 `i ]
@@ -1967,148 +1941,148 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $U 1660  ]
 [e :U 1659 ]
 {
-"116
+"115
 [v _index `i ~T0 @X0 1 a ]
 [e = _index + * _i -> 24 `i _j ]
-"117
+"116
 [e = *U + _send_data * -> _index `x -> -> # *U _send_data `i `x -> ? != & -> _green `i << -> 1 `i - -> 7 `i _j -> 0 `i : -> 20 `i -> 10 `i `uc ]
-"118
+"117
 [e = *U + _send_data * -> + _index -> 8 `i `x -> -> # *U _send_data `i `x -> ? != & -> _red `i << -> 1 `i - -> 7 `i _j -> 0 `i : -> 20 `i -> 10 `i `uc ]
-"119
+"118
 [e = *U + _send_data * -> + _index -> 16 `i `x -> -> # *U _send_data `i `x -> ? != & -> _blue `i << -> 1 `i - -> 7 `i _j -> 0 `i : -> 20 `i -> 10 `i `uc ]
-"120
+"119
 }
 [e ++ _j -> 1 `i ]
 [e $ < _j -> 8 `i 1659  ]
 [e :U 1660 ]
 }
-"121
+"120
 }
 [e :U 1658 ]
-"122
+"121
 }
 [e ++ _i -> 1 `i ]
 [e :U 1653 ]
 [e $ < _i -> . *U _ws2812_conf 1 `i 1650  ]
 [e :U 1651 ]
 }
-"124
+"123
 [e $ ! != -> . *U _ws2812_conf 5 `i -> 0 `i 1662  ]
 {
-"126
+"125
 }
 [e $U 1663  ]
-"127
+"126
 [e :U 1662 ]
 {
-"128
+"127
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
 [e $U 1667  ]
 [e :U 1664 ]
 {
+"128
+[e ( _PWM6_LoadDutyValue (1 -> *U + _send_data * -> _i `x -> -> # *U _send_data `i `x `us ]
 "129
-[e ( _CCP2_LoadDutyValue (1 -> *U + _send_data * -> _i `x -> -> # *U _send_data `i `x `us ]
+[e = _T2CON -> -> 128 `i `uc ]
 "130
-[e =| _T4CON -> -> 128 `i `Vuc ]
-"131
-[e =| _CCP2CON -> -> 128 `i `Vuc ]
-"133
 }
 [e ++ _i -> 1 `i ]
 [e :U 1667 ]
 [e $ < _i * -> . *U _ws2812_conf 1 `i -> 24 `i 1664  ]
 [e :U 1665 ]
 }
-"134
+"131
+[e =& _T2CON -> ~ -> 128 `i `Vuc ]
+"132
 }
 [e :U 1663 ]
-"135
+"133
 [e ( _free (1 -> _send_data `*v ]
-"136
+"134
 [e ( __delay (1 -> * -> -> 285 `i `d / -> -> 32000000 `l `d .4000000.0 `ul ]
-"138
+"136
 [e :UE 1648 ]
 }
-"140
+"138
 [v _ws2812_pwm_clear `(v ~T0 @X0 1 ef1`*S1618 ]
 {
 [e :U _ws2812_pwm_clear ]
 [v _ws2812_conf `*S1618 ~T0 @X0 1 r1 ]
 [f ]
-"141
+"139
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
 [e $U 1672  ]
 [e :U 1669 ]
 {
-"142
+"140
 [e ( _ws2812_set_led (4 , , , , _ws2812_conf -> _i `uc -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc ]
-"143
+"141
 }
 [e ++ _i -> 1 `i ]
 [e :U 1672 ]
 [e $ < _i -> . *U _ws2812_conf 1 `i 1669  ]
 [e :U 1670 ]
 }
-"144
+"142
 [e ( _ws2812_pwm_send (2 , _ws2812_conf . *U _ws2812_conf 2 ]
-"145
+"143
 [e :UE 1668 ]
 }
-"148
+"146
 [v _ws2812_pwm_init `(a ~T0 @X0 1 ef1`*S1618 ]
 {
 [e :U _ws2812_pwm_init ]
 [v _ws2812_conf `*S1618 ~T0 @X0 1 r1 ]
 [f ]
-[v F13038 `uc ~T0 @X0 -> 3 `i t ]
+[v F13046 `uc ~T0 @X0 -> 3 `i t ]
+"148
+[v _led_data `*F13046 ~T0 @X0 1 a ]
+[v F13047 `uc ~T0 @X0 -> 3 `i t ]
+[e = _led_data -> ( _malloc (1 * -> . *U _ws2812_conf 1 `ui * -> # *U &U *U _led_data `ui -> -> 3 `i `ui `*F13047 ]
+[v F13049 `uc ~T0 @X0 -> 3 `i t ]
 "150
-[v _led_data `*F13038 ~T0 @X0 1 a ]
-[v F13039 `uc ~T0 @X0 -> 3 `i t ]
-[e = _led_data -> ( _malloc (1 * -> . *U _ws2812_conf 1 `ui * -> # *U &U *U _led_data `ui -> -> 3 `i `ui `*F13039 ]
-[v F13041 `uc ~T0 @X0 -> 3 `i t ]
-"152
-[e $ ! == _led_data -> -> -> 0 `i `*v `*F13041 1674  ]
+[e $ ! == _led_data -> -> -> 0 `i `*v `*F13049 1674  ]
 {
-"153
+"151
 [e ) -> -> 0 `i `a ]
 [e $UE 1673  ]
-"154
+"152
 }
 [e :U 1674 ]
-"156
+"154
 [e = . *U _ws2812_conf 4 -> _led_data `*v ]
-"157
+"155
 [e ( _memset (3 , , . *U _ws2812_conf 4 -> 0 `i * -> . *U _ws2812_conf 1 `ui * -> # *U &U *U _led_data `ui -> -> 3 `i `ui ]
-"159
+"157
 [e ( _ws2812_pwm_send (2 , _ws2812_conf . *U _ws2812_conf 2 ]
-"161
+"159
 [e ) -> -> 1 `i `a ]
 [e $UE 1673  ]
-"162
+"160
 [e :UE 1673 ]
 }
-"164
+"162
 [v _ws2812_pwm_deinit `(v ~T0 @X0 1 ef1`*S1618 ]
 {
 [e :U _ws2812_pwm_deinit ]
 [v _ws2812_conf `*S1618 ~T0 @X0 1 r1 ]
 [f ]
-"166
+"164
 [e ( _free (1 . *U _ws2812_conf 4 ]
-"167
+"165
 [e = . *U _ws2812_conf 4 -> -> 0 `i `*v ]
-"168
+"166
 [e = . *U _ws2812_conf 0 -> -> 0 `i `*v ]
-"169
+"167
 [e = . *U _ws2812_conf 1 -> -> 0 `i `uc ]
-"170
+"168
 [e = . *U _ws2812_conf 2 -> -> 0 `i `uc ]
-"171
+"169
 [e = . *U _ws2812_conf 5 -> -> 0 `i `uc ]
-"172
+"170
 [e :UE 1675 ]
 }

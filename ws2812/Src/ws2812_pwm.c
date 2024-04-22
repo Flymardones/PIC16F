@@ -70,8 +70,7 @@ void ws2812_pwm_data(ws2812_configuration* ws2812_conf, uint8_t green, uint8_t r
 	}
 	else {
         for (int i = 0; i < 24; i++) {
-            CCP2_LoadDutyValue((uint16_t)send_data[i]);
-            CCP2CONbits.EN = 1;
+            
         }
 	}
 }
@@ -126,11 +125,10 @@ void ws2812_pwm_send(ws2812_configuration* ws2812_conf, uint8_t brightness) {
     }
     else {
         for (int i = 0; i < (ws2812_conf->led_num * 24); i++) {
-            CCP2_LoadDutyValue((uint16_t)send_data[i]);
-            T4CON |= 0x80;
-            CCP2CON |= 0x80;
-            
+            PWM6_LoadDutyValue(send_data[i]);
+            T2CON = 0x80;
         }
+        T2CON &= ~(0x80);
     }
     free(send_data);
     __delay_us(285);

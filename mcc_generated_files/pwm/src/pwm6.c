@@ -1,15 +1,16 @@
 /**
- * PWM2 Generated Driver API Header File.
- * 
- * @file ccp2.h
- * 
- * @defgroup pwm2 PWM2
- * 
- * @brief This file contains the API prototypes for the PWM2 module.
- *
- * @version PWM2 Driver Version 2.0.2
+  * PWM6 Generated Driver File
+  *
+  * @file pwm6.c
+  *
+  * @ingroup pwm6
+  *
+  * @brief This file contains the API implementations for the PWM6 module.
+  *
+  * @version PWM6 Driver Version 2.0.4
 */
-/*
+
+ /*
 © [2024] Microchip Technology Inc. and its subsidiaries.
 
     Subject to your compliance with these terms, you may use Microchip 
@@ -29,47 +30,41 @@
     EXCEED AMOUNT OF FEES, IF ANY, YOU PAID DIRECTLY TO MICROCHIP FOR 
     THIS SOFTWARE.
 */
+ 
+ /**
+  * Section: Included Files
+  */
 
-#ifndef PWM2_H
-#define PWM2_H
+ #include <xc.h>
+ #include "../pwm6.h"
 
  /**
-   Section: Included Files
- */
+  * Section: PWM Module APIs
+  */
 
-#include <xc.h>
-#include <stdint.h>
-#include <stdbool.h>
+ void PWM6_Initialize(void)
+ {
+    // Set the PWM6 to the options selected in the User Interface
+    
+    // PWMPOL active_hi; PWMEN enabled; 
+    PWM6CON = 0x80;
+    
+    // PWMDCH 0; 
+    PWM6DCH = 0x0;
 
-#define PWM2_Initialize CCP2_Initialize
-#define PWM2_LoadDutyValue CCP2_LoadDutyValue
-#define PWM2_OutputStatusGet  CCP2_OutputStatusGet
+    // PWMDCL 0; 
+    PWM6DCL = 0x0;
+    
+    CCPTMRS1bits.P6TSEL = 0x1;
 
- /**
- * @ingroup pwm2
- * @brief Initializes the CCP2 module. This is called only once before calling other CCP2 APIs.
- * @param None.
- * @return None.
- */
-void CCP2_Initialize(void);
-/**
- * @ingroup pwm2
- * @brief Loads the 16-bit duty cycle value.
- * @pre CCP2_Initialize() is already called.
- * @param dutyValue - 16-bit duty cycle value.
- * @return None.
- */
-void CCP2_LoadDutyValue(uint16_t dutyValue);
-/**
- * @ingroup pwm2
- * @brief Returns the PWM output status.
- * @pre CCP2_Initialize() is already called.
- * @param None.
- * @retval True - CCP2 PWM output is high
- * @retval False - CCP2 PWM output is low
- */
-bool CCP2_OutputStatusGet(void);
-#endif //PWM2_H
-/**
- End of File
-*/
+
+ }
+
+ void PWM6_LoadDutyValue(uint16_t dutyValue)
+ {
+     // Writing to 8 MSBs of PWM duty cycle in PWMDCH register
+     PWM6DCH = (uint8_t) ((dutyValue & 0x03FCu) >> 2);
+     
+     // Writing to 2 LSBs of PWM duty cycle in PWMDCL register
+     PWM6DCL = (uint8_t) ((dutyValue & 0x0003u) << 6);
+ }

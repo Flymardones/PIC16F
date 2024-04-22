@@ -49,6 +49,25 @@
 #define PULL_UP_ENABLED      1
 #define PULL_UP_DISABLED     0
 
+// get/set IO_RA5 aliases
+#define IO_RA5_TRIS                 TRISAbits.TRISA5
+#define IO_RA5_LAT                  LATAbits.LATA5
+#define IO_RA5_PORT                 PORTAbits.RA5
+#define IO_RA5_WPU                  WPUAbits.WPUA5
+#define IO_RA5_OD                   ODCONAbits.ODCA5
+#define IO_RA5_ANS                  ANSELAbits.ANSA5
+#define IO_RA5_SetHigh()            do { LATAbits.LATA5 = 1; } while(0)
+#define IO_RA5_SetLow()             do { LATAbits.LATA5 = 0; } while(0)
+#define IO_RA5_Toggle()             do { LATAbits.LATA5 = ~LATAbits.LATA5; } while(0)
+#define IO_RA5_GetValue()           PORTAbits.RA5
+#define IO_RA5_SetDigitalInput()    do { TRISAbits.TRISA5 = 1; } while(0)
+#define IO_RA5_SetDigitalOutput()   do { TRISAbits.TRISA5 = 0; } while(0)
+#define IO_RA5_SetPullup()          do { WPUAbits.WPUA5 = 1; } while(0)
+#define IO_RA5_ResetPullup()        do { WPUAbits.WPUA5 = 0; } while(0)
+#define IO_RA5_SetPushPull()        do { ODCONAbits.ODCA5 = 0; } while(0)
+#define IO_RA5_SetOpenDrain()       do { ODCONAbits.ODCA5 = 1; } while(0)
+#define IO_RA5_SetAnalogMode()      do { ANSELAbits.ANSA5 = 1; } while(0)
+#define IO_RA5_SetDigitalMode()     do { ANSELAbits.ANSA5 = 0; } while(0)
 // get/set IO_RB0 aliases
 #define SPI_MOSI_TRIS                 TRISBbits.TRISB0
 #define SPI_MOSI_LAT                  LATBbits.LATB0
@@ -68,25 +87,6 @@
 #define SPI_MOSI_SetOpenDrain()       do { ODCONBbits.ODCB0 = 1; } while(0)
 #define SPI_MOSI_SetAnalogMode()      do { ANSELBbits.ANSB0 = 1; } while(0)
 #define SPI_MOSI_SetDigitalMode()     do { ANSELBbits.ANSB0 = 0; } while(0)
-// get/set IO_RB1 aliases
-#define PWM_OUTPUT_TRIS                 TRISBbits.TRISB1
-#define PWM_OUTPUT_LAT                  LATBbits.LATB1
-#define PWM_OUTPUT_PORT                 PORTBbits.RB1
-#define PWM_OUTPUT_WPU                  WPUBbits.WPUB1
-#define PWM_OUTPUT_OD                   ODCONBbits.ODCB1
-#define PWM_OUTPUT_ANS                  ANSELBbits.ANSB1
-#define PWM_OUTPUT_SetHigh()            do { LATBbits.LATB1 = 1; } while(0)
-#define PWM_OUTPUT_SetLow()             do { LATBbits.LATB1 = 0; } while(0)
-#define PWM_OUTPUT_Toggle()             do { LATBbits.LATB1 = ~LATBbits.LATB1; } while(0)
-#define PWM_OUTPUT_GetValue()           PORTBbits.RB1
-#define PWM_OUTPUT_SetDigitalInput()    do { TRISBbits.TRISB1 = 1; } while(0)
-#define PWM_OUTPUT_SetDigitalOutput()   do { TRISBbits.TRISB1 = 0; } while(0)
-#define PWM_OUTPUT_SetPullup()          do { WPUBbits.WPUB1 = 1; } while(0)
-#define PWM_OUTPUT_ResetPullup()        do { WPUBbits.WPUB1 = 0; } while(0)
-#define PWM_OUTPUT_SetPushPull()        do { ODCONBbits.ODCB1 = 0; } while(0)
-#define PWM_OUTPUT_SetOpenDrain()       do { ODCONBbits.ODCB1 = 1; } while(0)
-#define PWM_OUTPUT_SetAnalogMode()      do { ANSELBbits.ANSB1 = 1; } while(0)
-#define PWM_OUTPUT_SetDigitalMode()     do { ANSELBbits.ANSB1 = 0; } while(0)
 // get/set IO_RB2 aliases
 #define IO_RB2_TRIS                 TRISBbits.TRISB2
 #define IO_RB2_LAT                  LATBbits.LATB2
@@ -106,25 +106,6 @@
 #define IO_RB2_SetOpenDrain()       do { ODCONBbits.ODCB2 = 1; } while(0)
 #define IO_RB2_SetAnalogMode()      do { ANSELBbits.ANSB2 = 1; } while(0)
 #define IO_RB2_SetDigitalMode()     do { ANSELBbits.ANSB2 = 0; } while(0)
-// get/set IO_RC3 aliases
-#define IO_RC3_TRIS                 TRISCbits.TRISC3
-#define IO_RC3_LAT                  LATCbits.LATC3
-#define IO_RC3_PORT                 PORTCbits.RC3
-#define IO_RC3_WPU                  WPUCbits.WPUC3
-#define IO_RC3_OD                   ODCONCbits.ODCC3
-#define IO_RC3_ANS                  ANSELCbits.ANSC3
-#define IO_RC3_SetHigh()            do { LATCbits.LATC3 = 1; } while(0)
-#define IO_RC3_SetLow()             do { LATCbits.LATC3 = 0; } while(0)
-#define IO_RC3_Toggle()             do { LATCbits.LATC3 = ~LATCbits.LATC3; } while(0)
-#define IO_RC3_GetValue()           PORTCbits.RC3
-#define IO_RC3_SetDigitalInput()    do { TRISCbits.TRISC3 = 1; } while(0)
-#define IO_RC3_SetDigitalOutput()   do { TRISCbits.TRISC3 = 0; } while(0)
-#define IO_RC3_SetPullup()          do { WPUCbits.WPUC3 = 1; } while(0)
-#define IO_RC3_ResetPullup()        do { WPUCbits.WPUC3 = 0; } while(0)
-#define IO_RC3_SetPushPull()        do { ODCONCbits.ODCC3 = 0; } while(0)
-#define IO_RC3_SetOpenDrain()       do { ODCONCbits.ODCC3 = 1; } while(0)
-#define IO_RC3_SetAnalogMode()      do { ANSELCbits.ANSC3 = 1; } while(0)
-#define IO_RC3_SetDigitalMode()     do { ANSELCbits.ANSC3 = 0; } while(0)
 /**
  * @ingroup  pinsdriver
  * @brief GPIO and peripheral I/O initialization

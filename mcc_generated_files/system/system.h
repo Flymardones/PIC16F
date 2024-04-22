@@ -43,9 +43,9 @@
 #include "../system/clock.h"
 #include "../system/pins.h"
 #include "../uart/eusart.h"
-#include "../pwm/ccp2.h"
+#include "../pwm/pwm6.h"
 #include "../spi/mssp1.h"
-#include "../timer/tmr4.h"
+#include "../timer/tmr2.h"
 #include "../system/interrupt.h"
 
 /**

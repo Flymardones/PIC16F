@@ -1,152 +1,28 @@
 Version 4.0 HI-TECH Software Intermediate Code
-[v F12159 `(v ~T0 @X0 0 tf ]
-[v F12161 `(v ~T0 @X0 0 tf ]
-[v F12163 `(v ~T0 @X0 0 tf ]
-[v F12165 `(v ~T0 @X0 0 tf1`ui ]
-[v F12169 `(v ~T0 @X0 0 tf ]
-[v F12168 `(v ~T0 @X0 0 tf1`*F12169 ]
-[v F12172 `(v ~T0 @X0 0 tf ]
-"51 mcc_generated_files/timer/src/../timer_interface.h
-[; ;mcc_generated_files/timer/src/../timer_interface.h: 51: {
-[s S1611 `*F12159 1 `*F12161 1 `*F12163 1 `*F12165 1 `*F12168 1 `*F12172 1 ]
-[n S1611 TMR_INTERFACE Initialize Start Stop PeriodCountSet TimeoutCallbackRegister Tasks ]
-"329 mcc_generated_files/timer/src/../tmr4.h
-[; ;mcc_generated_files/timer/src/../tmr4.h: 329: void TMR4_Initialize(void);
-[v _TMR4_Initialize `(v ~T0 @X0 0 ef ]
-"356
-[; ;mcc_generated_files/timer/src/../tmr4.h: 356: void TMR4_Start(void);
-[v _TMR4_Start `(v ~T0 @X0 0 ef ]
-"365
-[; ;mcc_generated_files/timer/src/../tmr4.h: 365: void TMR4_Stop(void);
-[v _TMR4_Stop `(v ~T0 @X0 0 ef ]
-"392
-[; ;mcc_generated_files/timer/src/../tmr4.h: 392: void TMR4_PeriodCountSet(size_t periodVal);
-[v _TMR4_PeriodCountSet `(v ~T0 @X0 0 ef1`ui ]
-[v F12229 `(v ~T0 @X0 0 tf ]
-"400
-[; ;mcc_generated_files/timer/src/../tmr4.h: 400: void TMR4_OverflowCallbackRegister(void (* InterruptHandler)(void));
-[v _TMR4_OverflowCallbackRegister `(v ~T0 @X0 0 ef1`*F12229 ]
-"408
-[; ;mcc_generated_files/timer/src/../tmr4.h: 408: void TMR4_Tasks(void);
-[v _TMR4_Tasks `(v ~T0 @X0 0 ef ]
-[v F12244 `(v ~T0 @X0 0 tf ]
-"10283 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 10283: extern volatile unsigned char T4CLKCON __attribute__((address(0x296)));
-[v _T4CLKCON `Vuc ~T0 @X0 0 e@662 ]
-"10155
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 10155: extern volatile unsigned char T4HLT __attribute__((address(0x295)));
-[v _T4HLT `Vuc ~T0 @X0 0 e@661 ]
-"10441
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 10441: extern volatile unsigned char T4RST __attribute__((address(0x297)));
-[v _T4RST `Vuc ~T0 @X0 0 e@663 ]
-"9971
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 9971: extern volatile unsigned char T4PR __attribute__((address(0x293)));
-[v _T4PR `Vuc ~T0 @X0 0 e@659 ]
-"9933
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 9933: extern volatile unsigned char T4TMR __attribute__((address(0x292)));
-[v _T4TMR `Vuc ~T0 @X0 0 e@658 ]
-"51 mcc_generated_files/timer/src/tmr4.c
-[; ;mcc_generated_files/timer/src/tmr4.c: 51: static void TMR4_DefaultOverflowCallback(void);
-[v _TMR4_DefaultOverflowCallback `(v ~T0 @X0 0 sf ]
-"21411 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 21411:     struct {
-[s S972 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S972 . TMR1IF TMR2IF TMR3IF TMR4IF TMR5IF TMR6IF ]
-"21410
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 21410: typedef union {
-[u S971 `S972 1 ]
-[n S971 . . ]
-"21420
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 21420: extern volatile PIR4bits_t PIR4bits __attribute__((address(0x710)));
-[v _PIR4bits `VS971 ~T0 @X0 0 e@1808 ]
-"10009
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 10009: extern volatile unsigned char T4CON __attribute__((address(0x294)));
-[v _T4CON `Vuc ~T0 @X0 0 e@660 ]
-"80 mcc_generated_files/timer/src/tmr4.c
-[; ;mcc_generated_files/timer/src/tmr4.c: 80: void TMR4_ModeSet(TMR4_HLT_MODE mode)
-[c E12174 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 22 23 17 18 19 .. ]
-[n E12174 . TMR4_ROP_STARTS_TMRON TMR4_ROP_STARTS_TMRON_ERSHIGH TMR4_ROP_STARTS_TMRON_ERSLOW TMR4_ROP_RESETS_ERSBOTHEDGE TMR4_ROP_RESETS_ERSRISINGEDGE TMR4_ROP_RESETS_ERSFALLINGEDGE TMR4_ROP_RESETS_ERSLOW TMR4_ROP_RESETS_ERSHIGH TMR4_OS_STARTS_TMRON TMR4_OS_STARTS_ERSRISINGEDGE TMR4_OS_STARTS_ERSFALLINGEDGE TMR4_OS_STARTS_ERSBOTHEDGE TMR4_OS_STARTS_ERSFIRSTRISINGEDGE TMR4_OS_STARTS_ERSFIRSTFALLINGEDGE TMR4_OS_STARTS_ERSRISINGEDGEDETECT TMR4_OS_STARTS_ERSFALLINGEDGEDETECT TMR4_OS_STARTS_TMRON_ERSHIGH TMR4_OS_STARTS_TMRON_ERSLOW TMR4_MS_STARTS_TMRON_ERSRISINGEDGEDETECT TMR4_MS_STARTS_TMRON_ERSFALLINGEDGEDETECT TMR4_MS_STARTS_TMRON_ERSBOTHEDGE  ]
-"10161 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 10161:     struct {
-[s S461 :5 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S461 . MODE CKSYNC CKPOL PSYNC ]
-"10167
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 10167:     struct {
-[s S462 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S462 . MODE0 MODE1 MODE2 MODE3 MODE4 ]
-"10174
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 10174:     struct {
-[s S463 :5 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S463 . T4MODE T4CKSYNC T4CKPOL T4PSYNC ]
-"10180
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 10180:     struct {
-[s S464 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S464 . T4MODE0 T4MODE1 T4MODE2 T4MODE3 T4MODE4 ]
-"10160
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 10160: typedef union {
-[u S460 `S461 1 `S462 1 `S463 1 `S464 1 ]
-[n S460 . . . . . ]
-"10188
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 10188: extern volatile T4HLTbits_t T4HLTbits __attribute__((address(0x295)));
-[v _T4HLTbits `VS460 ~T0 @X0 0 e@661 ]
-"86 mcc_generated_files/timer/src/tmr4.c
-[; ;mcc_generated_files/timer/src/tmr4.c: 86: void TMR4_ExtResetSourceSet(TMR4_HLT_EXT_RESET_SOURCE reset)
-[c E12197 0 1 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 .. ]
-[n E12197 . TMR4_T4CKIPPS_PIN TMR4_TMR2_POSTSCALED TMR4_TMR6_POSTSCALED TMR4_CCP1_OUT TMR4_CCP2_OUT TMR4_CCP3_OUT TMR4_CCP4_OUT TMR4_CCP5_OUT TMR4_PWM6_OUT TMR4_PWM7_OUT TMR4_SYNC_C1OUT TMR4_SYNC_C2OUT TMR4_ZCD_OUT TMR4_LC1_OUT TMR4_LC2_OUT TMR4_LC3_OUT TMR4_LC4_OUT  ]
-"10447 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 10447:     struct {
-[s S476 :5 `uc 1 ]
-[n S476 . RSEL ]
-"10450
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 10450:     struct {
-[s S477 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S477 . RSEL0 RSEL1 RSEL2 RSEL3 RSEL4 ]
-"10457
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 10457:     struct {
-[s S478 :5 `uc 1 ]
-[n S478 . T4RSEL ]
-"10460
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 10460:     struct {
-[s S479 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S479 . T4RSEL0 T4RSEL1 T4RSEL2 T4RSEL3 T4RSEL4 ]
-"10446
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 10446: typedef union {
-[u S475 `S476 1 `S477 1 `S478 1 `S479 1 ]
-[n S475 . . . . . ]
-"10468
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 10468: extern volatile T4RSTbits_t T4RSTbits __attribute__((address(0x297)));
-[v _T4RSTbits `VS475 ~T0 @X0 0 e@663 ]
-"10015
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 10015:     struct {
-[s S456 :4 `uc 1 :3 `uc 1 :1 `uc 1 ]
-[n S456 . OUTPS CKPS ON ]
-"10020
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 10020:     struct {
-[s S457 :4 `uc 1 :3 `uc 1 :1 `uc 1 ]
-[n S457 . T4OUTPS T4CKPS T4ON ]
-"10025
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 10025:     struct {
-[s S458 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S458 . T4OUTPS0 T4OUTPS1 T4OUTPS2 T4OUTPS3 T4CKPS0 T4CKPS1 T4CKPS2 ]
-"10034
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 10034:     struct {
-[s S459 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S459 . OUTPS0 OUTPS1 OUTPS2 OUTPS3 CKPS0 CKPS1 CKPS2 TMR4ON ]
-"10014
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 10014: typedef union {
-[u S455 `S456 1 `S457 1 `S458 1 `S459 1 ]
-[n S455 . . . . . ]
-"10045
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 10045: extern volatile T4CONbits_t T4CONbits __attribute__((address(0x294)));
-[v _T4CONbits `VS455 ~T0 @X0 0 e@660 ]
-"9938
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 9938: extern volatile unsigned char TMR4 __attribute__((address(0x292)));
-[v _TMR4 `Vuc ~T0 @X0 0 e@658 ]
-"9976
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 9976: extern volatile unsigned char PR4 __attribute__((address(0x293)));
-[v _PR4 `Vuc ~T0 @X0 0 e@659 ]
-[v F12261 `(v ~T0 @X0 0 tf ]
-[v F12263 `(v ~T0 @X0 0 tf ]
+"12541 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 12541: extern volatile unsigned char PWM6CON __attribute__((address(0x38E)));
+[v _PWM6CON `Vuc ~T0 @X0 0 e@910 ]
+"12371
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 12371: extern volatile unsigned char PWM6DCH __attribute__((address(0x38D)));
+[v _PWM6DCH `Vuc ~T0 @X0 0 e@909 ]
+"12305
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 12305: extern volatile unsigned char PWM6DCL __attribute__((address(0x38C)));
+[v _PWM6DCL `Vuc ~T0 @X0 0 e@908 ]
+"9269
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 9269:     struct {
+[s S412 :2 `uc 1 :2 `uc 1 :2 `uc 1 ]
+[n S412 . C5TSEL P6TSEL P7TSEL ]
+"9274
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 9274:     struct {
+[s S413 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S413 . C5TSEL0 C5TSEL1 P6TSEL0 P6TSEL1 P7TSEL0 P7TSEL1 ]
+"9268
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 9268: typedef union {
+[u S411 `S412 1 `S413 1 ]
+[n S411 . . . ]
+"9283
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 9283: extern volatile CCPTMRS1bits_t CCPTMRS1bits __attribute__((address(0x21F)));
+[v _CCPTMRS1bits `VS411 ~T0 @X0 0 e@543 ]
 "54 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 54: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -1782,247 +1658,50 @@ Version 4.0 HI-TECH Software Intermediate Code
 "36289
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 36289: __asm("TOSH equ 01FEFh");
 [; <" TOSH equ 01FEFh ;# ">
-"41 mcc_generated_files/timer/src/tmr4.c
-[; ;mcc_generated_files/timer/src/tmr4.c: 41: const struct TMR_INTERFACE Timer4 = {
-[v _Timer4 `CS1611 ~T0 @X0 1 e ]
-[i _Timer4
-:U ..
-:U ..
-&U _TMR4_Initialize
-&U _TMR4_Start
-&U _TMR4_Stop
-&U _TMR4_PeriodCountSet
-&U _TMR4_OverflowCallbackRegister
-&U _TMR4_Tasks
-..
-..
-]
+"45 mcc_generated_files/pwm/src/pwm6.c
+[; ;mcc_generated_files/pwm/src/pwm6.c: 45:  void PWM6_Initialize(void)
+[v _PWM6_Initialize `(v ~T0 @X0 1 ef ]
+"46
+[; ;mcc_generated_files/pwm/src/pwm6.c: 46:  {
+{
+[e :U _PWM6_Initialize ]
+[f ]
 "50
-[; ;mcc_generated_files/timer/src/tmr4.c: 50: static void (*TMR4_OverflowCallback)(void);
-[v _TMR4_OverflowCallback `*F12244 ~T0 @X0 1 s ]
-"57
-[; ;mcc_generated_files/timer/src/tmr4.c: 57: void TMR4_Initialize(void){
-[v _TMR4_Initialize `(v ~T0 @X0 1 ef ]
-{
-[e :U _TMR4_Initialize ]
-[f ]
+[; ;mcc_generated_files/pwm/src/pwm6.c: 50:     PWM6CON = 0x80;
+[e = _PWM6CON -> -> 128 `i `uc ]
+"53
+[; ;mcc_generated_files/pwm/src/pwm6.c: 53:     PWM6DCH = 0x0;
+[e = _PWM6DCH -> -> 0 `i `uc ]
+"56
+[; ;mcc_generated_files/pwm/src/pwm6.c: 56:     PWM6DCL = 0x0;
+[e = _PWM6DCL -> -> 0 `i `uc ]
+"58
+[; ;mcc_generated_files/pwm/src/pwm6.c: 58:     CCPTMRS1bits.P6TSEL = 0x1;
+[e = . . _CCPTMRS1bits 0 1 -> -> 1 `i `uc ]
 "61
-[; ;mcc_generated_files/timer/src/tmr4.c: 61:     T4CLKCON = 0x1;
-[e = _T4CLKCON -> -> 1 `i `uc ]
+[; ;mcc_generated_files/pwm/src/pwm6.c: 61:  }
+[e :UE 1611 ]
+}
 "63
-[; ;mcc_generated_files/timer/src/tmr4.c: 63:     T4HLT = 0x8;
-[e = _T4HLT -> -> 8 `i `uc ]
-"65
-[; ;mcc_generated_files/timer/src/tmr4.c: 65:     T4RST = 0x0;
-[e = _T4RST -> -> 0 `i `uc ]
-"67
-[; ;mcc_generated_files/timer/src/tmr4.c: 67:     T4PR = 0x9;
-[e = _T4PR -> -> 9 `i `uc ]
+[; ;mcc_generated_files/pwm/src/pwm6.c: 63:  void PWM6_LoadDutyValue(uint16_t dutyValue)
+[v _PWM6_LoadDutyValue `(v ~T0 @X0 1 ef1`us ]
+"64
+[; ;mcc_generated_files/pwm/src/pwm6.c: 64:  {
+{
+[e :U _PWM6_LoadDutyValue ]
+"63
+[; ;mcc_generated_files/pwm/src/pwm6.c: 63:  void PWM6_LoadDutyValue(uint16_t dutyValue)
+[v _dutyValue `us ~T0 @X0 1 r1 ]
+"64
+[; ;mcc_generated_files/pwm/src/pwm6.c: 64:  {
+[f ]
+"66
+[; ;mcc_generated_files/pwm/src/pwm6.c: 66:      PWM6DCH = (uint8_t) ((dutyValue & 0x03FCu) >> 2);
+[e = _PWM6DCH -> >> & -> _dutyValue `ui -> 1020 `ui -> 2 `i `uc ]
 "69
-[; ;mcc_generated_files/timer/src/tmr4.c: 69:     T4TMR = 0x0;
-[e = _T4TMR -> -> 0 `i `uc ]
-"72
-[; ;mcc_generated_files/timer/src/tmr4.c: 72:     TMR4_OverflowCallbackRegister(TMR4_DefaultOverflowCallback);
-[e ( _TMR4_OverflowCallbackRegister (1 &U _TMR4_DefaultOverflowCallback ]
-"75
-[; ;mcc_generated_files/timer/src/tmr4.c: 75:     PIR4bits.TMR4IF = 0;
-[e = . . _PIR4bits 0 3 -> -> 0 `i `uc ]
-"77
-[; ;mcc_generated_files/timer/src/tmr4.c: 77:     T4CON = 0x80;
-[e = _T4CON -> -> 128 `i `uc ]
-"78
-[; ;mcc_generated_files/timer/src/tmr4.c: 78: }
+[; ;mcc_generated_files/pwm/src/pwm6.c: 69:      PWM6DCL = (uint8_t) ((dutyValue & 0x0003u) << 6);
+[e = _PWM6DCL -> << & -> _dutyValue `ui -> 3 `ui -> 6 `i `uc ]
+"70
+[; ;mcc_generated_files/pwm/src/pwm6.c: 70:  }
 [e :UE 1612 ]
-}
-"80
-[; ;mcc_generated_files/timer/src/tmr4.c: 80: void TMR4_ModeSet(TMR4_HLT_MODE mode)
-[v _TMR4_ModeSet `(v ~T0 @X0 1 ef1`E12174 ]
-"81
-[; ;mcc_generated_files/timer/src/tmr4.c: 81: {
-{
-[e :U _TMR4_ModeSet ]
-"80
-[; ;mcc_generated_files/timer/src/tmr4.c: 80: void TMR4_ModeSet(TMR4_HLT_MODE mode)
-[v _mode `E12174 ~T0 @X0 1 r1 ]
-"81
-[; ;mcc_generated_files/timer/src/tmr4.c: 81: {
-[f ]
-"83
-[; ;mcc_generated_files/timer/src/tmr4.c: 83:     T4HLTbits.T4MODE = mode;
-[e = . . _T4HLTbits 2 0 -> _mode `uc ]
-"84
-[; ;mcc_generated_files/timer/src/tmr4.c: 84: }
-[e :UE 1613 ]
-}
-"86
-[; ;mcc_generated_files/timer/src/tmr4.c: 86: void TMR4_ExtResetSourceSet(TMR4_HLT_EXT_RESET_SOURCE reset)
-[v _TMR4_ExtResetSourceSet `(v ~T0 @X0 1 ef1`E12197 ]
-"87
-[; ;mcc_generated_files/timer/src/tmr4.c: 87: {
-{
-[e :U _TMR4_ExtResetSourceSet ]
-"86
-[; ;mcc_generated_files/timer/src/tmr4.c: 86: void TMR4_ExtResetSourceSet(TMR4_HLT_EXT_RESET_SOURCE reset)
-[v _reset `E12197 ~T0 @X0 1 r1 ]
-"87
-[; ;mcc_generated_files/timer/src/tmr4.c: 87: {
-[f ]
-"89
-[; ;mcc_generated_files/timer/src/tmr4.c: 89:     T4RSTbits.T4RSEL = reset;
-[e = . . _T4RSTbits 2 0 -> _reset `uc ]
-"90
-[; ;mcc_generated_files/timer/src/tmr4.c: 90: }
-[e :UE 1614 ]
-}
-"92
-[; ;mcc_generated_files/timer/src/tmr4.c: 92: void TMR4_Start(void)
-[v _TMR4_Start `(v ~T0 @X0 1 ef ]
-"93
-[; ;mcc_generated_files/timer/src/tmr4.c: 93: {
-{
-[e :U _TMR4_Start ]
-[f ]
-"95
-[; ;mcc_generated_files/timer/src/tmr4.c: 95:     T4CONbits.TMR4ON = 1;
-[e = . . _T4CONbits 3 7 -> -> 1 `i `uc ]
-"96
-[; ;mcc_generated_files/timer/src/tmr4.c: 96: }
-[e :UE 1615 ]
-}
-"98
-[; ;mcc_generated_files/timer/src/tmr4.c: 98: void TMR4_Stop(void)
-[v _TMR4_Stop `(v ~T0 @X0 1 ef ]
-"99
-[; ;mcc_generated_files/timer/src/tmr4.c: 99: {
-{
-[e :U _TMR4_Stop ]
-[f ]
-"101
-[; ;mcc_generated_files/timer/src/tmr4.c: 101:     T4CONbits.TMR4ON = 0;
-[e = . . _T4CONbits 3 7 -> -> 0 `i `uc ]
-"102
-[; ;mcc_generated_files/timer/src/tmr4.c: 102: }
-[e :UE 1616 ]
-}
-"104
-[; ;mcc_generated_files/timer/src/tmr4.c: 104: uint8_t TMR4_Read(void)
-[v _TMR4_Read `(uc ~T0 @X0 1 ef ]
-"105
-[; ;mcc_generated_files/timer/src/tmr4.c: 105: {
-{
-[e :U _TMR4_Read ]
-[f ]
-"106
-[; ;mcc_generated_files/timer/src/tmr4.c: 106:     uint8_t readVal;
-[v _readVal `uc ~T0 @X0 1 a ]
-"107
-[; ;mcc_generated_files/timer/src/tmr4.c: 107:     readVal = TMR4;
-[e = _readVal _TMR4 ]
-"108
-[; ;mcc_generated_files/timer/src/tmr4.c: 108:     return readVal;
-[e ) _readVal ]
-[e $UE 1617  ]
-"109
-[; ;mcc_generated_files/timer/src/tmr4.c: 109: }
-[e :UE 1617 ]
-}
-"111
-[; ;mcc_generated_files/timer/src/tmr4.c: 111: void TMR4_Write(uint8_t timerVal)
-[v _TMR4_Write `(v ~T0 @X0 1 ef1`uc ]
-"112
-[; ;mcc_generated_files/timer/src/tmr4.c: 112: {
-{
-[e :U _TMR4_Write ]
-"111
-[; ;mcc_generated_files/timer/src/tmr4.c: 111: void TMR4_Write(uint8_t timerVal)
-[v _timerVal `uc ~T0 @X0 1 r1 ]
-"112
-[; ;mcc_generated_files/timer/src/tmr4.c: 112: {
-[f ]
-"114
-[; ;mcc_generated_files/timer/src/tmr4.c: 114:     TMR4 = timerVal;;
-[e = _TMR4 _timerVal ]
-"115
-[; ;mcc_generated_files/timer/src/tmr4.c: 115: }
-[e :UE 1618 ]
-}
-"117
-[; ;mcc_generated_files/timer/src/tmr4.c: 117: void TMR4_PeriodCountSet(size_t periodVal)
-[v _TMR4_PeriodCountSet `(v ~T0 @X0 1 ef1`ui ]
-"118
-[; ;mcc_generated_files/timer/src/tmr4.c: 118: {
-{
-[e :U _TMR4_PeriodCountSet ]
-"117
-[; ;mcc_generated_files/timer/src/tmr4.c: 117: void TMR4_PeriodCountSet(size_t periodVal)
-[v _periodVal `ui ~T0 @X0 1 r1 ]
-"118
-[; ;mcc_generated_files/timer/src/tmr4.c: 118: {
-[f ]
-"119
-[; ;mcc_generated_files/timer/src/tmr4.c: 119:    PR4 = (uint8_t) periodVal;
-[e = _PR4 -> _periodVal `uc ]
-"120
-[; ;mcc_generated_files/timer/src/tmr4.c: 120: }
-[e :UE 1619 ]
-}
-"122
-[; ;mcc_generated_files/timer/src/tmr4.c: 122: void TMR4_OverflowCallbackRegister(void (* InterruptHandler)(void))
-[v _TMR4_OverflowCallbackRegister `(v ~T0 @X0 1 ef1`*F12261 ]
-"123
-[; ;mcc_generated_files/timer/src/tmr4.c: 123: {
-{
-[e :U _TMR4_OverflowCallbackRegister ]
-"122
-[; ;mcc_generated_files/timer/src/tmr4.c: 122: void TMR4_OverflowCallbackRegister(void (* InterruptHandler)(void))
-[v _InterruptHandler `*F12263 ~T0 @X0 1 r1 ]
-"123
-[; ;mcc_generated_files/timer/src/tmr4.c: 123: {
-[f ]
-"124
-[; ;mcc_generated_files/timer/src/tmr4.c: 124:    TMR4_OverflowCallback = InterruptHandler;
-[e = _TMR4_OverflowCallback _InterruptHandler ]
-"125
-[; ;mcc_generated_files/timer/src/tmr4.c: 125: }
-[e :UE 1620 ]
-}
-"127
-[; ;mcc_generated_files/timer/src/tmr4.c: 127: static void TMR4_DefaultOverflowCallback(void)
-[v _TMR4_DefaultOverflowCallback `(v ~T0 @X0 1 sf ]
-"128
-[; ;mcc_generated_files/timer/src/tmr4.c: 128: {
-{
-[e :U _TMR4_DefaultOverflowCallback ]
-[f ]
-"131
-[; ;mcc_generated_files/timer/src/tmr4.c: 131: }
-[e :UE 1621 ]
-}
-"133
-[; ;mcc_generated_files/timer/src/tmr4.c: 133: void TMR4_Tasks(void)
-[v _TMR4_Tasks `(v ~T0 @X0 1 ef ]
-"134
-[; ;mcc_generated_files/timer/src/tmr4.c: 134: {
-{
-[e :U _TMR4_Tasks ]
-[f ]
-"135
-[; ;mcc_generated_files/timer/src/tmr4.c: 135:     if(PIR4bits.TMR4IF)
-[e $ ! != -> . . _PIR4bits 0 3 `i -> 0 `i 1623  ]
-"136
-[; ;mcc_generated_files/timer/src/tmr4.c: 136:     {
-{
-"138
-[; ;mcc_generated_files/timer/src/tmr4.c: 138:         PIR4bits.TMR4IF = 0;
-[e = . . _PIR4bits 0 3 -> -> 0 `i `uc ]
-"139
-[; ;mcc_generated_files/timer/src/tmr4.c: 139:        TMR4_OverflowCallback();
-[e ( *U _TMR4_OverflowCallback ..  ]
-"140
-[; ;mcc_generated_files/timer/src/tmr4.c: 140:     }
-}
-[e :U 1623 ]
-"141
-[; ;mcc_generated_files/timer/src/tmr4.c: 141: }
-[e :UE 1622 ]
 }

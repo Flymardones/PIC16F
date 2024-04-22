@@ -40,7 +40,7 @@ void ws2812_uart_commands(uint8_t* data, uint16_t size) {
             initialized = 0;
             fade_flag = 0;
         }
-        ws2812_spi.handle = 0;
+        ws2812_spi.handle = (void*)WS2812_SPI;
         ws2812_spi.led_num = (uint8_t)atoi(tokenizedInput[1]);
         ws2812_spi.brightness = (uint8_t)atoi(tokenizedInput[2]);
         ws2812_spi.dma = 0;

@@ -2,9 +2,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "23431 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 23431: extern volatile unsigned char OSCCON1 __attribute__((address(0x88D)));
 [v _OSCCON1 `Vuc ~T0 @X0 0 e@2189 ]
-"23501
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 23501: extern volatile unsigned char OSCCON2 __attribute__((address(0x88E)));
-[v _OSCCON2 `Vuc ~T0 @X0 0 e@2190 ]
 "23571
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 23571: extern volatile unsigned char OSCCON3 __attribute__((address(0x88F)));
 [v _OSCCON3 `Vuc ~T0 @X0 0 e@2191 ]
@@ -1664,21 +1661,18 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/system/src/clock.c: 41:     OSCCON1 = 0x60;
 [e = _OSCCON1 -> -> 96 `i `uc ]
 "43
-[; ;mcc_generated_files/system/src/clock.c: 43:     OSCCON2 = 0x60;
-[e = _OSCCON2 -> -> 96 `i `uc ]
-"46
-[; ;mcc_generated_files/system/src/clock.c: 46:     OSCCON3 = 0x0;
-[e = _OSCCON3 -> -> 0 `i `uc ]
-"48
-[; ;mcc_generated_files/system/src/clock.c: 48:     OSCEN = 0x40;
-[e = _OSCEN -> -> 64 `i `uc ]
-"50
-[; ;mcc_generated_files/system/src/clock.c: 50:     OSCFRQ = 0x6;
+[; ;mcc_generated_files/system/src/clock.c: 43:     OSCCON3 = 0x40;
+[e = _OSCCON3 -> -> 64 `i `uc ]
+"45
+[; ;mcc_generated_files/system/src/clock.c: 45:     OSCEN = 0x0;
+[e = _OSCEN -> -> 0 `i `uc ]
+"47
+[; ;mcc_generated_files/system/src/clock.c: 47:     OSCFRQ = 0x6;
 [e = _OSCFRQ -> -> 6 `i `uc ]
-"52
-[; ;mcc_generated_files/system/src/clock.c: 52:     OSCTUNE = 0x0;
+"49
+[; ;mcc_generated_files/system/src/clock.c: 49:     OSCTUNE = 0x0;
 [e = _OSCTUNE -> -> 0 `i `uc ]
-"54
-[; ;mcc_generated_files/system/src/clock.c: 54: }
+"51
+[; ;mcc_generated_files/system/src/clock.c: 51: }
 [e :UE 1611 ]
 }
