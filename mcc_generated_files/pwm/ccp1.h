@@ -1,15 +1,14 @@
 /**
- * PWM6 Generated Driver API Header File
+ * PWM1 Generated Driver API Header File.
+ * 
+ * @file ccp1.h
+ * 
+ * @defgroup pwm1 PWM1
+ * 
+ * @brief This file contains the API prototypes for the PWM1 module.
  *
- * @file pwm6.h
- *
- * @defgroup pwm6 PWM6
- *
- * @brief This file contains the API prototypes for the PWM6 driver.
- *
- * @version PWM6 Driver Version 2.0.4
+ * @version PWM1 Driver Version 2.0.2
 */
-
 /*
 © [2024] Microchip Technology Inc. and its subsidiaries.
 
@@ -31,37 +30,46 @@
     THIS SOFTWARE.
 */
 
-#ifndef PWM6_H
- #define PWM6_H
- 
- /**
-  * Section: Included Files
-  */
-
- #include <xc.h>
- #include <stdint.h>
+#ifndef PWM1_H
+#define PWM1_H
 
  /**
-  * Section: Macro Declarations
+   Section: Included Files
  */
 
- #define PWM6_INITIALIZE_DUTY_VALUE    0
+#include <xc.h>
+#include <stdint.h>
+#include <stdbool.h>
 
+#define PWM1_Initialize CCP1_Initialize
+#define PWM1_LoadDutyValue CCP1_LoadDutyValue
+#define PWM1_OutputStatusGet  CCP1_OutputStatusGet
 
-/**
- * @ingroup pwm6
- * @brief Initializes the PWM6 interface.
+ /**
+ * @ingroup pwm1
+ * @brief Initializes the CCP1 module. This is called only once before calling other CCP1 APIs.
  * @param None.
  * @return None.
  */
- void PWM6_Initialize(void);
-
- /**
- * @ingroup pwm6
+void CCP1_Initialize(void);
+/**
+ * @ingroup pwm1
  * @brief Loads the 16-bit duty cycle value.
- * @param uint16_t dutyValue - PWM6 duty cycle value to be loaded.
+ * @pre CCP1_Initialize() is already called.
+ * @param dutyValue - 16-bit duty cycle value.
  * @return None.
  */
- void PWM6_LoadDutyValue(uint16_t dutyValue);
- 
- #endif	//PWM6_H
+void CCP1_LoadDutyValue(uint16_t dutyValue);
+/**
+ * @ingroup pwm1
+ * @brief Returns the PWM output status.
+ * @pre CCP1_Initialize() is already called.
+ * @param None.
+ * @retval True - CCP1 PWM output is high
+ * @retval False - CCP1 PWM output is low
+ */
+bool CCP1_OutputStatusGet(void);
+#endif //PWM1_H
+/**
+ End of File
+*/

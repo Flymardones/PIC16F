@@ -106,7 +106,7 @@ void ws2812_uart_commands(uint8_t* data, uint16_t size) {
 
         #if PWM
         ws2812_set_led(&ws2812_pwm, (uint8_t)atoi(tokenizedInput[1]), (uint8_t)atoi(tokenizedInput[2]), (uint8_t)atoi(tokenizedInput[3]), (uint8_t)atoi(tokenizedInput[4]));
-        ws2812_pwm_send_single(&ws2812_pwm);
+        ws2812_pwm_send(&ws2812_pwm, ws2812_pwm.brightness);
         #endif
 
     }
@@ -144,7 +144,7 @@ void ws2812_uart_commands(uint8_t* data, uint16_t size) {
 
         #if PWM
         ws2812_set_led(&ws2812_pwm, (uint8_t)atoi(tokenizedInput[1]), 0, 0, 0);
-        ws2812_pwm_send_single(&ws2812_pwm);
+        ws2812_pwm_send(&ws2812_pwm, ws2812_pwm.brightness);
         #endif
     }
     else if (strcmp(tokenizedInput[0], "START_FADE_ALL") == 0 && initialized) {

@@ -49,8 +49,8 @@ void PIN_MANAGER_Initialize(void)
     /**
     TRISx registers
     */
-    TRISA = 0xDF;
-    TRISB = 0xFE;
+    TRISA = 0xFF;
+    TRISB = 0xFC;
     TRISC = 0xFF;
     TRISD = 0xFF;
     TRISE = 0x7;
@@ -104,7 +104,8 @@ void PIN_MANAGER_Initialize(void)
     */
     RXPPS = 0xA; //RB2->EUSART:RX;
     RB0PPS = 0x15;  //RB0->MSSP1:SDO1;
-    RA5PPS = 0x0E;  //RA5->PWM6:PWM6OUT;
+    CCP1PPS = 0x9;  //RB1->CCP1:CCP1;
+    RB1PPS = 0x09;  //RB1->CCP1:CCP1;
 
     /**
     APFCON registers

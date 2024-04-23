@@ -21137,9 +21137,9 @@ void EUSART_RxCompleteCallbackRegister(void (* callbackHandler)(void));
 void EUSART_ReceiveISR(void);
 # 45 "ws2812/Src/../Inc/../../mcc_generated_files/system/../uart/../system/system.h" 2
 
-# 1 "ws2812/Src/../Inc/../../mcc_generated_files/system/../pwm/pwm6.h" 1
-# 57 "ws2812/Src/../Inc/../../mcc_generated_files/system/../pwm/pwm6.h"
- void PWM6_Initialize(void);
+# 1 "ws2812/Src/../Inc/../../mcc_generated_files/system/../pwm/ccp1.h" 1
+# 54 "ws2812/Src/../Inc/../../mcc_generated_files/system/../pwm/ccp1.h"
+void CCP1_Initialize(void);
 
 
 
@@ -21147,7 +21147,9 @@ void EUSART_ReceiveISR(void);
 
 
 
- void PWM6_LoadDutyValue(uint16_t dutyValue);
+void CCP1_LoadDutyValue(uint16_t dutyValue);
+# 71 "ws2812/Src/../Inc/../../mcc_generated_files/system/../pwm/ccp1.h"
+_Bool CCP1_OutputStatusGet(void);
 # 46 "ws2812/Src/../Inc/../../mcc_generated_files/system/../uart/../system/system.h" 2
 
 # 1 "ws2812/Src/../Inc/../../mcc_generated_files/system/../spi/mssp1.h" 1

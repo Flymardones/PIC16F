@@ -1,28 +1,51 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"12541 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 12541: extern volatile unsigned char PWM6CON __attribute__((address(0x38E)));
-[v _PWM6CON `Vuc ~T0 @X0 0 e@910 ]
-"12371
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 12371: extern volatile unsigned char PWM6DCH __attribute__((address(0x38D)));
-[v _PWM6DCH `Vuc ~T0 @X0 0 e@909 ]
-"12305
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 12305: extern volatile unsigned char PWM6DCL __attribute__((address(0x38C)));
-[v _PWM6DCL `Vuc ~T0 @X0 0 e@908 ]
-"9269
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 9269:     struct {
-[s S412 :2 `uc 1 :2 `uc 1 :2 `uc 1 ]
-[n S412 . C5TSEL P6TSEL P7TSEL ]
-"9274
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 9274:     struct {
-[s S413 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S413 . C5TSEL0 C5TSEL1 P6TSEL0 P6TSEL1 P7TSEL0 P7TSEL1 ]
-"9268
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 9268: typedef union {
-[u S411 `S412 1 `S413 1 ]
-[n S411 . . . ]
-"9283
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 9283: extern volatile CCPTMRS1bits_t CCPTMRS1bits __attribute__((address(0x21F)));
-[v _CCPTMRS1bits `VS411 ~T0 @X0 0 e@543 ]
+"11180 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 11180: extern volatile unsigned char CCP1CON __attribute__((address(0x30E)));
+[v _CCP1CON `Vuc ~T0 @X0 0 e@782 ]
+"11160
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 11160: extern volatile unsigned char CCPR1H __attribute__((address(0x30D)));
+[v _CCPR1H `Vuc ~T0 @X0 0 e@781 ]
+"11140
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 11140: extern volatile unsigned char CCPR1L __attribute__((address(0x30C)));
+[v _CCPR1L `Vuc ~T0 @X0 0 e@780 ]
+"9181
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 9181:     struct {
+[s S409 :2 `uc 1 :2 `uc 1 :2 `uc 1 :2 `uc 1 ]
+[n S409 . C1TSEL C2TSEL C3TSEL C4TSEL ]
+"9187
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 9187:     struct {
+[s S410 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S410 . C1TSEL0 C1TSEL1 C2TSEL0 C2TSEL1 C3TSEL0 C3TSEL1 C4TSEL0 C4TSEL1 ]
+"9180
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 9180: typedef union {
+[u S408 `S409 1 `S410 1 ]
+[n S408 . . . ]
+"9198
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 9198: extern volatile CCPTMRS0bits_t CCPTMRS0bits __attribute__((address(0x21E)));
+[v _CCPTMRS0bits `VS408 ~T0 @X0 0 e@542 ]
+"11186
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 11186:     struct {
+[s S518 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S518 . MODE FMT OUT . EN ]
+"11193
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 11193:     struct {
+[s S519 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S519 . MODE0 MODE1 MODE2 MODE3 ]
+"11199
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 11199:     struct {
+[s S520 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S520 . CCP1MODE CCP1FMT CCP1OUT . CCP1EN ]
+"11206
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 11206:     struct {
+[s S521 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S521 . CCP1MODE0 CCP1MODE1 CCP1MODE2 CCP1MODE3 ]
+"11185
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 11185: typedef union {
+[u S517 `S518 1 `S519 1 `S520 1 `S521 1 ]
+[n S517 . . . . . ]
+"11213
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 11213: extern volatile CCP1CONbits_t CCP1CONbits __attribute__((address(0x30E)));
+[v _CCP1CONbits `VS517 ~T0 @X0 0 e@782 ]
 "54 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 54: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -1658,50 +1681,98 @@ Version 4.0 HI-TECH Software Intermediate Code
 "36289
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 36289: __asm("TOSH equ 01FEFh");
 [; <" TOSH equ 01FEFh ;# ">
-"45 mcc_generated_files/pwm/src/pwm6.c
-[; ;mcc_generated_files/pwm/src/pwm6.c: 45:  void PWM6_Initialize(void)
-[v _PWM6_Initialize `(v ~T0 @X0 1 ef ]
-"46
-[; ;mcc_generated_files/pwm/src/pwm6.c: 46:  {
+"50 mcc_generated_files/pwm/src/ccp1.c
+[; ;mcc_generated_files/pwm/src/ccp1.c: 50: void CCP1_Initialize(void)
+[v _CCP1_Initialize `(v ~T0 @X0 1 ef ]
+"51
+[; ;mcc_generated_files/pwm/src/ccp1.c: 51: {
 {
-[e :U _PWM6_Initialize ]
+[e :U _CCP1_Initialize ]
 [f ]
-"50
-[; ;mcc_generated_files/pwm/src/pwm6.c: 50:     PWM6CON = 0x80;
-[e = _PWM6CON -> -> 128 `i `uc ]
-"53
-[; ;mcc_generated_files/pwm/src/pwm6.c: 53:     PWM6DCH = 0x0;
-[e = _PWM6DCH -> -> 0 `i `uc ]
-"56
-[; ;mcc_generated_files/pwm/src/pwm6.c: 56:     PWM6DCL = 0x0;
-[e = _PWM6DCL -> -> 0 `i `uc ]
+"55
+[; ;mcc_generated_files/pwm/src/ccp1.c: 55:     CCP1CON = 0x8F;
+[e = _CCP1CON -> -> 143 `i `uc ]
 "58
-[; ;mcc_generated_files/pwm/src/pwm6.c: 58:     CCPTMRS1bits.P6TSEL = 0x1;
-[e = . . _CCPTMRS1bits 0 1 -> -> 1 `i `uc ]
+[; ;mcc_generated_files/pwm/src/ccp1.c: 58:     CCPR1H = 0x0;
+[e = _CCPR1H -> -> 0 `i `uc ]
 "61
-[; ;mcc_generated_files/pwm/src/pwm6.c: 61:  }
+[; ;mcc_generated_files/pwm/src/ccp1.c: 61:     CCPR1L = 0x0;
+[e = _CCPR1L -> -> 0 `i `uc ]
+"64
+[; ;mcc_generated_files/pwm/src/ccp1.c: 64:     CCPTMRS0bits.C1TSEL = 0x1;
+[e = . . _CCPTMRS0bits 0 0 -> -> 1 `i `uc ]
+"65
+[; ;mcc_generated_files/pwm/src/ccp1.c: 65: }
 [e :UE 1611 ]
 }
-"63
-[; ;mcc_generated_files/pwm/src/pwm6.c: 63:  void PWM6_LoadDutyValue(uint16_t dutyValue)
-[v _PWM6_LoadDutyValue `(v ~T0 @X0 1 ef1`us ]
-"64
-[; ;mcc_generated_files/pwm/src/pwm6.c: 64:  {
+"67
+[; ;mcc_generated_files/pwm/src/ccp1.c: 67: void CCP1_LoadDutyValue(uint16_t dutyValue)
+[v _CCP1_LoadDutyValue `(v ~T0 @X0 1 ef1`us ]
+"68
+[; ;mcc_generated_files/pwm/src/ccp1.c: 68: {
 {
-[e :U _PWM6_LoadDutyValue ]
-"63
-[; ;mcc_generated_files/pwm/src/pwm6.c: 63:  void PWM6_LoadDutyValue(uint16_t dutyValue)
+[e :U _CCP1_LoadDutyValue ]
+"67
+[; ;mcc_generated_files/pwm/src/ccp1.c: 67: void CCP1_LoadDutyValue(uint16_t dutyValue)
 [v _dutyValue `us ~T0 @X0 1 r1 ]
-"64
-[; ;mcc_generated_files/pwm/src/pwm6.c: 64:  {
+"68
+[; ;mcc_generated_files/pwm/src/ccp1.c: 68: {
 [f ]
-"66
-[; ;mcc_generated_files/pwm/src/pwm6.c: 66:      PWM6DCH = (uint8_t) ((dutyValue & 0x03FCu) >> 2);
-[e = _PWM6DCH -> >> & -> _dutyValue `ui -> 1020 `ui -> 2 `i `uc ]
 "69
-[; ;mcc_generated_files/pwm/src/pwm6.c: 69:      PWM6DCL = (uint8_t) ((dutyValue & 0x0003u) << 6);
-[e = _PWM6DCL -> << & -> _dutyValue `ui -> 3 `ui -> 6 `i `uc ]
-"70
-[; ;mcc_generated_files/pwm/src/pwm6.c: 70:  }
+[; ;mcc_generated_files/pwm/src/ccp1.c: 69:    dutyValue &= 0x03FF;
+[e =& _dutyValue -> -> 1023 `i `us ]
+"72
+[; ;mcc_generated_files/pwm/src/ccp1.c: 72:     if(CCP1CONbits.CCP1FMT)
+[e $ ! != -> . . _CCP1CONbits 2 1 `i -> 0 `i 1613  ]
+"73
+[; ;mcc_generated_files/pwm/src/ccp1.c: 73:     {
+{
+"74
+[; ;mcc_generated_files/pwm/src/ccp1.c: 74:         dutyValue <<= 6;
+[e =<< _dutyValue -> -> 6 `i `us ]
+"75
+[; ;mcc_generated_files/pwm/src/ccp1.c: 75:         CCPR1H = (uint8_t)(dutyValue >> 8);
+[e = _CCPR1H -> >> -> _dutyValue `ui -> 8 `i `uc ]
+"76
+[; ;mcc_generated_files/pwm/src/ccp1.c: 76:         CCPR1L = (uint8_t)dutyValue;
+[e = _CCPR1L -> _dutyValue `uc ]
+"77
+[; ;mcc_generated_files/pwm/src/ccp1.c: 77:     }
+}
+[e $U 1614  ]
+"78
+[; ;mcc_generated_files/pwm/src/ccp1.c: 78:     else
+[e :U 1613 ]
+"79
+[; ;mcc_generated_files/pwm/src/ccp1.c: 79:     {
+{
+"80
+[; ;mcc_generated_files/pwm/src/ccp1.c: 80:         CCPR1H = (uint8_t)(dutyValue >> 8);
+[e = _CCPR1H -> >> -> _dutyValue `ui -> 8 `i `uc ]
+"81
+[; ;mcc_generated_files/pwm/src/ccp1.c: 81:         CCPR1L = (uint8_t)dutyValue;
+[e = _CCPR1L -> _dutyValue `uc ]
+"82
+[; ;mcc_generated_files/pwm/src/ccp1.c: 82:     }
+}
+[e :U 1614 ]
+"83
+[; ;mcc_generated_files/pwm/src/ccp1.c: 83: }
 [e :UE 1612 ]
+}
+"84
+[; ;mcc_generated_files/pwm/src/ccp1.c: 84: _Bool CCP1_OutputStatusGet(void)
+[v _CCP1_OutputStatusGet `(a ~T0 @X0 1 ef ]
+"85
+[; ;mcc_generated_files/pwm/src/ccp1.c: 85: {
+{
+[e :U _CCP1_OutputStatusGet ]
+[f ]
+"87
+[; ;mcc_generated_files/pwm/src/ccp1.c: 87:     return(CCP1CONbits.OUT);
+[e ) -> . . _CCP1CONbits 0 2 `a ]
+[e $UE 1615  ]
+"88
+[; ;mcc_generated_files/pwm/src/ccp1.c: 88: }
+[e :UE 1615 ]
 }

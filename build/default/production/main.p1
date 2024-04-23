@@ -30,18 +30,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "370
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 370: extern volatile INTCONbits_t INTCONbits __attribute__((address(0x00B)));
 [v _INTCONbits `VS30 ~T0 @X0 0 e@11 ]
-"16 ./ws2812/Inc/ws2812_pwm.h
-[; ;./ws2812/Inc/ws2812_pwm.h: 16: _Bool ws2812_pwm_init(ws2812_configuration* ws2812_conf);
-[v _ws2812_pwm_init `(a ~T0 @X0 0 ef1`*S1618 ]
-"64 ./ws2812/Inc/ws2812.h
-[; ;./ws2812/Inc/ws2812.h: 64: void ws2812_set_led(ws2812_configuration* ws2812_conf, uint8_t led, uint8_t red, uint8_t green, uint8_t blue);
-[v _ws2812_set_led `(v ~T0 @X0 0 ef5`*S1618`uc`uc`uc`uc ]
-"365 ./mcc_generated_files/system/../timer/tmr2.h
-[; ;./mcc_generated_files/system/../timer/tmr2.h: 365: void TMR2_Stop(void);
-[v _TMR2_Stop `(v ~T0 @X0 0 ef ]
-"14 ./ws2812/Inc/ws2812_pwm.h
-[; ;./ws2812/Inc/ws2812_pwm.h: 14: void ws2812_pwm_send(ws2812_configuration* ws2812_conf, uint8_t brightness);
-[v _ws2812_pwm_send `(v ~T0 @X0 0 ef2`*S1618`uc ]
 "54 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 54: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -1779,59 +1767,22 @@ Version 4.0 HI-TECH Software Intermediate Code
 "98
 [; ;main.c: 98:     (INTCONbits.PEIE = 1);
 [e = . . _INTCONbits 0 2 -> -> 1 `i `uc ]
-"112
-[; ;main.c: 112:     ws2812_pwm.handle = 0;
-[e = . _ws2812_pwm 0 -> -> 0 `i `*v ]
-"113
-[; ;main.c: 113:     ws2812_pwm.led_num = 25;
-[e = . _ws2812_pwm 1 -> -> 25 `i `uc ]
-"114
-[; ;main.c: 114:     ws2812_pwm.brightness = 50;
-[e = . _ws2812_pwm 2 -> -> 50 `i `uc ]
-"115
-[; ;main.c: 115:     ws2812_pwm.dma = 0;
-[e = . _ws2812_pwm 5 -> -> 0 `i `uc ]
-"119
-[; ;main.c: 119:     ws2812_pwm_init(&ws2812_pwm);
-[e ( _ws2812_pwm_init (1 &U _ws2812_pwm ]
-"121
-[; ;main.c: 121:     for (uint8_t i = 0; i < ws2812_pwm.led_num; i++) {
-{
-[v _i `uc ~T0 @X0 1 a ]
-[e = _i -> -> 0 `i `uc ]
-[e $U 1631  ]
-[e :U 1628 ]
-{
-"122
-[; ;main.c: 122:         ws2812_set_led(&ws2812_spi, i, 0, 255, 0);
-[e ( _ws2812_set_led (4 , , , , &U _ws2812_spi _i -> -> 0 `i `uc -> -> 255 `i `uc -> -> 0 `i `uc ]
-"123
-[; ;main.c: 123:     }
-}
-[e ++ _i -> -> 1 `i `uc ]
-[e :U 1631 ]
-[e $ < -> _i `i -> . _ws2812_pwm 1 `i 1628  ]
+"127
+[; ;main.c: 127:     while(1)
 [e :U 1629 ]
-}
-"125
-[; ;main.c: 125:     TMR2_Stop();
-[e ( _TMR2_Stop ..  ]
-"130
-[; ;main.c: 130:     while(1)
-[e :U 1633 ]
-"131
-[; ;main.c: 131:     {
+"128
+[; ;main.c: 128:     {
 {
 "146
-[; ;main.c: 146:     ws2812_pwm_send(&ws2812_pwm, ws2812_pwm.brightness);
-[e ( _ws2812_pwm_send (2 , &U _ws2812_pwm . _ws2812_pwm 2 ]
-"156
-[; ;main.c: 156:     }
+[; ;main.c: 146:     Handle_UART_Data();
+[e ( _Handle_UART_Data ..  ]
+"151
+[; ;main.c: 151:     }
 }
-[e :U 1632 ]
-[e $U 1633  ]
-[e :U 1634 ]
-"157
-[; ;main.c: 157: }
+[e :U 1628 ]
+[e $U 1629  ]
+[e :U 1630 ]
+"152
+[; ;main.c: 152: }
 [e :UE 1627 ]
 }

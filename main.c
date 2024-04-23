@@ -109,20 +109,17 @@ int main(void)
     
     
 #if PWM
-    ws2812_pwm.handle = 0;
-    ws2812_pwm.led_num = 25;
-    ws2812_pwm.brightness = 50;
-    ws2812_pwm.dma = 0;
+    //ws2812_pwm.handle = 0;
+    //ws2812_pwm.led_num = 25;
+    //ws2812_pwm.brightness = 50;
+    //ws2812_pwm.dma = 0;
     
-    //TMR2_Start();
+    //ws2812_pwm_init(&ws2812_pwm);
     
-    ws2812_pwm_init(&ws2812_pwm);
+    //for (uint8_t i = 0; i < ws2812_pwm.led_num; i++) {
+    //    ws2812_set_led(&ws2812_pwm, i, 0, 0, 255);
+    //}
     
-    for (uint8_t i = 0; i < ws2812_pwm.led_num; i++) {
-        ws2812_set_led(&ws2812_spi, i, 0, 255, 0);
-    }
-    
-    TMR2_Stop();
 
 #endif
     
@@ -143,12 +140,10 @@ int main(void)
         
 #if PWM
     
-    ws2812_pwm_send(&ws2812_pwm, ws2812_pwm.brightness);
-    //PWM6_LoadDutyValue(0x0A);
-    //__delay_us(625);
-    //T2CON = 0x80;
+    //ws2812_pwm_send(&ws2812_pwm, ws2812_pwm.brightness);
     
-    //__delay_ms(100);
+    
+    Handle_UART_Data(); 
 
 
 #endif

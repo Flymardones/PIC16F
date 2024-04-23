@@ -8,7 +8,7 @@
                      displayName="MCC Generated Files"
                      projectFiles="true">
         <logicalFolder name="pwm" displayName="pwm" projectFiles="true">
-          <itemPath>mcc_generated_files/pwm/pwm6.h</itemPath>
+          <itemPath>mcc_generated_files/pwm/ccp1.h</itemPath>
         </logicalFolder>
         <logicalFolder name="spi" displayName="spi" projectFiles="true">
           <itemPath>mcc_generated_files/spi/spi_interface.h</itemPath>
@@ -51,7 +51,7 @@
                      projectFiles="true">
         <logicalFolder name="pwm" displayName="pwm" projectFiles="true">
           <logicalFolder name="src" displayName="src" projectFiles="true">
-            <itemPath>mcc_generated_files/pwm/src/pwm6.c</itemPath>
+            <itemPath>mcc_generated_files/pwm/src/ccp1.c</itemPath>
           </logicalFolder>
         </logicalFolder>
         <logicalFolder name="spi" displayName="spi" projectFiles="true">

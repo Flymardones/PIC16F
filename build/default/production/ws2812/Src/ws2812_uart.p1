@@ -34,9 +34,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "14 ws2812/Src/../Inc/ws2812_pwm.h
 [; ;ws2812/Src/../Inc/ws2812_pwm.h: 14: void ws2812_pwm_send(ws2812_configuration* ws2812_conf, uint8_t brightness);
 [v _ws2812_pwm_send `(v ~T0 @X0 0 ef2`*S1618`uc ]
-"18
-[; ;ws2812/Src/../Inc/ws2812_pwm.h: 18: void ws2812_pwm_send_single(ws2812_configuration* ws2812_conf);
-[v _ws2812_pwm_send_single `(v ~T0 @X0 0 ef1`*S1618 ]
 "68 ws2812/Src/../Inc/../../mcc_generated_files/system/../uart/../system/system.h
 [; ;ws2812/Src/../Inc/../../mcc_generated_files/system/../uart/../system/system.h: 68: extern uint16_t fade_time;
 [v _fade_time `us ~T0 @X0 0 e ]
@@ -1836,8 +1833,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;ws2812/Src/ws2812_uart.c: 108:         ws2812_set_led(&ws2812_pwm, (uint8_t)atoi(tokenizedInput[1]), (uint8_t)atoi(tokenizedInput[2]), (uint8_t)atoi(tokenizedInput[3]), (uint8_t)atoi(tokenizedInput[4]));
 [e ( _ws2812_set_led (4 , , , , &U _ws2812_pwm -> ( _atoi (1 -> *U + &U _tokenizedInput * -> -> -> 1 `i `ui `ux -> -> # *U &U _tokenizedInput `ui `ux `*Cuc `uc -> ( _atoi (1 -> *U + &U _tokenizedInput * -> -> -> 2 `i `ui `ux -> -> # *U &U _tokenizedInput `ui `ux `*Cuc `uc -> ( _atoi (1 -> *U + &U _tokenizedInput * -> -> -> 3 `i `ui `ux -> -> # *U &U _tokenizedInput `ui `ux `*Cuc `uc -> ( _atoi (1 -> *U + &U _tokenizedInput * -> -> -> 4 `i `ui `ux -> -> # *U &U _tokenizedInput `ui `ux `*Cuc `uc ]
 "109
-[; ;ws2812/Src/ws2812_uart.c: 109:         ws2812_pwm_send_single(&ws2812_pwm);
-[e ( _ws2812_pwm_send_single (1 &U _ws2812_pwm ]
+[; ;ws2812/Src/ws2812_uart.c: 109:         ws2812_pwm_send(&ws2812_pwm, ws2812_pwm.brightness);
+[e ( _ws2812_pwm_send (2 , &U _ws2812_pwm . _ws2812_pwm 2 ]
 "112
 [; ;ws2812/Src/ws2812_uart.c: 112:     }
 }
@@ -1897,8 +1894,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;ws2812/Src/ws2812_uart.c: 146:         ws2812_set_led(&ws2812_pwm, (uint8_t)atoi(tokenizedInput[1]), 0, 0, 0);
 [e ( _ws2812_set_led (4 , , , , &U _ws2812_pwm -> ( _atoi (1 -> *U + &U _tokenizedInput * -> -> -> 1 `i `ui `ux -> -> # *U &U _tokenizedInput `ui `ux `*Cuc `uc -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc ]
 "147
-[; ;ws2812/Src/ws2812_uart.c: 147:         ws2812_pwm_send_single(&ws2812_pwm);
-[e ( _ws2812_pwm_send_single (1 &U _ws2812_pwm ]
+[; ;ws2812/Src/ws2812_uart.c: 147:         ws2812_pwm_send(&ws2812_pwm, ws2812_pwm.brightness);
+[e ( _ws2812_pwm_send (2 , &U _ws2812_pwm . _ws2812_pwm 2 ]
 "149
 [; ;ws2812/Src/ws2812_uart.c: 149:     }
 }

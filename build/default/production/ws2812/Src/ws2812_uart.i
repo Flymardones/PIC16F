@@ -21136,9 +21136,9 @@ void EUSART_RxCompleteCallbackRegister(void (* callbackHandler)(void));
 void EUSART_ReceiveISR(void);
 # 45 "ws2812/Src/../Inc/../../mcc_generated_files/system/../uart/../system/system.h" 2
 
-# 1 "ws2812/Src/../Inc/../../mcc_generated_files/system/../pwm/pwm6.h" 1
-# 57 "ws2812/Src/../Inc/../../mcc_generated_files/system/../pwm/pwm6.h"
- void PWM6_Initialize(void);
+# 1 "ws2812/Src/../Inc/../../mcc_generated_files/system/../pwm/ccp1.h" 1
+# 54 "ws2812/Src/../Inc/../../mcc_generated_files/system/../pwm/ccp1.h"
+void CCP1_Initialize(void);
 
 
 
@@ -21146,7 +21146,9 @@ void EUSART_ReceiveISR(void);
 
 
 
- void PWM6_LoadDutyValue(uint16_t dutyValue);
+void CCP1_LoadDutyValue(uint16_t dutyValue);
+# 71 "ws2812/Src/../Inc/../../mcc_generated_files/system/../pwm/ccp1.h"
+_Bool CCP1_OutputStatusGet(void);
 # 46 "ws2812/Src/../Inc/../../mcc_generated_files/system/../uart/../system/system.h" 2
 
 # 1 "ws2812/Src/../Inc/../../mcc_generated_files/system/../spi/mssp1.h" 1
@@ -21727,7 +21729,7 @@ void ws2812_uart_commands(uint8_t* data, uint16_t size) {
 
 
         ws2812_set_led(&ws2812_pwm, (uint8_t)atoi(tokenizedInput[1]), (uint8_t)atoi(tokenizedInput[2]), (uint8_t)atoi(tokenizedInput[3]), (uint8_t)atoi(tokenizedInput[4]));
-        ws2812_pwm_send_single(&ws2812_pwm);
+        ws2812_pwm_send(&ws2812_pwm, ws2812_pwm.brightness);
 
 
     }
@@ -21758,7 +21760,7 @@ void ws2812_uart_commands(uint8_t* data, uint16_t size) {
 
 
         ws2812_set_led(&ws2812_pwm, (uint8_t)atoi(tokenizedInput[1]), 0, 0, 0);
-        ws2812_pwm_send_single(&ws2812_pwm);
+        ws2812_pwm_send(&ws2812_pwm, ws2812_pwm.brightness);
 
     }
     else if (strcmp(tokenizedInput[0], "START_FADE_ALL") == 0 && initialized) {

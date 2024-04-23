@@ -21141,9 +21141,9 @@ void EUSART_RxCompleteCallbackRegister(void (* callbackHandler)(void));
 void EUSART_ReceiveISR(void);
 # 45 "mcc_generated_files/system/src/../../system/../uart/../system/system.h" 2
 
-# 1 "mcc_generated_files/system/src/../../system/../pwm/pwm6.h" 1
-# 57 "mcc_generated_files/system/src/../../system/../pwm/pwm6.h"
- void PWM6_Initialize(void);
+# 1 "mcc_generated_files/system/src/../../system/../pwm/ccp1.h" 1
+# 54 "mcc_generated_files/system/src/../../system/../pwm/ccp1.h"
+void CCP1_Initialize(void);
 
 
 
@@ -21151,7 +21151,9 @@ void EUSART_ReceiveISR(void);
 
 
 
- void PWM6_LoadDutyValue(uint16_t dutyValue);
+void CCP1_LoadDutyValue(uint16_t dutyValue);
+# 71 "mcc_generated_files/system/src/../../system/../pwm/ccp1.h"
+_Bool CCP1_OutputStatusGet(void);
 # 46 "mcc_generated_files/system/src/../../system/../uart/../system/system.h" 2
 
 # 1 "mcc_generated_files/system/src/../../system/../spi/mssp1.h" 1

@@ -8,7 +8,7 @@ mcc_generated_files/system/src/../../uart/eusart.h  \
 mcc_generated_files/system/src/../../uart/../system/system.h  \
 mcc_generated_files/system/src/../../uart/uart_drv_interface.h  \
 mcc_generated_files/system/src/../../uart/uart_types.h  \
-mcc_generated_files/system/src/../../pwm/pwm6.h  \
+mcc_generated_files/system/src/../../pwm/ccp1.h  \
 mcc_generated_files/system/src/../../spi/mssp1.h  \
 mcc_generated_files/system/src/../../spi/spi_interface.h  \
 mcc_generated_files/system/src/../../timer/tmr2.h  \

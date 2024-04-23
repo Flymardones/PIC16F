@@ -21126,9 +21126,9 @@ void EUSART_RxCompleteCallbackRegister(void (* callbackHandler)(void));
 void EUSART_ReceiveISR(void);
 # 45 "./mcc_generated_files/system/../uart/../system/system.h" 2
 
-# 1 "./mcc_generated_files/system/../pwm/pwm6.h" 1
-# 57 "./mcc_generated_files/system/../pwm/pwm6.h"
- void PWM6_Initialize(void);
+# 1 "./mcc_generated_files/system/../pwm/ccp1.h" 1
+# 54 "./mcc_generated_files/system/../pwm/ccp1.h"
+void CCP1_Initialize(void);
 
 
 
@@ -21136,7 +21136,9 @@ void EUSART_ReceiveISR(void);
 
 
 
- void PWM6_LoadDutyValue(uint16_t dutyValue);
+void CCP1_LoadDutyValue(uint16_t dutyValue);
+# 71 "./mcc_generated_files/system/../pwm/ccp1.h"
+_Bool CCP1_OutputStatusGet(void);
 # 46 "./mcc_generated_files/system/../uart/../system/system.h" 2
 
 # 1 "./mcc_generated_files/system/../spi/mssp1.h" 1
@@ -21708,29 +21710,14 @@ int main(void)
 
 
     (INTCONbits.PEIE = 1);
-# 112 "main.c"
-    ws2812_pwm.handle = 0;
-    ws2812_pwm.led_num = 25;
-    ws2812_pwm.brightness = 50;
-    ws2812_pwm.dma = 0;
-
-
-
-    ws2812_pwm_init(&ws2812_pwm);
-
-    for (uint8_t i = 0; i < ws2812_pwm.led_num; i++) {
-        ws2812_set_led(&ws2812_spi, i, 0, 255, 0);
-    }
-
-    TMR2_Stop();
-
-
-
-
+# 127 "main.c"
     while(1)
     {
 # 146 "main.c"
-    ws2812_pwm_send(&ws2812_pwm, ws2812_pwm.brightness);
-# 156 "main.c"
+    Handle_UART_Data();
+
+
+
+
     }
 }

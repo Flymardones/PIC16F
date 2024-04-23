@@ -21126,9 +21126,9 @@ void EUSART_RxCompleteCallbackRegister(void (* callbackHandler)(void));
 void EUSART_ReceiveISR(void);
 # 45 "./mcc_generated_files/system/../uart/../system/system.h" 2
 
-# 1 "./mcc_generated_files/system/../pwm/pwm6.h" 1
-# 57 "./mcc_generated_files/system/../pwm/pwm6.h"
- void PWM6_Initialize(void);
+# 1 "./mcc_generated_files/system/../pwm/ccp1.h" 1
+# 54 "./mcc_generated_files/system/../pwm/ccp1.h"
+void CCP1_Initialize(void);
 
 
 
@@ -21136,7 +21136,9 @@ void EUSART_ReceiveISR(void);
 
 
 
- void PWM6_LoadDutyValue(uint16_t dutyValue);
+void CCP1_LoadDutyValue(uint16_t dutyValue);
+# 71 "./mcc_generated_files/system/../pwm/ccp1.h"
+_Bool CCP1_OutputStatusGet(void);
 # 46 "./mcc_generated_files/system/../uart/../system/system.h" 2
 
 # 1 "./mcc_generated_files/system/../spi/mssp1.h" 1
@@ -21665,26 +21667,13 @@ void ws2812_pwm_deinit(ws2812_configuration* ws2812_conf);
 ws2812_configuration ws2812_spi;
 ws2812_configuration ws2812_pwm;
 
+char c;
+uint8_t index = 0;
 _Bool fade_flag = 0;
 uint16_t fade_time = 0;
 uint8_t rxBuff[128];
-uint8_t buffer[24] = {
-    0b1110, 0b100, 0b1110, 0b100, 0b1110, 0b100,
-    0b1110, 0b100, 0b1110, 0b100, 0b1110, 0b100,
-    0b1110, 0b100, 0b1110, 0b100, 0b1110, 0b100,
-};
 
-char c;
-uint8_t index = 0;
 
-static void spi_write(uint8_t data) {
-    SSP1BUF = data;
-
-    while(!PIR3bits.SSP1IF) {
-
-    }
-    PIR3bits.SSP1IF = 0;
-}
 
 static void Handle_UART_Data(void) {
 
@@ -21721,19 +21710,16 @@ int main(void)
 
 
     (INTCONbits.PEIE = 1);
-# 125 "main.c"
-    ws2812_pwm.handle = 0;
-    ws2812_pwm.led_num = 25;
-    ws2812_pwm.brightness = 50;
-    ws2812_pwm.dma = 0;
-# 141 "main.c"
+# 131 "main.c"
     while(1)
     {
-# 158 "main.c"
-    PWM6_LoadDutyValue(0x0A);
-    T2CON = 0x80;
+# 150 "main.c"
+    CCP1_LoadDutyValue(0x0A);
+    T2CONbits.TMR2ON = 1;
+    while(PIR4bits.TMR2IF) {}
+    T2CONbits.TMR2ON = 0;
 
-    _delay((unsigned long)((100)*(32000000/4000.0)));
+
 
 
 

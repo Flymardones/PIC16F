@@ -20923,9 +20923,9 @@ void PIN_MANAGER_IOC(void);
 # 1 "mcc_generated_files/uart/src/../../system/../uart/eusart.h" 1
 # 45 "mcc_generated_files/uart/src/../../system/system.h" 2
 
-# 1 "mcc_generated_files/uart/src/../../system/../pwm/pwm6.h" 1
-# 57 "mcc_generated_files/uart/src/../../system/../pwm/pwm6.h"
- void PWM6_Initialize(void);
+# 1 "mcc_generated_files/uart/src/../../system/../pwm/ccp1.h" 1
+# 54 "mcc_generated_files/uart/src/../../system/../pwm/ccp1.h"
+void CCP1_Initialize(void);
 
 
 
@@ -20933,7 +20933,9 @@ void PIN_MANAGER_IOC(void);
 
 
 
- void PWM6_LoadDutyValue(uint16_t dutyValue);
+void CCP1_LoadDutyValue(uint16_t dutyValue);
+# 71 "mcc_generated_files/uart/src/../../system/../pwm/ccp1.h"
+_Bool CCP1_OutputStatusGet(void);
 # 46 "mcc_generated_files/uart/src/../../system/system.h" 2
 
 # 1 "mcc_generated_files/uart/src/../../system/../spi/mssp1.h" 1

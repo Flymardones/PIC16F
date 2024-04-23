@@ -83,12 +83,12 @@ TMR2_LC4_OUT 17
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
-"96 C:\Users\chris\Desktop\PIC16F\PIC16F.X\main.c
+"83 C:\Users\chris\Desktop\PIC16F\PIC16F.X\main.c
 [v _main main `(i  1 e 2 0 ]
-"45 C:\Users\chris\Desktop\PIC16F\PIC16F.X\mcc_generated_files/pwm/src/pwm6.c
-[v _PWM6_Initialize PWM6_Initialize `(v  1 e 1 0 ]
-"63
-[v _PWM6_LoadDutyValue PWM6_LoadDutyValue `(v  1 e 1 0 ]
+"50 C:\Users\chris\Desktop\PIC16F\PIC16F.X\mcc_generated_files/pwm/src/ccp1.c
+[v _CCP1_Initialize CCP1_Initialize `(v  1 e 1 0 ]
+"67
+[v _CCP1_LoadDutyValue CCP1_LoadDutyValue `(v  1 e 1 0 ]
 "60 C:\Users\chris\Desktop\PIC16F\PIC16F.X\mcc_generated_files/spi/src/mssp1.c
 [v _SPI1_Initialize SPI1_Initialize `(v  1 e 1 0 ]
 "72
@@ -127,7 +127,7 @@ TMR2_LC4_OUT 17
 [v _INT_DefaultInterruptHandler INT_DefaultInterruptHandler `(v  1 e 1 0 ]
 "38 C:\Users\chris\Desktop\PIC16F\PIC16F.X\mcc_generated_files/system/src/pins.c
 [v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
-"132
+"133
 [v _PIN_MANAGER_IOC PIN_MANAGER_IOC `(v  1 e 1 0 ]
 "39 C:\Users\chris\Desktop\PIC16F\PIC16F.X\mcc_generated_files/system/src/system.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
@@ -187,15 +187,15 @@ TMR2_LC4_OUT 17
 [v _ws2812_delay_us ws2812_delay_us `(v  1 e 1 0 ]
 "44 C:\Users\chris\Desktop\PIC16F\PIC16F.X\ws2812/Src/ws2812_pwm.c
 [v _ws2812_pwm_data ws2812_pwm_data `(v  1 e 1 0 ]
-"79
+"78
 [v _ws2812_pwm_send_single ws2812_pwm_send_single `(v  1 e 1 0 ]
-"90
+"89
 [v _ws2812_pwm_send ws2812_pwm_send `(v  1 e 1 0 ]
-"138
+"142
 [v _ws2812_pwm_clear ws2812_pwm_clear `(v  1 e 1 0 ]
-"146
+"150
 [v _ws2812_pwm_init ws2812_pwm_init `(a  1 e 1 0 ]
-"162
+"166
 [v _ws2812_pwm_deinit ws2812_pwm_deinit `(v  1 e 1 0 ]
 "51 C:\Users\chris\Desktop\PIC16F\PIC16F.X\ws2812/Src/ws2812_spi.c
 [v _ws2812_spi_data ws2812_spi_data `(v  1 e 1 0 ]
@@ -243,7 +243,7 @@ TMR2_LC4_OUT 17
 [v _SP1BRGH SP1BRGH `VEuc  1 e 1 @284 ]
 "3992
 [v _RC1STA RC1STA `VEuc  1 e 1 @285 ]
-[s S723 . 1 `uc 1 RX9D 1 0 :1:0 
+[s S1030 . 1 `uc 1 RX9D 1 0 :1:0 
 `uc 1 OERR 1 0 :1:1 
 `uc 1 FERR 1 0 :1:2 
 `uc 1 ADDEN 1 0 :1:3 
@@ -253,11 +253,11 @@ TMR2_LC4_OUT 17
 `uc 1 SPEN 1 0 :1:7 
 ]
 "4018
-[u S732 . 1 `S723 1 . 1 0 ]
-[v _RC1STAbits RC1STAbits `VES732  1 e 1 @285 ]
+[u S1039 . 1 `S1030 1 . 1 0 ]
+[v _RC1STAbits RC1STAbits `VES1039  1 e 1 @285 ]
 "4172
 [v _TX1STA TX1STA `VEuc  1 e 1 @286 ]
-[s S744 . 1 `uc 1 TX9D 1 0 :1:0 
+[s S1051 . 1 `uc 1 TX9D 1 0 :1:0 
 `uc 1 TRMT 1 0 :1:1 
 `uc 1 BRGH 1 0 :1:2 
 `uc 1 SENDB 1 0 :1:3 
@@ -267,11 +267,11 @@ TMR2_LC4_OUT 17
 `uc 1 CSRC 1 0 :1:7 
 ]
 "4198
-[u S753 . 1 `S744 1 . 1 0 ]
-[v _TX1STAbits TX1STAbits `VES753  1 e 1 @286 ]
+[u S1060 . 1 `S1051 1 . 1 0 ]
+[v _TX1STAbits TX1STAbits `VES1060  1 e 1 @286 ]
 "4352
 [v _BAUD1CON BAUD1CON `VEuc  1 e 1 @287 ]
-[s S765 . 1 `uc 1 ABDEN 1 0 :1:0 
+[s S1072 . 1 `uc 1 ABDEN 1 0 :1:0 
 `uc 1 WUE 1 0 :1:1 
 `uc 1 . 1 0 :1:2 
 `uc 1 BRG16 1 0 :1:3 
@@ -281,8 +281,8 @@ TMR2_LC4_OUT 17
 `uc 1 ABDOVF 1 0 :1:7 
 ]
 "4386
-[u S774 . 1 `S765 1 . 1 0 ]
-[v _BAUD1CONbits BAUD1CONbits `VES774  1 e 1 @287 ]
+[u S1081 . 1 `S1072 1 . 1 0 ]
+[v _BAUD1CONbits BAUD1CONbits `VES1081  1 e 1 @287 ]
 "4598
 [v _SSP1BUF SSP1BUF `VEuc  1 e 1 @396 ]
 "4618
@@ -316,20 +316,23 @@ TMR2_LC4_OUT 17
 [v _SSP1CON1bits SSP1CON1bits `VES213  1 e 1 @400 ]
 "5479
 [v _SSP1CON3 SSP1CON3 `VEuc  1 e 1 @402 ]
-[s S1735 . 1 `uc 1 C5TSEL 1 0 :2:0 
-`uc 1 P6TSEL 1 0 :2:2 
-`uc 1 P7TSEL 1 0 :2:4 
+[s S1735 . 1 `uc 1 C1TSEL 1 0 :2:0 
+`uc 1 C2TSEL 1 0 :2:2 
+`uc 1 C3TSEL 1 0 :2:4 
+`uc 1 C4TSEL 1 0 :2:6 
 ]
-"9283
-[s S1739 . 1 `uc 1 C5TSEL0 1 0 :1:0 
-`uc 1 C5TSEL1 1 0 :1:1 
-`uc 1 P6TSEL0 1 0 :1:2 
-`uc 1 P6TSEL1 1 0 :1:3 
-`uc 1 P7TSEL0 1 0 :1:4 
-`uc 1 P7TSEL1 1 0 :1:5 
+"9198
+[s S1740 . 1 `uc 1 C1TSEL0 1 0 :1:0 
+`uc 1 C1TSEL1 1 0 :1:1 
+`uc 1 C2TSEL0 1 0 :1:2 
+`uc 1 C2TSEL1 1 0 :1:3 
+`uc 1 C3TSEL0 1 0 :1:4 
+`uc 1 C3TSEL1 1 0 :1:5 
+`uc 1 C4TSEL0 1 0 :1:6 
+`uc 1 C4TSEL1 1 0 :1:7 
 ]
-[u S1746 . 1 `S1735 1 . 1 0 `S1739 1 . 1 0 ]
-[v _CCPTMRS1bits CCPTMRS1bits `VES1746  1 e 1 @543 ]
+[u S1749 . 1 `S1735 1 . 1 0 `S1740 1 . 1 0 ]
+[v _CCPTMRS0bits CCPTMRS0bits `VES1749  1 e 1 @542 ]
 "9333
 [v _T2TMR T2TMR `VEuc  1 e 1 @652 ]
 "9338
@@ -340,16 +343,16 @@ TMR2_LC4_OUT 17
 [v _PR2 PR2 `VEuc  1 e 1 @653 ]
 "9409
 [v _T2CON T2CON `VEuc  1 e 1 @654 ]
-[s S1627 . 1 `uc 1 OUTPS 1 0 :4:0 
+[s S704 . 1 `uc 1 OUTPS 1 0 :4:0 
 `uc 1 CKPS 1 0 :3:4 
 `uc 1 ON 1 0 :1:7 
 ]
 "9445
-[s S1631 . 1 `uc 1 T2OUTPS 1 0 :4:0 
+[s S708 . 1 `uc 1 T2OUTPS 1 0 :4:0 
 `uc 1 T2CKPS 1 0 :3:4 
 `uc 1 T2ON 1 0 :1:7 
 ]
-[s S1635 . 1 `uc 1 T2OUTPS0 1 0 :1:0 
+[s S712 . 1 `uc 1 T2OUTPS0 1 0 :1:0 
 `uc 1 T2OUTPS1 1 0 :1:1 
 `uc 1 T2OUTPS2 1 0 :1:2 
 `uc 1 T2OUTPS3 1 0 :1:3 
@@ -357,7 +360,7 @@ TMR2_LC4_OUT 17
 `uc 1 T2CKPS1 1 0 :1:5 
 `uc 1 T2CKPS2 1 0 :1:6 
 ]
-[s S1643 . 1 `uc 1 OUTPS0 1 0 :1:0 
+[s S720 . 1 `uc 1 OUTPS0 1 0 :1:0 
 `uc 1 OUTPS1 1 0 :1:1 
 `uc 1 OUTPS2 1 0 :1:2 
 `uc 1 OUTPS3 1 0 :1:3 
@@ -366,89 +369,89 @@ TMR2_LC4_OUT 17
 `uc 1 CKPS2 1 0 :1:6 
 `uc 1 TMR2ON 1 0 :1:7 
 ]
-[u S1652 . 1 `S1627 1 . 1 0 `S1631 1 . 1 0 `S1635 1 . 1 0 `S1643 1 . 1 0 ]
-[v _T2CONbits T2CONbits `VES1652  1 e 1 @654 ]
+[u S729 . 1 `S704 1 . 1 0 `S708 1 . 1 0 `S712 1 . 1 0 `S720 1 . 1 0 ]
+[v _T2CONbits T2CONbits `VES729  1 e 1 @654 ]
 "9555
 [v _T2HLT T2HLT `VEuc  1 e 1 @655 ]
-[s S1521 . 1 `uc 1 MODE 1 0 :5:0 
+[s S598 . 1 `uc 1 MODE 1 0 :5:0 
 `uc 1 CKSYNC 1 0 :1:5 
 `uc 1 CKPOL 1 0 :1:6 
 `uc 1 PSYNC 1 0 :1:7 
 ]
 "9588
-[s S1526 . 1 `uc 1 MODE0 1 0 :1:0 
+[s S603 . 1 `uc 1 MODE0 1 0 :1:0 
 `uc 1 MODE1 1 0 :1:1 
 `uc 1 MODE2 1 0 :1:2 
 `uc 1 MODE3 1 0 :1:3 
 `uc 1 MODE4 1 0 :1:4 
 ]
-[s S1532 . 1 `uc 1 T2MODE 1 0 :5:0 
+[s S609 . 1 `uc 1 T2MODE 1 0 :5:0 
 `uc 1 T2CKSYNC 1 0 :1:5 
 `uc 1 T2CKPOL 1 0 :1:6 
 `uc 1 T2PSYNC 1 0 :1:7 
 ]
-[s S1537 . 1 `uc 1 T2MODE0 1 0 :1:0 
+[s S614 . 1 `uc 1 T2MODE0 1 0 :1:0 
 `uc 1 T2MODE1 1 0 :1:1 
 `uc 1 T2MODE2 1 0 :1:2 
 `uc 1 T2MODE3 1 0 :1:3 
 `uc 1 T2MODE4 1 0 :1:4 
 ]
-[u S1543 . 1 `S1521 1 . 1 0 `S1526 1 . 1 0 `S1532 1 . 1 0 `S1537 1 . 1 0 ]
-[v _T2HLTbits T2HLTbits `VES1543  1 e 1 @655 ]
+[u S620 . 1 `S598 1 . 1 0 `S603 1 . 1 0 `S609 1 . 1 0 `S614 1 . 1 0 ]
+[v _T2HLTbits T2HLTbits `VES620  1 e 1 @655 ]
 "9683
 [v _T2CLKCON T2CLKCON `VEuc  1 e 1 @656 ]
 "9841
 [v _T2RST T2RST `VEuc  1 e 1 @657 ]
-[s S1589 . 1 `uc 1 RSEL 1 0 :5:0 
+[s S666 . 1 `uc 1 RSEL 1 0 :5:0 
 ]
 "9868
-[s S1591 . 1 `uc 1 RSEL0 1 0 :1:0 
+[s S668 . 1 `uc 1 RSEL0 1 0 :1:0 
 `uc 1 RSEL1 1 0 :1:1 
 `uc 1 RSEL2 1 0 :1:2 
 `uc 1 RSEL3 1 0 :1:3 
 `uc 1 RSEL4 1 0 :1:4 
 ]
-[s S1597 . 1 `uc 1 T2RSEL 1 0 :5:0 
+[s S674 . 1 `uc 1 T2RSEL 1 0 :5:0 
 ]
-[s S1599 . 1 `uc 1 T2RSEL0 1 0 :1:0 
+[s S676 . 1 `uc 1 T2RSEL0 1 0 :1:0 
 `uc 1 T2RSEL1 1 0 :1:1 
 `uc 1 T2RSEL2 1 0 :1:2 
 `uc 1 T2RSEL3 1 0 :1:3 
 `uc 1 T2RSEL4 1 0 :1:4 
 ]
-[u S1605 . 1 `S1589 1 . 1 0 `S1591 1 . 1 0 `S1597 1 . 1 0 `S1599 1 . 1 0 ]
-[v _T2RSTbits T2RSTbits `VES1605  1 e 1 @657 ]
-[s S976 . 1 `uc 1 MODE 1 0 :4:0 
+[u S682 . 1 `S666 1 . 1 0 `S668 1 . 1 0 `S674 1 . 1 0 `S676 1 . 1 0 ]
+[v _T2RSTbits T2RSTbits `VES682  1 e 1 @657 ]
+"11140
+[v _CCPR1L CCPR1L `VEuc  1 e 1 @780 ]
+"11160
+[v _CCPR1H CCPR1H `VEuc  1 e 1 @781 ]
+"11180
+[v _CCP1CON CCP1CON `VEuc  1 e 1 @782 ]
+[s S1767 . 1 `uc 1 MODE 1 0 :4:0 
 `uc 1 FMT 1 0 :1:4 
 `uc 1 OUT 1 0 :1:5 
 `uc 1 . 1 0 :1:6 
 `uc 1 EN 1 0 :1:7 
 ]
-"11446
-[s S982 . 1 `uc 1 MODE0 1 0 :1:0 
+"11213
+[s S1773 . 1 `uc 1 MODE0 1 0 :1:0 
 `uc 1 MODE1 1 0 :1:1 
 `uc 1 MODE2 1 0 :1:2 
 `uc 1 MODE3 1 0 :1:3 
 ]
-[s S987 . 1 `uc 1 CCP2MODE 1 0 :4:0 
-`uc 1 CCP2FMT 1 0 :1:4 
-`uc 1 CCP2OUT 1 0 :1:5 
+[s S1778 . 1 `uc 1 CCP1MODE 1 0 :4:0 
+`uc 1 CCP1FMT 1 0 :1:4 
+`uc 1 CCP1OUT 1 0 :1:5 
 `uc 1 . 1 0 :1:6 
-`uc 1 CCP2EN 1 0 :1:7 
+`uc 1 CCP1EN 1 0 :1:7 
 ]
-[s S993 . 1 `uc 1 CCP2MODE0 1 0 :1:0 
-`uc 1 CCP2MODE1 1 0 :1:1 
-`uc 1 CCP2MODE2 1 0 :1:2 
-`uc 1 CCP2MODE3 1 0 :1:3 
+[s S1784 . 1 `uc 1 CCP1MODE0 1 0 :1:0 
+`uc 1 CCP1MODE1 1 0 :1:1 
+`uc 1 CCP1MODE2 1 0 :1:2 
+`uc 1 CCP1MODE3 1 0 :1:3 
 ]
-[u S998 . 1 `S976 1 . 1 0 `S982 1 . 1 0 `S987 1 . 1 0 `S993 1 . 1 0 ]
-[v _CCP2CONbits CCP2CONbits `VES998  1 e 1 @786 ]
-"12305
-[v _PWM6DCL PWM6DCL `VEuc  1 e 1 @908 ]
-"12371
-[v _PWM6DCH PWM6DCH `VEuc  1 e 1 @909 ]
-"12541
-[v _PWM6CON PWM6CON `VEuc  1 e 1 @910 ]
+[u S1789 . 1 `S1767 1 . 1 0 `S1773 1 . 1 0 `S1778 1 . 1 0 `S1784 1 . 1 0 ]
+[v _CCP1CONbits CCP1CONbits `VES1789  1 e 1 @782 ]
 [s S397 . 1 `uc 1 INTF 1 0 :1:0 
 `uc 1 . 1 0 :3:1 
 `uc 1 IOCIF 1 0 :1:4 
@@ -467,7 +470,7 @@ TMR2_LC4_OUT 17
 "21370
 [u S179 . 1 `S172 1 . 1 0 ]
 [v _PIR3bits PIR3bits `VES179  1 e 1 @1807 ]
-[s S1481 . 1 `uc 1 TMR1IF 1 0 :1:0 
+[s S558 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 TMR3IF 1 0 :1:2 
 `uc 1 TMR4IF 1 0 :1:3 
@@ -475,8 +478,8 @@ TMR2_LC4_OUT 17
 `uc 1 TMR6IF 1 0 :1:5 
 ]
 "21420
-[u S1488 . 1 `S1481 1 . 1 0 ]
-[v _PIR4bits PIR4bits `VES1488  1 e 1 @1808 ]
+[u S565 . 1 `S558 1 . 1 0 ]
+[v _PIR4bits PIR4bits `VES565  1 e 1 @1808 ]
 [s S433 . 1 `uc 1 INTE 1 0 :1:0 
 `uc 1 . 1 0 :3:1 
 `uc 1 IOCIE 1 0 :1:4 
@@ -497,8 +500,6 @@ TMR2_LC4_OUT 17
 [v _PIE3bits PIE3bits `VES162  1 e 1 @1817 ]
 "23431
 [v _OSCCON1 OSCCON1 `VEuc  1 e 1 @2189 ]
-"23501
-[v _OSCCON2 OSCCON2 `VEuc  1 e 1 @2190 ]
 "23571
 [v _OSCCON3 OSCCON3 `VEuc  1 e 1 @2191 ]
 "23668
@@ -507,12 +508,14 @@ TMR2_LC4_OUT 17
 [v _OSCTUNE OSCTUNE `VEuc  1 e 1 @2194 ]
 "23777
 [v _OSCFRQ OSCFRQ `VEuc  1 e 1 @2195 ]
+"30270
+[v _CCP1PPS CCP1PPS `VEuc  1 e 1 @7841 ]
 "31628
 [v _RXPPS RXPPS `VEuc  1 e 1 @7883 ]
-"31982
-[v _RA5PPS RA5PPS `VEuc  1 e 1 @7957 ]
 "32132
 [v _RB0PPS RB0PPS `VEuc  1 e 1 @7960 ]
+"32182
+[v _RB1PPS RB1PPS `VEuc  1 e 1 @7961 ]
 "33482
 [v _ANSELA ANSELA `VEuc  1 e 1 @7992 ]
 "33544
@@ -595,22 +598,22 @@ TMR2_LC4_OUT 17
 "12
 [v _brkp brkp `*.39uc  1 s 2 brkp ]
 "17 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\lite_free.c
-[u S2203 . 2 `*.39S2205 1 next 2 0 `[1]uc 1 space 1 0 ]
-[s S2205 chunk 4 `ui 1 size 2 0 `S2203 1 . 2 2 ]
-[v ___freelist __freelist `*.39S2205  1 e 2 0 ]
-[s S933 . 9 `*.39v 1 handle 2 0 `uc 1 led_num 1 2 `uc 1 brightness 1 3 `ui 1 buffer_size 2 4 `*.39v 1 buffer 2 6 `uc 1 dma 1 8 ]
+[u S2271 . 2 `*.39S2273 1 next 2 0 `[1]uc 1 space 1 0 ]
+[s S2273 chunk 4 `ui 1 size 2 0 `S2271 1 . 2 2 ]
+[v ___freelist __freelist `*.39S2273  1 e 2 0 ]
+[s S1240 . 9 `*.39v 1 handle 2 0 `uc 1 led_num 1 2 `uc 1 brightness 1 3 `ui 1 buffer_size 2 4 `*.39v 1 buffer 2 6 `uc 1 dma 1 8 ]
 "54 C:\Users\chris\Desktop\PIC16F\PIC16F.X\main.c
-[v _ws2812_pwm ws2812_pwm `S933  1 e 9 0 ]
+[v _ws2812_pwm ws2812_pwm `S1240  1 e 9 0 ]
 "56
-[v _fade_flag fade_flag `a  1 e 1 0 ]
-"57
-[v _fade_time fade_time `us  1 e 2 0 ]
-"58
-[v _rxBuff rxBuff `[128]uc  1 e 128 @12016 ]
-"65
 [v _c c `uc  1 e 1 0 ]
-"66
+"57
 [v _index index `uc  1 e 1 0 ]
+"58
+[v _fade_flag fade_flag `a  1 e 1 0 ]
+"59
+[v _fade_time fade_time `us  1 e 2 0 ]
+"60
+[v _rxBuff rxBuff `[128]uc  1 e 128 @12016 ]
 [s S149 . 5 `uc 1 stat 1 0 `uc 1 con1 1 1 `uc 1 con3 1 2 `uc 1 baud 1 3 `uc 1 clock 1 4 ]
 "55 C:\Users\chris\Desktop\PIC16F\PIC16F.X\mcc_generated_files/spi/src/mssp1.c
 [v _spi1_configuration spi1_configuration `DC[2]S149  1 s 10 spi1_configuration ]
@@ -624,39 +627,39 @@ TMR2_LC4_OUT 17
 [v _eusartRxTail eusartRxTail `VEuc  1 s 1 eusartRxTail ]
 "82
 [v _eusartRxBuffer eusartRxBuffer `VE[128]uc  1 s 128 eusartRxBuffer ]
-[s S685 . 1 `uc 1 perr 1 0 :1:0 
+[s S992 . 1 `uc 1 perr 1 0 :1:0 
 `uc 1 ferr 1 0 :1:1 
 `uc 1 oerr 1 0 :1:2 
 `uc 1 reserved 1 0 :5:3 
 ]
 "83
-[u S690 . 2 `S685 1 . 1 0 `ui 1 status 2 0 ]
-[v _eusartRxStatusBuffer eusartRxStatusBuffer `VE[128]S690  1 s 256 eusartRxStatusBuffer ]
+[u S997 . 2 `S992 1 . 1 0 `ui 1 status 2 0 ]
+[v _eusartRxStatusBuffer eusartRxStatusBuffer `VE[128]S997  1 s 256 eusartRxStatusBuffer ]
 "84
 [v _eusartRxCount eusartRxCount `VEuc  1 e 1 0 ]
-[s S685 . 1 `uc 1 perr 1 0 :1:0 
+[s S992 . 1 `uc 1 perr 1 0 :1:0 
 `uc 1 ferr 1 0 :1:1 
 `uc 1 oerr 1 0 :1:2 
 `uc 1 reserved 1 0 :5:3 
 ]
 "86
-[u S690 . 2 `S685 1 . 1 0 `ui 1 status 2 0 ]
-[v _eusartRxLastError eusartRxLastError `VES690  1 e 2 0 ]
+[u S997 . 2 `S992 1 . 1 0 `ui 1 status 2 0 ]
+[v _eusartRxLastError eusartRxLastError `VES997  1 e 2 0 ]
 "93
 [v _EUSART_FramingErrorHandler EUSART_FramingErrorHandler `*.37(v  1 e 2 0 ]
 "94
 [v _EUSART_OverrunErrorHandler EUSART_OverrunErrorHandler `*.37(v  1 e 2 0 ]
 "21 C:\Users\chris\Desktop\PIC16F\PIC16F.X\ws2812/Src/ws2812_uart.c
 [v _initialized initialized `uc  1 e 1 0 ]
-"96 C:\Users\chris\Desktop\PIC16F\PIC16F.X\main.c
+"83 C:\Users\chris\Desktop\PIC16F\PIC16F.X\main.c
 [v _main main `(i  1 e 2 0 ]
 {
-"167
+"161
 } 0
 "39 C:\Users\chris\Desktop\PIC16F\PIC16F.X\mcc_generated_files/system/src/system.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
 {
-"53
+"54
 } 0
 "57 C:\Users\chris\Desktop\PIC16F\PIC16F.X\mcc_generated_files/timer/src/tmr2.c
 [v _TMR2_Initialize TMR2_Initialize `(v  1 e 1 0 ]
@@ -669,15 +672,10 @@ TMR2_LC4_OUT 17
 [v TMR2_OverflowCallbackRegister@InterruptHandler InterruptHandler `*.37(v  1 p 2 0 ]
 "125
 } 0
-"45 C:\Users\chris\Desktop\PIC16F\PIC16F.X\mcc_generated_files/pwm/src/pwm6.c
-[v _PWM6_Initialize PWM6_Initialize `(v  1 e 1 0 ]
-{
-"61
-} 0
 "38 C:\Users\chris\Desktop\PIC16F\PIC16F.X\mcc_generated_files/system/src/pins.c
 [v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
 {
-"130
+"131
 } 0
 "40 C:\Users\chris\Desktop\PIC16F\PIC16F.X\mcc_generated_files/system/src/interrupt.c
 [v _INTERRUPT_Initialize INTERRUPT_Initialize `(v  1 e 1 0 ]
@@ -716,23 +714,28 @@ TMR2_LC4_OUT 17
 "37 C:\Users\chris\Desktop\PIC16F\PIC16F.X\mcc_generated_files/system/src/clock.c
 [v _CLOCK_Initialize CLOCK_Initialize `(v  1 e 1 0 ]
 {
-"54
+"51
 } 0
-"63 C:\Users\chris\Desktop\PIC16F\PIC16F.X\mcc_generated_files/pwm/src/pwm6.c
-[v _PWM6_LoadDutyValue PWM6_LoadDutyValue `(v  1 e 1 0 ]
+"50 C:\Users\chris\Desktop\PIC16F\PIC16F.X\mcc_generated_files/pwm/src/ccp1.c
+[v _CCP1_Initialize CCP1_Initialize `(v  1 e 1 0 ]
 {
-[v PWM6_LoadDutyValue@dutyValue dutyValue `us  1 p 2 0 ]
-"70
+"65
+} 0
+"67
+[v _CCP1_LoadDutyValue CCP1_LoadDutyValue `(v  1 e 1 0 ]
+{
+[v CCP1_LoadDutyValue@dutyValue dutyValue `us  1 p 2 0 ]
+"83
 } 0
 "59 C:\Users\chris\Desktop\PIC16F\PIC16F.X\mcc_generated_files/system/src/interrupt.c
 [v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `II(v  1 e 1 0 ]
 {
 "81
 } 0
-"132 C:\Users\chris\Desktop\PIC16F\PIC16F.X\mcc_generated_files/system/src/pins.c
+"133 C:\Users\chris\Desktop\PIC16F\PIC16F.X\mcc_generated_files/system/src/pins.c
 [v _PIN_MANAGER_IOC PIN_MANAGER_IOC `(v  1 e 1 0 ]
 {
-"134
+"135
 } 0
 "267 C:\Users\chris\Desktop\PIC16F\PIC16F.X\mcc_generated_files/uart/src/eusart.c
 [v _EUSART_ReceiveISR EUSART_ReceiveISR `(v  1 e 1 0 ]

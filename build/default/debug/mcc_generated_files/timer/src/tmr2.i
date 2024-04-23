@@ -21004,7 +21004,7 @@ void TMR2_Initialize(void){
 
     T2CLKCON = 0x1;
 
-    T2HLT = 0x8;
+    T2HLT = 0x0;
 
     T2RST = 0x0;
 

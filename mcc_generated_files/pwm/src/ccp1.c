@@ -1,16 +1,15 @@
 /**
-  * PWM6 Generated Driver File
-  *
-  * @file pwm6.c
-  *
-  * @ingroup pwm6
-  *
-  * @brief This file contains the API implementations for the PWM6 module.
-  *
-  * @version PWM6 Driver Version 2.0.4
+ * PWM1 Generated Driver File.
+ * 
+ * @file ccp1.c
+ * 
+ * @ingroup pwm1
+ * 
+ * @brief This file contains the API implementations for the PWM1 driver.
+ *
+ * @version PWM1 Driver Version 2.0.2
 */
-
- /*
+/*
 © [2024] Microchip Technology Inc. and its subsidiaries.
 
     Subject to your compliance with these terms, you may use Microchip 
@@ -30,41 +29,63 @@
     EXCEED AMOUNT OF FEES, IF ANY, YOU PAID DIRECTLY TO MICROCHIP FOR 
     THIS SOFTWARE.
 */
- 
- /**
-  * Section: Included Files
-  */
-
- #include <xc.h>
- #include "../pwm6.h"
 
  /**
-  * Section: PWM Module APIs
-  */
+   Section: Included Files
+ */
 
- void PWM6_Initialize(void)
- {
-    // Set the PWM6 to the options selected in the User Interface
+#include <xc.h>
+#include "../ccp1.h"
+
+/**
+  Section: Macro Declarations
+*/
+
+#define PWM1_INITIALIZE_DUTY_VALUE    0
+
+/**
+  Section: PWM1 Module APIs
+*/
+
+void CCP1_Initialize(void)
+{
+    // Set the PWM1 to the options selected in the User Interface
     
-    // PWMPOL active_hi; PWMEN enabled; 
-    PWM6CON = 0x80;
+    // CCPM PWM; EN enabled; FMT right_aligned; 
+    CCP1CON = 0x8F;
     
-    // PWMDCH 0; 
-    PWM6DCH = 0x0;
-
-    // PWMDCL 0; 
-    PWM6DCL = 0x0;
+    // CCPRH 0; 
+    CCPR1H = 0x0;
     
-    CCPTMRS1bits.P6TSEL = 0x1;
+    // CCPRL 0; 
+    CCPR1L = 0x0;
+    
+    // Selecting Timer 2
+    CCPTMRS0bits.C1TSEL = 0x1;
+}
 
-
- }
-
- void PWM6_LoadDutyValue(uint16_t dutyValue)
- {
-     // Writing to 8 MSBs of PWM duty cycle in PWMDCH register
-     PWM6DCH = (uint8_t) ((dutyValue & 0x03FCu) >> 2);
-     
-     // Writing to 2 LSBs of PWM duty cycle in PWMDCL register
-     PWM6DCL = (uint8_t) ((dutyValue & 0x0003u) << 6);
- }
+void CCP1_LoadDutyValue(uint16_t dutyValue)
+{
+	  dutyValue &= 0x03FF;
+    
+    // Load duty cycle value
+    if(CCP1CONbits.CCP1FMT)
+    {
+        dutyValue <<= 6;
+        CCPR1H = (uint8_t)(dutyValue >> 8);
+        CCPR1L = (uint8_t)dutyValue;
+    }
+    else
+    {
+        CCPR1H = (uint8_t)(dutyValue >> 8);
+        CCPR1L = (uint8_t)dutyValue;
+    }
+}
+bool CCP1_OutputStatusGet(void)
+{
+    // Returns the output status
+    return(CCP1CONbits.OUT);
+}
+/**
+ End of File
+*/

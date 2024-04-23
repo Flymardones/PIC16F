@@ -1664,12 +1664,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;ws2812/Src/ws2812.c: 16:     }
 }
 [e :U 1620 ]
-[v F12815 `uc ~T0 @X0 -> 3 `i t ]
+[v F12816 `uc ~T0 @X0 -> 3 `i t ]
 "17
 [; ;ws2812/Src/ws2812.c: 17:     uint8_t (*led_data)[3] = ws2812_conf->buffer;
-[v _led_data `*F12815 ~T0 @X0 1 a ]
-[v F12816 `uc ~T0 @X0 -> 3 `i t ]
-[e = _led_data -> . *U _ws2812_conf 4 `*F12816 ]
+[v _led_data `*F12816 ~T0 @X0 1 a ]
+[v F12817 `uc ~T0 @X0 -> 3 `i t ]
+[e = _led_data -> . *U _ws2812_conf 4 `*F12817 ]
 "19
 [; ;ws2812/Src/ws2812.c: 19:     led_data[led][0] = green;
 [e = *U + &U *U + _led_data * -> _led `ux -> * -> # *U &U *U _led_data `ui -> -> 3 `i `ui `ux * -> -> 0 `i `x -> -> # *U &U *U + _led_data * -> _led `ux -> * -> # *U &U *U _led_data `ui -> -> 3 `i `ui `ux `i `x _green ]
