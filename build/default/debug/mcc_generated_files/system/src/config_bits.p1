@@ -4,7 +4,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "40
 [p x RSTOSC  =  HFINT1      ]
 "41
-[p x CLKOUTEN  =  ON      ]
+[p x CLKOUTEN  =  OFF      ]
 "42
 [p x CSWEN  =  ON      ]
 "43

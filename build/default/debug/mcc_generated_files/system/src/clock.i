@@ -20738,7 +20738,7 @@ void CLOCK_Initialize(void)
 
     OSCCON1 = 0x60;
 
-    OSCCON3 = 0x40;
+    OSCCON3 = 0x0;
 
     OSCEN = 0x0;
 

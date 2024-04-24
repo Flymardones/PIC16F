@@ -106,6 +106,7 @@
 #define IO_RB2_SetOpenDrain()       do { ODCONBbits.ODCB2 = 1; } while(0)
 #define IO_RB2_SetAnalogMode()      do { ANSELBbits.ANSB2 = 1; } while(0)
 #define IO_RB2_SetDigitalMode()     do { ANSELBbits.ANSB2 = 0; } while(0)
+#define RB2_SetInterruptHandler  IO_RB2_SetInterruptHandler
 /**
  * @ingroup  pinsdriver
  * @brief GPIO and peripheral I/O initialization
@@ -121,6 +122,46 @@ void PIN_MANAGER_Initialize (void);
  * @return none
  */
 void PIN_MANAGER_IOC(void);
+
+/**
+ * @ingroup  pinsdriver
+ * @brief Interrupt on Change Handler for the IO_RB2 pin functionality
+ * @param none
+ * @return none
+ */
+void IO_RB2_ISR(void);
+
+/**
+ * @ingroup  pinsdriver
+ * @brief Interrupt Handler Setter for IO_RB2 pin interrupt-on-change functionality.
+ *        Allows selecting an interrupt handler for IO_RB2 at application runtime.
+ * @pre Pins intializer called
+ * @param InterruptHandler function pointer.
+ * @return none
+ */
+void IO_RB2_SetInterruptHandler(void (* InterruptHandler)(void));
+
+/**
+ * @ingroup  pinsdriver
+ * @brief Dynamic Interrupt Handler for IO_RB2 pin.
+ *        This is a dynamic interrupt handler to be used together with the IO_RB2_SetInterruptHandler() method.
+ *        This handler is called every time the IO_RB2 ISR is executed and allows any function to be registered at runtime.
+ * @pre Pins intializer called
+ * @param none
+ * @return none
+ */
+extern void (*IO_RB2_InterruptHandler)(void);
+
+/**
+ * @ingroup  pinsdriver
+ * @brief Default Interrupt Handler for IO_RB2 pin. 
+ *        This is a predefined interrupt handler to be used together with the IO_RB2_SetInterruptHandler() method.
+ *        This handler is called every time the IO_RB2 ISR is executed. 
+ * @pre Pins intializer called
+ * @param none
+ * @return none
+ */
+void IO_RB2_DefaultInterruptHandler(void);
 
 
 #endif // PINS_H

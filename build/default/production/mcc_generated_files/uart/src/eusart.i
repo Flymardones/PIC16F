@@ -20908,7 +20908,7 @@ void CLOCK_Initialize(void);
 
 
 # 1 "mcc_generated_files/uart/src/../../system/../system/pins.h" 1
-# 115 "mcc_generated_files/uart/src/../../system/../system/pins.h"
+# 116 "mcc_generated_files/uart/src/../../system/../system/pins.h"
 void PIN_MANAGER_Initialize (void);
 
 
@@ -20918,6 +20918,20 @@ void PIN_MANAGER_Initialize (void);
 
 
 void PIN_MANAGER_IOC(void);
+
+
+
+
+
+
+
+void IO_RB2_ISR(void);
+# 142 "mcc_generated_files/uart/src/../../system/../system/pins.h"
+void IO_RB2_SetInterruptHandler(void (* InterruptHandler)(void));
+# 153 "mcc_generated_files/uart/src/../../system/../system/pins.h"
+extern void (*IO_RB2_InterruptHandler)(void);
+# 164 "mcc_generated_files/uart/src/../../system/../system/pins.h"
+void IO_RB2_DefaultInterruptHandler(void);
 # 44 "mcc_generated_files/uart/src/../../system/system.h" 2
 
 # 1 "mcc_generated_files/uart/src/../../system/../uart/eusart.h" 1

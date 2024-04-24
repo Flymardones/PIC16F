@@ -20742,7 +20742,7 @@ void CLOCK_Initialize(void);
 
 
 # 1 "./mcc_generated_files/system/../system/pins.h" 1
-# 115 "./mcc_generated_files/system/../system/pins.h"
+# 116 "./mcc_generated_files/system/../system/pins.h"
 void PIN_MANAGER_Initialize (void);
 
 
@@ -20752,6 +20752,20 @@ void PIN_MANAGER_Initialize (void);
 
 
 void PIN_MANAGER_IOC(void);
+
+
+
+
+
+
+
+void IO_RB2_ISR(void);
+# 142 "./mcc_generated_files/system/../system/pins.h"
+void IO_RB2_SetInterruptHandler(void (* InterruptHandler)(void));
+# 153 "./mcc_generated_files/system/../system/pins.h"
+extern void (*IO_RB2_InterruptHandler)(void);
+# 164 "./mcc_generated_files/system/../system/pins.h"
+void IO_RB2_DefaultInterruptHandler(void);
 # 44 "./mcc_generated_files/system/system.h" 2
 
 # 1 "./mcc_generated_files/system/../uart/eusart.h" 1
@@ -21517,6 +21531,12 @@ typedef enum {
     ws2812_dma_error,
 } ws2812_status_t;
 
+typedef enum {
+    GREEN,
+    RED,
+    BLUE
+} ws2812_color;
+
 
 typedef struct {
 
@@ -21551,7 +21571,7 @@ typedef struct {
     uint8_t dma;
 
 } ws2812_configuration;
-# 64 "./ws2812/Inc/ws2812.h"
+# 70 "./ws2812/Inc/ws2812.h"
 void ws2812_set_led(ws2812_configuration* ws2812_conf, uint8_t led, uint8_t red, uint8_t green, uint8_t blue);
 
 
@@ -21560,7 +21580,7 @@ void ws2812_set_led(ws2812_configuration* ws2812_conf, uint8_t led, uint8_t red,
 
 
 
-void ws2812_delay_us(uint16_t us);
+void ws2812_delay_ms(uint16_t ms);
 # 11 "./ws2812/Inc/ws2812_uart.h" 2
 
 
@@ -21634,36 +21654,25 @@ void *memccpy (void *restrict, const void *restrict, int, size_t);
 
 
 
+# 1 "./ws2812/Inc/ws2812_spi.h" 1
+# 13 "./ws2812/Inc/ws2812_spi.h"
+extern ws2812_configuration ws2812_spi;
 
+_Bool ws2812_spi_init(ws2812_configuration* ws2812_conf);
 
+void ws2812_spi_send(ws2812_configuration* ws2812_conf);
 
+void ws2812_spi_data(ws2812_configuration* ws2812_conf, uint8_t green, uint8_t red, uint8_t blue, uint8_t brightness);
 
-# 1 "./ws2812/Inc/ws2812_pwm.h" 1
-# 12 "./ws2812/Inc/ws2812_pwm.h"
-extern ws2812_configuration ws2812_pwm;
+void ws2812_spi_fade(ws2812_configuration* ws2812_conf, uint16_t fade_time_ms);
 
-void ws2812_pwm_send(ws2812_configuration* ws2812_conf, uint8_t brightness);
+void ws2812_spi_send_single(ws2812_configuration* ws2812_conf);
 
-_Bool ws2812_pwm_init(ws2812_configuration* ws2812_conf);
+void ws2812_spi_clear(ws2812_configuration* ws2812_conf);
 
-void ws2812_pwm_send_single(ws2812_configuration* ws2812_conf);
-
-void ws2812_pwm_data(ws2812_configuration* ws2812_conf, uint8_t green, uint8_t red, uint8_t blue, uint8_t brightness);
-
-void ws2812_pwm_fade(ws2812_configuration* ws2812_conf, uint16_t fade_time_ms);
-
-void ws2812_pwm_clear(ws2812_configuration* ws2812_conf);
-
-void ws2812_pwm_deinit(ws2812_configuration* ws2812_conf);
-# 45 "main.c" 2
-
-
-
-
-
-
-
-
+void ws2812_spi_deinit(ws2812_configuration* ws2812_conf);
+# 41 "main.c" 2
+# 53 "main.c"
 ws2812_configuration ws2812_spi;
 ws2812_configuration ws2812_pwm;
 
@@ -21675,22 +21684,22 @@ uint8_t rxBuff[128];
 
 
 
+
 static void Handle_UART_Data(void) {
 
+    while(EUSART_IsRxReady()) {
+        c = EUSART_Read();
+        rxBuff[index++] = c;
+        if (index > 128) {
+            index = 0;
+        }
 
-    while(!EUSART_IsRxReady());
-    c = EUSART_Read();
-    rxBuff[index++] = c;
-    if (index > 128) {
-        index = 0;
+        if (c == '\n') {
+            ws2812_uart_commands(rxBuff, index);
+            index = 0;
+            c = '\0';
+        }
     }
-
-    if (c == '\n') {
-        ws2812_uart_commands(rxBuff, index);
-        memset(rxBuff, 0, 128);
-        index = 0;
-    }
-
 }
 
 
@@ -21710,14 +21719,29 @@ int main(void)
 
 
     (INTCONbits.PEIE = 1);
-# 127 "main.c"
+
+
+
+
+
+    CPUDOZEbits.IDLEN = 1;
+
+
+    SPI1_Open((uint8_t)ws2812_spi.handle);
+# 119 "main.c"
     while(1)
     {
-# 146 "main.c"
+
+
+    if (fade_flag) {
+        ws2812_spi_fade(&ws2812_spi, fade_time);
+    }
+    else {
+        __asm("sleep");
+        __nop();
+    }
+
     Handle_UART_Data();
-
-
-
-
+# 149 "main.c"
     }
 }

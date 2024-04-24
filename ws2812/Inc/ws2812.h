@@ -16,6 +16,12 @@ typedef enum {
     ws2812_dma_error,
 } ws2812_status_t;
 
+typedef enum {
+    GREEN,
+    RED,
+    BLUE
+} ws2812_color;
+
 
 typedef struct {
 
@@ -40,12 +46,12 @@ typedef struct {
     size_t buffer_size;
 
     /*
-    * @member buffer is the buffer for storing the data for the leds
+    * @member buffer is a pointer to the buffer storing the data for the leds
     */
     void* buffer;
 
     /*
-    * @member dma is used for defining whether the dma should be used of not
+    * @member dma is used for defining whether the dma should be used or not
     */
     uint8_t dma;
 
@@ -69,7 +75,7 @@ void ws2812_set_led(ws2812_configuration* ws2812_conf, uint8_t led, uint8_t red,
  *
  * @param us the amount of microseconds to delay
  */
-void ws2812_delay_us(uint16_t us);
+void ws2812_delay_ms(uint16_t ms);
 
 
 

@@ -20752,7 +20752,7 @@ void CLOCK_Initialize(void);
 
 
 # 1 "ws2812/Src/../Inc/../../mcc_generated_files/system/../system/pins.h" 1
-# 115 "ws2812/Src/../Inc/../../mcc_generated_files/system/../system/pins.h"
+# 116 "ws2812/Src/../Inc/../../mcc_generated_files/system/../system/pins.h"
 void PIN_MANAGER_Initialize (void);
 
 
@@ -20762,6 +20762,20 @@ void PIN_MANAGER_Initialize (void);
 
 
 void PIN_MANAGER_IOC(void);
+
+
+
+
+
+
+
+void IO_RB2_ISR(void);
+# 142 "ws2812/Src/../Inc/../../mcc_generated_files/system/../system/pins.h"
+void IO_RB2_SetInterruptHandler(void (* InterruptHandler)(void));
+# 153 "ws2812/Src/../Inc/../../mcc_generated_files/system/../system/pins.h"
+extern void (*IO_RB2_InterruptHandler)(void);
+# 164 "ws2812/Src/../Inc/../../mcc_generated_files/system/../system/pins.h"
+void IO_RB2_DefaultInterruptHandler(void);
 # 44 "ws2812/Src/../Inc/../../mcc_generated_files/system/system.h" 2
 
 # 1 "ws2812/Src/../Inc/../../mcc_generated_files/system/../uart/eusart.h" 1
@@ -21522,6 +21536,12 @@ typedef enum {
     ws2812_dma_error,
 } ws2812_status_t;
 
+typedef enum {
+    GREEN,
+    RED,
+    BLUE
+} ws2812_color;
+
 
 typedef struct {
 
@@ -21556,7 +21576,7 @@ typedef struct {
     uint8_t dma;
 
 } ws2812_configuration;
-# 64 "ws2812/Src/../Inc/ws2812.h"
+# 70 "ws2812/Src/../Inc/ws2812.h"
 void ws2812_set_led(ws2812_configuration* ws2812_conf, uint8_t led, uint8_t red, uint8_t green, uint8_t blue);
 
 
@@ -21565,13 +21585,13 @@ void ws2812_set_led(ws2812_configuration* ws2812_conf, uint8_t led, uint8_t red,
 
 
 
-void ws2812_delay_us(uint16_t us);
+void ws2812_delay_ms(uint16_t ms);
 # 10 "ws2812/Src/../Inc/ws2812_pwm.h" 2
 
 
 extern ws2812_configuration ws2812_pwm;
 
-void ws2812_pwm_send(ws2812_configuration* ws2812_conf, uint8_t brightness);
+void ws2812_pwm_send(ws2812_configuration* ws2812_conf);
 
 _Bool ws2812_pwm_init(ws2812_configuration* ws2812_conf);
 
@@ -21647,11 +21667,41 @@ void *memccpy (void *restrict, const void *restrict, int, size_t);
 
 
 
-#pragma GCC optimize ("O3")
+void ws2812_pwm_adjust_brightness(ws2812_configuration* ws2812_conf, uint8_t brightness) {
+    uint8_t green, red, blue;
+    uint8_t (*led_data)[3] = (uint8_t(*)[3])ws2812_conf->buffer;
+    uint8_t *send_data = (uint8_t*) malloc(ws2812_conf->led_num * 24);
+
+    if (send_data == ((void*)0)) {
+        return;
+    }
+
+    for (uint8_t i = 0; i < ws2812_conf->led_num; i++) {
+        green = (led_data[i][GREEN] * brightness / 100);
+        red = (led_data[i][RED] * brightness / 100);
+        blue = (led_data[i][BLUE] * brightness / 100);
+
+        for (uint8_t j = 0; j < 8; j++) {
+            uint16_t index = i * 24 + j;
+            send_data[index] = (green & (1 << (7 - j))) ? 0x14 : 0xA;
+            send_data[index + 8] = (red & (1 << (7 - j))) ? 0x14 : 0xA;
+            send_data[index + 16] = (blue & (1 << (7 - j))) ? 0x14 : 0xA;
+        }
+    }
+
+
+    for (uint16_t i = 0; i < (ws2812_conf->led_num * 24); i++) {
+        CCP1_LoadDutyValue(send_data[i]);
+        T2CON |= 0x80;
+    }
+    free(send_data);
+    _delay((unsigned long)((285)*(32000000/4000000.0)));
+}
+
+
 void ws2812_pwm_fade(ws2812_configuration* ws2812_conf, uint16_t fade_time_ms) {
 
   uint16_t fade_delay = 0;
-  uint8_t (*led_data)[3] = (uint8_t(*)[3])ws2812_conf->buffer;
 
 
   if (fade_time_ms < ws2812_conf->brightness) {
@@ -21661,124 +21711,85 @@ void ws2812_pwm_fade(ws2812_configuration* ws2812_conf, uint16_t fade_time_ms) {
   fade_delay = (fade_time_ms / ws2812_conf->brightness) / 2;
 
   for (int fade = ws2812_conf->brightness; fade >= 0; fade--) {
-
-
-
-    ws2812_pwm_send(ws2812_conf, (uint8_t)fade);
-
+    ws2812_pwm_adjust_brightness(ws2812_conf, (uint8_t)fade);
+    ws2812_delay_ms(fade_delay);
   }
 
   for (int fade = 0; fade < ws2812_conf->brightness; fade++) {
-
-
-
-    ws2812_pwm_send(ws2812_conf, (uint8_t)fade);
-
+    ws2812_pwm_adjust_brightness(ws2812_conf, (uint8_t)fade);
+    ws2812_delay_ms(fade_delay);
   }
-
 }
 
-#pragma GCC optimize ("O3")
-void ws2812_pwm_data(ws2812_configuration* ws2812_conf, uint8_t green, uint8_t red, uint8_t blue, uint8_t brightness) {
 
- green = green * brightness / 100;
- red = red * brightness / 100;
- blue = blue * brightness / 100;
+void ws2812_pwm_data(ws2812_configuration* ws2812_conf, uint8_t green, uint8_t red, uint8_t blue, uint8_t brightness) {
 
  uint8_t send_data[24];
 
-    if (ws2812_conf->dma) {
-        for (int i = 0; i < 8; i++) {
-            send_data[i] = (green & (1 << (7 - i))) ? 0x14 : 0xA;
-            send_data[i + 8] = (red & (1 << (7 - i))) ? 0x14 : 0xA;
-            send_data[i + 16] = (blue & (1 << (7 - i))) ? 0x14 : 0xA;
-        }
+    green = green * brightness / 100;
+ red = red * brightness / 100;
+ blue = blue * brightness / 100;
+
+    for (uint8_t i = 0; i < 8; i++) {
+        send_data[i] = (green & (1 << (7 - i))) ? 0x14 : 0xA;
+        send_data[i + 8] = (red & (1 << (7 - i))) ? 0x14 : 0xA;
+        send_data[i + 16] = (blue & (1 << (7 - i))) ? 0x14 : 0xA;
     }
-    else {
-        for (int i = 0; i < 8; i++) {
-            send_data[i] = (green & (1 << (7 - i))) ? 0x14 : 0xA;
-            send_data[i + 8] = (red & (1 << (7 - i))) ? 0x14 : 0xA;
-            send_data[i + 16] = (blue & (1 << (7 - i))) ? 0x14 : 0xA;
-        }
-     }
 
-
- if (ws2812_conf->dma) {
-
- }
- else {
-        for (int i = 0; i < 24; i++) {
-            CCP1_LoadDutyValue(send_data[i]);
-            T2CON |= 0x80;
-        }
- }
+    for (uint8_t i = 0; i < 24; i++) {
+        CCP1_LoadDutyValue(send_data[i]);
+        T2CON |= 0x80;
+    }
 }
 
 void ws2812_pwm_send_single(ws2812_configuration* ws2812_conf) {
     uint8_t (*led_data)[3] = (uint8_t(*)[3])ws2812_conf->buffer;
 
-    for (int i = 0; i < ws2812_conf->led_num; i++) {
+    for (uint8_t i = 0; i < ws2812_conf->led_num; i++) {
         ws2812_pwm_data(ws2812_conf, led_data[i][0],led_data[i][1],led_data[i][2], ws2812_conf->brightness);
     }
 
     _delay((unsigned long)((285)*(32000000/4000000.0)));
 }
 
-#pragma GCC optimize ("O3")
-void ws2812_pwm_send(ws2812_configuration* ws2812_conf, uint8_t brightness) {
 
-    uint8_t (*led_data)[3] = (uint8_t(*)[3])ws2812_conf->buffer;
+void ws2812_pwm_send(ws2812_configuration* ws2812_conf) {
+
     uint8_t green, red, blue;
-
+    uint8_t (*led_data)[3] = (uint8_t(*)[3])ws2812_conf->buffer;
     uint8_t *send_data = (uint8_t*) malloc(ws2812_conf->led_num * 24);
 
     if (send_data == ((void*)0)) {
         return;
     }
 
-    for (int i = 0; i < ws2812_conf->led_num; i++) {
-        green = led_data[i][0] * brightness / 100;
-        red = led_data[i][1] * brightness / 100;
-        blue = led_data[i][2] * brightness / 100;
+    for (uint8_t i = 0; i < ws2812_conf->led_num; i++) {
+        green = (led_data[i][GREEN] * ws2812_conf->brightness / 100);
+        red = (led_data[i][RED] * ws2812_conf->brightness / 100);
+        blue = (led_data[i][BLUE] * ws2812_conf->brightness / 100);
 
-        if (ws2812_conf->dma) {
-            for (int j = 0; j < 8; j++) {
-                int index = i * 24 + j;
-                send_data[index] = (green & (1 << (7 - j))) ? 0x14 : 0xA;
-                send_data[index + 8] = (red & (1 << (7 - j))) ? 0x14 : 0xA;
-                send_data[index + 16] = (blue & (1 << (7 - j))) ? 0x14 : 0xA;
-            }
-        }
-        else {
-            for (int j = 0; j < 8; j++) {
-                int index = i * 24 + j;
-                send_data[index] = (green & (1 << (7 - j))) ? 0x14 : 0xA;
-                send_data[index + 8] = (red & (1 << (7 - j))) ? 0x14 : 0xA;
-                send_data[index + 16] = (blue & (1 << (7 - j))) ? 0x14 : 0xA;
-            }
+        for (uint8_t j = 0; j < 8; j++) {
+            uint16_t index = i * 24 + j;
+            send_data[index] = (green & (1 << (7 - j))) ? 0x14 : 0xA;
+            send_data[index + 8] = (red & (1 << (7 - j))) ? 0x14 : 0xA;
+            send_data[index + 16] = (blue & (1 << (7 - j))) ? 0x14 : 0xA;
         }
     }
 
-    if (ws2812_conf->dma) {
 
-    }
-    else {
-        for (int i = 0; i < (ws2812_conf->led_num * 24); i++) {
-            CCP1_LoadDutyValue(send_data[i]);
-            T2CON |= 0x80;
-        }
-
+    for (uint16_t i = 0; i < (ws2812_conf->led_num * 24); i++) {
+        CCP1_LoadDutyValue(send_data[i]);
+        T2CON |= 0x80;
     }
     free(send_data);
     _delay((unsigned long)((285)*(32000000/4000000.0)));
-
 }
 
 void ws2812_pwm_clear(ws2812_configuration* ws2812_conf) {
-    for (int i = 0; i < ws2812_conf->led_num; i++) {
+    for (uint8_t i = 0; i < ws2812_conf->led_num; i++) {
         ws2812_set_led(ws2812_conf, (uint8_t)i, 0, 0, 0);
     }
-    ws2812_pwm_send(ws2812_conf, ws2812_conf->brightness);
+    ws2812_pwm_send(ws2812_conf);
 }
 
 
@@ -21793,7 +21804,7 @@ _Bool ws2812_pwm_init(ws2812_configuration* ws2812_conf) {
     ws2812_conf->buffer = led_data;
     memset(ws2812_conf->buffer, 0, ws2812_conf->led_num * sizeof(*led_data));
 
-    ws2812_pwm_send(ws2812_conf, ws2812_conf->brightness);
+    ws2812_pwm_send(ws2812_conf);
 
     return 1;
 }

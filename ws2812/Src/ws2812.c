@@ -15,14 +15,16 @@ void ws2812_set_led(ws2812_configuration* ws2812_conf, uint8_t led, uint8_t red,
         return;
     }
     uint8_t (*led_data)[3] = ws2812_conf->buffer;
-
-    led_data[led][0] = green;
-    led_data[led][1] = red;
-    led_data[led][2] = blue;
+    
+    led_data[led][GREEN] = green;
+    led_data[led][RED] = red;
+    led_data[led][BLUE] = blue;
 }
 
 
-void ws2812_delay_us(uint16_t us) {
-//    __delay_us(us);
+void ws2812_delay_ms(uint16_t ms) {
+    for (uint16_t i = 0; i < ms; i++) {
+        __delay_ms(1);
+    }
 }
 

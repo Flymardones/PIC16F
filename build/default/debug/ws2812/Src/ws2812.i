@@ -20750,7 +20750,7 @@ void CLOCK_Initialize(void);
 
 
 # 1 "ws2812/Src/../Inc/../../mcc_generated_files/system/../system/pins.h" 1
-# 115 "ws2812/Src/../Inc/../../mcc_generated_files/system/../system/pins.h"
+# 116 "ws2812/Src/../Inc/../../mcc_generated_files/system/../system/pins.h"
 void PIN_MANAGER_Initialize (void);
 
 
@@ -20760,6 +20760,20 @@ void PIN_MANAGER_Initialize (void);
 
 
 void PIN_MANAGER_IOC(void);
+
+
+
+
+
+
+
+void IO_RB2_ISR(void);
+# 142 "ws2812/Src/../Inc/../../mcc_generated_files/system/../system/pins.h"
+void IO_RB2_SetInterruptHandler(void (* InterruptHandler)(void));
+# 153 "ws2812/Src/../Inc/../../mcc_generated_files/system/../system/pins.h"
+extern void (*IO_RB2_InterruptHandler)(void);
+# 164 "ws2812/Src/../Inc/../../mcc_generated_files/system/../system/pins.h"
+void IO_RB2_DefaultInterruptHandler(void);
 # 44 "ws2812/Src/../Inc/../../mcc_generated_files/system/system.h" 2
 
 # 1 "ws2812/Src/../Inc/../../mcc_generated_files/system/../uart/eusart.h" 1
@@ -21520,6 +21534,12 @@ typedef enum {
     ws2812_dma_error,
 } ws2812_status_t;
 
+typedef enum {
+    GREEN,
+    RED,
+    BLUE
+} ws2812_color;
+
 
 typedef struct {
 
@@ -21554,7 +21574,7 @@ typedef struct {
     uint8_t dma;
 
 } ws2812_configuration;
-# 64 "ws2812/Src/../Inc/ws2812.h"
+# 70 "ws2812/Src/../Inc/ws2812.h"
 void ws2812_set_led(ws2812_configuration* ws2812_conf, uint8_t led, uint8_t red, uint8_t green, uint8_t blue);
 
 
@@ -21563,7 +21583,7 @@ void ws2812_set_led(ws2812_configuration* ws2812_conf, uint8_t led, uint8_t red,
 
 
 
-void ws2812_delay_us(uint16_t us);
+void ws2812_delay_ms(uint16_t ms);
 # 8 "ws2812/Src/ws2812.c" 2
 
 
@@ -21576,12 +21596,14 @@ void ws2812_set_led(ws2812_configuration* ws2812_conf, uint8_t led, uint8_t red,
     }
     uint8_t (*led_data)[3] = ws2812_conf->buffer;
 
-    led_data[led][0] = green;
-    led_data[led][1] = red;
-    led_data[led][2] = blue;
+    led_data[led][GREEN] = green;
+    led_data[led][RED] = red;
+    led_data[led][BLUE] = blue;
 }
 
 
-void ws2812_delay_us(uint16_t us) {
-
+void ws2812_delay_ms(uint16_t ms) {
+    for (uint16_t i = 0; i < ms; i++) {
+        _delay((unsigned long)((1)*(32000000/4000.0)));
+    }
 }

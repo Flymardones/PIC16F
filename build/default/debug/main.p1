@@ -1,7 +1,7 @@
 Version 4.0 HI-TECH Software Intermediate Code
-[v F12619 `(v ~T0 @X0 0 tf ]
-"20 ./ws2812/Inc/ws2812.h
-[; ;./ws2812/Inc/ws2812.h: 20: typedef struct {
+[v F12627 `(v ~T0 @X0 0 tf ]
+"26 ./ws2812/Inc/ws2812.h
+[; ;./ws2812/Inc/ws2812.h: 26: typedef struct {
 [s S1618 `*v 1 `uc 1 `uc 1 `ui 1 `*v 1 `uc 1 ]
 [n S1618 . handle led_num brightness buffer_size buffer dma ]
 "253 ./mcc_generated_files/system/../uart/eusart.h
@@ -13,9 +13,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "18 ./ws2812/Inc/ws2812_uart.h
 [; ;./ws2812/Inc/ws2812_uart.h: 18: void ws2812_uart_commands(uint8_t* data, uint16_t size);
 [v _ws2812_uart_commands `(v ~T0 @X0 0 ef2`*uc`us ]
-"29 C:\Program Files\Microchip\xc8\v2.46\pic\include\c99\string.h
-[; ;C:\Program Files\Microchip\xc8\v2.46\pic\include\c99\string.h: 29: void *memset (void *, int, size_t);
-[v _memset `(*v ~T0 @X0 0 ef3`*v`i`ui ]
 [p mainexit ]
 "70 ./ws2812/Inc/../../mcc_generated_files/system/system.h
 [v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
@@ -30,43 +27,23 @@ Version 4.0 HI-TECH Software Intermediate Code
 "370
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 370: extern volatile INTCONbits_t INTCONbits __attribute__((address(0x00B)));
 [v _INTCONbits `VS30 ~T0 @X0 0 e@11 ]
-"62 ./mcc_generated_files/system/../pwm/ccp1.h
-[; ;./mcc_generated_files/system/../pwm/ccp1.h: 62: void CCP1_LoadDutyValue(uint16_t dutyValue);
-[v _CCP1_LoadDutyValue `(v ~T0 @X0 0 ef1`us ]
-"9415 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 9415:     struct {
-[s S423 :4 `uc 1 :3 `uc 1 :1 `uc 1 ]
-[n S423 . OUTPS CKPS ON ]
-"9420
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 9420:     struct {
-[s S424 :4 `uc 1 :3 `uc 1 :1 `uc 1 ]
-[n S424 . T2OUTPS T2CKPS T2ON ]
-"9425
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 9425:     struct {
-[s S425 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S425 . T2OUTPS0 T2OUTPS1 T2OUTPS2 T2OUTPS3 T2CKPS0 T2CKPS1 T2CKPS2 ]
-"9434
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 9434:     struct {
-[s S426 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S426 . OUTPS0 OUTPS1 OUTPS2 OUTPS3 CKPS0 CKPS1 CKPS2 TMR2ON ]
-"9414
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 9414: typedef union {
-[u S422 `S423 1 `S424 1 `S425 1 `S426 1 ]
-[n S422 . . . . . ]
-"9445
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 9445: extern volatile T2CONbits_t T2CONbits __attribute__((address(0x28E)));
-[v _T2CONbits `VS422 ~T0 @X0 0 e@654 ]
-"21411
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 21411:     struct {
-[s S972 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S972 . TMR1IF TMR2IF TMR3IF TMR4IF TMR5IF TMR6IF ]
-"21410
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 21410: typedef union {
-[u S971 `S972 1 ]
-[n S971 . . ]
-"21420
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 21420: extern volatile PIR4bits_t PIR4bits __attribute__((address(0x710)));
-[v _PIR4bits `VS971 ~T0 @X0 0 e@1808 ]
+"23380
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 23380:     struct {
+[s S1056 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1056 . DOZE0 DOZE1 DOZE2 . DOE ROI DOZEN IDLEN ]
+"23379
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 23379: typedef union {
+[u S1055 `S1056 1 ]
+[n S1055 . . ]
+"23391
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 23391: extern volatile CPUDOZEbits_t CPUDOZEbits __attribute__((address(0x88C)));
+[v _CPUDOZEbits `VS1055 ~T0 @X0 0 e@2188 ]
+"22 ./ws2812/Inc/ws2812_pwm.h
+[; ;./ws2812/Inc/ws2812_pwm.h: 22: void ws2812_pwm_fade(ws2812_configuration* ws2812_conf, uint16_t fade_time_ms);
+[v _ws2812_pwm_fade `(v ~T0 @X0 0 ef2`*S1618`us ]
+"8 C:\Program Files\Microchip\xc8\v2.46\pic\include\builtins.h
+[v ___nop `(v ~T0 @X0 0 ef ]
+[p i ___nop ]
 "54 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 54: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -1704,7 +1681,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; <" TOSH equ 01FEFh ;# ">
 "324 ./mcc_generated_files/system/../uart/eusart.h
 [; ;./mcc_generated_files/system/../uart/eusart.h: 324: void (*EUSART_RxInterruptHandler)(void);
-[v _EUSART_RxInterruptHandler `*F12619 ~T0 @X0 1 e ]
+[v _EUSART_RxInterruptHandler `*F12627 ~T0 @X0 1 e ]
 "53 main.c
 [; ;main.c: 53: ws2812_configuration ws2812_spi;
 [v _ws2812_spi `S1618 ~T0 @X0 1 e ]
@@ -1735,46 +1712,43 @@ Version 4.0 HI-TECH Software Intermediate Code
 "60
 [; ;main.c: 60: uint8_t rxBuff[128];
 [v _rxBuff `uc ~T0 @X0 -> 128 `i e ]
-"64
-[; ;main.c: 64: static void Handle_UART_Data(void) {
+"65
+[; ;main.c: 65: static void Handle_UART_Data(void) {
 [v _Handle_UART_Data `(v ~T0 @X0 1 sf ]
 {
 [e :U _Handle_UART_Data ]
 [f ]
-"67
-[; ;main.c: 67:     while(!EUSART_IsRxReady());
+"68
+[; ;main.c: 68:     while(!EUSART_IsRxReady());
 [e $U 1622  ]
 [e :U 1623 ]
 [e :U 1622 ]
 [e $ ! != -> ( _EUSART_IsRxReady ..  `i -> 0 `i 1623  ]
 [e :U 1624 ]
-"68
-[; ;main.c: 68:     c = EUSART_Read();
-[e = _c -> ( _EUSART_Read ..  `uc ]
 "69
-[; ;main.c: 69:     rxBuff[index++] = c;
-[e = *U + &U _rxBuff * -> ++ _index -> -> 1 `i `uc `ux -> -> # *U &U _rxBuff `ui `ux -> _c `uc ]
+[; ;main.c: 69:     c = EUSART_Read();
+[e = _c -> ( _EUSART_Read ..  `uc ]
 "70
-[; ;main.c: 70:     if (index > 128) {
+[; ;main.c: 70:     rxBuff[index++] = c;
+[e = *U + &U _rxBuff * -> ++ _index -> -> 1 `i `uc `ux -> -> # *U &U _rxBuff `ui `ux -> _c `uc ]
+"71
+[; ;main.c: 71:     if (index > 128) {
 [e $ ! > -> _index `i -> 128 `i 1625  ]
 {
-"71
-[; ;main.c: 71:         index = 0;
-[e = _index -> -> 0 `i `uc ]
 "72
-[; ;main.c: 72:     }
+[; ;main.c: 72:         index = 0;
+[e = _index -> -> 0 `i `uc ]
+"73
+[; ;main.c: 73:     }
 }
 [e :U 1625 ]
-"74
-[; ;main.c: 74:     if (c == '\n') {
+"75
+[; ;main.c: 75:     if (c == '\n') {
 [e $ ! == -> _c `ui -> 10 `ui 1626  ]
 {
-"75
-[; ;main.c: 75:         ws2812_uart_commands(rxBuff, index);
-[e ( _ws2812_uart_commands (2 , &U _rxBuff -> _index `us ]
 "76
-[; ;main.c: 76:         memset(rxBuff, 0, 128);
-[e ( _memset (3 , , -> &U _rxBuff `*v -> 0 `i -> -> 128 `i `ui ]
+[; ;main.c: 76:         ws2812_uart_commands(rxBuff, index);
+[e ( _ws2812_uart_commands (2 , &U _rxBuff -> _index `us ]
 "77
 [; ;main.c: 77:         index = 0;
 [e = _index -> -> 0 `i `uc ]
@@ -1804,37 +1778,50 @@ Version 4.0 HI-TECH Software Intermediate Code
 "98
 [; ;main.c: 98:     (INTCONbits.PEIE = 1);
 [e = . . _INTCONbits 0 2 -> -> 1 `i `uc ]
-"131
-[; ;main.c: 131:     while(1)
+"104
+[; ;main.c: 104:     CPUDOZEbits.IDLEN = 1;
+[e = . . _CPUDOZEbits 0 7 -> -> 1 `i `uc ]
+"119
+[; ;main.c: 119:     while(1)
 [e :U 1629 ]
-"132
-[; ;main.c: 132:     {
+"120
+[; ;main.c: 120:     {
 {
-"150
-[; ;main.c: 150:     CCP1_LoadDutyValue(0x0A);
-[e ( _CCP1_LoadDutyValue (1 -> -> 10 `i `us ]
-"151
-[; ;main.c: 151:     T2CONbits.TMR2ON = 1;
-[e = . . _T2CONbits 3 7 -> -> 1 `i `uc ]
-"152
-[; ;main.c: 152:     while(PIR4bits.TMR2IF) {}
-[e $U 1631  ]
-[e :U 1632 ]
+"135
+[; ;main.c: 135:     if (fade_flag) {
+[e $ ! != -> _fade_flag `i -> 0 `i 1631  ]
 {
+"136
+[; ;main.c: 136:         ws2812_pwm_fade(&ws2812_pwm, fade_time);
+[e ( _ws2812_pwm_fade (2 , &U _ws2812_pwm _fade_time ]
+"137
+[; ;main.c: 137:     }
 }
+[e $U 1632  ]
+"138
+[; ;main.c: 138:     else {
 [e :U 1631 ]
-[e $ != -> . . _PIR4bits 0 1 `i -> 0 `i 1632  ]
-[e :U 1633 ]
-"153
-[; ;main.c: 153:     T2CONbits.TMR2ON = 0;
-[e = . . _T2CONbits 3 7 -> -> 0 `i `uc ]
-"160
-[; ;main.c: 160:     }
+{
+"139
+[; ;main.c: 139:         __asm("sleep");
+[; <" sleep ;# ">
+"140
+[; ;main.c: 140:         __nop();
+[e ( ___nop ..  ]
+"141
+[; ;main.c: 141:         Handle_UART_Data();
+[e ( _Handle_UART_Data ..  ]
+"142
+[; ;main.c: 142:     }
+}
+[e :U 1632 ]
+"147
+[; ;main.c: 147:     }
 }
 [e :U 1628 ]
 [e $U 1629  ]
 [e :U 1630 ]
-"161
-[; ;main.c: 161: }
+"148
+[; ;main.c: 148: }
 [e :UE 1627 ]
 }

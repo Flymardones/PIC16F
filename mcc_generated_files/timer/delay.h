@@ -1,17 +1,14 @@
 /**
- * System Driver Header File
+ * DELAY Generated Driver API Header File
  * 
- * @file system.h
+ * @file delay.h
  * 
- * @defgroup systemdriver System Driver
+ * @defgroup delay DELAY BLOCKING DRIVER
  * 
- * @brief This file contains the API prototype for the System Driver.
+ * @brief This file contains the API to generate delays in the range of milliseconds and microseconds.
  *
- * @version Driver Version 2.0.3
- *
- * @version Package Version 4.1.4
+ * @version DELAY Driver Version 1.1.0
 */
-
 /*
 © [2024] Microchip Technology Inc. and its subsidiaries.
 
@@ -33,43 +30,25 @@
     THIS SOFTWARE.
 */
 
-#ifndef SYSTEM_H
-#define	SYSTEM_H
+#ifndef _DELAY_H
+#define _DELAY_H
 
-#include <xc.h>
 #include <stdint.h>
-#include <stdbool.h>
-#include "config_bits.h"
-#include "../system/clock.h"
-#include "../system/pins.h"
-#include "../uart/eusart.h"
-#include "../pwm/ccp1.h"
-#include "../spi/mssp1.h"
-#include "../timer/tmr2.h"
-#include "../system/interrupt.h"
 
 /**
- * @ingroup systemdriver
- * @brief Initializes the system module.
- * This routine is called only once during system initialization, before calling other APIs.
- * @param None.
- * @return None.
+*  @ingroup delay
+*  @brief Delays the execution of the program for a certain number of milliseconds
+*  @param[in] milliseconds - Number of milliseconds to delay
+*  @return None.
 */
+void DELAY_milliseconds(uint16_t milliseconds);
 
-
-#define SPI 1
-#define PWM 0
-
-
-#define RX_BUFF_SIZE 128
-
-extern uint8_t rxBuff[RX_BUFF_SIZE];
-extern bool fade_flag;
-extern uint16_t fade_time;
-
-void SYSTEM_Initialize(void);
-
-#endif	/* SYSTEM_H */
 /**
- End of File
+*  @ingroup delay
+*  @brief Delays the execution of the program for a certain number of microseconds
+*  @param[in] microseconds - Number of microseconds to delay
+*  @return None.
 */
+void DELAY_microseconds(uint16_t microseconds);
+
+#endif	// _DELAY_H

@@ -1,9 +1,17 @@
 Version 4.0 HI-TECH Software Intermediate Code
-[v F12619 `(v ~T0 @X0 0 tf ]
-"20 ws2812/Src/../Inc/ws2812.h
-[; ;ws2812/Src/../Inc/ws2812.h: 20: typedef struct {
+[v F12627 `(v ~T0 @X0 0 tf ]
+"26 ws2812/Src/../Inc/ws2812.h
+[; ;ws2812/Src/../Inc/ws2812.h: 26: typedef struct {
 [s S1618 `*v 1 `uc 1 `uc 1 `ui 1 `*v 1 `uc 1 ]
 [n S1618 . handle led_num brightness buffer_size buffer dma ]
+"19 ws2812/Src/ws2812.c
+[; ;ws2812/Src/ws2812.c: 19:     led_data[led][GREEN] = green;
+[c E12801 0 1 2 .. ]
+[n E12801 . GREEN RED BLUE  ]
+[v F202 `(v ~T0 @X0 1 tf1`ul ]
+"20 C:\Program Files\Microchip\xc8\v2.46\pic\include\builtins.h
+[v __delay `JF202 ~T0 @X0 0 e ]
+[p i __delay ]
 "54 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 54: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -1641,7 +1649,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; <" TOSH equ 01FEFh ;# ">
 "324 ws2812/Src/../Inc/../../mcc_generated_files/system/../uart/eusart.h
 [; ;ws2812/Src/../Inc/../../mcc_generated_files/system/../uart/eusart.h: 324: void (*EUSART_RxInterruptHandler)(void);
-[v _EUSART_RxInterruptHandler `*F12619 ~T0 @X0 1 e ]
+[v _EUSART_RxInterruptHandler `*F12627 ~T0 @X0 1 e ]
 "12 ws2812/Src/ws2812.c
 [; ;ws2812/Src/ws2812.c: 12: void ws2812_set_led(ws2812_configuration* ws2812_conf, uint8_t led, uint8_t red, uint8_t green, uint8_t blue) {
 [v _ws2812_set_led `(v ~T0 @X0 1 ef5`*S1618`uc`uc`uc`uc ]
@@ -1664,33 +1672,52 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;ws2812/Src/ws2812.c: 16:     }
 }
 [e :U 1620 ]
-[v F12816 `uc ~T0 @X0 -> 3 `i t ]
+[v F12829 `uc ~T0 @X0 -> 3 `i t ]
 "17
 [; ;ws2812/Src/ws2812.c: 17:     uint8_t (*led_data)[3] = ws2812_conf->buffer;
-[v _led_data `*F12816 ~T0 @X0 1 a ]
-[v F12817 `uc ~T0 @X0 -> 3 `i t ]
-[e = _led_data -> . *U _ws2812_conf 4 `*F12817 ]
+[v _led_data `*F12829 ~T0 @X0 1 a ]
+[v F12830 `uc ~T0 @X0 -> 3 `i t ]
+[e = _led_data -> . *U _ws2812_conf 4 `*F12830 ]
 "19
-[; ;ws2812/Src/ws2812.c: 19:     led_data[led][0] = green;
-[e = *U + &U *U + _led_data * -> _led `ux -> * -> # *U &U *U _led_data `ui -> -> 3 `i `ui `ux * -> -> 0 `i `x -> -> # *U &U *U + _led_data * -> _led `ux -> * -> # *U &U *U _led_data `ui -> -> 3 `i `ui `ux `i `x _green ]
+[; ;ws2812/Src/ws2812.c: 19:     led_data[led][GREEN] = green;
+[e = *U + &U *U + _led_data * -> _led `ux -> * -> # *U &U *U _led_data `ui -> -> 3 `i `ui `ux * -> . `E12801 0 `x -> -> # *U &U *U + _led_data * -> _led `ux -> * -> # *U &U *U _led_data `ui -> -> 3 `i `ui `ux `i `x _green ]
 "20
-[; ;ws2812/Src/ws2812.c: 20:     led_data[led][1] = red;
-[e = *U + &U *U + _led_data * -> _led `ux -> * -> # *U &U *U _led_data `ui -> -> 3 `i `ui `ux * -> -> 1 `i `x -> -> # *U &U *U + _led_data * -> _led `ux -> * -> # *U &U *U _led_data `ui -> -> 3 `i `ui `ux `i `x _red ]
+[; ;ws2812/Src/ws2812.c: 20:     led_data[led][RED] = red;
+[e = *U + &U *U + _led_data * -> _led `ux -> * -> # *U &U *U _led_data `ui -> -> 3 `i `ui `ux * -> . `E12801 1 `x -> -> # *U &U *U + _led_data * -> _led `ux -> * -> # *U &U *U _led_data `ui -> -> 3 `i `ui `ux `i `x _red ]
 "21
-[; ;ws2812/Src/ws2812.c: 21:     led_data[led][2] = blue;
-[e = *U + &U *U + _led_data * -> _led `ux -> * -> # *U &U *U _led_data `ui -> -> 3 `i `ui `ux * -> -> 2 `i `x -> -> # *U &U *U + _led_data * -> _led `ux -> * -> # *U &U *U _led_data `ui -> -> 3 `i `ui `ux `i `x _blue ]
+[; ;ws2812/Src/ws2812.c: 21:     led_data[led][BLUE] = blue;
+[e = *U + &U *U + _led_data * -> _led `ux -> * -> # *U &U *U _led_data `ui -> -> 3 `i `ui `ux * -> . `E12801 2 `x -> -> # *U &U *U + _led_data * -> _led `ux -> * -> # *U &U *U _led_data `ui -> -> 3 `i `ui `ux `i `x _blue ]
 "22
 [; ;ws2812/Src/ws2812.c: 22: }
 [e :UE 1619 ]
 }
 "25
-[; ;ws2812/Src/ws2812.c: 25: void ws2812_delay_us(uint16_t us) {
-[v _ws2812_delay_us `(v ~T0 @X0 1 ef1`us ]
+[; ;ws2812/Src/ws2812.c: 25: void ws2812_delay_ms(uint16_t ms) {
+[v _ws2812_delay_ms `(v ~T0 @X0 1 ef1`us ]
 {
-[e :U _ws2812_delay_us ]
-[v _us `us ~T0 @X0 1 r1 ]
+[e :U _ws2812_delay_ms ]
+[v _ms `us ~T0 @X0 1 r1 ]
 [f ]
+"26
+[; ;ws2812/Src/ws2812.c: 26:     for (uint16_t i = 0; i < ms; i++) {
+{
+[v _i `us ~T0 @X0 1 a ]
+[e = _i -> -> 0 `i `us ]
+[e $U 1625  ]
+[e :U 1622 ]
+{
 "27
-[; ;ws2812/Src/ws2812.c: 27: }
+[; ;ws2812/Src/ws2812.c: 27:         _delay((unsigned long)((1)*(32000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
+"28
+[; ;ws2812/Src/ws2812.c: 28:     }
+}
+[e ++ _i -> -> 1 `i `us ]
+[e :U 1625 ]
+[e $ < -> _i `ui -> _ms `ui 1622  ]
+[e :U 1623 ]
+}
+"29
+[; ;ws2812/Src/ws2812.c: 29: }
 [e :UE 1621 ]
 }

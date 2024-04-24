@@ -1810,8 +1810,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/timer/src/tmr2.c: 61:     T2CLKCON = 0x1;
 [e = _T2CLKCON -> -> 1 `i `uc ]
 "63
-[; ;mcc_generated_files/timer/src/tmr2.c: 63:     T2HLT = 0x0;
-[e = _T2HLT -> -> 0 `i `uc ]
+[; ;mcc_generated_files/timer/src/tmr2.c: 63:     T2HLT = 0x28;
+[e = _T2HLT -> -> 40 `i `uc ]
 "65
 [; ;mcc_generated_files/timer/src/tmr2.c: 65:     T2RST = 0x0;
 [e = _T2RST -> -> 0 `i `uc ]

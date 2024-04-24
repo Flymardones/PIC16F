@@ -61,22 +61,22 @@ uint8_t rxBuff[RX_BUFF_SIZE];
 
 
 
+
 static void Handle_UART_Data(void) {
 
-    
-    while(!EUSART_IsRxReady());
-    c = EUSART_Read();
-    rxBuff[index++] = c;
-    if (index > RX_BUFF_SIZE) {
-        index = 0;
-    }
+    while(EUSART_IsRxReady()) {
+        c = EUSART_Read();
+        rxBuff[index++] = c;
+        if (index > RX_BUFF_SIZE) {
+            index = 0;
+        }
 
-    if (c == '\n') {
-        ws2812_uart_commands(rxBuff, index);
-        memset(rxBuff, 0, RX_BUFF_SIZE);
-        index = 0;
+        if (c == '\n') {
+            ws2812_uart_commands(rxBuff, index);
+            index = 0;
+            c = '\0';
+        }
     }
-    
 }
 
 
@@ -99,7 +99,9 @@ int main(void)
 
     // Disable the Peripheral Interrupts 
     //INTERRUPT_PeripheralInterruptDisable(); 
-
+    
+    // Enable IDLE mode
+    CPUDOZEbits.IDLEN = 1;
 #if SPI
 
     SPI1_Open((uint8_t)ws2812_spi.handle);
@@ -109,17 +111,7 @@ int main(void)
     
     
 #if PWM
-    //ws2812_pwm.handle = 0;
-    //ws2812_pwm.led_num = 25;
-    //ws2812_pwm.brightness = 50;
-    //ws2812_pwm.dma = 0;
-    
-    //ws2812_pwm_init(&ws2812_pwm);
-    
-    //for (uint8_t i = 0; i < ws2812_pwm.led_num; i++) {
-    //    ws2812_set_led(&ws2812_pwm, i, 0, 0, 255);
-    //}
-    
+
 
 #endif
     
@@ -128,25 +120,30 @@ int main(void)
     {
         
 #if SPI
+    if (fade_flag) {
+        ws2812_spi_fade(&ws2812_spi, fade_time);
+    }
+    else {
+        SLEEP();
+        NOP(); //Prevent next instruction from loading while device enters sleep            
+    }
     
-    
-    
-    Handle_UART_Data(); 
-    
-
-
 #endif
         
         
 #if PWM
+    if (fade_flag) {
+        ws2812_pwm_fade(&ws2812_pwm, fade_time);
+    }
+    else {
+        SLEEP();
+        NOP(); //Prevent next instruction from loading while device enters sleep      
+    }
     
-    //ws2812_pwm_send(&ws2812_pwm, ws2812_pwm.brightness);
-    
+      
+#endif
     
     Handle_UART_Data(); 
-
-
-#endif
-        
+    
     }    
 }

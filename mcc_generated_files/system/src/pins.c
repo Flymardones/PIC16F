@@ -34,6 +34,7 @@
 
 #include "../pins.h"
 
+void (*IO_RB2_InterruptHandler)(void);
 
 void PIN_MANAGER_Initialize(void)
 {
@@ -117,8 +118,8 @@ void PIN_MANAGER_Initialize(void)
     IOCAP = 0x0;
     IOCAN = 0x0;
     IOCAF = 0x0;
-    IOCBP = 0x0;
-    IOCBN = 0x0;
+    IOCBP = 0x4;
+    IOCBN = 0x4;
     IOCBF = 0x0;
     IOCCP = 0x0;
     IOCCN = 0x0;
@@ -127,11 +128,49 @@ void PIN_MANAGER_Initialize(void)
     IOCEN = 0x0;
     IOCEF = 0x0;
 
+    IO_RB2_SetInterruptHandler(IO_RB2_DefaultInterruptHandler);
 
+    // Enable PIE0bits.IOCIE interrupt 
+    PIE0bits.IOCIE = 1; 
 }
   
 void PIN_MANAGER_IOC(void)
 {
+    // interrupt on change for pin IO_RB2}
+    if(IOCBFbits.IOCBF2 == 1)
+    {
+        IO_RB2_ISR();  
+    }
+}
+   
+/**
+   IO_RB2 Interrupt Service Routine
+*/
+void IO_RB2_ISR(void) {
+
+    // Add custom IOCBF2 code
+
+    // Call the interrupt handler for the callback registered at runtime
+    if(IO_RB2_InterruptHandler)
+    {
+        IO_RB2_InterruptHandler();
+    }
+    IOCBFbits.IOCBF2 = 0;
+}
+
+/**
+  Allows selecting an interrupt handler for IOCBF2 at application runtime
+*/
+void IO_RB2_SetInterruptHandler(void (* InterruptHandler)(void)){
+    IO_RB2_InterruptHandler = InterruptHandler;
+}
+
+/**
+  Default interrupt handler for IOCBF2
+*/
+void IO_RB2_DefaultInterruptHandler(void){
+    // add your IO_RB2 interrupt custom code
+    // or set custom function using IO_RB2_SetInterruptHandler()
 }
 /**
  End of File

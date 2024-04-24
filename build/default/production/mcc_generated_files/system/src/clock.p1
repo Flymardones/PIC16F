@@ -1661,8 +1661,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/system/src/clock.c: 41:     OSCCON1 = 0x60;
 [e = _OSCCON1 -> -> 96 `i `uc ]
 "43
-[; ;mcc_generated_files/system/src/clock.c: 43:     OSCCON3 = 0x40;
-[e = _OSCCON3 -> -> 64 `i `uc ]
+[; ;mcc_generated_files/system/src/clock.c: 43:     OSCCON3 = 0x0;
+[e = _OSCCON3 -> -> 0 `i `uc ]
 "45
 [; ;mcc_generated_files/system/src/clock.c: 45:     OSCEN = 0x0;
 [e = _OSCEN -> -> 0 `i `uc ]

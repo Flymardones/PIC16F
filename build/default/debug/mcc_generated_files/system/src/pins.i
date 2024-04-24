@@ -20727,7 +20727,7 @@ extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 28 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\xc.h" 2 3
 # 38 "mcc_generated_files/system/src/../pins.h" 2
-# 115 "mcc_generated_files/system/src/../pins.h"
+# 116 "mcc_generated_files/system/src/../pins.h"
 void PIN_MANAGER_Initialize (void);
 
 
@@ -20737,9 +20737,24 @@ void PIN_MANAGER_Initialize (void);
 
 
 void PIN_MANAGER_IOC(void);
+
+
+
+
+
+
+
+void IO_RB2_ISR(void);
+# 142 "mcc_generated_files/system/src/../pins.h"
+void IO_RB2_SetInterruptHandler(void (* InterruptHandler)(void));
+# 153 "mcc_generated_files/system/src/../pins.h"
+extern void (*IO_RB2_InterruptHandler)(void);
+# 164 "mcc_generated_files/system/src/../pins.h"
+void IO_RB2_DefaultInterruptHandler(void);
 # 35 "mcc_generated_files/system/src/pins.c" 2
 
 
+void (*IO_RB2_InterruptHandler)(void);
 
 void PIN_MANAGER_Initialize(void)
 {
@@ -20812,12 +20827,12 @@ void PIN_MANAGER_Initialize(void)
     RB0PPS = 0x15;
     CCP1PPS = 0x9;
     RB1PPS = 0x09;
-# 117 "mcc_generated_files/system/src/pins.c"
+# 118 "mcc_generated_files/system/src/pins.c"
     IOCAP = 0x0;
     IOCAN = 0x0;
     IOCAF = 0x0;
-    IOCBP = 0x0;
-    IOCBN = 0x0;
+    IOCBP = 0x4;
+    IOCBN = 0x4;
     IOCBF = 0x0;
     IOCCP = 0x0;
     IOCCN = 0x0;
@@ -20826,9 +20841,47 @@ void PIN_MANAGER_Initialize(void)
     IOCEN = 0x0;
     IOCEF = 0x0;
 
+    IO_RB2_SetInterruptHandler(IO_RB2_DefaultInterruptHandler);
 
+
+    PIE0bits.IOCIE = 1;
 }
 
 void PIN_MANAGER_IOC(void)
 {
+
+    if(IOCBFbits.IOCBF2 == 1)
+    {
+        IO_RB2_ISR();
+    }
+}
+
+
+
+
+void IO_RB2_ISR(void) {
+
+
+
+
+    if(IO_RB2_InterruptHandler)
+    {
+        IO_RB2_InterruptHandler();
+    }
+    IOCBFbits.IOCBF2 = 0;
+}
+
+
+
+
+void IO_RB2_SetInterruptHandler(void (* InterruptHandler)(void)){
+    IO_RB2_InterruptHandler = InterruptHandler;
+}
+
+
+
+
+void IO_RB2_DefaultInterruptHandler(void){
+
+
 }
