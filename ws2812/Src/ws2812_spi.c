@@ -47,12 +47,12 @@ void ws2812_spi_fade(ws2812_configuration* ws2812_conf, uint16_t fade_time_ms) {
   
   fade_delay = (fade_time_ms / ws2812_conf->brightness) / 2;
   
-  for (int fade = ws2812_conf->brightness; fade >= 0; fade--) {
+  for (int fade = ws2812_conf->brightness; fade >= 0; fade -= 2) {
     ws2812_spi_adjust_brightness(ws2812_conf, (uint8_t) fade);
     ws2812_delay_ms(fade_delay);
   }
   
-  for (int fade = 0; fade < ws2812_conf->brightness; fade++) {
+  for (int fade = 0; fade < ws2812_conf->brightness; fade += 2) {
     ws2812_spi_adjust_brightness(ws2812_conf, (uint8_t) fade);
     ws2812_delay_ms(fade_delay);
   }

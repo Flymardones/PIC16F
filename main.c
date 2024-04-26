@@ -142,7 +142,7 @@ int main(void)
     
       
 #endif
-    
+
     Handle_UART_Data(); 
     
     }    

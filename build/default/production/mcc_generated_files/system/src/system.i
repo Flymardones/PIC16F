@@ -21528,11 +21528,11 @@ void SYSTEM_Initialize(void)
     EUSART_Initialize();
 
 
+    CCP1_Initialize();
+    TMR2_Initialize();
 
 
 
-
-    SPI1_Initialize();
 
 
     INTERRUPT_Initialize();

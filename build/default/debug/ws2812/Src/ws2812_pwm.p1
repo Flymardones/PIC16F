@@ -1818,47 +1818,47 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;ws2812/Src/ws2812_pwm.c: 53:   fade_delay = (fade_time_ms / ws2812_conf->brightness) / 2;
 [e = _fade_delay -> / / -> _fade_time_ms `ui -> . *U _ws2812_conf 2 `ui -> -> 2 `i `ui `us ]
 "55
-[; ;ws2812/Src/ws2812_pwm.c: 55:   for (uint8_t fade = ws2812_conf->brightness; fade >= 0; fade--) {
+[; ;ws2812/Src/ws2812_pwm.c: 55:   for (int fade = ws2812_conf->brightness; fade >= 0; fade--) {
 {
-[v _fade `uc ~T0 @X0 1 a ]
-[e = _fade . *U _ws2812_conf 2 ]
-[e $ >= -> _fade `i -> 0 `i 1635  ]
+[v _fade `i ~T0 @X0 1 a ]
+[e = _fade -> . *U _ws2812_conf 2 `i ]
+[e $ >= _fade -> 0 `i 1635  ]
 [e $U 1636  ]
 [e :U 1635 ]
 {
 "56
-[; ;ws2812/Src/ws2812_pwm.c: 56:     ws2812_pwm_adjust_brightness(ws2812_conf, (uint8_t) fade);
-[e ( _ws2812_pwm_adjust_brightness (2 , _ws2812_conf _fade ]
+[; ;ws2812/Src/ws2812_pwm.c: 56:     ws2812_pwm_adjust_brightness(ws2812_conf, (uint8_t)fade);
+[e ( _ws2812_pwm_adjust_brightness (2 , _ws2812_conf -> _fade `uc ]
 "57
 [; ;ws2812/Src/ws2812_pwm.c: 57:     ws2812_delay_ms(fade_delay);
 [e ( _ws2812_delay_ms (1 _fade_delay ]
 "58
 [; ;ws2812/Src/ws2812_pwm.c: 58:   }
 }
-[e -- _fade -> -> 1 `i `uc ]
-[e $ >= -> _fade `i -> 0 `i 1635  ]
+[e -- _fade -> 1 `i ]
+[e $ >= _fade -> 0 `i 1635  ]
 [e :U 1636 ]
 }
 "60
-[; ;ws2812/Src/ws2812_pwm.c: 60:   for (uint8_t fade = 0; fade < ws2812_conf->brightness; fade++) {
+[; ;ws2812/Src/ws2812_pwm.c: 60:   for (int fade = 0; fade < ws2812_conf->brightness; fade++) {
 {
-[v _fade `uc ~T0 @X0 1 a ]
-[e = _fade -> -> 0 `i `uc ]
+[v _fade `i ~T0 @X0 1 a ]
+[e = _fade -> 0 `i ]
 [e $U 1641  ]
 [e :U 1638 ]
 {
 "61
-[; ;ws2812/Src/ws2812_pwm.c: 61:     ws2812_pwm_adjust_brightness(ws2812_conf, (uint8_t) fade);
-[e ( _ws2812_pwm_adjust_brightness (2 , _ws2812_conf _fade ]
+[; ;ws2812/Src/ws2812_pwm.c: 61:     ws2812_pwm_adjust_brightness(ws2812_conf, (uint8_t)fade);
+[e ( _ws2812_pwm_adjust_brightness (2 , _ws2812_conf -> _fade `uc ]
 "62
 [; ;ws2812/Src/ws2812_pwm.c: 62:     ws2812_delay_ms(fade_delay);
 [e ( _ws2812_delay_ms (1 _fade_delay ]
 "63
 [; ;ws2812/Src/ws2812_pwm.c: 63:   }
 }
-[e ++ _fade -> -> 1 `i `uc ]
+[e ++ _fade -> 1 `i ]
 [e :U 1641 ]
-[e $ < -> _fade `i -> . *U _ws2812_conf 2 `i 1638  ]
+[e $ < _fade -> . *U _ws2812_conf 2 `i 1638  ]
 [e :U 1639 ]
 }
 "64

@@ -21667,6 +21667,23 @@ void *memccpy (void *restrict, const void *restrict, int, size_t);
 
 
 
+static volatile void CCP1_DutyCycle(uint16_t dutyValue) {
+    dutyValue &= 0x03FF;
+
+
+    if(CCP1CONbits.CCP1FMT)
+    {
+        dutyValue <<= 6;
+        CCPR1H = (uint8_t)(dutyValue >> 8);
+        CCPR1L = (uint8_t)dutyValue;
+    }
+    else
+    {
+        CCPR1H = (uint8_t)(dutyValue >> 8);
+        CCPR1L = (uint8_t)dutyValue;
+    }
+}
+
 void ws2812_pwm_adjust_brightness(ws2812_configuration* ws2812_conf, uint8_t brightness) {
     uint8_t green, red, blue;
     uint8_t (*led_data)[3] = (uint8_t(*)[3])ws2812_conf->buffer;
@@ -21778,7 +21795,7 @@ void ws2812_pwm_send(ws2812_configuration* ws2812_conf) {
 
 
     for (uint16_t i = 0; i < (ws2812_conf->led_num * 24); i++) {
-        CCP1_LoadDutyValue(send_data[i]);
+        CCP1_DutyCycle(send_data[i]);
         T2CON |= 0x80;
     }
     free(send_data);

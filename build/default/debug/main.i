@@ -21698,19 +21698,19 @@ uint8_t rxBuff[128];
 
 static void Handle_UART_Data(void) {
 
+    while(EUSART_IsRxReady()) {
+        c = EUSART_Read();
+        rxBuff[index++] = c;
+        if (index > 128) {
+            index = 0;
+        }
 
-    while(!EUSART_IsRxReady());
-    c = EUSART_Read();
-    rxBuff[index++] = c;
-    if (index > 128) {
-        index = 0;
+        if (c == '\n') {
+            ws2812_uart_commands(rxBuff, index);
+            index = 0;
+            c = '\0';
+        }
     }
-
-    if (c == '\n') {
-        ws2812_uart_commands(rxBuff, index);
-        index = 0;
-    }
-
 }
 
 
@@ -21730,12 +21730,6 @@ int main(void)
 
 
     (INTCONbits.PEIE = 1);
-
-
-
-
-
-    CPUDOZEbits.IDLEN = 1;
 # 119 "main.c"
     while(1)
     {
@@ -21744,12 +21738,15 @@ int main(void)
         ws2812_pwm_fade(&ws2812_pwm, fade_time);
     }
     else {
-        __asm("sleep");
-        __nop();
-        Handle_UART_Data();
+
+
     }
 
 
+
+
+    CCP1_LoadDutyValue(0xA);
+    T2CON |= 0x80;
 
 
     }

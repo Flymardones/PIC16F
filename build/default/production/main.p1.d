@@ -16,4 +16,4 @@ mcc_generated_files/system/../timer/timer_interface.h  \
 mcc_generated_files/system/../system/interrupt.h  \
 ws2812/Inc/ws2812_uart.h  \
 ws2812/Inc/ws2812.h  \
-ws2812/Inc/ws2812_spi.h 
+ws2812/Inc/ws2812_pwm.h 

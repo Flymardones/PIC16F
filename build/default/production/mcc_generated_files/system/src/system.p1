@@ -9,9 +9,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 "120 mcc_generated_files/system/src/../../uart/eusart.h
 [; ;mcc_generated_files/system/src/../../uart/eusart.h: 120: void EUSART_Initialize(void);
 [v _EUSART_Initialize `(v ~T0 @X0 0 ef ]
-"126 mcc_generated_files/system/src/../../spi/mssp1.h
-[; ;mcc_generated_files/system/src/../../spi/mssp1.h: 126: void SPI1_Initialize(void);
-[v _SPI1_Initialize `(v ~T0 @X0 0 ef ]
+"54 mcc_generated_files/system/src/../../pwm/ccp1.h
+[; ;mcc_generated_files/system/src/../../pwm/ccp1.h: 54: void CCP1_Initialize(void);
+[v _CCP1_Initialize `(v ~T0 @X0 0 ef ]
+"329 mcc_generated_files/system/src/../../timer/tmr2.h
+[; ;mcc_generated_files/system/src/../../timer/tmr2.h: 329: void TMR2_Initialize(void);
+[v _TMR2_Initialize `(v ~T0 @X0 0 ef ]
 "85 mcc_generated_files/system/src/../../system/interrupt.h
 [; ;mcc_generated_files/system/src/../../system/interrupt.h: 85: void INTERRUPT_Initialize (void);
 [v _INTERRUPT_Initialize `(v ~T0 @X0 0 ef ]
@@ -1670,9 +1673,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 "43
 [; ;mcc_generated_files/system/src/system.c: 43:     EUSART_Initialize();
 [e ( _EUSART_Initialize ..  ]
-"50
-[; ;mcc_generated_files/system/src/system.c: 50:     SPI1_Initialize();
-[e ( _SPI1_Initialize ..  ]
+"46
+[; ;mcc_generated_files/system/src/system.c: 46:     CCP1_Initialize();
+[e ( _CCP1_Initialize ..  ]
+"47
+[; ;mcc_generated_files/system/src/system.c: 47:     TMR2_Initialize();
+[e ( _TMR2_Initialize ..  ]
 "53
 [; ;mcc_generated_files/system/src/system.c: 53:     INTERRUPT_Initialize();
 [e ( _INTERRUPT_Initialize ..  ]

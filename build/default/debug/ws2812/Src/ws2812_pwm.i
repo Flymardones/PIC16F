@@ -21710,13 +21710,13 @@ void ws2812_pwm_fade(ws2812_configuration* ws2812_conf, uint16_t fade_time_ms) {
 
   fade_delay = (fade_time_ms / ws2812_conf->brightness) / 2;
 
-  for (uint8_t fade = ws2812_conf->brightness; fade >= 0; fade--) {
-    ws2812_pwm_adjust_brightness(ws2812_conf, (uint8_t) fade);
+  for (int fade = ws2812_conf->brightness; fade >= 0; fade--) {
+    ws2812_pwm_adjust_brightness(ws2812_conf, (uint8_t)fade);
     ws2812_delay_ms(fade_delay);
   }
 
-  for (uint8_t fade = 0; fade < ws2812_conf->brightness; fade++) {
-    ws2812_pwm_adjust_brightness(ws2812_conf, (uint8_t) fade);
+  for (int fade = 0; fade < ws2812_conf->brightness; fade++) {
+    ws2812_pwm_adjust_brightness(ws2812_conf, (uint8_t)fade);
     ws2812_delay_ms(fade_delay);
   }
 }

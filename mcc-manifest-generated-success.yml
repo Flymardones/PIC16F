@@ -2,7 +2,7 @@
 
 manifest_file_version: 1.0.0
 project: PIC16F
-creation_date: 2024-04-24T11:53:39.053+02:00[Europe/Paris]
+creation_date: 2024-04-26T10:01:01.953+02:00[Europe/Paris]
 operating_system: Windows 10
 mcc_mode: IDE
 mcc_mode_version: v6.20
@@ -17,7 +17,6 @@ mcc_content_registries: https://registry.npmjs.org/
 device_library: {library_class: com.microchip.mcc.melody.Library, name: Melody, version: 2.7.0}
 packs: {name: PIC16F1xxxx_DFP, version: 1.25.389}
 modules:
-- {name: '@mchp-mcc/delay-blocking-driver', type: MELODY, version: 3.1.0}
 - {name: '@mchp-mcc/main-manager', type: MELODY, version: 3.1.1}
 - {name: '@mchp-mcc/pic-8bit', type: MELODY, version: 5.28.0}
 - {name: '@mchp-mcc/pic16-configuration-bits-v1', type: MELODY, version: 4.1.4}

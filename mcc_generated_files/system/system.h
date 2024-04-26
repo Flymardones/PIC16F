@@ -57,8 +57,8 @@
 */
 
 
-#define SPI 1
-#define PWM 0
+#define SPI 0
+#define PWM 1
 
 
 #define RX_BUFF_SIZE 128

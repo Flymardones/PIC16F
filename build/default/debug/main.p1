@@ -4,15 +4,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;./ws2812/Inc/ws2812.h: 26: typedef struct {
 [s S1618 `*v 1 `uc 1 `uc 1 `ui 1 `*v 1 `uc 1 ]
 [n S1618 . handle led_num brightness buffer_size buffer dma ]
-"253 ./mcc_generated_files/system/../uart/eusart.h
-[; ;./mcc_generated_files/system/../uart/eusart.h: 253: _Bool EUSART_IsRxReady(void);
-[v _EUSART_IsRxReady `(a ~T0 @X0 0 ef ]
-"289
+"289 ./mcc_generated_files/system/../uart/eusart.h
 [; ;./mcc_generated_files/system/../uart/eusart.h: 289: uint8_t EUSART_Read(void);
 [v _EUSART_Read `(uc ~T0 @X0 0 ef ]
 "18 ./ws2812/Inc/ws2812_uart.h
 [; ;./ws2812/Inc/ws2812_uart.h: 18: void ws2812_uart_commands(uint8_t* data, uint16_t size);
 [v _ws2812_uart_commands `(v ~T0 @X0 0 ef2`*uc`us ]
+"253 ./mcc_generated_files/system/../uart/eusart.h
+[; ;./mcc_generated_files/system/../uart/eusart.h: 253: _Bool EUSART_IsRxReady(void);
+[v _EUSART_IsRxReady `(a ~T0 @X0 0 ef ]
 [p mainexit ]
 "70 ./ws2812/Inc/../../mcc_generated_files/system/system.h
 [v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
@@ -27,23 +27,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 "370
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 370: extern volatile INTCONbits_t INTCONbits __attribute__((address(0x00B)));
 [v _INTCONbits `VS30 ~T0 @X0 0 e@11 ]
-"23380
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 23380:     struct {
-[s S1056 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1056 . DOZE0 DOZE1 DOZE2 . DOE ROI DOZEN IDLEN ]
-"23379
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 23379: typedef union {
-[u S1055 `S1056 1 ]
-[n S1055 . . ]
-"23391
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 23391: extern volatile CPUDOZEbits_t CPUDOZEbits __attribute__((address(0x88C)));
-[v _CPUDOZEbits `VS1055 ~T0 @X0 0 e@2188 ]
 "22 ./ws2812/Inc/ws2812_pwm.h
 [; ;./ws2812/Inc/ws2812_pwm.h: 22: void ws2812_pwm_fade(ws2812_configuration* ws2812_conf, uint16_t fade_time_ms);
 [v _ws2812_pwm_fade `(v ~T0 @X0 0 ef2`*S1618`us ]
-"8 C:\Program Files\Microchip\xc8\v2.46\pic\include\builtins.h
-[v ___nop `(v ~T0 @X0 0 ef ]
-[p i ___nop ]
+"62 ./mcc_generated_files/system/../pwm/ccp1.h
+[; ;./mcc_generated_files/system/../pwm/ccp1.h: 62: void CCP1_LoadDutyValue(uint16_t dutyValue);
+[v _CCP1_LoadDutyValue `(v ~T0 @X0 0 ef1`us ]
+"9409 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 9409: extern volatile unsigned char T2CON __attribute__((address(0x28E)));
+[v _T2CON `Vuc ~T0 @X0 0 e@654 ]
 "54 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 54: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -1718,44 +1710,53 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 [e :U _Handle_UART_Data ]
 [f ]
-"68
-[; ;main.c: 68:     while(!EUSART_IsRxReady());
+"67
+[; ;main.c: 67:     while(EUSART_IsRxReady()) {
 [e $U 1622  ]
 [e :U 1623 ]
-[e :U 1622 ]
-[e $ ! != -> ( _EUSART_IsRxReady ..  `i -> 0 `i 1623  ]
-[e :U 1624 ]
-"69
-[; ;main.c: 69:     c = EUSART_Read();
+{
+"68
+[; ;main.c: 68:         c = EUSART_Read();
 [e = _c -> ( _EUSART_Read ..  `uc ]
-"70
-[; ;main.c: 70:     rxBuff[index++] = c;
+"69
+[; ;main.c: 69:         rxBuff[index++] = c;
 [e = *U + &U _rxBuff * -> ++ _index -> -> 1 `i `uc `ux -> -> # *U &U _rxBuff `ui `ux -> _c `uc ]
-"71
-[; ;main.c: 71:     if (index > 128) {
+"70
+[; ;main.c: 70:         if (index > 128) {
 [e $ ! > -> _index `i -> 128 `i 1625  ]
 {
-"72
-[; ;main.c: 72:         index = 0;
+"71
+[; ;main.c: 71:             index = 0;
 [e = _index -> -> 0 `i `uc ]
-"73
-[; ;main.c: 73:     }
+"72
+[; ;main.c: 72:         }
 }
 [e :U 1625 ]
-"75
-[; ;main.c: 75:     if (c == '\n') {
+"74
+[; ;main.c: 74:         if (c == '\n') {
 [e $ ! == -> _c `ui -> 10 `ui 1626  ]
 {
-"76
-[; ;main.c: 76:         ws2812_uart_commands(rxBuff, index);
+"75
+[; ;main.c: 75:             ws2812_uart_commands(rxBuff, index);
 [e ( _ws2812_uart_commands (2 , &U _rxBuff -> _index `us ]
-"77
-[; ;main.c: 77:         index = 0;
+"76
+[; ;main.c: 76:             index = 0;
 [e = _index -> -> 0 `i `uc ]
+"77
+[; ;main.c: 77:             c = '\0';
+[e = _c -> -> 0 `ui `uc ]
 "78
-[; ;main.c: 78:     }
+[; ;main.c: 78:         }
 }
 [e :U 1626 ]
+"79
+[; ;main.c: 79:     }
+}
+[e :U 1622 ]
+"67
+[; ;main.c: 67:     while(EUSART_IsRxReady()) {
+[e $ != -> ( _EUSART_IsRxReady ..  `i -> 0 `i 1623  ]
+[e :U 1624 ]
 "80
 [; ;main.c: 80: }
 [e :UE 1621 ]
@@ -1778,9 +1779,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "98
 [; ;main.c: 98:     (INTCONbits.PEIE = 1);
 [e = . . _INTCONbits 0 2 -> -> 1 `i `uc ]
-"104
-[; ;main.c: 104:     CPUDOZEbits.IDLEN = 1;
-[e = . . _CPUDOZEbits 0 7 -> -> 1 `i `uc ]
 "119
 [; ;main.c: 119:     while(1)
 [e :U 1629 ]
@@ -1802,26 +1800,23 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 138:     else {
 [e :U 1631 ]
 {
-"139
-[; ;main.c: 139:         __asm("sleep");
-[; <" sleep ;# ">
-"140
-[; ;main.c: 140:         __nop();
-[e ( ___nop ..  ]
 "141
-[; ;main.c: 141:         Handle_UART_Data();
-[e ( _Handle_UART_Data ..  ]
-"142
-[; ;main.c: 142:     }
+[; ;main.c: 141:     }
 }
 [e :U 1632 ]
+"146
+[; ;main.c: 146:     CCP1_LoadDutyValue(0xA);
+[e ( _CCP1_LoadDutyValue (1 -> -> 10 `i `us ]
 "147
-[; ;main.c: 147:     }
+[; ;main.c: 147:     T2CON |= 0x80;
+[e =| _T2CON -> -> 128 `i `Vuc ]
+"150
+[; ;main.c: 150:     }
 }
 [e :U 1628 ]
 [e $U 1629  ]
 [e :U 1630 ]
-"148
-[; ;main.c: 148: }
+"151
+[; ;main.c: 151: }
 [e :UE 1627 ]
 }
