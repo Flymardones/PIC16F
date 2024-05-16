@@ -30,6 +30,8 @@
     EXCEED AMOUNT OF FEES, IF ANY, YOU PAID DIRECTLY TO MICROCHIP FOR 
     THIS SOFTWARE.
 */
+
+
 #include "mcc_generated_files/system/system.h"
 
 
@@ -142,7 +144,7 @@ int main(void)
     
       
 #endif
-
+    
     Handle_UART_Data(); 
     
     }    

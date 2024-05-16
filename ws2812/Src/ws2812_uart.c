@@ -18,26 +18,45 @@
 #endif
 
 
+#define MAX_COMMAND_SIZE 10
+
+
 uint8_t initialized = 0;
+
+bool valid_command_size(int commandSize, int expectedSize) {
+    if (commandSize < expectedSize) {
+        memset(rxBuff, 0, RX_BUFF_SIZE);
+        return false;
+    }
+    return true;
+}
 
 void ws2812_uart_commands(uint8_t* data, uint16_t size) {
 
     char *token;
-    char *tokenizedInput[10];
-    int i = 0;
+    char *tokenizedInput[MAX_COMMAND_SIZE];
+    int commandSize = 0;
 
 
-    token = strtok((char *)data, ",");
+    token = strtok((char*)data, ",");
     while (token != NULL) {
-        tokenizedInput[i++] = token;
+        if (commandSize >= MAX_COMMAND_SIZE) {
+            return;
+        }
+        tokenizedInput[commandSize++] = token;
         token = strtok(NULL, ",");
     }
 
     if (strcmp(tokenizedInput[0], "INIT") == 0) {
+        if (!valid_command_size(commandSize, 3)) {
+            return;
+        }
         #if SPI
         if (initialized) {
             ws2812_spi_deinit(&ws2812_spi);
             initialized = 0;
+            fade_flag = 0;
+            fade_time = 0;
         }
         ws2812_spi.handle = (void*)WS2812_SPI;
         ws2812_spi.led_num = (uint8_t)atoi(tokenizedInput[1]);
@@ -53,8 +72,10 @@ void ws2812_uart_commands(uint8_t* data, uint16_t size) {
         if (initialized) {
             ws2812_pwm_deinit(&ws2812_pwm);
             initialized = 0;
+            fade_flag = 0;
+            fade_time = 0;
         }
-        ws2812_pwm.handle = 0;
+        ws2812_pwm.handle = NULL;
         ws2812_pwm.led_num = (uint8_t)atoi(tokenizedInput[1]);
         ws2812_pwm.brightness = (uint8_t)atoi(tokenizedInput[2]);
         ws2812_pwm.dma = 0;
@@ -65,9 +86,7 @@ void ws2812_uart_commands(uint8_t* data, uint16_t size) {
         }
 
         #endif
-        
-        fade_flag = 0;
-        fade_time = 0;
+
     }
     else if (strcmp(tokenizedInput[0], "DEINIT") == 0) {
         #if SPI
@@ -83,22 +102,29 @@ void ws2812_uart_commands(uint8_t* data, uint16_t size) {
         fade_flag = 0;
     }
     else if (strcmp(tokenizedInput[0], "SET_ALL") == 0 && initialized) {
+        if (!valid_command_size(commandSize, 4)) {
+            return;
+        }
         #if SPI
-        for (int i = 0; i < ws2812_spi.led_num; i++) {
-            ws2812_set_led(&ws2812_spi, (uint8_t)i, (uint8_t)atoi(tokenizedInput[1]), (uint8_t)atoi(tokenizedInput[2]), (uint8_t)atoi(tokenizedInput[3]));
+        for (uint8_t i = 0; i < ws2812_spi.led_num; i++) {
+            ws2812_set_led(&ws2812_spi, i, (uint8_t)atoi(tokenizedInput[1]), (uint8_t)atoi(tokenizedInput[2]), (uint8_t)atoi(tokenizedInput[3]));
         }
         ws2812_spi_send(&ws2812_spi);
         #endif
 
         #if PWM
-        for (int i = 0; i < ws2812_pwm.led_num; i++) {
-            ws2812_set_led(&ws2812_pwm, (uint8_t)i, (uint8_t)atoi(tokenizedInput[1]), (uint8_t)atoi(tokenizedInput[2]), (uint8_t)atoi(tokenizedInput[3]));
+        for (uint8_t i = 0; i < ws2812_pwm.led_num; i++) {
+            ws2812_set_led(&ws2812_pwm, i, (uint8_t)atoi(tokenizedInput[1]), (uint8_t)atoi(tokenizedInput[2]), (uint8_t)atoi(tokenizedInput[3]));
         }
         ws2812_pwm_send(&ws2812_pwm);
         #endif
 
     }
     else if (strcmp(tokenizedInput[0], "SET_SINGLE") == 0 && initialized) {
+        if (!valid_command_size(commandSize, 5)) {
+            return;
+        }
+
         #if SPI
         ws2812_set_led(&ws2812_spi, (uint8_t)atoi(tokenizedInput[1]), (uint8_t)atoi(tokenizedInput[2]), (uint8_t)atoi(tokenizedInput[3]), (uint8_t)atoi(tokenizedInput[4]));
         ws2812_spi_send(&ws2812_spi);
@@ -111,6 +137,10 @@ void ws2812_uart_commands(uint8_t* data, uint16_t size) {
 
     }
     else if (strcmp(tokenizedInput[0], "SET_BRIGHTNESS") == 0 && initialized) {
+        if (!valid_command_size(commandSize, 2)) {
+            return;
+        }
+
         #if SPI
         ws2812_spi.brightness = (uint8_t)atoi(tokenizedInput[1]);
         ws2812_spi_send(&ws2812_spi);
@@ -123,10 +153,7 @@ void ws2812_uart_commands(uint8_t* data, uint16_t size) {
     }
     else if (strcmp(tokenizedInput[0], "CLEAR_ALL") == 0 && initialized) {
         #if SPI
-        for (int i = 0; i < ws2812_spi.led_num; i++) {
-            ws2812_set_led(&ws2812_spi, (uint8_t)i, 0, 0, 0);
-        }
-        ws2812_spi_send(&ws2812_spi);
+        ws2812_spi_clear(&ws2812_spi);
         #endif
 
         #if PWM
@@ -134,6 +161,10 @@ void ws2812_uart_commands(uint8_t* data, uint16_t size) {
         #endif
     }
     else if (strcmp(tokenizedInput[0], "CLEAR_SINGLE") == 0 && initialized) {
+        if (!valid_command_size(commandSize, 2)) {
+            return;
+        }
+
         #if SPI
         ws2812_set_led(&ws2812_spi, (uint8_t)atoi(tokenizedInput[1]), 0, 0, 0);
         ws2812_spi_send(&ws2812_spi);
@@ -145,15 +176,18 @@ void ws2812_uart_commands(uint8_t* data, uint16_t size) {
         #endif
     }
     else if (strcmp(tokenizedInput[0], "START_FADE_ALL") == 0 && initialized) {
+        if (!valid_command_size(commandSize, 5)) {
+            return;
+        }
         #if SPI
-        for (i = 0; i < ws2812_spi.led_num; i++) {
-            ws2812_set_led(&ws2812_spi, (uint8_t)i, (uint8_t)atoi(tokenizedInput[1]), (uint8_t)atoi(tokenizedInput[2]), (uint8_t)atoi(tokenizedInput[3]));
+        for (uint8_t i = 0; i < ws2812_spi.led_num; i++) {
+            ws2812_set_led(&ws2812_spi, i, (uint8_t)atoi(tokenizedInput[1]), (uint8_t)atoi(tokenizedInput[2]), (uint8_t)atoi(tokenizedInput[3]));
         }
         #endif
 	
         #if PWM
-        for (i = 0; i < ws2812_pwm.led_num; i++) {
-            ws2812_set_led(&ws2812_pwm, (uint8_t)i, (uint8_t)atoi(tokenizedInput[1]), (uint8_t)atoi(tokenizedInput[2]), (uint8_t)atoi(tokenizedInput[3]));
+        for (uint8_t i = 0; i < ws2812_pwm.led_num; i++) {
+            ws2812_set_led(&ws2812_pwm, i, (uint8_t)atoi(tokenizedInput[1]), (uint8_t)atoi(tokenizedInput[2]), (uint8_t)atoi(tokenizedInput[3]));
         }
         #endif
 	
@@ -164,6 +198,9 @@ void ws2812_uart_commands(uint8_t* data, uint16_t size) {
         fade_flag = 0;
     }
     else if (strcmp(tokenizedInput[0], "START_FADE_SINGLE") == 0 && initialized) {
+        if (!valid_command_size(commandSize, 6)) {
+            return;
+        }
         #if SPI
         ws2812_set_led(&ws2812_spi, (uint8_t)atoi(tokenizedInput[1]), (uint8_t)atoi(tokenizedInput[2]), (uint8_t)atoi(tokenizedInput[3]), (uint8_t)atoi(tokenizedInput[4]));
         #endif
@@ -176,6 +213,9 @@ void ws2812_uart_commands(uint8_t* data, uint16_t size) {
         fade_flag = 1;
     }
     else if (strcmp(tokenizedInput[0], "STOP_FADE_SINGLE") == 0 && initialized) {
+        if (!valid_command_size(commandSize, 2)) {
+            return;
+        }
         #if SPI
         ws2812_set_led(&ws2812_spi, (uint8_t)atoi(tokenizedInput[1]), 0, 0, 0);
         #endif

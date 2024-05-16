@@ -1,9 +1,10 @@
 Version 4.0 HI-TECH Software Intermediate Code
 [v F12627 `(v ~T0 @X0 0 tf ]
-"26 ./ws2812/Inc/ws2812.h
-[; ;./ws2812/Inc/ws2812.h: 26: typedef struct {
-[s S1618 `*v 1 `uc 1 `uc 1 `ui 1 `*v 1 `uc 1 ]
-[n S1618 . handle led_num brightness buffer_size buffer dma ]
+[v F12807 `uc ~T0 @X0 -> 3 `i t ]
+"19 ./ws2812/Inc/ws2812.h
+[; ;./ws2812/Inc/ws2812.h: 19: typedef struct {
+[s S1618 `*v 1 `uc 1 `uc 1 `c 1 `*F12807 1 `uc 1 ]
+[n S1618 . handle led_num brightness fade led_data dma ]
 "289 ./mcc_generated_files/system/../uart/eusart.h
 [; ;./mcc_generated_files/system/../uart/eusart.h: 289: uint8_t EUSART_Read(void);
 [v _EUSART_Read `(uc ~T0 @X0 0 ef ]
@@ -38,9 +39,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 "23391
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 23391: extern volatile CPUDOZEbits_t CPUDOZEbits __attribute__((address(0x88C)));
 [v _CPUDOZEbits `VS1055 ~T0 @X0 0 e@2188 ]
-"22 ./ws2812/Inc/ws2812_pwm.h
-[; ;./ws2812/Inc/ws2812_pwm.h: 22: void ws2812_pwm_fade(ws2812_configuration* ws2812_conf, uint16_t fade_time_ms);
-[v _ws2812_pwm_fade `(v ~T0 @X0 0 ef2`*S1618`us ]
+"144 ./mcc_generated_files/system/../spi/mssp1.h
+[; ;./mcc_generated_files/system/../spi/mssp1.h: 144: _Bool SPI1_Open(uint8_t spiConfigIndex);
+[v _SPI1_Open `(a ~T0 @X0 0 ef1`uc ]
+"21 ./ws2812/Inc/ws2812_spi.h
+[; ;./ws2812/Inc/ws2812_spi.h: 21: void ws2812_spi_fade(ws2812_configuration* ws2812_conf, uint16_t fade_time_ms);
+[v _ws2812_spi_fade `(v ~T0 @X0 0 ef2`*S1618`us ]
 "8 C:\Program Files\Microchip\xc8\v2.46\pic\include\builtins.h
 [v ___nop `(v ~T0 @X0 0 ef ]
 [p i ___nop ]
@@ -1682,143 +1686,146 @@ Version 4.0 HI-TECH Software Intermediate Code
 "324 ./mcc_generated_files/system/../uart/eusart.h
 [; ;./mcc_generated_files/system/../uart/eusart.h: 324: void (*EUSART_RxInterruptHandler)(void);
 [v _EUSART_RxInterruptHandler `*F12627 ~T0 @X0 1 e ]
-"53 main.c
-[; ;main.c: 53: ws2812_configuration ws2812_spi;
+"55 main.c
+[; ;main.c: 55: ws2812_configuration ws2812_spi;
 [v _ws2812_spi `S1618 ~T0 @X0 1 e ]
-"54
-[; ;main.c: 54: ws2812_configuration ws2812_pwm;
-[v _ws2812_pwm `S1618 ~T0 @X0 1 e ]
 "56
-[; ;main.c: 56: char c;
+[; ;main.c: 56: ws2812_configuration ws2812_pwm;
+[v _ws2812_pwm `S1618 ~T0 @X0 1 e ]
+"58
+[; ;main.c: 58: char c;
 [v _c `uc ~T0 @X0 1 e ]
-"57
-[; ;main.c: 57: uint8_t index = 0;
+"59
+[; ;main.c: 59: uint8_t index = 0;
 [v _index `uc ~T0 @X0 1 e ]
 [i _index
 -> -> 0 `i `uc
 ]
-"58
-[; ;main.c: 58: _Bool fade_flag = 0;
+"60
+[; ;main.c: 60: _Bool fade_flag = 0;
 [v _fade_flag `a ~T0 @X0 1 e ]
 [i _fade_flag
 -> -> 0 `i `a
 ]
-"59
-[; ;main.c: 59: uint16_t fade_time = 0;
+"61
+[; ;main.c: 61: uint16_t fade_time = 0;
 [v _fade_time `us ~T0 @X0 1 e ]
 [i _fade_time
 -> -> 0 `i `us
 ]
-"60
-[; ;main.c: 60: uint8_t rxBuff[128];
+"62
+[; ;main.c: 62: uint8_t rxBuff[128];
 [v _rxBuff `uc ~T0 @X0 -> 128 `i e ]
-"65
-[; ;main.c: 65: static void Handle_UART_Data(void) {
+"67
+[; ;main.c: 67: static void Handle_UART_Data(void) {
 [v _Handle_UART_Data `(v ~T0 @X0 1 sf ]
 {
 [e :U _Handle_UART_Data ]
 [f ]
-"67
-[; ;main.c: 67:     while(EUSART_IsRxReady()) {
+"69
+[; ;main.c: 69:     while(EUSART_IsRxReady()) {
 [e $U 1622  ]
 [e :U 1623 ]
 {
-"68
-[; ;main.c: 68:         c = EUSART_Read();
-[e = _c -> ( _EUSART_Read ..  `uc ]
-"69
-[; ;main.c: 69:         rxBuff[index++] = c;
-[e = *U + &U _rxBuff * -> ++ _index -> -> 1 `i `uc `ux -> -> # *U &U _rxBuff `ui `ux -> _c `uc ]
 "70
-[; ;main.c: 70:         if (index > 128) {
+[; ;main.c: 70:         c = EUSART_Read();
+[e = _c -> ( _EUSART_Read ..  `uc ]
+"71
+[; ;main.c: 71:         rxBuff[index++] = c;
+[e = *U + &U _rxBuff * -> ++ _index -> -> 1 `i `uc `ux -> -> # *U &U _rxBuff `ui `ux -> _c `uc ]
+"72
+[; ;main.c: 72:         if (index > 128) {
 [e $ ! > -> _index `i -> 128 `i 1625  ]
 {
-"71
-[; ;main.c: 71:             index = 0;
+"73
+[; ;main.c: 73:             index = 0;
 [e = _index -> -> 0 `i `uc ]
-"72
-[; ;main.c: 72:         }
+"74
+[; ;main.c: 74:         }
 }
 [e :U 1625 ]
-"74
-[; ;main.c: 74:         if (c == '\n') {
+"76
+[; ;main.c: 76:         if (c == '\n') {
 [e $ ! == -> _c `ui -> 10 `ui 1626  ]
 {
-"75
-[; ;main.c: 75:             ws2812_uart_commands(rxBuff, index);
-[e ( _ws2812_uart_commands (2 , &U _rxBuff -> _index `us ]
-"76
-[; ;main.c: 76:             index = 0;
-[e = _index -> -> 0 `i `uc ]
 "77
-[; ;main.c: 77:             c = '\0';
-[e = _c -> -> 0 `ui `uc ]
+[; ;main.c: 77:             ws2812_uart_commands(rxBuff, index);
+[e ( _ws2812_uart_commands (2 , &U _rxBuff -> _index `us ]
 "78
-[; ;main.c: 78:         }
+[; ;main.c: 78:             index = 0;
+[e = _index -> -> 0 `i `uc ]
+"79
+[; ;main.c: 79:             c = '\0';
+[e = _c -> -> 0 `ui `uc ]
+"80
+[; ;main.c: 80:         }
 }
 [e :U 1626 ]
-"79
-[; ;main.c: 79:     }
+"81
+[; ;main.c: 81:     }
 }
 [e :U 1622 ]
-"67
-[; ;main.c: 67:     while(EUSART_IsRxReady()) {
+"69
+[; ;main.c: 69:     while(EUSART_IsRxReady()) {
 [e $ != -> ( _EUSART_IsRxReady ..  `i -> 0 `i 1623  ]
 [e :U 1624 ]
-"80
-[; ;main.c: 80: }
+"82
+[; ;main.c: 82: }
 [e :UE 1621 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"83
-[; ;main.c: 83: int main(void)
+"85
+[; ;main.c: 85: int main(void)
 [v _main `(i ~T0 @X0 1 ef ]
-"84
-[; ;main.c: 84: {
+"86
+[; ;main.c: 86: {
 {
 [e :U _main ]
 [f ]
-"85
-[; ;main.c: 85:     SYSTEM_Initialize();
+"87
+[; ;main.c: 87:     SYSTEM_Initialize();
 [e ( _SYSTEM_Initialize ..  ]
-"92
-[; ;main.c: 92:     (INTCONbits.GIE = 1);
+"94
+[; ;main.c: 94:     (INTCONbits.GIE = 1);
 [e = . . _INTCONbits 0 3 -> -> 1 `i `uc ]
-"98
-[; ;main.c: 98:     (INTCONbits.PEIE = 1);
+"100
+[; ;main.c: 100:     (INTCONbits.PEIE = 1);
 [e = . . _INTCONbits 0 2 -> -> 1 `i `uc ]
-"104
-[; ;main.c: 104:     CPUDOZEbits.IDLEN = 1;
+"106
+[; ;main.c: 106:     CPUDOZEbits.IDLEN = 1;
 [e = . . _CPUDOZEbits 0 7 -> -> 1 `i `uc ]
-"119
-[; ;main.c: 119:     while(1)
+"109
+[; ;main.c: 109:     SPI1_Open((uint8_t)ws2812_spi.handle);
+[e ( _SPI1_Open (1 -> . _ws2812_spi 0 `uc ]
+"121
+[; ;main.c: 121:     while(1)
 [e :U 1629 ]
-"120
-[; ;main.c: 120:     {
+"122
+[; ;main.c: 122:     {
 {
-"135
-[; ;main.c: 135:     if (fade_flag) {
+"125
+[; ;main.c: 125:     if (fade_flag) {
 [e $ ! != -> _fade_flag `i -> 0 `i 1631  ]
 {
-"136
-[; ;main.c: 136:         ws2812_pwm_fade(&ws2812_pwm, fade_time);
-[e ( _ws2812_pwm_fade (2 , &U _ws2812_pwm _fade_time ]
-"137
-[; ;main.c: 137:     }
+"126
+[; ;main.c: 126:         ws2812_spi_fade(&ws2812_spi, fade_time);
+[e ( _ws2812_spi_fade (2 , &U _ws2812_spi _fade_time ]
+"127
+[; ;main.c: 127:     }
 }
 [e $U 1632  ]
-"138
-[; ;main.c: 138:     else {
+"128
+[; ;main.c: 128:     else {
 [e :U 1631 ]
 {
-"139
-[; ;main.c: 139:         __asm("sleep");
+"129
+[; ;main.c: 129:         __asm("sleep");
 [; <" sleep ;# ">
-"140
-[; ;main.c: 140:         __nop();
+"130
+[; ;main.c: 130:         __nop();
 [e ( ___nop ..  ]
-"141
-[; ;main.c: 141:     }
+"131
+[; ;main.c: 131:     }
 }
 [e :U 1632 ]
 "148

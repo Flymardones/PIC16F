@@ -20752,7 +20752,7 @@ void CLOCK_Initialize(void);
 
 
 # 1 "ws2812/Src/../Inc/../../mcc_generated_files/system/../system/pins.h" 1
-# 116 "ws2812/Src/../Inc/../../mcc_generated_files/system/../system/pins.h"
+# 135 "ws2812/Src/../Inc/../../mcc_generated_files/system/../system/pins.h"
 void PIN_MANAGER_Initialize (void);
 
 
@@ -20770,11 +20770,11 @@ void PIN_MANAGER_IOC(void);
 
 
 void IO_RB2_ISR(void);
-# 142 "ws2812/Src/../Inc/../../mcc_generated_files/system/../system/pins.h"
+# 161 "ws2812/Src/../Inc/../../mcc_generated_files/system/../system/pins.h"
 void IO_RB2_SetInterruptHandler(void (* InterruptHandler)(void));
-# 153 "ws2812/Src/../Inc/../../mcc_generated_files/system/../system/pins.h"
+# 172 "ws2812/Src/../Inc/../../mcc_generated_files/system/../system/pins.h"
 extern void (*IO_RB2_InterruptHandler)(void);
-# 164 "ws2812/Src/../Inc/../../mcc_generated_files/system/../system/pins.h"
+# 183 "ws2812/Src/../Inc/../../mcc_generated_files/system/../system/pins.h"
 void IO_RB2_DefaultInterruptHandler(void);
 # 44 "ws2812/Src/../Inc/../../mcc_generated_files/system/system.h" 2
 
@@ -21531,17 +21531,10 @@ void SYSTEM_Initialize(void);
 
 
 typedef enum {
-    ws2812_ok,
-    ws2812_error,
-    ws2812_dma_error,
-} ws2812_status_t;
-
-typedef enum {
     GREEN,
     RED,
-    BLUE
-} ws2812_color;
-
+    BLUE,
+} ws2812_color_t;
 
 typedef struct {
 
@@ -21563,12 +21556,12 @@ typedef struct {
 
 
 
-    size_t buffer_size;
+    int8_t fade;
 
 
 
 
-    void* buffer;
+    uint8_t(*led_data)[3];
 
 
 
@@ -21576,7 +21569,7 @@ typedef struct {
     uint8_t dma;
 
 } ws2812_configuration;
-# 70 "ws2812/Src/../Inc/ws2812.h"
+# 63 "ws2812/Src/../Inc/ws2812.h"
 void ws2812_set_led(ws2812_configuration* ws2812_conf, uint8_t led, uint8_t red, uint8_t green, uint8_t blue);
 
 
@@ -21585,7 +21578,7 @@ void ws2812_set_led(ws2812_configuration* ws2812_conf, uint8_t led, uint8_t red,
 
 
 
-void ws2812_delay_ms(uint16_t ms);
+void ws2812_delay_ms(uint16_t us);
 # 11 "ws2812/Src/../Inc/ws2812_uart.h" 2
 
 
@@ -21685,28 +21678,47 @@ void ws2812_pwm_deinit(ws2812_configuration* ws2812_conf);
 
 
 
+
+
+
 uint8_t initialized = 0;
+
+_Bool valid_command_size(int commandSize, int expectedSize) {
+    if (commandSize < expectedSize) {
+        memset(rxBuff, 0, 128);
+        return 0;
+    }
+    return 1;
+}
 
 void ws2812_uart_commands(uint8_t* data, uint16_t size) {
 
     char *token;
     char *tokenizedInput[10];
-    int i = 0;
+    int commandSize = 0;
 
 
-    token = strtok((char *)data, ",");
+    token = strtok((char*)data, ",");
     while (token != ((void*)0)) {
-        tokenizedInput[i++] = token;
+        if (commandSize >= 10) {
+            return;
+        }
+        tokenizedInput[commandSize++] = token;
         token = strtok(((void*)0), ",");
     }
 
     if (strcmp(tokenizedInput[0], "INIT") == 0) {
-# 53 "ws2812/Src/ws2812_uart.c"
+        if (!valid_command_size(commandSize, 3)) {
+            return;
+        }
+# 72 "ws2812/Src/ws2812_uart.c"
         if (initialized) {
             ws2812_pwm_deinit(&ws2812_pwm);
             initialized = 0;
+            fade_flag = 0;
+            fade_time = 0;
         }
-        ws2812_pwm.handle = 0;
+        ws2812_pwm.handle = ((void*)0);
         ws2812_pwm.led_num = (uint8_t)atoi(tokenizedInput[1]);
         ws2812_pwm.brightness = (uint8_t)atoi(tokenizedInput[2]);
         ws2812_pwm.dma = 0;
@@ -21718,8 +21730,6 @@ void ws2812_uart_commands(uint8_t* data, uint16_t size) {
 
 
 
-        fade_flag = 0;
-        fade_time = 0;
     }
     else if (strcmp(tokenizedInput[0], "DEINIT") == 0) {
 
@@ -21735,15 +21745,22 @@ void ws2812_uart_commands(uint8_t* data, uint16_t size) {
         fade_flag = 0;
     }
     else if (strcmp(tokenizedInput[0], "SET_ALL") == 0 && initialized) {
-# 94 "ws2812/Src/ws2812_uart.c"
-        for (int i = 0; i < ws2812_pwm.led_num; i++) {
-            ws2812_set_led(&ws2812_pwm, (uint8_t)i, (uint8_t)atoi(tokenizedInput[1]), (uint8_t)atoi(tokenizedInput[2]), (uint8_t)atoi(tokenizedInput[3]));
+        if (!valid_command_size(commandSize, 4)) {
+            return;
+        }
+# 116 "ws2812/Src/ws2812_uart.c"
+        for (uint8_t i = 0; i < ws2812_pwm.led_num; i++) {
+            ws2812_set_led(&ws2812_pwm, i, (uint8_t)atoi(tokenizedInput[1]), (uint8_t)atoi(tokenizedInput[2]), (uint8_t)atoi(tokenizedInput[3]));
         }
         ws2812_pwm_send(&ws2812_pwm);
 
 
     }
     else if (strcmp(tokenizedInput[0], "SET_SINGLE") == 0 && initialized) {
+        if (!valid_command_size(commandSize, 5)) {
+            return;
+        }
+
 
 
 
@@ -21756,6 +21773,10 @@ void ws2812_uart_commands(uint8_t* data, uint16_t size) {
 
     }
     else if (strcmp(tokenizedInput[0], "SET_BRIGHTNESS") == 0 && initialized) {
+        if (!valid_command_size(commandSize, 2)) {
+            return;
+        }
+
 
 
 
@@ -21767,11 +21788,19 @@ void ws2812_uart_commands(uint8_t* data, uint16_t size) {
 
     }
     else if (strcmp(tokenizedInput[0], "CLEAR_ALL") == 0 && initialized) {
-# 133 "ws2812/Src/ws2812_uart.c"
+
+
+
+
+
         ws2812_pwm_clear(&ws2812_pwm);
 
     }
     else if (strcmp(tokenizedInput[0], "CLEAR_SINGLE") == 0 && initialized) {
+        if (!valid_command_size(commandSize, 2)) {
+            return;
+        }
+
 
 
 
@@ -21783,6 +21812,9 @@ void ws2812_uart_commands(uint8_t* data, uint16_t size) {
 
     }
     else if (strcmp(tokenizedInput[0], "START_FADE_ALL") == 0 && initialized) {
+        if (!valid_command_size(commandSize, 5)) {
+            return;
+        }
 
 
 
@@ -21790,8 +21822,8 @@ void ws2812_uart_commands(uint8_t* data, uint16_t size) {
 
 
 
-        for (i = 0; i < ws2812_pwm.led_num; i++) {
-            ws2812_set_led(&ws2812_pwm, (uint8_t)i, (uint8_t)atoi(tokenizedInput[1]), (uint8_t)atoi(tokenizedInput[2]), (uint8_t)atoi(tokenizedInput[3]));
+        for (uint8_t i = 0; i < ws2812_pwm.led_num; i++) {
+            ws2812_set_led(&ws2812_pwm, i, (uint8_t)atoi(tokenizedInput[1]), (uint8_t)atoi(tokenizedInput[2]), (uint8_t)atoi(tokenizedInput[3]));
         }
 
 
@@ -21802,6 +21834,9 @@ void ws2812_uart_commands(uint8_t* data, uint16_t size) {
         fade_flag = 0;
     }
     else if (strcmp(tokenizedInput[0], "START_FADE_SINGLE") == 0 && initialized) {
+        if (!valid_command_size(commandSize, 6)) {
+            return;
+        }
 
 
 
@@ -21814,6 +21849,9 @@ void ws2812_uart_commands(uint8_t* data, uint16_t size) {
         fade_flag = 1;
     }
     else if (strcmp(tokenizedInput[0], "STOP_FADE_SINGLE") == 0 && initialized) {
+        if (!valid_command_size(commandSize, 2)) {
+            return;
+        }
 
 
 

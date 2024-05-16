@@ -9,7 +9,7 @@
 # 1 "mcc_generated_files/system/src/config_bits.c" 2
 # 39 "mcc_generated_files/system/src/config_bits.c"
 #pragma config FEXTOSC = OFF
-#pragma config RSTOSC = HFINT1
+#pragma config RSTOSC = HFINT32
 #pragma config CLKOUTEN = OFF
 #pragma config CSWEN = ON
 #pragma config FCMEN = ON

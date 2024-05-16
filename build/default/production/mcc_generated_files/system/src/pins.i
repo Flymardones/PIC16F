@@ -20727,7 +20727,7 @@ extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 28 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\xc.h" 2 3
 # 38 "mcc_generated_files/system/src/../pins.h" 2
-# 116 "mcc_generated_files/system/src/../pins.h"
+# 135 "mcc_generated_files/system/src/../pins.h"
 void PIN_MANAGER_Initialize (void);
 
 
@@ -20745,11 +20745,11 @@ void PIN_MANAGER_IOC(void);
 
 
 void IO_RB2_ISR(void);
-# 142 "mcc_generated_files/system/src/../pins.h"
+# 161 "mcc_generated_files/system/src/../pins.h"
 void IO_RB2_SetInterruptHandler(void (* InterruptHandler)(void));
-# 153 "mcc_generated_files/system/src/../pins.h"
+# 172 "mcc_generated_files/system/src/../pins.h"
 extern void (*IO_RB2_InterruptHandler)(void);
-# 164 "mcc_generated_files/system/src/../pins.h"
+# 183 "mcc_generated_files/system/src/../pins.h"
 void IO_RB2_DefaultInterruptHandler(void);
 # 35 "mcc_generated_files/system/src/pins.c" 2
 
@@ -20771,7 +20771,7 @@ void PIN_MANAGER_Initialize(void)
 
 
     TRISA = 0xFF;
-    TRISB = 0xFC;
+    TRISB = 0xF4;
     TRISC = 0xFF;
     TRISD = 0xFF;
     TRISE = 0x7;
@@ -20780,7 +20780,7 @@ void PIN_MANAGER_Initialize(void)
 
 
     ANSELA = 0xFF;
-    ANSELB = 0xFA;
+    ANSELB = 0xF2;
     ANSELC = 0xFF;
     ANSELD = 0xFF;
     ANSELE = 0x7;
@@ -20807,7 +20807,7 @@ void PIN_MANAGER_Initialize(void)
 
 
     SLRCONA = 0xFF;
-    SLRCONB = 0xFF;
+    SLRCONB = 0xF7;
     SLRCONC = 0xFF;
     SLRCOND = 0xFF;
     SLRCONE = 0x7;
@@ -20815,7 +20815,7 @@ void PIN_MANAGER_Initialize(void)
 
 
     INLVLA = 0xFF;
-    INLVLB = 0xFF;
+    INLVLB = 0xF7;
     INLVLC = 0xFF;
     INLVLD = 0xFF;
     INLVLE = 0xF;

@@ -1,48 +1,53 @@
 Version 4.0 HI-TECH Software Intermediate Code
 [v F12627 `(v ~T0 @X0 0 tf ]
-"52 C:\Program Files\Microchip\xc8\v2.46\pic\include\c99\string.h
-[; ;C:\Program Files\Microchip\xc8\v2.46\pic\include\c99\string.h: 52: char *strtok (char *restrict, const char *restrict);
-[v _strtok `(*uc ~T0 @X0 0 ef2`*uc`*Cuc ]
-"39
-[; ;C:\Program Files\Microchip\xc8\v2.46\pic\include\c99\string.h: 39: int strcmp (const char *, const char *);
-[v _strcmp `(i ~T0 @X0 0 ef2`*Cuc`*Cuc ]
-"26 ws2812/Src/../Inc/ws2812.h
-[; ;ws2812/Src/../Inc/ws2812.h: 26: typedef struct {
-[s S1618 `*v 1 `uc 1 `uc 1 `ui 1 `*v 1 `uc 1 ]
-[n S1618 . handle led_num brightness buffer_size buffer dma ]
-"26 ws2812/Src/../Inc/ws2812_pwm.h
-[; ;ws2812/Src/../Inc/ws2812_pwm.h: 26: void ws2812_pwm_deinit(ws2812_configuration* ws2812_conf);
-[v _ws2812_pwm_deinit `(v ~T0 @X0 0 ef1`*S1618 ]
-"12
-[; ;ws2812/Src/../Inc/ws2812_pwm.h: 12: extern ws2812_configuration ws2812_pwm;
-[v _ws2812_pwm `S1618 ~T0 @X0 0 e ]
-"23 C:\Program Files\Microchip\xc8\v2.46\pic\include\c99\stdlib.h
-[; ;C:\Program Files\Microchip\xc8\v2.46\pic\include\c99\stdlib.h: 23: int atoi (const char *);
-[v _atoi `(i ~T0 @X0 0 ef1`*Cuc ]
-"16 ws2812/Src/../Inc/ws2812_pwm.h
-[; ;ws2812/Src/../Inc/ws2812_pwm.h: 16: _Bool ws2812_pwm_init(ws2812_configuration* ws2812_conf);
-[v _ws2812_pwm_init `(a ~T0 @X0 0 ef1`*S1618 ]
-"67 ws2812/Src/../Inc/../../mcc_generated_files/system/../uart/../system/system.h
-[; ;ws2812/Src/../Inc/../../mcc_generated_files/system/../uart/../system/system.h: 67: extern _Bool fade_flag;
-[v _fade_flag `a ~T0 @X0 0 e ]
-"68
-[; ;ws2812/Src/../Inc/../../mcc_generated_files/system/../uart/../system/system.h: 68: extern uint16_t fade_time;
-[v _fade_time `us ~T0 @X0 0 e ]
-"24 ws2812/Src/../Inc/ws2812_pwm.h
-[; ;ws2812/Src/../Inc/ws2812_pwm.h: 24: void ws2812_pwm_clear(ws2812_configuration* ws2812_conf);
-[v _ws2812_pwm_clear `(v ~T0 @X0 0 ef1`*S1618 ]
-"70 ws2812/Src/../Inc/ws2812.h
-[; ;ws2812/Src/../Inc/ws2812.h: 70: void ws2812_set_led(ws2812_configuration* ws2812_conf, uint8_t led, uint8_t red, uint8_t green, uint8_t blue);
-[v _ws2812_set_led `(v ~T0 @X0 0 ef5`*S1618`uc`uc`uc`uc ]
-"14 ws2812/Src/../Inc/ws2812_pwm.h
-[; ;ws2812/Src/../Inc/ws2812_pwm.h: 14: void ws2812_pwm_send(ws2812_configuration* ws2812_conf);
-[v _ws2812_pwm_send `(v ~T0 @X0 0 ef1`*S1618 ]
 "29 C:\Program Files\Microchip\xc8\v2.46\pic\include\c99\string.h
 [; ;C:\Program Files\Microchip\xc8\v2.46\pic\include\c99\string.h: 29: void *memset (void *, int, size_t);
 [v _memset `(*v ~T0 @X0 0 ef3`*v`i`ui ]
 "66 ws2812/Src/../Inc/../../mcc_generated_files/system/../uart/../system/system.h
 [; ;ws2812/Src/../Inc/../../mcc_generated_files/system/../uart/../system/system.h: 66: extern uint8_t rxBuff[128];
 [v _rxBuff `uc ~T0 @X0 -> 0 `x e ]
+"52 C:\Program Files\Microchip\xc8\v2.46\pic\include\c99\string.h
+[; ;C:\Program Files\Microchip\xc8\v2.46\pic\include\c99\string.h: 52: char *strtok (char *restrict, const char *restrict);
+[v _strtok `(*uc ~T0 @X0 0 ef2`*uc`*Cuc ]
+"39
+[; ;C:\Program Files\Microchip\xc8\v2.46\pic\include\c99\string.h: 39: int strcmp (const char *, const char *);
+[v _strcmp `(i ~T0 @X0 0 ef2`*Cuc`*Cuc ]
+[v F12807 `uc ~T0 @X0 -> 3 `i t ]
+"19 ws2812/Src/../Inc/ws2812.h
+[; ;ws2812/Src/../Inc/ws2812.h: 19: typedef struct {
+[s S1618 `*v 1 `uc 1 `uc 1 `c 1 `*F12807 1 `uc 1 ]
+[n S1618 . handle led_num brightness fade led_data dma ]
+"27 ws2812/Src/../Inc/ws2812_spi.h
+[; ;ws2812/Src/../Inc/ws2812_spi.h: 27: void ws2812_spi_deinit(ws2812_configuration* ws2812_conf);
+[v _ws2812_spi_deinit `(v ~T0 @X0 0 ef1`*S1618 ]
+"13
+[; ;ws2812/Src/../Inc/ws2812_spi.h: 13: extern ws2812_configuration ws2812_spi;
+[v _ws2812_spi `S1618 ~T0 @X0 0 e ]
+"67 ws2812/Src/../Inc/../../mcc_generated_files/system/../uart/../system/system.h
+[; ;ws2812/Src/../Inc/../../mcc_generated_files/system/../uart/../system/system.h: 67: extern _Bool fade_flag;
+[v _fade_flag `a ~T0 @X0 0 e ]
+"68
+[; ;ws2812/Src/../Inc/../../mcc_generated_files/system/../uart/../system/system.h: 68: extern uint16_t fade_time;
+[v _fade_time `us ~T0 @X0 0 e ]
+"61 ws2812/Src/ws2812_uart.c
+[; ;ws2812/Src/ws2812_uart.c: 61:         ws2812_spi.handle = (void*)WS2812_SPI;
+[c E12681 0 1 .. ]
+[n E12681 . WS2812_SPI MSSP1_DEFAULT  ]
+"23 C:\Program Files\Microchip\xc8\v2.46\pic\include\c99\stdlib.h
+[; ;C:\Program Files\Microchip\xc8\v2.46\pic\include\c99\stdlib.h: 23: int atoi (const char *);
+[v _atoi `(i ~T0 @X0 0 ef1`*Cuc ]
+"15 ws2812/Src/../Inc/ws2812_spi.h
+[; ;ws2812/Src/../Inc/ws2812_spi.h: 15: _Bool ws2812_spi_init(ws2812_configuration* ws2812_conf);
+[v _ws2812_spi_init `(a ~T0 @X0 0 ef1`*S1618 ]
+"25
+[; ;ws2812/Src/../Inc/ws2812_spi.h: 25: void ws2812_spi_clear(ws2812_configuration* ws2812_conf);
+[v _ws2812_spi_clear `(v ~T0 @X0 0 ef1`*S1618 ]
+"63 ws2812/Src/../Inc/ws2812.h
+[; ;ws2812/Src/../Inc/ws2812.h: 63: void ws2812_set_led(ws2812_configuration* ws2812_conf, uint8_t led, uint8_t red, uint8_t green, uint8_t blue);
+[v _ws2812_set_led `(v ~T0 @X0 0 ef5`*S1618`uc`uc`uc`uc ]
+"17 ws2812/Src/../Inc/ws2812_spi.h
+[; ;ws2812/Src/../Inc/ws2812_spi.h: 17: void ws2812_spi_send(ws2812_configuration* ws2812_conf);
+[v _ws2812_spi_send `(v ~T0 @X0 0 ef1`*S1618 ]
 "54 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 54: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -1681,306 +1686,437 @@ Version 4.0 HI-TECH Software Intermediate Code
 "324 ws2812/Src/../Inc/../../mcc_generated_files/system/../uart/eusart.h
 [; ;ws2812/Src/../Inc/../../mcc_generated_files/system/../uart/eusart.h: 324: void (*EUSART_RxInterruptHandler)(void);
 [v _EUSART_RxInterruptHandler `*F12627 ~T0 @X0 1 e ]
-"21 ws2812/Src/ws2812_uart.c
-[; ;ws2812/Src/ws2812_uart.c: 21: uint8_t initialized = 0;
+"24 ws2812/Src/ws2812_uart.c
+[; ;ws2812/Src/ws2812_uart.c: 24: uint8_t initialized = 0;
 [v _initialized `uc ~T0 @X0 1 e ]
 [i _initialized
 -> -> 0 `i `uc
 ]
-"23
-[; ;ws2812/Src/ws2812_uart.c: 23: void ws2812_uart_commands(uint8_t* data, uint16_t size) {
+"26
+[; ;ws2812/Src/ws2812_uart.c: 26: _Bool valid_command_size(int commandSize, int expectedSize) {
+[v _valid_command_size `(a ~T0 @X0 1 ef2`i`i ]
+{
+[e :U _valid_command_size ]
+[v _commandSize `i ~T0 @X0 1 r1 ]
+[v _expectedSize `i ~T0 @X0 1 r2 ]
+[f ]
+"27
+[; ;ws2812/Src/ws2812_uart.c: 27:     if (commandSize < expectedSize) {
+[e $ ! < _commandSize _expectedSize 1622  ]
+{
+"28
+[; ;ws2812/Src/ws2812_uart.c: 28:         memset(rxBuff, 0, 128);
+[e ( _memset (3 , , -> &U _rxBuff `*v -> 0 `i -> -> 128 `i `ui ]
+"29
+[; ;ws2812/Src/ws2812_uart.c: 29:         return 0;
+[e ) -> -> 0 `i `a ]
+[e $UE 1621  ]
+"30
+[; ;ws2812/Src/ws2812_uart.c: 30:     }
+}
+[e :U 1622 ]
+"31
+[; ;ws2812/Src/ws2812_uart.c: 31:     return 1;
+[e ) -> -> 1 `i `a ]
+[e $UE 1621  ]
+"32
+[; ;ws2812/Src/ws2812_uart.c: 32: }
+[e :UE 1621 ]
+}
+"34
+[; ;ws2812/Src/ws2812_uart.c: 34: void ws2812_uart_commands(uint8_t* data, uint16_t size) {
 [v _ws2812_uart_commands `(v ~T0 @X0 1 ef2`*uc`us ]
 {
 [e :U _ws2812_uart_commands ]
 [v _data `*uc ~T0 @X0 1 r1 ]
 [v _size `us ~T0 @X0 1 r2 ]
 [f ]
-"25
-[; ;ws2812/Src/ws2812_uart.c: 25:     char *token;
-[v _token `*uc ~T0 @X0 1 a ]
-"26
-[; ;ws2812/Src/ws2812_uart.c: 26:     char *tokenizedInput[10];
-[v _tokenizedInput `*uc ~T0 @X0 -> 10 `i a ]
-"27
-[; ;ws2812/Src/ws2812_uart.c: 27:     int i = 0;
-[v _i `i ~T0 @X0 1 a ]
-[e = _i -> 0 `i ]
-"30
-[; ;ws2812/Src/ws2812_uart.c: 30:     token = strtok((char *)data, ",");
-[e = _token ( _strtok (2 , -> _data `*uc :s 1C ]
-"31
-[; ;ws2812/Src/ws2812_uart.c: 31:     while (token != ((void*)0)) {
-[e $U 1622  ]
-[e :U 1623 ]
-{
-"32
-[; ;ws2812/Src/ws2812_uart.c: 32:         tokenizedInput[i++] = token;
-[e = *U + &U _tokenizedInput * -> -> ++ _i -> 1 `i `ui `ux -> -> # *U &U _tokenizedInput `ui `ux _token ]
-"33
-[; ;ws2812/Src/ws2812_uart.c: 33:         token = strtok(((void*)0), ",");
-[e = _token ( _strtok (2 , -> -> -> 0 `i `*v `*uc :s 2C ]
-"34
-[; ;ws2812/Src/ws2812_uart.c: 34:     }
-}
-[e :U 1622 ]
-"31
-[; ;ws2812/Src/ws2812_uart.c: 31:     while (token != ((void*)0)) {
-[e $ != _token -> -> -> 0 `i `*v `*uc 1623  ]
-[e :U 1624 ]
 "36
-[; ;ws2812/Src/ws2812_uart.c: 36:     if (strcmp(tokenizedInput[0], "INIT") == 0) {
-[e $ ! == ( _strcmp (2 , -> *U + &U _tokenizedInput * -> -> -> 0 `i `ui `ux -> -> # *U &U _tokenizedInput `ui `ux `*Cuc :s 3C -> 0 `i 1625  ]
+[; ;ws2812/Src/ws2812_uart.c: 36:     char *token;
+[v _token `*uc ~T0 @X0 1 a ]
+"37
+[; ;ws2812/Src/ws2812_uart.c: 37:     char *tokenizedInput[10];
+[v _tokenizedInput `*uc ~T0 @X0 -> 10 `i a ]
+"38
+[; ;ws2812/Src/ws2812_uart.c: 38:     int commandSize = 0;
+[v _commandSize `i ~T0 @X0 1 a ]
+[e = _commandSize -> 0 `i ]
+"41
+[; ;ws2812/Src/ws2812_uart.c: 41:     token = strtok((char*)data, ",");
+[e = _token ( _strtok (2 , -> _data `*uc :s 1C ]
+"42
+[; ;ws2812/Src/ws2812_uart.c: 42:     while (token != ((void*)0)) {
+[e $U 1624  ]
+[e :U 1625 ]
 {
-"53
-[; ;ws2812/Src/ws2812_uart.c: 53:         if (initialized) {
-[e $ ! != -> _initialized `i -> 0 `i 1626  ]
+"43
+[; ;ws2812/Src/ws2812_uart.c: 43:         if (commandSize >= 10) {
+[e $ ! >= _commandSize -> 10 `i 1627  ]
 {
-"54
-[; ;ws2812/Src/ws2812_uart.c: 54:             ws2812_pwm_deinit(&ws2812_pwm);
-[e ( _ws2812_pwm_deinit (1 &U _ws2812_pwm ]
-"55
-[; ;ws2812/Src/ws2812_uart.c: 55:             initialized = 0;
-[e = _initialized -> -> 0 `i `uc ]
-"56
-[; ;ws2812/Src/ws2812_uart.c: 56:         }
-}
-[e :U 1626 ]
-"57
-[; ;ws2812/Src/ws2812_uart.c: 57:         ws2812_pwm.handle = 0;
-[e = . _ws2812_pwm 0 -> -> 0 `i `*v ]
-"58
-[; ;ws2812/Src/ws2812_uart.c: 58:         ws2812_pwm.led_num = (uint8_t)atoi(tokenizedInput[1]);
-[e = . _ws2812_pwm 1 -> ( _atoi (1 -> *U + &U _tokenizedInput * -> -> -> 1 `i `ui `ux -> -> # *U &U _tokenizedInput `ui `ux `*Cuc `uc ]
-"59
-[; ;ws2812/Src/ws2812_uart.c: 59:         ws2812_pwm.brightness = (uint8_t)atoi(tokenizedInput[2]);
-[e = . _ws2812_pwm 2 -> ( _atoi (1 -> *U + &U _tokenizedInput * -> -> -> 2 `i `ui `ux -> -> # *U &U _tokenizedInput `ui `ux `*Cuc `uc ]
-"60
-[; ;ws2812/Src/ws2812_uart.c: 60:         ws2812_pwm.dma = 0;
-[e = . _ws2812_pwm 5 -> -> 0 `i `uc ]
-"63
-[; ;ws2812/Src/ws2812_uart.c: 63:         if(ws2812_pwm_init(&ws2812_pwm)) {
-[e $ ! != -> ( _ws2812_pwm_init (1 &U _ws2812_pwm `i -> 0 `i 1627  ]
-{
-"64
-[; ;ws2812/Src/ws2812_uart.c: 64:             initialized = 1;
-[e = _initialized -> -> 1 `i `uc ]
-"65
-[; ;ws2812/Src/ws2812_uart.c: 65:         }
+"44
+[; ;ws2812/Src/ws2812_uart.c: 44:             return;
+[e $UE 1623  ]
+"45
+[; ;ws2812/Src/ws2812_uart.c: 45:         }
 }
 [e :U 1627 ]
-"69
-[; ;ws2812/Src/ws2812_uart.c: 69:         fade_flag = 0;
-[e = _fade_flag -> -> 0 `i `a ]
-"70
-[; ;ws2812/Src/ws2812_uart.c: 70:         fade_time = 0;
-[e = _fade_time -> -> 0 `i `us ]
-"71
-[; ;ws2812/Src/ws2812_uart.c: 71:     }
+"46
+[; ;ws2812/Src/ws2812_uart.c: 46:         tokenizedInput[commandSize++] = token;
+[e = *U + &U _tokenizedInput * -> -> ++ _commandSize -> 1 `i `ui `ux -> -> # *U &U _tokenizedInput `ui `ux _token ]
+"47
+[; ;ws2812/Src/ws2812_uart.c: 47:         token = strtok(((void*)0), ",");
+[e = _token ( _strtok (2 , -> -> -> 0 `i `*v `*uc :s 2C ]
+"48
+[; ;ws2812/Src/ws2812_uart.c: 48:     }
 }
-[e $U 1628  ]
-"72
-[; ;ws2812/Src/ws2812_uart.c: 72:     else if (strcmp(tokenizedInput[0], "DEINIT") == 0) {
-[e :U 1625 ]
-[e $ ! == ( _strcmp (2 , -> *U + &U _tokenizedInput * -> -> -> 0 `i `ui `ux -> -> # *U &U _tokenizedInput `ui `ux `*Cuc :s 4C -> 0 `i 1629  ]
+[e :U 1624 ]
+"42
+[; ;ws2812/Src/ws2812_uart.c: 42:     while (token != ((void*)0)) {
+[e $ != _token -> -> -> 0 `i `*v `*uc 1625  ]
+[e :U 1626 ]
+"50
+[; ;ws2812/Src/ws2812_uart.c: 50:     if (strcmp(tokenizedInput[0], "INIT") == 0) {
+[e $ ! == ( _strcmp (2 , -> *U + &U _tokenizedInput * -> -> -> 0 `i `ui `ux -> -> # *U &U _tokenizedInput `ui `ux `*Cuc :s 3C -> 0 `i 1628  ]
 {
-"79
-[; ;ws2812/Src/ws2812_uart.c: 79:         ws2812_pwm_clear(&ws2812_pwm);
-[e ( _ws2812_pwm_clear (1 &U _ws2812_pwm ]
-"80
-[; ;ws2812/Src/ws2812_uart.c: 80:         ws2812_pwm_deinit(&ws2812_pwm);
-[e ( _ws2812_pwm_deinit (1 &U _ws2812_pwm ]
-"82
-[; ;ws2812/Src/ws2812_uart.c: 82:         initialized = 0;
-[e = _initialized -> -> 0 `i `uc ]
-"83
-[; ;ws2812/Src/ws2812_uart.c: 83:         fade_flag = 0;
-[e = _fade_flag -> -> 0 `i `a ]
-"84
-[; ;ws2812/Src/ws2812_uart.c: 84:     }
+"51
+[; ;ws2812/Src/ws2812_uart.c: 51:         if (!valid_command_size(commandSize, 3)) {
+[e $ ! ! != -> ( _valid_command_size (2 , _commandSize -> 3 `i `i -> 0 `i 1629  ]
+{
+"52
+[; ;ws2812/Src/ws2812_uart.c: 52:             return;
+[e $UE 1623  ]
+"53
+[; ;ws2812/Src/ws2812_uart.c: 53:         }
 }
-[e $U 1630  ]
-"85
-[; ;ws2812/Src/ws2812_uart.c: 85:     else if (strcmp(tokenizedInput[0], "SET_ALL") == 0 && initialized) {
 [e :U 1629 ]
-[e $ ! && == ( _strcmp (2 , -> *U + &U _tokenizedInput * -> -> -> 0 `i `ui `ux -> -> # *U &U _tokenizedInput `ui `ux `*Cuc :s 5C -> 0 `i != -> _initialized `i -> 0 `i 1631  ]
+"55
+[; ;ws2812/Src/ws2812_uart.c: 55:         if (initialized) {
+[e $ ! != -> _initialized `i -> 0 `i 1630  ]
 {
-"94
-[; ;ws2812/Src/ws2812_uart.c: 94:         for (int i = 0; i < ws2812_pwm.led_num; i++) {
+"56
+[; ;ws2812/Src/ws2812_uart.c: 56:             ws2812_spi_deinit(&ws2812_spi);
+[e ( _ws2812_spi_deinit (1 &U _ws2812_spi ]
+"57
+[; ;ws2812/Src/ws2812_uart.c: 57:             initialized = 0;
+[e = _initialized -> -> 0 `i `uc ]
+"58
+[; ;ws2812/Src/ws2812_uart.c: 58:             fade_flag = 0;
+[e = _fade_flag -> -> 0 `i `a ]
+"59
+[; ;ws2812/Src/ws2812_uart.c: 59:             fade_time = 0;
+[e = _fade_time -> -> 0 `i `us ]
+"60
+[; ;ws2812/Src/ws2812_uart.c: 60:         }
+}
+[e :U 1630 ]
+"61
+[; ;ws2812/Src/ws2812_uart.c: 61:         ws2812_spi.handle = (void*)WS2812_SPI;
+[e = . _ws2812_spi 0 -> . `E12681 0 `*v ]
+"62
+[; ;ws2812/Src/ws2812_uart.c: 62:         ws2812_spi.led_num = (uint8_t)atoi(tokenizedInput[1]);
+[e = . _ws2812_spi 1 -> ( _atoi (1 -> *U + &U _tokenizedInput * -> -> -> 1 `i `ui `ux -> -> # *U &U _tokenizedInput `ui `ux `*Cuc `uc ]
+"63
+[; ;ws2812/Src/ws2812_uart.c: 63:         ws2812_spi.brightness = (uint8_t)atoi(tokenizedInput[2]);
+[e = . _ws2812_spi 2 -> ( _atoi (1 -> *U + &U _tokenizedInput * -> -> -> 2 `i `ui `ux -> -> # *U &U _tokenizedInput `ui `ux `*Cuc `uc ]
+"64
+[; ;ws2812/Src/ws2812_uart.c: 64:         ws2812_spi.dma = 0;
+[e = . _ws2812_spi 5 -> -> 0 `i `uc ]
+"66
+[; ;ws2812/Src/ws2812_uart.c: 66:         if (ws2812_spi_init(&ws2812_spi)) {
+[e $ ! != -> ( _ws2812_spi_init (1 &U _ws2812_spi `i -> 0 `i 1631  ]
 {
-[v _i `i ~T0 @X0 1 a ]
-[e = _i -> 0 `i ]
-[e $U 1635  ]
-[e :U 1632 ]
-{
-"95
-[; ;ws2812/Src/ws2812_uart.c: 95:             ws2812_set_led(&ws2812_pwm, (uint8_t)i, (uint8_t)atoi(tokenizedInput[1]), (uint8_t)atoi(tokenizedInput[2]), (uint8_t)atoi(tokenizedInput[3]));
-[e ( _ws2812_set_led (4 , , , , &U _ws2812_pwm -> _i `uc -> ( _atoi (1 -> *U + &U _tokenizedInput * -> -> -> 1 `i `ui `ux -> -> # *U &U _tokenizedInput `ui `ux `*Cuc `uc -> ( _atoi (1 -> *U + &U _tokenizedInput * -> -> -> 2 `i `ui `ux -> -> # *U &U _tokenizedInput `ui `ux `*Cuc `uc -> ( _atoi (1 -> *U + &U _tokenizedInput * -> -> -> 3 `i `ui `ux -> -> # *U &U _tokenizedInput `ui `ux `*Cuc `uc ]
-"96
-[; ;ws2812/Src/ws2812_uart.c: 96:         }
+"67
+[; ;ws2812/Src/ws2812_uart.c: 67:             initialized = 1;
+[e = _initialized -> -> 1 `i `uc ]
+"68
+[; ;ws2812/Src/ws2812_uart.c: 68:         }
 }
-[e ++ _i -> 1 `i ]
-[e :U 1635 ]
-[e $ < _i -> . _ws2812_pwm 1 `i 1632  ]
-[e :U 1633 ]
-}
-"97
-[; ;ws2812/Src/ws2812_uart.c: 97:         ws2812_pwm_send(&ws2812_pwm);
-[e ( _ws2812_pwm_send (1 &U _ws2812_pwm ]
-"100
-[; ;ws2812/Src/ws2812_uart.c: 100:     }
-}
-[e $U 1636  ]
-"101
-[; ;ws2812/Src/ws2812_uart.c: 101:     else if (strcmp(tokenizedInput[0], "SET_SINGLE") == 0 && initialized) {
 [e :U 1631 ]
-[e $ ! && == ( _strcmp (2 , -> *U + &U _tokenizedInput * -> -> -> 0 `i `ui `ux -> -> # *U &U _tokenizedInput `ui `ux `*Cuc :s 6C -> 0 `i != -> _initialized `i -> 0 `i 1637  ]
+"90
+[; ;ws2812/Src/ws2812_uart.c: 90:     }
+}
+[e $U 1632  ]
+"91
+[; ;ws2812/Src/ws2812_uart.c: 91:     else if (strcmp(tokenizedInput[0], "DEINIT") == 0) {
+[e :U 1628 ]
+[e $ ! == ( _strcmp (2 , -> *U + &U _tokenizedInput * -> -> -> 0 `i `ui `ux -> -> # *U &U _tokenizedInput `ui `ux `*Cuc :s 4C -> 0 `i 1633  ]
 {
-"108
-[; ;ws2812/Src/ws2812_uart.c: 108:         ws2812_set_led(&ws2812_pwm, (uint8_t)atoi(tokenizedInput[1]), (uint8_t)atoi(tokenizedInput[2]), (uint8_t)atoi(tokenizedInput[3]), (uint8_t)atoi(tokenizedInput[4]));
-[e ( _ws2812_set_led (4 , , , , &U _ws2812_pwm -> ( _atoi (1 -> *U + &U _tokenizedInput * -> -> -> 1 `i `ui `ux -> -> # *U &U _tokenizedInput `ui `ux `*Cuc `uc -> ( _atoi (1 -> *U + &U _tokenizedInput * -> -> -> 2 `i `ui `ux -> -> # *U &U _tokenizedInput `ui `ux `*Cuc `uc -> ( _atoi (1 -> *U + &U _tokenizedInput * -> -> -> 3 `i `ui `ux -> -> # *U &U _tokenizedInput `ui `ux `*Cuc `uc -> ( _atoi (1 -> *U + &U _tokenizedInput * -> -> -> 4 `i `ui `ux -> -> # *U &U _tokenizedInput `ui `ux `*Cuc `uc ]
+"93
+[; ;ws2812/Src/ws2812_uart.c: 93:         ws2812_spi_clear(&ws2812_spi);
+[e ( _ws2812_spi_clear (1 &U _ws2812_spi ]
+"94
+[; ;ws2812/Src/ws2812_uart.c: 94:         ws2812_spi_deinit(&ws2812_spi);
+[e ( _ws2812_spi_deinit (1 &U _ws2812_spi ]
+"101
+[; ;ws2812/Src/ws2812_uart.c: 101:         initialized = 0;
+[e = _initialized -> -> 0 `i `uc ]
+"102
+[; ;ws2812/Src/ws2812_uart.c: 102:         fade_flag = 0;
+[e = _fade_flag -> -> 0 `i `a ]
+"103
+[; ;ws2812/Src/ws2812_uart.c: 103:     }
+}
+[e $U 1634  ]
+"104
+[; ;ws2812/Src/ws2812_uart.c: 104:     else if (strcmp(tokenizedInput[0], "SET_ALL") == 0 && initialized) {
+[e :U 1633 ]
+[e $ ! && == ( _strcmp (2 , -> *U + &U _tokenizedInput * -> -> -> 0 `i `ui `ux -> -> # *U &U _tokenizedInput `ui `ux `*Cuc :s 5C -> 0 `i != -> _initialized `i -> 0 `i 1635  ]
+{
+"105
+[; ;ws2812/Src/ws2812_uart.c: 105:         if (!valid_command_size(commandSize, 4)) {
+[e $ ! ! != -> ( _valid_command_size (2 , _commandSize -> 4 `i `i -> 0 `i 1636  ]
+{
+"106
+[; ;ws2812/Src/ws2812_uart.c: 106:             return;
+[e $UE 1623  ]
+"107
+[; ;ws2812/Src/ws2812_uart.c: 107:         }
+}
+[e :U 1636 ]
 "109
-[; ;ws2812/Src/ws2812_uart.c: 109:         ws2812_pwm_send(&ws2812_pwm);
-[e ( _ws2812_pwm_send (1 &U _ws2812_pwm ]
-"112
-[; ;ws2812/Src/ws2812_uart.c: 112:     }
-}
-[e $U 1638  ]
-"113
-[; ;ws2812/Src/ws2812_uart.c: 113:     else if (strcmp(tokenizedInput[0], "SET_BRIGHTNESS") == 0 && initialized) {
-[e :U 1637 ]
-[e $ ! && == ( _strcmp (2 , -> *U + &U _tokenizedInput * -> -> -> 0 `i `ui `ux -> -> # *U &U _tokenizedInput `ui `ux `*Cuc :s 7C -> 0 `i != -> _initialized `i -> 0 `i 1639  ]
+[; ;ws2812/Src/ws2812_uart.c: 109:         for (uint8_t i = 0; i < ws2812_spi.led_num; i++) {
 {
-"120
-[; ;ws2812/Src/ws2812_uart.c: 120:         ws2812_pwm.brightness = (uint8_t)atoi(tokenizedInput[1]);
-[e = . _ws2812_pwm 2 -> ( _atoi (1 -> *U + &U _tokenizedInput * -> -> -> 1 `i `ui `ux -> -> # *U &U _tokenizedInput `ui `ux `*Cuc `uc ]
-"121
-[; ;ws2812/Src/ws2812_uart.c: 121:         ws2812_pwm_send(&ws2812_pwm);
-[e ( _ws2812_pwm_send (1 &U _ws2812_pwm ]
-"123
-[; ;ws2812/Src/ws2812_uart.c: 123:     }
-}
+[v _i `uc ~T0 @X0 1 a ]
+[e = _i -> -> 0 `i `uc ]
 [e $U 1640  ]
-"124
-[; ;ws2812/Src/ws2812_uart.c: 124:     else if (strcmp(tokenizedInput[0], "CLEAR_ALL") == 0 && initialized) {
-[e :U 1639 ]
-[e $ ! && == ( _strcmp (2 , -> *U + &U _tokenizedInput * -> -> -> 0 `i `ui `ux -> -> # *U &U _tokenizedInput `ui `ux `*Cuc :s 8C -> 0 `i != -> _initialized `i -> 0 `i 1641  ]
+[e :U 1637 ]
 {
-"133
-[; ;ws2812/Src/ws2812_uart.c: 133:         ws2812_pwm_clear(&ws2812_pwm);
-[e ( _ws2812_pwm_clear (1 &U _ws2812_pwm ]
-"135
-[; ;ws2812/Src/ws2812_uart.c: 135:     }
+"110
+[; ;ws2812/Src/ws2812_uart.c: 110:             ws2812_set_led(&ws2812_spi, i, (uint8_t)atoi(tokenizedInput[1]), (uint8_t)atoi(tokenizedInput[2]), (uint8_t)atoi(tokenizedInput[3]));
+[e ( _ws2812_set_led (4 , , , , &U _ws2812_spi _i -> ( _atoi (1 -> *U + &U _tokenizedInput * -> -> -> 1 `i `ui `ux -> -> # *U &U _tokenizedInput `ui `ux `*Cuc `uc -> ( _atoi (1 -> *U + &U _tokenizedInput * -> -> -> 2 `i `ui `ux -> -> # *U &U _tokenizedInput `ui `ux `*Cuc `uc -> ( _atoi (1 -> *U + &U _tokenizedInput * -> -> -> 3 `i `ui `ux -> -> # *U &U _tokenizedInput `ui `ux `*Cuc `uc ]
+"111
+[; ;ws2812/Src/ws2812_uart.c: 111:         }
 }
-[e $U 1642  ]
-"136
-[; ;ws2812/Src/ws2812_uart.c: 136:     else if (strcmp(tokenizedInput[0], "CLEAR_SINGLE") == 0 && initialized) {
-[e :U 1641 ]
-[e $ ! && == ( _strcmp (2 , -> *U + &U _tokenizedInput * -> -> -> 0 `i `ui `ux -> -> # *U &U _tokenizedInput `ui `ux `*Cuc :s 9C -> 0 `i != -> _initialized `i -> 0 `i 1643  ]
+[e ++ _i -> -> 1 `i `uc ]
+[e :U 1640 ]
+[e $ < -> _i `i -> . _ws2812_spi 1 `i 1637  ]
+[e :U 1638 ]
+}
+"112
+[; ;ws2812/Src/ws2812_uart.c: 112:         ws2812_spi_send(&ws2812_spi);
+[e ( _ws2812_spi_send (1 &U _ws2812_spi ]
+"122
+[; ;ws2812/Src/ws2812_uart.c: 122:     }
+}
+[e $U 1641  ]
+"123
+[; ;ws2812/Src/ws2812_uart.c: 123:     else if (strcmp(tokenizedInput[0], "SET_SINGLE") == 0 && initialized) {
+[e :U 1635 ]
+[e $ ! && == ( _strcmp (2 , -> *U + &U _tokenizedInput * -> -> -> 0 `i `ui `ux -> -> # *U &U _tokenizedInput `ui `ux `*Cuc :s 6C -> 0 `i != -> _initialized `i -> 0 `i 1642  ]
 {
-"143
-[; ;ws2812/Src/ws2812_uart.c: 143:         ws2812_set_led(&ws2812_pwm, (uint8_t)atoi(tokenizedInput[1]), 0, 0, 0);
-[e ( _ws2812_set_led (4 , , , , &U _ws2812_pwm -> ( _atoi (1 -> *U + &U _tokenizedInput * -> -> -> 1 `i `ui `ux -> -> # *U &U _tokenizedInput `ui `ux `*Cuc `uc -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc ]
-"144
-[; ;ws2812/Src/ws2812_uart.c: 144:         ws2812_pwm_send(&ws2812_pwm);
-[e ( _ws2812_pwm_send (1 &U _ws2812_pwm ]
-"146
-[; ;ws2812/Src/ws2812_uart.c: 146:     }
+"124
+[; ;ws2812/Src/ws2812_uart.c: 124:         if (!valid_command_size(commandSize, 5)) {
+[e $ ! ! != -> ( _valid_command_size (2 , _commandSize -> 5 `i `i -> 0 `i 1643  ]
+{
+"125
+[; ;ws2812/Src/ws2812_uart.c: 125:             return;
+[e $UE 1623  ]
+"126
+[; ;ws2812/Src/ws2812_uart.c: 126:         }
+}
+[e :U 1643 ]
+"129
+[; ;ws2812/Src/ws2812_uart.c: 129:         ws2812_set_led(&ws2812_spi, (uint8_t)atoi(tokenizedInput[1]), (uint8_t)atoi(tokenizedInput[2]), (uint8_t)atoi(tokenizedInput[3]), (uint8_t)atoi(tokenizedInput[4]));
+[e ( _ws2812_set_led (4 , , , , &U _ws2812_spi -> ( _atoi (1 -> *U + &U _tokenizedInput * -> -> -> 1 `i `ui `ux -> -> # *U &U _tokenizedInput `ui `ux `*Cuc `uc -> ( _atoi (1 -> *U + &U _tokenizedInput * -> -> -> 2 `i `ui `ux -> -> # *U &U _tokenizedInput `ui `ux `*Cuc `uc -> ( _atoi (1 -> *U + &U _tokenizedInput * -> -> -> 3 `i `ui `ux -> -> # *U &U _tokenizedInput `ui `ux `*Cuc `uc -> ( _atoi (1 -> *U + &U _tokenizedInput * -> -> -> 4 `i `ui `ux -> -> # *U &U _tokenizedInput `ui `ux `*Cuc `uc ]
+"130
+[; ;ws2812/Src/ws2812_uart.c: 130:         ws2812_spi_send(&ws2812_spi);
+[e ( _ws2812_spi_send (1 &U _ws2812_spi ]
+"138
+[; ;ws2812/Src/ws2812_uart.c: 138:     }
 }
 [e $U 1644  ]
-"147
-[; ;ws2812/Src/ws2812_uart.c: 147:     else if (strcmp(tokenizedInput[0], "START_FADE_ALL") == 0 && initialized) {
-[e :U 1643 ]
-[e $ ! && == ( _strcmp (2 , -> *U + &U _tokenizedInput * -> -> -> 0 `i `ui `ux -> -> # *U &U _tokenizedInput `ui `ux `*Cuc :s 10C -> 0 `i != -> _initialized `i -> 0 `i 1645  ]
+"139
+[; ;ws2812/Src/ws2812_uart.c: 139:     else if (strcmp(tokenizedInput[0], "SET_BRIGHTNESS") == 0 && initialized) {
+[e :U 1642 ]
+[e $ ! && == ( _strcmp (2 , -> *U + &U _tokenizedInput * -> -> -> 0 `i `ui `ux -> -> # *U &U _tokenizedInput `ui `ux `*Cuc :s 7C -> 0 `i != -> _initialized `i -> 0 `i 1645  ]
 {
-"155
-[; ;ws2812/Src/ws2812_uart.c: 155:         for (i = 0; i < ws2812_pwm.led_num; i++) {
+"140
+[; ;ws2812/Src/ws2812_uart.c: 140:         if (!valid_command_size(commandSize, 2)) {
+[e $ ! ! != -> ( _valid_command_size (2 , _commandSize -> 2 `i `i -> 0 `i 1646  ]
 {
-[e = _i -> 0 `i ]
-[e $U 1649  ]
+"141
+[; ;ws2812/Src/ws2812_uart.c: 141:             return;
+[e $UE 1623  ]
+"142
+[; ;ws2812/Src/ws2812_uart.c: 142:         }
+}
 [e :U 1646 ]
+"145
+[; ;ws2812/Src/ws2812_uart.c: 145:         ws2812_spi.brightness = (uint8_t)atoi(tokenizedInput[1]);
+[e = . _ws2812_spi 2 -> ( _atoi (1 -> *U + &U _tokenizedInput * -> -> -> 1 `i `ui `ux -> -> # *U &U _tokenizedInput `ui `ux `*Cuc `uc ]
+"146
+[; ;ws2812/Src/ws2812_uart.c: 146:         ws2812_spi_send(&ws2812_spi);
+[e ( _ws2812_spi_send (1 &U _ws2812_spi ]
+"153
+[; ;ws2812/Src/ws2812_uart.c: 153:     }
+}
+[e $U 1647  ]
+"154
+[; ;ws2812/Src/ws2812_uart.c: 154:     else if (strcmp(tokenizedInput[0], "CLEAR_ALL") == 0 && initialized) {
+[e :U 1645 ]
+[e $ ! && == ( _strcmp (2 , -> *U + &U _tokenizedInput * -> -> -> 0 `i `ui `ux -> -> # *U &U _tokenizedInput `ui `ux `*Cuc :s 8C -> 0 `i != -> _initialized `i -> 0 `i 1648  ]
 {
 "156
-[; ;ws2812/Src/ws2812_uart.c: 156:             ws2812_set_led(&ws2812_pwm, (uint8_t)i, (uint8_t)atoi(tokenizedInput[1]), (uint8_t)atoi(tokenizedInput[2]), (uint8_t)atoi(tokenizedInput[3]));
-[e ( _ws2812_set_led (4 , , , , &U _ws2812_pwm -> _i `uc -> ( _atoi (1 -> *U + &U _tokenizedInput * -> -> -> 1 `i `ui `ux -> -> # *U &U _tokenizedInput `ui `ux `*Cuc `uc -> ( _atoi (1 -> *U + &U _tokenizedInput * -> -> -> 2 `i `ui `ux -> -> # *U &U _tokenizedInput `ui `ux `*Cuc `uc -> ( _atoi (1 -> *U + &U _tokenizedInput * -> -> -> 3 `i `ui `ux -> -> # *U &U _tokenizedInput `ui `ux `*Cuc `uc ]
-"157
-[; ;ws2812/Src/ws2812_uart.c: 157:         }
-}
-[e ++ _i -> 1 `i ]
-[e :U 1649 ]
-[e $ < _i -> . _ws2812_pwm 1 `i 1646  ]
-[e :U 1647 ]
-}
-"160
-[; ;ws2812/Src/ws2812_uart.c: 160:         fade_time = (uint16_t)atoi(tokenizedInput[4]);
-[e = _fade_time -> ( _atoi (1 -> *U + &U _tokenizedInput * -> -> -> 4 `i `ui `ux -> -> # *U &U _tokenizedInput `ui `ux `*Cuc `us ]
-"161
-[; ;ws2812/Src/ws2812_uart.c: 161:         fade_flag = 1;
-[e = _fade_flag -> -> 1 `i `a ]
+[; ;ws2812/Src/ws2812_uart.c: 156:         ws2812_spi_clear(&ws2812_spi);
+[e ( _ws2812_spi_clear (1 &U _ws2812_spi ]
 "162
 [; ;ws2812/Src/ws2812_uart.c: 162:     }
 }
-[e $U 1650  ]
+[e $U 1649  ]
 "163
-[; ;ws2812/Src/ws2812_uart.c: 163:     else if (strcmp(tokenizedInput[0], "STOP_FADE_ALL") == 0 && initialized) {
-[e :U 1645 ]
-[e $ ! && == ( _strcmp (2 , -> *U + &U _tokenizedInput * -> -> -> 0 `i `ui `ux -> -> # *U &U _tokenizedInput `ui `ux `*Cuc :s 11C -> 0 `i != -> _initialized `i -> 0 `i 1651  ]
+[; ;ws2812/Src/ws2812_uart.c: 163:     else if (strcmp(tokenizedInput[0], "CLEAR_SINGLE") == 0 && initialized) {
+[e :U 1648 ]
+[e $ ! && == ( _strcmp (2 , -> *U + &U _tokenizedInput * -> -> -> 0 `i `ui `ux -> -> # *U &U _tokenizedInput `ui `ux `*Cuc :s 9C -> 0 `i != -> _initialized `i -> 0 `i 1650  ]
 {
 "164
-[; ;ws2812/Src/ws2812_uart.c: 164:         fade_flag = 0;
-[e = _fade_flag -> -> 0 `i `a ]
-"165
-[; ;ws2812/Src/ws2812_uart.c: 165:     }
-}
-[e $U 1652  ]
-"166
-[; ;ws2812/Src/ws2812_uart.c: 166:     else if (strcmp(tokenizedInput[0], "START_FADE_SINGLE") == 0 && initialized) {
-[e :U 1651 ]
-[e $ ! && == ( _strcmp (2 , -> *U + &U _tokenizedInput * -> -> -> 0 `i `ui `ux -> -> # *U &U _tokenizedInput `ui `ux `*Cuc :s 12C -> 0 `i != -> _initialized `i -> 0 `i 1653  ]
+[; ;ws2812/Src/ws2812_uart.c: 164:         if (!valid_command_size(commandSize, 2)) {
+[e $ ! ! != -> ( _valid_command_size (2 , _commandSize -> 2 `i `i -> 0 `i 1651  ]
 {
-"172
-[; ;ws2812/Src/ws2812_uart.c: 172:         ws2812_set_led(&ws2812_pwm, (uint8_t)atoi(tokenizedInput[1]), (uint8_t)atoi(tokenizedInput[2]), (uint8_t)atoi(tokenizedInput[3]), (uint8_t)atoi(tokenizedInput[4]));
-[e ( _ws2812_set_led (4 , , , , &U _ws2812_pwm -> ( _atoi (1 -> *U + &U _tokenizedInput * -> -> -> 1 `i `ui `ux -> -> # *U &U _tokenizedInput `ui `ux `*Cuc `uc -> ( _atoi (1 -> *U + &U _tokenizedInput * -> -> -> 2 `i `ui `ux -> -> # *U &U _tokenizedInput `ui `ux `*Cuc `uc -> ( _atoi (1 -> *U + &U _tokenizedInput * -> -> -> 3 `i `ui `ux -> -> # *U &U _tokenizedInput `ui `ux `*Cuc `uc -> ( _atoi (1 -> *U + &U _tokenizedInput * -> -> -> 4 `i `ui `ux -> -> # *U &U _tokenizedInput `ui `ux `*Cuc `uc ]
-"175
-[; ;ws2812/Src/ws2812_uart.c: 175:         fade_time = (uint16_t)atoi(tokenizedInput[5]);
-[e = _fade_time -> ( _atoi (1 -> *U + &U _tokenizedInput * -> -> -> 5 `i `ui `ux -> -> # *U &U _tokenizedInput `ui `ux `*Cuc `us ]
-"176
-[; ;ws2812/Src/ws2812_uart.c: 176:         fade_flag = 1;
-[e = _fade_flag -> -> 1 `i `a ]
+"165
+[; ;ws2812/Src/ws2812_uart.c: 165:             return;
+[e $UE 1623  ]
+"166
+[; ;ws2812/Src/ws2812_uart.c: 166:         }
+}
+[e :U 1651 ]
+"169
+[; ;ws2812/Src/ws2812_uart.c: 169:         ws2812_set_led(&ws2812_spi, (uint8_t)atoi(tokenizedInput[1]), 0, 0, 0);
+[e ( _ws2812_set_led (4 , , , , &U _ws2812_spi -> ( _atoi (1 -> *U + &U _tokenizedInput * -> -> -> 1 `i `ui `ux -> -> # *U &U _tokenizedInput `ui `ux `*Cuc `uc -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc ]
+"170
+[; ;ws2812/Src/ws2812_uart.c: 170:         ws2812_spi_send(&ws2812_spi);
+[e ( _ws2812_spi_send (1 &U _ws2812_spi ]
 "177
 [; ;ws2812/Src/ws2812_uart.c: 177:     }
 }
-[e $U 1654  ]
+[e $U 1652  ]
 "178
-[; ;ws2812/Src/ws2812_uart.c: 178:     else if (strcmp(tokenizedInput[0], "STOP_FADE_SINGLE") == 0 && initialized) {
-[e :U 1653 ]
-[e $ ! && == ( _strcmp (2 , -> *U + &U _tokenizedInput * -> -> -> 0 `i `ui `ux -> -> # *U &U _tokenizedInput `ui `ux `*Cuc :s 13C -> 0 `i != -> _initialized `i -> 0 `i 1655  ]
+[; ;ws2812/Src/ws2812_uart.c: 178:     else if (strcmp(tokenizedInput[0], "START_FADE_ALL") == 0 && initialized) {
+[e :U 1650 ]
+[e $ ! && == ( _strcmp (2 , -> *U + &U _tokenizedInput * -> -> -> 0 `i `ui `ux -> -> # *U &U _tokenizedInput `ui `ux `*Cuc :s 10C -> 0 `i != -> _initialized `i -> 0 `i 1653  ]
+{
+"179
+[; ;ws2812/Src/ws2812_uart.c: 179:         if (!valid_command_size(commandSize, 5)) {
+[e $ ! ! != -> ( _valid_command_size (2 , _commandSize -> 5 `i `i -> 0 `i 1654  ]
+{
+"180
+[; ;ws2812/Src/ws2812_uart.c: 180:             return;
+[e $UE 1623  ]
+"181
+[; ;ws2812/Src/ws2812_uart.c: 181:         }
+}
+[e :U 1654 ]
+"183
+[; ;ws2812/Src/ws2812_uart.c: 183:         for (uint8_t i = 0; i < ws2812_spi.led_num; i++) {
+{
+[v _i `uc ~T0 @X0 1 a ]
+[e = _i -> -> 0 `i `uc ]
+[e $U 1658  ]
+[e :U 1655 ]
 {
 "184
-[; ;ws2812/Src/ws2812_uart.c: 184:         ws2812_set_led(&ws2812_pwm, (uint8_t)atoi(tokenizedInput[1]), 0, 0, 0);
-[e ( _ws2812_set_led (4 , , , , &U _ws2812_pwm -> ( _atoi (1 -> *U + &U _tokenizedInput * -> -> -> 1 `i `ui `ux -> -> # *U &U _tokenizedInput `ui `ux `*Cuc `uc -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc ]
-"186
-[; ;ws2812/Src/ws2812_uart.c: 186:     }
+[; ;ws2812/Src/ws2812_uart.c: 184:             ws2812_set_led(&ws2812_spi, i, (uint8_t)atoi(tokenizedInput[1]), (uint8_t)atoi(tokenizedInput[2]), (uint8_t)atoi(tokenizedInput[3]));
+[e ( _ws2812_set_led (4 , , , , &U _ws2812_spi _i -> ( _atoi (1 -> *U + &U _tokenizedInput * -> -> -> 1 `i `ui `ux -> -> # *U &U _tokenizedInput `ui `ux `*Cuc `uc -> ( _atoi (1 -> *U + &U _tokenizedInput * -> -> -> 2 `i `ui `ux -> -> # *U &U _tokenizedInput `ui `ux `*Cuc `uc -> ( _atoi (1 -> *U + &U _tokenizedInput * -> -> -> 3 `i `ui `ux -> -> # *U &U _tokenizedInput `ui `ux `*Cuc `uc ]
+"185
+[; ;ws2812/Src/ws2812_uart.c: 185:         }
 }
-[e :U 1655 ]
-[e :U 1654 ]
+[e ++ _i -> -> 1 `i `uc ]
+[e :U 1658 ]
+[e $ < -> _i `i -> . _ws2812_spi 1 `i 1655  ]
+[e :U 1656 ]
+}
+"194
+[; ;ws2812/Src/ws2812_uart.c: 194:         fade_time = (uint16_t)atoi(tokenizedInput[4]);
+[e = _fade_time -> ( _atoi (1 -> *U + &U _tokenizedInput * -> -> -> 4 `i `ui `ux -> -> # *U &U _tokenizedInput `ui `ux `*Cuc `us ]
+"195
+[; ;ws2812/Src/ws2812_uart.c: 195:         fade_flag = 1;
+[e = _fade_flag -> -> 1 `i `a ]
+"196
+[; ;ws2812/Src/ws2812_uart.c: 196:     }
+}
+[e $U 1659  ]
+"197
+[; ;ws2812/Src/ws2812_uart.c: 197:     else if (strcmp(tokenizedInput[0], "STOP_FADE_ALL") == 0 && initialized) {
+[e :U 1653 ]
+[e $ ! && == ( _strcmp (2 , -> *U + &U _tokenizedInput * -> -> -> 0 `i `ui `ux -> -> # *U &U _tokenizedInput `ui `ux `*Cuc :s 11C -> 0 `i != -> _initialized `i -> 0 `i 1660  ]
+{
+"198
+[; ;ws2812/Src/ws2812_uart.c: 198:         fade_flag = 0;
+[e = _fade_flag -> -> 0 `i `a ]
+"199
+[; ;ws2812/Src/ws2812_uart.c: 199:     }
+}
+[e $U 1661  ]
+"200
+[; ;ws2812/Src/ws2812_uart.c: 200:     else if (strcmp(tokenizedInput[0], "START_FADE_SINGLE") == 0 && initialized) {
+[e :U 1660 ]
+[e $ ! && == ( _strcmp (2 , -> *U + &U _tokenizedInput * -> -> -> 0 `i `ui `ux -> -> # *U &U _tokenizedInput `ui `ux `*Cuc :s 12C -> 0 `i != -> _initialized `i -> 0 `i 1662  ]
+{
+"201
+[; ;ws2812/Src/ws2812_uart.c: 201:         if (!valid_command_size(commandSize, 6)) {
+[e $ ! ! != -> ( _valid_command_size (2 , _commandSize -> 6 `i `i -> 0 `i 1663  ]
+{
+"202
+[; ;ws2812/Src/ws2812_uart.c: 202:             return;
+[e $UE 1623  ]
+"203
+[; ;ws2812/Src/ws2812_uart.c: 203:         }
+}
+[e :U 1663 ]
+"205
+[; ;ws2812/Src/ws2812_uart.c: 205:         ws2812_set_led(&ws2812_spi, (uint8_t)atoi(tokenizedInput[1]), (uint8_t)atoi(tokenizedInput[2]), (uint8_t)atoi(tokenizedInput[3]), (uint8_t)atoi(tokenizedInput[4]));
+[e ( _ws2812_set_led (4 , , , , &U _ws2812_spi -> ( _atoi (1 -> *U + &U _tokenizedInput * -> -> -> 1 `i `ui `ux -> -> # *U &U _tokenizedInput `ui `ux `*Cuc `uc -> ( _atoi (1 -> *U + &U _tokenizedInput * -> -> -> 2 `i `ui `ux -> -> # *U &U _tokenizedInput `ui `ux `*Cuc `uc -> ( _atoi (1 -> *U + &U _tokenizedInput * -> -> -> 3 `i `ui `ux -> -> # *U &U _tokenizedInput `ui `ux `*Cuc `uc -> ( _atoi (1 -> *U + &U _tokenizedInput * -> -> -> 4 `i `ui `ux -> -> # *U &U _tokenizedInput `ui `ux `*Cuc `uc ]
+"212
+[; ;ws2812/Src/ws2812_uart.c: 212:         fade_time = (uint16_t)atoi(tokenizedInput[5]);
+[e = _fade_time -> ( _atoi (1 -> *U + &U _tokenizedInput * -> -> -> 5 `i `ui `ux -> -> # *U &U _tokenizedInput `ui `ux `*Cuc `us ]
+"213
+[; ;ws2812/Src/ws2812_uart.c: 213:         fade_flag = 1;
+[e = _fade_flag -> -> 1 `i `a ]
+"214
+[; ;ws2812/Src/ws2812_uart.c: 214:     }
+}
+[e $U 1664  ]
+"215
+[; ;ws2812/Src/ws2812_uart.c: 215:     else if (strcmp(tokenizedInput[0], "STOP_FADE_SINGLE") == 0 && initialized) {
+[e :U 1662 ]
+[e $ ! && == ( _strcmp (2 , -> *U + &U _tokenizedInput * -> -> -> 0 `i `ui `ux -> -> # *U &U _tokenizedInput `ui `ux `*Cuc :s 13C -> 0 `i != -> _initialized `i -> 0 `i 1665  ]
+{
+"216
+[; ;ws2812/Src/ws2812_uart.c: 216:         if (!valid_command_size(commandSize, 2)) {
+[e $ ! ! != -> ( _valid_command_size (2 , _commandSize -> 2 `i `i -> 0 `i 1666  ]
+{
+"217
+[; ;ws2812/Src/ws2812_uart.c: 217:             return;
+[e $UE 1623  ]
+"218
+[; ;ws2812/Src/ws2812_uart.c: 218:         }
+}
+[e :U 1666 ]
+"220
+[; ;ws2812/Src/ws2812_uart.c: 220:         ws2812_set_led(&ws2812_spi, (uint8_t)atoi(tokenizedInput[1]), 0, 0, 0);
+[e ( _ws2812_set_led (4 , , , , &U _ws2812_spi -> ( _atoi (1 -> *U + &U _tokenizedInput * -> -> -> 1 `i `ui `ux -> -> # *U &U _tokenizedInput `ui `ux `*Cuc `uc -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc ]
+"226
+[; ;ws2812/Src/ws2812_uart.c: 226:     }
+}
+[e :U 1665 ]
+[e :U 1664 ]
+[e :U 1661 ]
+[e :U 1659 ]
 [e :U 1652 ]
-[e :U 1650 ]
+[e :U 1649 ]
+[e :U 1647 ]
 [e :U 1644 ]
-[e :U 1642 ]
-[e :U 1640 ]
-[e :U 1638 ]
-[e :U 1636 ]
-[e :U 1630 ]
-[e :U 1628 ]
-"188
-[; ;ws2812/Src/ws2812_uart.c: 188:     token = ((void*)0);
+[e :U 1641 ]
+[e :U 1634 ]
+[e :U 1632 ]
+"228
+[; ;ws2812/Src/ws2812_uart.c: 228:     token = ((void*)0);
 [e = _token -> -> -> 0 `i `*v `*uc ]
-"189
-[; ;ws2812/Src/ws2812_uart.c: 189:     memset(rxBuff, 0, 128);
+"229
+[; ;ws2812/Src/ws2812_uart.c: 229:     memset(rxBuff, 0, 128);
 [e ( _memset (3 , , -> &U _rxBuff `*v -> 0 `i -> -> 128 `i `ui ]
-"190
-[; ;ws2812/Src/ws2812_uart.c: 190: }
-[e :UE 1621 ]
+"230
+[; ;ws2812/Src/ws2812_uart.c: 230: }
+[e :UE 1623 ]
 }
 [a 4C 68 69 73 78 73 84 0 ]
 [a 3C 73 78 73 84 0 ]

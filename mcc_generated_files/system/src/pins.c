@@ -51,7 +51,7 @@ void PIN_MANAGER_Initialize(void)
     TRISx registers
     */
     TRISA = 0xFF;
-    TRISB = 0xFC;
+    TRISB = 0xF4;
     TRISC = 0xFF;
     TRISD = 0xFF;
     TRISE = 0x7;
@@ -60,7 +60,7 @@ void PIN_MANAGER_Initialize(void)
     ANSELx registers
     */
     ANSELA = 0xFF;
-    ANSELB = 0xFA;
+    ANSELB = 0xF2;
     ANSELC = 0xFF;
     ANSELD = 0xFF;
     ANSELE = 0x7;
@@ -87,7 +87,7 @@ void PIN_MANAGER_Initialize(void)
     SLRCONx registers
     */
     SLRCONA = 0xFF;
-    SLRCONB = 0xFF;
+    SLRCONB = 0xF7;
     SLRCONC = 0xFF;
     SLRCOND = 0xFF;
     SLRCONE = 0x7;
@@ -95,7 +95,7 @@ void PIN_MANAGER_Initialize(void)
     INLVLx registers
     */
     INLVLA = 0xFF;
-    INLVLB = 0xFF;
+    INLVLB = 0xF7;
     INLVLC = 0xFF;
     INLVLD = 0xFF;
     INLVLE = 0xF;

@@ -20740,7 +20740,7 @@ void CLOCK_Initialize(void)
 
     OSCCON3 = 0x0;
 
-    OSCEN = 0x0;
+    OSCEN = 0x40;
 
     OSCFRQ = 0x6;
 

@@ -154,11 +154,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 35990: extern volatile unsigned char IOCEF __attribute__((address(0x1F6B)));
 [v _IOCEF `Vuc ~T0 @X0 0 e@8043 ]
 [v F12160 `(v ~T0 @X0 0 tf ]
-"142 mcc_generated_files/system/src/../pins.h
-[; ;mcc_generated_files/system/src/../pins.h: 142: void IO_RB2_SetInterruptHandler(void (* InterruptHandler)(void));
+"161 mcc_generated_files/system/src/../pins.h
+[; ;mcc_generated_files/system/src/../pins.h: 161: void IO_RB2_SetInterruptHandler(void (* InterruptHandler)(void));
 [v _IO_RB2_SetInterruptHandler `(v ~T0 @X0 0 ef1`*F12160 ]
-"164
-[; ;mcc_generated_files/system/src/../pins.h: 164: void IO_RB2_DefaultInterruptHandler(void);
+"183
+[; ;mcc_generated_files/system/src/../pins.h: 183: void IO_RB2_DefaultInterruptHandler(void);
 [v _IO_RB2_DefaultInterruptHandler `(v ~T0 @X0 0 ef ]
 "21678 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 21678:     struct {
@@ -182,8 +182,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "34553
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 34553: extern volatile IOCBFbits_t IOCBFbits __attribute__((address(0x1F4A)));
 [v _IOCBFbits `VS1529 ~T0 @X0 0 e@8010 ]
-"132 mcc_generated_files/system/src/../pins.h
-[; ;mcc_generated_files/system/src/../pins.h: 132: void IO_RB2_ISR(void);
+"151 mcc_generated_files/system/src/../pins.h
+[; ;mcc_generated_files/system/src/../pins.h: 151: void IO_RB2_ISR(void);
 [v _IO_RB2_ISR `(v ~T0 @X0 0 ef ]
 [v F12172 `(v ~T0 @X0 0 tf ]
 [v F12174 `(v ~T0 @X0 0 tf ]
@@ -1853,8 +1853,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/system/src/pins.c: 53:     TRISA = 0xFF;
 [e = _TRISA -> -> 255 `i `uc ]
 "54
-[; ;mcc_generated_files/system/src/pins.c: 54:     TRISB = 0xFC;
-[e = _TRISB -> -> 252 `i `uc ]
+[; ;mcc_generated_files/system/src/pins.c: 54:     TRISB = 0xF4;
+[e = _TRISB -> -> 244 `i `uc ]
 "55
 [; ;mcc_generated_files/system/src/pins.c: 55:     TRISC = 0xFF;
 [e = _TRISC -> -> 255 `i `uc ]
@@ -1868,8 +1868,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/system/src/pins.c: 62:     ANSELA = 0xFF;
 [e = _ANSELA -> -> 255 `i `uc ]
 "63
-[; ;mcc_generated_files/system/src/pins.c: 63:     ANSELB = 0xFA;
-[e = _ANSELB -> -> 250 `i `uc ]
+[; ;mcc_generated_files/system/src/pins.c: 63:     ANSELB = 0xF2;
+[e = _ANSELB -> -> 242 `i `uc ]
 "64
 [; ;mcc_generated_files/system/src/pins.c: 64:     ANSELC = 0xFF;
 [e = _ANSELC -> -> 255 `i `uc ]
@@ -1913,8 +1913,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/system/src/pins.c: 89:     SLRCONA = 0xFF;
 [e = _SLRCONA -> -> 255 `i `uc ]
 "90
-[; ;mcc_generated_files/system/src/pins.c: 90:     SLRCONB = 0xFF;
-[e = _SLRCONB -> -> 255 `i `uc ]
+[; ;mcc_generated_files/system/src/pins.c: 90:     SLRCONB = 0xF7;
+[e = _SLRCONB -> -> 247 `i `uc ]
 "91
 [; ;mcc_generated_files/system/src/pins.c: 91:     SLRCONC = 0xFF;
 [e = _SLRCONC -> -> 255 `i `uc ]
@@ -1928,8 +1928,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/system/src/pins.c: 97:     INLVLA = 0xFF;
 [e = _INLVLA -> -> 255 `i `uc ]
 "98
-[; ;mcc_generated_files/system/src/pins.c: 98:     INLVLB = 0xFF;
-[e = _INLVLB -> -> 255 `i `uc ]
+[; ;mcc_generated_files/system/src/pins.c: 98:     INLVLB = 0xF7;
+[e = _INLVLB -> -> 247 `i `uc ]
 "99
 [; ;mcc_generated_files/system/src/pins.c: 99:     INLVLC = 0xFF;
 [e = _INLVLC -> -> 255 `i `uc ]

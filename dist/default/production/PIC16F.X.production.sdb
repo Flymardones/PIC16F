@@ -47,23 +47,28 @@ TMR2_LC2_OUT 15
 TMR2_LC3_OUT 16
 TMR2_LC4_OUT 17
 ]
-"19 C:\Users\chris\Desktop\PIC16F\PIC16F.X\ws2812/Src/ws2812.c
-[e E12801 . `uc
+"18 C:\Users\chris\Desktop\PIC16F\PIC16F.X\ws2812/Src/ws2812.c
+[e E12796 . `uc
 GREEN 0
 RED 1
 BLUE 2
 ]
-"39 C:\Users\chris\Desktop\PIC16F\PIC16F.X\ws2812/Src/ws2812_pwm.c
-[e E12801 . `uc
+"18 C:\Users\chris\Desktop\PIC16F\PIC16F.X\ws2812/Src/ws2812_pwm.c
+[e E12796 . `uc
 GREEN 0
 RED 1
 BLUE 2
 ]
 "20 C:\Users\chris\Desktop\PIC16F\PIC16F.X\ws2812/Src/ws2812_spi.c
-[e E12801 . `uc
+[e E12796 . `uc
 GREEN 0
 RED 1
 BLUE 2
+]
+"61 C:\Users\chris\Desktop\PIC16F\PIC16F.X\ws2812/Src/ws2812_uart.c
+[e E12681 . `uc
+WS2812_SPI 0
+MSSP1_DEFAULT 1
 ]
 "5 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\atoi.c
 [v _atoi atoi `(i  1 e 2 0 ]
@@ -101,13 +106,11 @@ BLUE 2
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
-"65 C:\Users\chris\Desktop\PIC16F\PIC16F.X\main.c
+"67 C:\Users\chris\Desktop\PIC16F\PIC16F.X\main.c
 [v _Handle_UART_Data Handle_UART_Data `(v  1 s 1 Handle_UART_Data ]
-"83
+"85
 [v _main main `(i  1 e 2 0 ]
-"50 C:\Users\chris\Desktop\PIC16F\PIC16F.X\mcc_generated_files/pwm/src/ccp1.c
-[v _CCP1_Initialize CCP1_Initialize `(v  1 e 1 0 ]
-"67
+"67 C:\Users\chris\Desktop\PIC16F\PIC16F.X\mcc_generated_files/pwm/src/ccp1.c
 [v _CCP1_LoadDutyValue CCP1_LoadDutyValue `(v  1 e 1 0 ]
 "60 C:\Users\chris\Desktop\PIC16F\PIC16F.X\mcc_generated_files/spi/src/mssp1.c
 [v _SPI1_Initialize SPI1_Initialize `(v  1 e 1 0 ]
@@ -209,42 +212,42 @@ BLUE 2
 [v _EUSART_RxCompleteCallbackRegister EUSART_RxCompleteCallbackRegister `(v  1 e 1 0 ]
 "12 C:\Users\chris\Desktop\PIC16F\PIC16F.X\ws2812/Src/ws2812.c
 [v _ws2812_set_led ws2812_set_led `(v  1 e 1 0 ]
-"25
+"24
 [v _ws2812_delay_ms ws2812_delay_ms `(v  1 e 1 0 ]
-"12 C:\Users\chris\Desktop\PIC16F\PIC16F.X\ws2812/Src/ws2812_pwm.c
-[v _CCP1_DutyCycle CCP1_DutyCycle `(VEv  1 s 1 CCP1_DutyCycle ]
-"29
+"14 C:\Users\chris\Desktop\PIC16F\PIC16F.X\ws2812/Src/ws2812_pwm.c
 [v _ws2812_pwm_adjust_brightness ws2812_pwm_adjust_brightness `(v  1 e 1 0 ]
-"61
-[v _ws2812_pwm_fade ws2812_pwm_fade `(v  1 e 1 0 ]
-"84
+"63
 [v _ws2812_pwm_data ws2812_pwm_data `(v  1 e 1 0 ]
-"115
+"95
 [v _ws2812_pwm_send ws2812_pwm_send `(v  1 e 1 0 ]
-"147
-[v _ws2812_pwm_clear ws2812_pwm_clear `(v  1 e 1 0 ]
-"155
-[v _ws2812_pwm_init ws2812_pwm_init `(a  1 e 1 0 ]
-"171
-[v _ws2812_pwm_deinit ws2812_pwm_deinit `(v  1 e 1 0 ]
-"13 C:\Users\chris\Desktop\PIC16F\PIC16F.X\ws2812/Src/ws2812_spi.c
+"15 C:\Users\chris\Desktop\PIC16F\PIC16F.X\ws2812/Src/ws2812_spi.c
 [v _ws2812_spi_adjust_brightness ws2812_spi_adjust_brightness `(v  1 e 1 0 ]
-"62
+"37
+[v _ws2812_spi_fade ws2812_spi_fade `(v  1 e 1 0 ]
+"60
 [v _ws2812_spi_data ws2812_spi_data `(v  1 e 1 0 ]
-"90
+"88
 [v _ws2812_spi_send ws2812_spi_send `(v  1 e 1 0 ]
-"23 C:\Users\chris\Desktop\PIC16F\PIC16F.X\ws2812/Src/ws2812_uart.c
+"112
+[v _ws2812_spi_init ws2812_spi_init `(a  1 e 1 0 ]
+"135
+[v _ws2812_spi_clear ws2812_spi_clear `(v  1 e 1 0 ]
+"142
+[v _ws2812_spi_deinit ws2812_spi_deinit `(v  1 e 1 0 ]
+"26 C:\Users\chris\Desktop\PIC16F\PIC16F.X\ws2812/Src/ws2812_uart.c
+[v _valid_command_size valid_command_size `(a  1 e 1 0 ]
+"34
 [v _ws2812_uart_commands ws2812_uart_commands `(v  1 e 1 0 ]
 "324 C:\Users\chris\Desktop\PIC16F\PIC16F.X/mcc_generated_files/uart/eusart.h
 [v _EUSART_RxInterruptHandler EUSART_RxInterruptHandler `*.37(v  1 e 2 0 ]
-[s S581 . 1 `uc 1 INTEDG 1 0 :1:0 
+[s S576 . 1 `uc 1 INTEDG 1 0 :1:0 
 `uc 1 . 1 0 :5:1 
 `uc 1 PEIE 1 0 :1:6 
 `uc 1 GIE 1 0 :1:7 
 ]
 "370 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h
-[u S586 . 1 `S581 1 . 1 0 ]
-[v _INTCONbits INTCONbits `VES586  1 e 1 @11 ]
+[u S581 . 1 `S576 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES581  1 e 1 @11 ]
 "676
 [v _TRISA TRISA `VEuc  1 e 1 @17 ]
 "738
@@ -275,7 +278,7 @@ BLUE 2
 [v _SP1BRGH SP1BRGH `VEuc  1 e 1 @284 ]
 "3992
 [v _RC1STA RC1STA `VEuc  1 e 1 @285 ]
-[s S1192 . 1 `uc 1 RX9D 1 0 :1:0 
+[s S1190 . 1 `uc 1 RX9D 1 0 :1:0 
 `uc 1 OERR 1 0 :1:1 
 `uc 1 FERR 1 0 :1:2 
 `uc 1 ADDEN 1 0 :1:3 
@@ -285,11 +288,11 @@ BLUE 2
 `uc 1 SPEN 1 0 :1:7 
 ]
 "4018
-[u S1201 . 1 `S1192 1 . 1 0 ]
-[v _RC1STAbits RC1STAbits `VES1201  1 e 1 @285 ]
+[u S1199 . 1 `S1190 1 . 1 0 ]
+[v _RC1STAbits RC1STAbits `VES1199  1 e 1 @285 ]
 "4172
 [v _TX1STA TX1STA `VEuc  1 e 1 @286 ]
-[s S1213 . 1 `uc 1 TX9D 1 0 :1:0 
+[s S1211 . 1 `uc 1 TX9D 1 0 :1:0 
 `uc 1 TRMT 1 0 :1:1 
 `uc 1 BRGH 1 0 :1:2 
 `uc 1 SENDB 1 0 :1:3 
@@ -299,11 +302,11 @@ BLUE 2
 `uc 1 CSRC 1 0 :1:7 
 ]
 "4198
-[u S1222 . 1 `S1213 1 . 1 0 ]
-[v _TX1STAbits TX1STAbits `VES1222  1 e 1 @286 ]
+[u S1220 . 1 `S1211 1 . 1 0 ]
+[v _TX1STAbits TX1STAbits `VES1220  1 e 1 @286 ]
 "4352
 [v _BAUD1CON BAUD1CON `VEuc  1 e 1 @287 ]
-[s S1234 . 1 `uc 1 ABDEN 1 0 :1:0 
+[s S1232 . 1 `uc 1 ABDEN 1 0 :1:0 
 `uc 1 WUE 1 0 :1:1 
 `uc 1 . 1 0 :1:2 
 `uc 1 BRG16 1 0 :1:3 
@@ -313,8 +316,8 @@ BLUE 2
 `uc 1 ABDOVF 1 0 :1:7 
 ]
 "4386
-[u S1243 . 1 `S1234 1 . 1 0 ]
-[v _BAUD1CONbits BAUD1CONbits `VES1243  1 e 1 @287 ]
+[u S1241 . 1 `S1232 1 . 1 0 ]
+[v _BAUD1CONbits BAUD1CONbits `VES1241  1 e 1 @287 ]
 "4598
 [v _SSP1BUF SSP1BUF `VEuc  1 e 1 @396 ]
 "4618
@@ -375,16 +378,16 @@ BLUE 2
 [v _PR2 PR2 `VEuc  1 e 1 @653 ]
 "9409
 [v _T2CON T2CON `VEuc  1 e 1 @654 ]
-[s S866 . 1 `uc 1 OUTPS 1 0 :4:0 
+[s S864 . 1 `uc 1 OUTPS 1 0 :4:0 
 `uc 1 CKPS 1 0 :3:4 
 `uc 1 ON 1 0 :1:7 
 ]
 "9445
-[s S870 . 1 `uc 1 T2OUTPS 1 0 :4:0 
+[s S868 . 1 `uc 1 T2OUTPS 1 0 :4:0 
 `uc 1 T2CKPS 1 0 :3:4 
 `uc 1 T2ON 1 0 :1:7 
 ]
-[s S874 . 1 `uc 1 T2OUTPS0 1 0 :1:0 
+[s S872 . 1 `uc 1 T2OUTPS0 1 0 :1:0 
 `uc 1 T2OUTPS1 1 0 :1:1 
 `uc 1 T2OUTPS2 1 0 :1:2 
 `uc 1 T2OUTPS3 1 0 :1:3 
@@ -392,7 +395,7 @@ BLUE 2
 `uc 1 T2CKPS1 1 0 :1:5 
 `uc 1 T2CKPS2 1 0 :1:6 
 ]
-[s S882 . 1 `uc 1 OUTPS0 1 0 :1:0 
+[s S880 . 1 `uc 1 OUTPS0 1 0 :1:0 
 `uc 1 OUTPS1 1 0 :1:1 
 `uc 1 OUTPS2 1 0 :1:2 
 `uc 1 OUTPS3 1 0 :1:3 
@@ -401,58 +404,58 @@ BLUE 2
 `uc 1 CKPS2 1 0 :1:6 
 `uc 1 TMR2ON 1 0 :1:7 
 ]
-[u S891 . 1 `S866 1 . 1 0 `S870 1 . 1 0 `S874 1 . 1 0 `S882 1 . 1 0 ]
-[v _T2CONbits T2CONbits `VES891  1 e 1 @654 ]
+[u S889 . 1 `S864 1 . 1 0 `S868 1 . 1 0 `S872 1 . 1 0 `S880 1 . 1 0 ]
+[v _T2CONbits T2CONbits `VES889  1 e 1 @654 ]
 "9555
 [v _T2HLT T2HLT `VEuc  1 e 1 @655 ]
-[s S760 . 1 `uc 1 MODE 1 0 :5:0 
+[s S758 . 1 `uc 1 MODE 1 0 :5:0 
 `uc 1 CKSYNC 1 0 :1:5 
 `uc 1 CKPOL 1 0 :1:6 
 `uc 1 PSYNC 1 0 :1:7 
 ]
 "9588
-[s S765 . 1 `uc 1 MODE0 1 0 :1:0 
+[s S763 . 1 `uc 1 MODE0 1 0 :1:0 
 `uc 1 MODE1 1 0 :1:1 
 `uc 1 MODE2 1 0 :1:2 
 `uc 1 MODE3 1 0 :1:3 
 `uc 1 MODE4 1 0 :1:4 
 ]
-[s S771 . 1 `uc 1 T2MODE 1 0 :5:0 
+[s S769 . 1 `uc 1 T2MODE 1 0 :5:0 
 `uc 1 T2CKSYNC 1 0 :1:5 
 `uc 1 T2CKPOL 1 0 :1:6 
 `uc 1 T2PSYNC 1 0 :1:7 
 ]
-[s S776 . 1 `uc 1 T2MODE0 1 0 :1:0 
+[s S774 . 1 `uc 1 T2MODE0 1 0 :1:0 
 `uc 1 T2MODE1 1 0 :1:1 
 `uc 1 T2MODE2 1 0 :1:2 
 `uc 1 T2MODE3 1 0 :1:3 
 `uc 1 T2MODE4 1 0 :1:4 
 ]
-[u S782 . 1 `S760 1 . 1 0 `S765 1 . 1 0 `S771 1 . 1 0 `S776 1 . 1 0 ]
-[v _T2HLTbits T2HLTbits `VES782  1 e 1 @655 ]
+[u S780 . 1 `S758 1 . 1 0 `S763 1 . 1 0 `S769 1 . 1 0 `S774 1 . 1 0 ]
+[v _T2HLTbits T2HLTbits `VES780  1 e 1 @655 ]
 "9683
 [v _T2CLKCON T2CLKCON `VEuc  1 e 1 @656 ]
 "9841
 [v _T2RST T2RST `VEuc  1 e 1 @657 ]
-[s S828 . 1 `uc 1 RSEL 1 0 :5:0 
+[s S826 . 1 `uc 1 RSEL 1 0 :5:0 
 ]
 "9868
-[s S830 . 1 `uc 1 RSEL0 1 0 :1:0 
+[s S828 . 1 `uc 1 RSEL0 1 0 :1:0 
 `uc 1 RSEL1 1 0 :1:1 
 `uc 1 RSEL2 1 0 :1:2 
 `uc 1 RSEL3 1 0 :1:3 
 `uc 1 RSEL4 1 0 :1:4 
 ]
-[s S836 . 1 `uc 1 T2RSEL 1 0 :5:0 
+[s S834 . 1 `uc 1 T2RSEL 1 0 :5:0 
 ]
-[s S838 . 1 `uc 1 T2RSEL0 1 0 :1:0 
+[s S836 . 1 `uc 1 T2RSEL0 1 0 :1:0 
 `uc 1 T2RSEL1 1 0 :1:1 
 `uc 1 T2RSEL2 1 0 :1:2 
 `uc 1 T2RSEL3 1 0 :1:3 
 `uc 1 T2RSEL4 1 0 :1:4 
 ]
-[u S844 . 1 `S828 1 . 1 0 `S830 1 . 1 0 `S836 1 . 1 0 `S838 1 . 1 0 ]
-[v _T2RSTbits T2RSTbits `VES844  1 e 1 @657 ]
+[u S842 . 1 `S826 1 . 1 0 `S828 1 . 1 0 `S834 1 . 1 0 `S836 1 . 1 0 ]
+[v _T2RSTbits T2RSTbits `VES842  1 e 1 @657 ]
 "11140
 [v _CCPR1L CCPR1L `VEuc  1 e 1 @780 ]
 "11160
@@ -484,14 +487,14 @@ BLUE 2
 ]
 [u S79 . 1 `S57 1 . 1 0 `S63 1 . 1 0 `S68 1 . 1 0 `S74 1 . 1 0 ]
 [v _CCP1CONbits CCP1CONbits `VES79  1 e 1 @782 ]
-[s S568 . 1 `uc 1 INTF 1 0 :1:0 
+[s S563 . 1 `uc 1 INTF 1 0 :1:0 
 `uc 1 . 1 0 :3:1 
 `uc 1 IOCIF 1 0 :1:4 
 `uc 1 TMR0IF 1 0 :1:5 
 ]
 "21263
-[u S573 . 1 `S568 1 . 1 0 ]
-[v _PIR0bits PIR0bits `VES573  1 e 1 @1804 ]
+[u S568 . 1 `S563 1 . 1 0 ]
+[v _PIR0bits PIR0bits `VES568  1 e 1 @1804 ]
 [s S275 . 1 `uc 1 SSP1IF 1 0 :1:0 
 `uc 1 BCL1IF 1 0 :1:1 
 `uc 1 SSP2IF 1 0 :1:2 
@@ -502,7 +505,7 @@ BLUE 2
 "21370
 [u S282 . 1 `S275 1 . 1 0 ]
 [v _PIR3bits PIR3bits `VES282  1 e 1 @1807 ]
-[s S720 . 1 `uc 1 TMR1IF 1 0 :1:0 
+[s S718 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 TMR3IF 1 0 :1:2 
 `uc 1 TMR4IF 1 0 :1:3 
@@ -510,8 +513,8 @@ BLUE 2
 `uc 1 TMR6IF 1 0 :1:5 
 ]
 "21420
-[u S727 . 1 `S720 1 . 1 0 ]
-[v _PIR4bits PIR4bits `VES727  1 e 1 @1808 ]
+[u S725 . 1 `S718 1 . 1 0 ]
+[v _PIR4bits PIR4bits `VES725  1 e 1 @1808 ]
 [s S484 . 1 `uc 1 INTE 1 0 :1:0 
 `uc 1 . 1 0 :3:1 
 `uc 1 IOCIE 1 0 :1:4 
@@ -530,7 +533,7 @@ BLUE 2
 "21792
 [u S265 . 1 `S258 1 . 1 0 ]
 [v _PIE3bits PIE3bits `VES265  1 e 1 @1817 ]
-[s S1843 . 1 `uc 1 DOZE0 1 0 :1:0 
+[s S1797 . 1 `uc 1 DOZE0 1 0 :1:0 
 `uc 1 DOZE1 1 0 :1:1 
 `uc 1 DOZE2 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -540,8 +543,8 @@ BLUE 2
 `uc 1 IDLEN 1 0 :1:7 
 ]
 "23391
-[u S1852 . 1 `S1843 1 . 1 0 ]
-[v _CPUDOZEbits CPUDOZEbits `VES1852  1 e 1 @2188 ]
+[u S1806 . 1 `S1797 1 . 1 0 ]
+[v _CPUDOZEbits CPUDOZEbits `VES1806  1 e 1 @2188 ]
 "23431
 [v _OSCCON1 OSCCON1 `VEuc  1 e 1 @2189 ]
 "23571
@@ -656,21 +659,21 @@ BLUE 2
 "12
 [v _brkp brkp `*.39uc  1 s 2 brkp ]
 "17 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\lite_free.c
-[u S2337 . 2 `*.39S2339 1 next 2 0 `[1]uc 1 space 1 0 ]
-[s S2339 chunk 4 `ui 1 size 2 0 `S2337 1 . 2 2 ]
-[v ___freelist __freelist `*.39S2339  1 e 2 0 ]
-[s S1402 . 9 `*.39v 1 handle 2 0 `uc 1 led_num 1 2 `uc 1 brightness 1 3 `ui 1 buffer_size 2 4 `*.39v 1 buffer 2 6 `uc 1 dma 1 8 ]
-"54 C:\Users\chris\Desktop\PIC16F\PIC16F.X\main.c
-[v _ws2812_pwm ws2812_pwm `S1402  1 e 9 0 ]
-"56
-[v _c c `uc  1 e 1 0 ]
-"57
-[v _index index `uc  1 e 1 0 ]
+[u S2292 . 2 `*.39S2294 1 next 2 0 `[1]uc 1 space 1 0 ]
+[s S2294 chunk 4 `ui 1 size 2 0 `S2292 1 . 2 2 ]
+[v ___freelist __freelist `*.39S2294  1 e 2 0 ]
+[s S1401 . 8 `*.39v 1 handle 2 0 `uc 1 led_num 1 2 `uc 1 brightness 1 3 `c 1 fade 1 4 `*.39[3]uc 1 led_data 2 5 `uc 1 dma 1 7 ]
+"55 C:\Users\chris\Desktop\PIC16F\PIC16F.X\main.c
+[v _ws2812_spi ws2812_spi `S1401  1 e 8 0 ]
 "58
-[v _fade_flag fade_flag `a  1 e 1 0 ]
+[v _c c `uc  1 e 1 0 ]
 "59
-[v _fade_time fade_time `us  1 e 2 0 ]
+[v _index index `uc  1 e 1 0 ]
 "60
+[v _fade_flag fade_flag `a  1 e 1 0 ]
+"61
+[v _fade_time fade_time `us  1 e 2 0 ]
+"62
 [v _rxBuff rxBuff `[128]uc  1 e 128 @12016 ]
 [s S252 . 5 `uc 1 stat 1 0 `uc 1 con1 1 1 `uc 1 con3 1 2 `uc 1 baud 1 3 `uc 1 clock 1 4 ]
 "55 C:\Users\chris\Desktop\PIC16F\PIC16F.X\mcc_generated_files/spi/src/mssp1.c
@@ -687,95 +690,87 @@ BLUE 2
 [v _eusartRxTail eusartRxTail `VEuc  1 s 1 eusartRxTail ]
 "82
 [v _eusartRxBuffer eusartRxBuffer `VE[128]uc  1 s 128 eusartRxBuffer ]
-[s S1154 . 1 `uc 1 perr 1 0 :1:0 
+[s S1152 . 1 `uc 1 perr 1 0 :1:0 
 `uc 1 ferr 1 0 :1:1 
 `uc 1 oerr 1 0 :1:2 
 `uc 1 reserved 1 0 :5:3 
 ]
 "83
-[u S1159 . 2 `S1154 1 . 1 0 `ui 1 status 2 0 ]
-[v _eusartRxStatusBuffer eusartRxStatusBuffer `VE[128]S1159  1 s 256 eusartRxStatusBuffer ]
+[u S1157 . 2 `S1152 1 . 1 0 `ui 1 status 2 0 ]
+[v _eusartRxStatusBuffer eusartRxStatusBuffer `VE[128]S1157  1 s 256 eusartRxStatusBuffer ]
 "84
 [v _eusartRxCount eusartRxCount `VEuc  1 e 1 0 ]
-[s S1154 . 1 `uc 1 perr 1 0 :1:0 
+[s S1152 . 1 `uc 1 perr 1 0 :1:0 
 `uc 1 ferr 1 0 :1:1 
 `uc 1 oerr 1 0 :1:2 
 `uc 1 reserved 1 0 :5:3 
 ]
 "86
-[u S1159 . 2 `S1154 1 . 1 0 `ui 1 status 2 0 ]
-[v _eusartRxLastError eusartRxLastError `VES1159  1 e 2 0 ]
+[u S1157 . 2 `S1152 1 . 1 0 `ui 1 status 2 0 ]
+[v _eusartRxLastError eusartRxLastError `VES1157  1 e 2 0 ]
 "93
 [v _EUSART_FramingErrorHandler EUSART_FramingErrorHandler `*.37(v  1 e 2 0 ]
 "94
 [v _EUSART_OverrunErrorHandler EUSART_OverrunErrorHandler `*.37(v  1 e 2 0 ]
-"21 C:\Users\chris\Desktop\PIC16F\PIC16F.X\ws2812/Src/ws2812_uart.c
+"12 C:\Users\chris\Desktop\PIC16F\PIC16F.X\ws2812/Src/ws2812_pwm.c
+[v _pwm_send_data pwm_send_data `*.39uc  1 e 2 0 ]
+"13 C:\Users\chris\Desktop\PIC16F\PIC16F.X\ws2812/Src/ws2812_spi.c
+[v _spi_send_data spi_send_data `*.39uc  1 e 2 0 ]
+"24 C:\Users\chris\Desktop\PIC16F\PIC16F.X\ws2812/Src/ws2812_uart.c
 [v _initialized initialized `uc  1 e 1 0 ]
-"83 C:\Users\chris\Desktop\PIC16F\PIC16F.X\main.c
+"85 C:\Users\chris\Desktop\PIC16F\PIC16F.X\main.c
 [v _main main `(i  1 e 2 0 ]
 {
 "151
 } 0
-"61 C:\Users\chris\Desktop\PIC16F\PIC16F.X\ws2812/Src/ws2812_pwm.c
-[v _ws2812_pwm_fade ws2812_pwm_fade `(v  1 e 1 0 ]
+"37 C:\Users\chris\Desktop\PIC16F\PIC16F.X\ws2812/Src/ws2812_spi.c
+[v _ws2812_spi_fade ws2812_spi_fade `(v  1 e 1 0 ]
 {
-[s S1402 . 9 `*.39v 1 handle 2 0 `uc 1 led_num 1 2 `uc 1 brightness 1 3 `ui 1 buffer_size 2 4 `*.39v 1 buffer 2 6 `uc 1 dma 1 8 ]
-[v ws2812_pwm_fade@ws2812_conf ws2812_conf `*.4S1402  1 a 1 wreg ]
-"77
-[v ws2812_pwm_fade@fade_1543 fade `i  1 a 2 71 ]
-"72
-[v ws2812_pwm_fade@fade fade `i  1 a 2 73 ]
-"63
-[v ws2812_pwm_fade@fade_delay fade_delay `us  1 a 2 69 ]
-"61
-[v ws2812_pwm_fade@ws2812_conf ws2812_conf `*.4S1402  1 a 1 wreg ]
-[v ws2812_pwm_fade@fade_time_ms fade_time_ms `us  1 p 2 63 ]
-[v ws2812_pwm_fade@ws2812_conf ws2812_conf `*.4S1402  1 a 1 75 ]
-"81
-} 0
-"29
-[v _ws2812_pwm_adjust_brightness ws2812_pwm_adjust_brightness `(v  1 e 1 0 ]
-{
-[s S1402 . 9 `*.39v 1 handle 2 0 `uc 1 led_num 1 2 `uc 1 brightness 1 3 `ui 1 buffer_size 2 4 `*.39v 1 buffer 2 6 `uc 1 dma 1 8 ]
-[v ws2812_pwm_adjust_brightness@ws2812_conf ws2812_conf `*.4S1402  1 a 1 wreg ]
-"44
-[v ws2812_pwm_adjust_brightness@index index `us  1 a 2 54 ]
-"43
-[v ws2812_pwm_adjust_brightness@j j `uc  1 a 1 62 ]
-"52
-[v ws2812_pwm_adjust_brightness@i_1528 i `us  1 a 2 50 ]
-"38
-[v ws2812_pwm_adjust_brightness@i i `uc  1 a 1 58 ]
-"32
-[v ws2812_pwm_adjust_brightness@send_data send_data `*.39uc  1 a 2 59 ]
-"31
-[v ws2812_pwm_adjust_brightness@led_data led_data `*.39[3]uc  1 a 2 52 ]
-"30
-[v ws2812_pwm_adjust_brightness@blue blue `uc  1 a 1 43 ]
-[v ws2812_pwm_adjust_brightness@red red `uc  1 a 1 42 ]
-[v ws2812_pwm_adjust_brightness@green green `uc  1 a 1 41 ]
-"29
-[v ws2812_pwm_adjust_brightness@ws2812_conf ws2812_conf `*.4S1402  1 a 1 wreg ]
-[v ws2812_pwm_adjust_brightness@brightness brightness `uc  1 p 1 34 ]
-"31
-"29
-[v ws2812_pwm_adjust_brightness@ws2812_conf ws2812_conf `*.4S1402  1 a 1 61 ]
+[s S1401 . 8 `*.39v 1 handle 2 0 `uc 1 led_num 1 2 `uc 1 brightness 1 3 `c 1 fade 1 4 `*.39[3]uc 1 led_data 2 5 `uc 1 dma 1 7 ]
+[v ws2812_spi_fade@ws2812_conf ws2812_conf `*.4S1401  1 a 1 wreg ]
+"53
+[v ws2812_spi_fade@fade_1632 fade `i  1 a 2 48 ]
+"48
+[v ws2812_spi_fade@fade fade `i  1 a 2 50 ]
+"39
+[v ws2812_spi_fade@fade_delay fade_delay `us  1 a 2 46 ]
+"37
+[v ws2812_spi_fade@ws2812_conf ws2812_conf `*.4S1401  1 a 1 wreg ]
+[v ws2812_spi_fade@fade_time_ms fade_time_ms `us  1 p 2 40 ]
+[v ws2812_spi_fade@ws2812_conf ws2812_conf `*.4S1401  1 a 1 52 ]
 "58
 } 0
-"67 C:\Users\chris\Desktop\PIC16F\PIC16F.X\mcc_generated_files/pwm/src/ccp1.c
-[v _CCP1_LoadDutyValue CCP1_LoadDutyValue `(v  1 e 1 0 ]
+"15
+[v _ws2812_spi_adjust_brightness ws2812_spi_adjust_brightness `(v  1 e 1 0 ]
 {
-[v CCP1_LoadDutyValue@dutyValue dutyValue `us  1 p 2 0 ]
-"83
+[s S1401 . 8 `*.39v 1 handle 2 0 `uc 1 led_num 1 2 `uc 1 brightness 1 3 `c 1 fade 1 4 `*.39[3]uc 1 led_data 2 5 `uc 1 dma 1 7 ]
+[v ws2812_spi_adjust_brightness@ws2812_conf ws2812_conf `*.4S1401  1 a 1 wreg ]
+"25
+[v ws2812_spi_adjust_brightness@index index `us  1 a 2 33 ]
+"24
+[v ws2812_spi_adjust_brightness@j j `uc  1 a 1 38 ]
+"19
+[v ws2812_spi_adjust_brightness@i i `uc  1 a 1 37 ]
+"16
+[v ws2812_spi_adjust_brightness@blue blue `uc  1 a 1 26 ]
+[v ws2812_spi_adjust_brightness@red red `uc  1 a 1 25 ]
+[v ws2812_spi_adjust_brightness@green green `uc  1 a 1 24 ]
+"15
+[v ws2812_spi_adjust_brightness@ws2812_conf ws2812_conf `*.4S1401  1 a 1 wreg ]
+[v ws2812_spi_adjust_brightness@brightness brightness `uc  1 p 1 15 ]
+"19
+"15
+[v ws2812_spi_adjust_brightness@ws2812_conf ws2812_conf `*.4S1401  1 a 1 39 ]
+"35
 } 0
-"25 C:\Users\chris\Desktop\PIC16F\PIC16F.X\ws2812/Src/ws2812.c
+"24 C:\Users\chris\Desktop\PIC16F\PIC16F.X\ws2812/Src/ws2812.c
 [v _ws2812_delay_ms ws2812_delay_ms `(v  1 e 1 0 ]
 {
-"26
-[v ws2812_delay_ms@i i `us  1 a 2 3 ]
 "25
+[v ws2812_delay_ms@i i `us  1 a 2 3 ]
+"24
 [v ws2812_delay_ms@ms ms `us  1 p 2 0 ]
-"29
+"28
 } 0
 "5 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\lwdiv.c
 [v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
@@ -794,16 +789,10 @@ BLUE 2
 {
 "54
 } 0
-"57 C:\Users\chris\Desktop\PIC16F\PIC16F.X\mcc_generated_files/timer/src/tmr2.c
-[v _TMR2_Initialize TMR2_Initialize `(v  1 e 1 0 ]
+"60 C:\Users\chris\Desktop\PIC16F\PIC16F.X\mcc_generated_files/spi/src/mssp1.c
+[v _SPI1_Initialize SPI1_Initialize `(v  1 e 1 0 ]
 {
-"78
-} 0
-"122
-[v _TMR2_OverflowCallbackRegister TMR2_OverflowCallbackRegister `(v  1 e 1 0 ]
-{
-[v TMR2_OverflowCallbackRegister@InterruptHandler InterruptHandler `*.37(v  1 p 2 0 ]
-"125
+"70
 } 0
 "39 C:\Users\chris\Desktop\PIC16F\PIC16F.X\mcc_generated_files/system/src/pins.c
 [v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
@@ -855,125 +844,45 @@ BLUE 2
 {
 "51
 } 0
-"50 C:\Users\chris\Desktop\PIC16F\PIC16F.X\mcc_generated_files/pwm/src/ccp1.c
-[v _CCP1_Initialize CCP1_Initialize `(v  1 e 1 0 ]
+"81 C:\Users\chris\Desktop\PIC16F\PIC16F.X\mcc_generated_files/spi/src/mssp1.c
+[v _SPI1_Open SPI1_Open `(a  1 e 1 0 ]
 {
-"65
+[v SPI1_Open@spiConfigIndex spiConfigIndex `uc  1 p 1 6 ]
+"100
 } 0
-"65 C:\Users\chris\Desktop\PIC16F\PIC16F.X\main.c
+"67 C:\Users\chris\Desktop\PIC16F\PIC16F.X\main.c
 [v _Handle_UART_Data Handle_UART_Data `(v  1 s 1 Handle_UART_Data ]
 {
-"80
+"82
 } 0
-"23 C:\Users\chris\Desktop\PIC16F\PIC16F.X\ws2812/Src/ws2812_uart.c
+"34 C:\Users\chris\Desktop\PIC16F\PIC16F.X\ws2812/Src/ws2812_uart.c
 [v _ws2812_uart_commands ws2812_uart_commands `(v  1 e 1 0 ]
 {
-"94
-[v ws2812_uart_commands@i_1814 i `i  1 a 2 0 ]
-"26
-[v ws2812_uart_commands@tokenizedInput tokenizedInput `[10]*.39uc  1 a 20 4 ]
-"27
-[v ws2812_uart_commands@i i `i  1 a 2 24 ]
-"25
-[v ws2812_uart_commands@token token `*.39uc  1 a 2 2 ]
-"23
-[v ws2812_uart_commands@data data `*.39uc  1 p 2 67 ]
-[v ws2812_uart_commands@size size `us  1 p 2 69 ]
-"190
+"183
+[v ws2812_uart_commands@i_1772 i `uc  1 a 1 48 ]
+"109
+[v ws2812_uart_commands@i i `uc  1 a 1 47 ]
+"37
+[v ws2812_uart_commands@tokenizedInput tokenizedInput `[10]*.39uc  1 a 20 51 ]
+"38
+[v ws2812_uart_commands@commandSize commandSize `i  1 a 2 71 ]
+"36
+[v ws2812_uart_commands@token token `*.39uc  1 a 2 49 ]
+"34
+[v ws2812_uart_commands@data data `*.39uc  1 p 2 42 ]
+[v ws2812_uart_commands@size size `us  1 p 2 44 ]
+"230
 } 0
-"155 C:\Users\chris\Desktop\PIC16F\PIC16F.X\ws2812/Src/ws2812_pwm.c
-[v _ws2812_pwm_init ws2812_pwm_init `(a  1 e 1 0 ]
+"112 C:\Users\chris\Desktop\PIC16F\PIC16F.X\ws2812/Src/ws2812_spi.c
+[v _ws2812_spi_init ws2812_spi_init `(a  1 e 1 0 ]
 {
-[s S1402 . 9 `*.39v 1 handle 2 0 `uc 1 led_num 1 2 `uc 1 brightness 1 3 `ui 1 buffer_size 2 4 `*.39v 1 buffer 2 6 `uc 1 dma 1 8 ]
-[v ws2812_pwm_init@ws2812_conf ws2812_conf `*.4S1402  1 a 1 wreg ]
-"157
-[v ws2812_pwm_init@led_data led_data `*.39[3]uc  1 a 2 64 ]
-"155
-[v ws2812_pwm_init@ws2812_conf ws2812_conf `*.4S1402  1 a 1 wreg ]
-"157
-"155
-[v ws2812_pwm_init@ws2812_conf ws2812_conf `*.4S1402  1 a 1 66 ]
-"169
-} 0
-"3 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\memset.c
-[v _memset memset `(*.39v  1 e 2 0 ]
-{
-"5
-[v memset@p p `*.39uc  1 a 2 12 ]
-"3
-[v memset@dest dest `*.39v  1 p 2 6 ]
-[v memset@c c `i  1 p 2 8 ]
-[v memset@n n `ui  1 p 2 10 ]
-"10
-} 0
-"171 C:\Users\chris\Desktop\PIC16F\PIC16F.X\ws2812/Src/ws2812_pwm.c
-[v _ws2812_pwm_deinit ws2812_pwm_deinit `(v  1 e 1 0 ]
-{
-[s S1402 . 9 `*.39v 1 handle 2 0 `uc 1 led_num 1 2 `uc 1 brightness 1 3 `ui 1 buffer_size 2 4 `*.39v 1 buffer 2 6 `uc 1 dma 1 8 ]
-[v ws2812_pwm_deinit@ws2812_conf ws2812_conf `*.4S1402  1 a 1 wreg ]
-[v ws2812_pwm_deinit@ws2812_conf ws2812_conf `*.4S1402  1 a 1 wreg ]
-"173
-"171
-[v ws2812_pwm_deinit@ws2812_conf ws2812_conf `*.4S1402  1 a 1 10 ]
-"179
-} 0
-"147
-[v _ws2812_pwm_clear ws2812_pwm_clear `(v  1 e 1 0 ]
-{
-[s S1402 . 9 `*.39v 1 handle 2 0 `uc 1 led_num 1 2 `uc 1 brightness 1 3 `ui 1 buffer_size 2 4 `*.39v 1 buffer 2 6 `uc 1 dma 1 8 ]
-[v ws2812_pwm_clear@ws2812_conf ws2812_conf `*.4S1402  1 a 1 wreg ]
-"148
-[v ws2812_pwm_clear@i i `uc  1 a 1 63 ]
-"147
-[v ws2812_pwm_clear@ws2812_conf ws2812_conf `*.4S1402  1 a 1 wreg ]
-[v ws2812_pwm_clear@ws2812_conf ws2812_conf `*.4S1402  1 a 1 64 ]
-"152
-} 0
-"12 C:\Users\chris\Desktop\PIC16F\PIC16F.X\ws2812/Src/ws2812.c
-[v _ws2812_set_led ws2812_set_led `(v  1 e 1 0 ]
-{
-[s S1402 . 9 `*.39v 1 handle 2 0 `uc 1 led_num 1 2 `uc 1 brightness 1 3 `ui 1 buffer_size 2 4 `*.39v 1 buffer 2 6 `uc 1 dma 1 8 ]
-[v ws2812_set_led@ws2812_conf ws2812_conf `*.4S1402  1 a 1 wreg ]
-"17
-[v ws2812_set_led@led_data led_data `*.39[3]uc  1 a 2 23 ]
-"12
-[v ws2812_set_led@ws2812_conf ws2812_conf `*.4S1402  1 a 1 wreg ]
-[v ws2812_set_led@led led `uc  1 p 1 13 ]
-[v ws2812_set_led@red red `uc  1 p 1 14 ]
-[v ws2812_set_led@green green `uc  1 p 1 15 ]
-[v ws2812_set_led@blue blue `uc  1 p 1 16 ]
-"14
-"12
-[v ws2812_set_led@ws2812_conf ws2812_conf `*.4S1402  1 a 1 25 ]
-"22
-} 0
-"115 C:\Users\chris\Desktop\PIC16F\PIC16F.X\ws2812/Src/ws2812_pwm.c
-[v _ws2812_pwm_send ws2812_pwm_send `(v  1 e 1 0 ]
-{
-[s S1402 . 9 `*.39v 1 handle 2 0 `uc 1 led_num 1 2 `uc 1 brightness 1 3 `ui 1 buffer_size 2 4 `*.39v 1 buffer 2 6 `uc 1 dma 1 8 ]
-[v ws2812_pwm_send@ws2812_conf ws2812_conf `*.4S1402  1 a 1 wreg ]
-"131
-[v ws2812_pwm_send@index index `us  1 a 2 53 ]
-"130
-[v ws2812_pwm_send@j j `uc  1 a 1 60 ]
-"139
-[v ws2812_pwm_send@i_1590 i `us  1 a 2 49 ]
-"125
-[v ws2812_pwm_send@i i `uc  1 a 1 57 ]
-"119
-[v ws2812_pwm_send@send_data send_data `*.39uc  1 a 2 58 ]
-"118
-[v ws2812_pwm_send@led_data led_data `*.39[3]uc  1 a 2 51 ]
-"117
-[v ws2812_pwm_send@blue blue `uc  1 a 1 42 ]
-[v ws2812_pwm_send@red red `uc  1 a 1 41 ]
-[v ws2812_pwm_send@green green `uc  1 a 1 40 ]
+[s S1401 . 8 `*.39v 1 handle 2 0 `uc 1 led_num 1 2 `uc 1 brightness 1 3 `c 1 fade 1 4 `*.39[3]uc 1 led_data 2 5 `uc 1 dma 1 7 ]
+[v ws2812_spi_init@ws2812_conf ws2812_conf `*.4S1401  1 a 1 wreg ]
+[v ws2812_spi_init@ws2812_conf ws2812_conf `*.4S1401  1 a 1 wreg ]
 "115
-[v ws2812_pwm_send@ws2812_conf ws2812_conf `*.4S1402  1 a 1 wreg ]
-"118
-"115
-[v ws2812_pwm_send@ws2812_conf ws2812_conf `*.4S1402  1 a 1 61 ]
-"145
+"112
+[v ws2812_spi_init@ws2812_conf ws2812_conf `*.4S1401  1 a 1 41 ]
+"133
 } 0
 "16 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\lite_malloc.c
 [v _malloc malloc `(*.39v  1 e 2 0 ]
@@ -1001,25 +910,25 @@ BLUE 2
 [v ___simple_search_fl __simple_search_fl `(*.39v  1 e 2 0 ]
 {
 "50
-[u S2337 . 2 `*.39S2339 1 next 2 0 `[1]uc 1 space 1 0 ]
-[s S2339 chunk 4 `ui 1 size 2 0 `S2337 1 . 2 2 ]
-[v ___simple_search_fl@split split `*.39S2339  1 a 2 10 ]
+[u S2292 . 2 `*.39S2294 1 next 2 0 `[1]uc 1 space 1 0 ]
+[s S2294 chunk 4 `ui 1 size 2 0 `S2292 1 . 2 2 ]
+[v ___simple_search_fl@split split `*.39S2294  1 a 2 10 ]
 "53
 [v ___simple_search_fl@remaining_size remaining_size `ui  1 a 2 6 ]
 "45
-[u S2337 . 2 `*.39S2339 1 next 2 0 `[1]uc 1 space 1 0 ]
-[s S2339 chunk 4 `ui 1 size 2 0 `S2337 1 . 2 2 ]
-[v ___simple_search_fl@next next `*.39S2339  1 a 2 14 ]
+[u S2292 . 2 `*.39S2294 1 next 2 0 `[1]uc 1 space 1 0 ]
+[s S2294 chunk 4 `ui 1 size 2 0 `S2292 1 . 2 2 ]
+[v ___simple_search_fl@next next `*.39S2294  1 a 2 14 ]
 "20
-[u S2337 . 2 `*.39S2339 1 next 2 0 `[1]uc 1 space 1 0 ]
-[s S2339 chunk 4 `ui 1 size 2 0 `S2337 1 . 2 2 ]
-[v ___simple_search_fl@best best `*.39S2339  1 a 2 18 ]
+[u S2292 . 2 `*.39S2294 1 next 2 0 `[1]uc 1 space 1 0 ]
+[s S2294 chunk 4 `ui 1 size 2 0 `S2292 1 . 2 2 ]
+[v ___simple_search_fl@best best `*.39S2294  1 a 2 18 ]
 "23
-[v ___simple_search_fl@c c `*.39S2339  1 a 2 16 ]
+[v ___simple_search_fl@c c `*.39S2294  1 a 2 16 ]
 "22
-[v ___simple_search_fl@last last `*.39S2339  1 a 2 12 ]
+[v ___simple_search_fl@last last `*.39S2294  1 a 2 12 ]
 "21
-[v ___simple_search_fl@best_last best_last `*.39S2339  1 a 2 8 ]
+[v ___simple_search_fl@best_last best_last `*.39S2294  1 a 2 8 ]
 "19
 [v ___simple_search_fl@n n `ui  1 p 2 0 ]
 "65
@@ -1038,18 +947,63 @@ BLUE 2
 [v ___expand_heap@pn pn `*.4ui  1 a 1 2 ]
 "32
 } 0
+"142 C:\Users\chris\Desktop\PIC16F\PIC16F.X\ws2812/Src/ws2812_spi.c
+[v _ws2812_spi_deinit ws2812_spi_deinit `(v  1 e 1 0 ]
+{
+[s S1401 . 8 `*.39v 1 handle 2 0 `uc 1 led_num 1 2 `uc 1 brightness 1 3 `c 1 fade 1 4 `*.39[3]uc 1 led_data 2 5 `uc 1 dma 1 7 ]
+[v ws2812_spi_deinit@ws2812_conf ws2812_conf `*.4S1401  1 a 1 wreg ]
+[v ws2812_spi_deinit@ws2812_conf ws2812_conf `*.4S1401  1 a 1 wreg ]
+"144
+"142
+[v ws2812_spi_deinit@ws2812_conf ws2812_conf `*.4S1401  1 a 1 10 ]
+"151
+} 0
 "67 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\lite_free.c
 [v _free free `(v  1 e 1 0 ]
 {
 "68
-[u S2337 . 2 `*.39S2339 1 next 2 0 `[1]uc 1 space 1 0 ]
-[s S2339 chunk 4 `ui 1 size 2 0 `S2337 1 . 2 2 ]
-[v free@c c `*.39S2339  1 a 2 8 ]
+[u S2292 . 2 `*.39S2294 1 next 2 0 `[1]uc 1 space 1 0 ]
+[s S2294 chunk 4 `ui 1 size 2 0 `S2292 1 . 2 2 ]
+[v free@c c `*.39S2294  1 a 2 8 ]
 "69
 [v free@cptr cptr `*.39uc  1 a 2 6 ]
 "67
 [v free@ptr ptr `*.39v  1 p 2 0 ]
 "94
+} 0
+"135 C:\Users\chris\Desktop\PIC16F\PIC16F.X\ws2812/Src/ws2812_spi.c
+[v _ws2812_spi_clear ws2812_spi_clear `(v  1 e 1 0 ]
+{
+[s S1401 . 8 `*.39v 1 handle 2 0 `uc 1 led_num 1 2 `uc 1 brightness 1 3 `c 1 fade 1 4 `*.39[3]uc 1 led_data 2 5 `uc 1 dma 1 7 ]
+[v ws2812_spi_clear@ws2812_conf ws2812_conf `*.4S1401  1 a 1 wreg ]
+"136
+[v ws2812_spi_clear@i i `uc  1 a 1 40 ]
+"135
+[v ws2812_spi_clear@ws2812_conf ws2812_conf `*.4S1401  1 a 1 wreg ]
+[v ws2812_spi_clear@ws2812_conf ws2812_conf `*.4S1401  1 a 1 41 ]
+"140
+} 0
+"88
+[v _ws2812_spi_send ws2812_spi_send `(v  1 e 1 0 ]
+{
+[s S1401 . 8 `*.39v 1 handle 2 0 `uc 1 led_num 1 2 `uc 1 brightness 1 3 `c 1 fade 1 4 `*.39[3]uc 1 led_data 2 5 `uc 1 dma 1 7 ]
+[v ws2812_spi_send@ws2812_conf ws2812_conf `*.4S1401  1 a 1 wreg ]
+"98
+[v ws2812_spi_send@index index `us  1 a 2 32 ]
+"97
+[v ws2812_spi_send@j j `uc  1 a 1 37 ]
+"92
+[v ws2812_spi_send@i i `uc  1 a 1 36 ]
+"90
+[v ws2812_spi_send@blue blue `uc  1 a 1 25 ]
+[v ws2812_spi_send@red red `uc  1 a 1 24 ]
+[v ws2812_spi_send@green green `uc  1 a 1 23 ]
+"88
+[v ws2812_spi_send@ws2812_conf ws2812_conf `*.4S1401  1 a 1 wreg ]
+"92
+"88
+[v ws2812_spi_send@ws2812_conf ws2812_conf `*.4S1401  1 a 1 38 ]
+"109
 } 0
 "5 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\awdiv.c
 [v ___awdiv __awdiv `(i  1 e 2 0 ]
@@ -1064,11 +1018,50 @@ BLUE 2
 [v ___awdiv@dividend dividend `i  1 p 2 8 ]
 "41
 } 0
-"12 C:\Users\chris\Desktop\PIC16F\PIC16F.X\ws2812/Src/ws2812_pwm.c
-[v _CCP1_DutyCycle CCP1_DutyCycle `(VEv  1 s 1 CCP1_DutyCycle ]
+"125 C:\Users\chris\Desktop\PIC16F\PIC16F.X\mcc_generated_files/spi/src/mssp1.c
+[v _SPI1_BufferWrite SPI1_BufferWrite `(v  1 e 1 0 ]
 {
-[v CCP1_DutyCycle@dutyValue dutyValue `us  1 p 2 0 ]
-"27
+"128
+[v SPI1_BufferWrite@bufferInputSize bufferInputSize `ui  1 a 2 12 ]
+"127
+[v SPI1_BufferWrite@bufferInput bufferInput `*.39uc  1 a 2 10 ]
+"125
+[v SPI1_BufferWrite@bufferData bufferData `*.39v  1 p 2 6 ]
+[v SPI1_BufferWrite@bufferSize bufferSize `ui  1 p 2 8 ]
+"140
+} 0
+"12 C:\Users\chris\Desktop\PIC16F\PIC16F.X\ws2812/Src/ws2812.c
+[v _ws2812_set_led ws2812_set_led `(v  1 e 1 0 ]
+{
+[s S1401 . 8 `*.39v 1 handle 2 0 `uc 1 led_num 1 2 `uc 1 brightness 1 3 `c 1 fade 1 4 `*.39[3]uc 1 led_data 2 5 `uc 1 dma 1 7 ]
+[v ws2812_set_led@ws2812_conf ws2812_conf `*.4S1401  1 a 1 wreg ]
+[v ws2812_set_led@ws2812_conf ws2812_conf `*.4S1401  1 a 1 wreg ]
+[v ws2812_set_led@led led `uc  1 p 1 13 ]
+[v ws2812_set_led@red red `uc  1 p 1 14 ]
+[v ws2812_set_led@green green `uc  1 p 1 15 ]
+[v ws2812_set_led@blue blue `uc  1 p 1 16 ]
+"14
+"12
+[v ws2812_set_led@ws2812_conf ws2812_conf `*.4S1401  1 a 1 25 ]
+"21
+} 0
+"26 C:\Users\chris\Desktop\PIC16F\PIC16F.X\ws2812/Src/ws2812_uart.c
+[v _valid_command_size valid_command_size `(a  1 e 1 0 ]
+{
+[v valid_command_size@commandSize commandSize `i  1 p 2 14 ]
+[v valid_command_size@expectedSize expectedSize `i  1 p 2 16 ]
+"32
+} 0
+"3 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\memset.c
+[v _memset memset `(*.39v  1 e 2 0 ]
+{
+"5
+[v memset@p p `*.39uc  1 a 2 12 ]
+"3
+[v memset@dest dest `*.39v  1 p 2 6 ]
+[v memset@c c `i  1 p 2 8 ]
+[v memset@n n `ui  1 p 2 10 ]
+"10
 } 0
 "3 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\strtok.c
 [v _strtok strtok `(*.39uc  1 e 2 0 ]

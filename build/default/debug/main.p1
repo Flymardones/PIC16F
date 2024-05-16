@@ -1,9 +1,10 @@
 Version 4.0 HI-TECH Software Intermediate Code
 [v F12627 `(v ~T0 @X0 0 tf ]
-"26 ./ws2812/Inc/ws2812.h
-[; ;./ws2812/Inc/ws2812.h: 26: typedef struct {
-[s S1618 `*v 1 `uc 1 `uc 1 `ui 1 `*v 1 `uc 1 ]
-[n S1618 . handle led_num brightness buffer_size buffer dma ]
+[v F12807 `uc ~T0 @X0 -> 3 `i t ]
+"19 ./ws2812/Inc/ws2812.h
+[; ;./ws2812/Inc/ws2812.h: 19: typedef struct {
+[s S1618 `*v 1 `uc 1 `uc 1 `c 1 `*F12807 1 `uc 1 ]
+[n S1618 . handle led_num brightness fade led_data dma ]
 "289 ./mcc_generated_files/system/../uart/eusart.h
 [; ;./mcc_generated_files/system/../uart/eusart.h: 289: uint8_t EUSART_Read(void);
 [v _EUSART_Read `(uc ~T0 @X0 0 ef ]
@@ -30,12 +31,20 @@ Version 4.0 HI-TECH Software Intermediate Code
 "22 ./ws2812/Inc/ws2812_pwm.h
 [; ;./ws2812/Inc/ws2812_pwm.h: 22: void ws2812_pwm_fade(ws2812_configuration* ws2812_conf, uint16_t fade_time_ms);
 [v _ws2812_pwm_fade `(v ~T0 @X0 0 ef2`*S1618`us ]
-"62 ./mcc_generated_files/system/../pwm/ccp1.h
-[; ;./mcc_generated_files/system/../pwm/ccp1.h: 62: void CCP1_LoadDutyValue(uint16_t dutyValue);
-[v _CCP1_LoadDutyValue `(v ~T0 @X0 0 ef1`us ]
-"9409 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 9409: extern volatile unsigned char T2CON __attribute__((address(0x28E)));
-[v _T2CON `Vuc ~T0 @X0 0 e@654 ]
+"8 C:\Program Files\Microchip\xc8\v2.46\pic\include\builtins.h
+[v ___nop `(v ~T0 @X0 0 ef ]
+[p i ___nop ]
+"1024 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 1024:     struct {
+[s S55 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S55 . LATB0 LATB1 LATB2 LATB3 LATB4 LATB5 LATB6 LATB7 ]
+"1023
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 1023: typedef union {
+[u S54 `S55 1 ]
+[n S54 . . ]
+"1035
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 1035: extern volatile LATBbits_t LATBbits __attribute__((address(0x017)));
+[v _LATBbits `VS54 ~T0 @X0 0 e@23 ]
 "54 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 54: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -1674,149 +1683,152 @@ Version 4.0 HI-TECH Software Intermediate Code
 "324 ./mcc_generated_files/system/../uart/eusart.h
 [; ;./mcc_generated_files/system/../uart/eusart.h: 324: void (*EUSART_RxInterruptHandler)(void);
 [v _EUSART_RxInterruptHandler `*F12627 ~T0 @X0 1 e ]
-"53 main.c
-[; ;main.c: 53: ws2812_configuration ws2812_spi;
+"55 main.c
+[; ;main.c: 55: ws2812_configuration ws2812_spi;
 [v _ws2812_spi `S1618 ~T0 @X0 1 e ]
-"54
-[; ;main.c: 54: ws2812_configuration ws2812_pwm;
-[v _ws2812_pwm `S1618 ~T0 @X0 1 e ]
 "56
-[; ;main.c: 56: char c;
+[; ;main.c: 56: ws2812_configuration ws2812_pwm;
+[v _ws2812_pwm `S1618 ~T0 @X0 1 e ]
+"58
+[; ;main.c: 58: char c;
 [v _c `uc ~T0 @X0 1 e ]
-"57
-[; ;main.c: 57: uint8_t index = 0;
+"59
+[; ;main.c: 59: uint8_t index = 0;
 [v _index `uc ~T0 @X0 1 e ]
 [i _index
 -> -> 0 `i `uc
 ]
-"58
-[; ;main.c: 58: _Bool fade_flag = 0;
+"60
+[; ;main.c: 60: _Bool fade_flag = 0;
 [v _fade_flag `a ~T0 @X0 1 e ]
 [i _fade_flag
 -> -> 0 `i `a
 ]
-"59
-[; ;main.c: 59: uint16_t fade_time = 0;
+"61
+[; ;main.c: 61: uint16_t fade_time = 0;
 [v _fade_time `us ~T0 @X0 1 e ]
 [i _fade_time
 -> -> 0 `i `us
 ]
-"60
-[; ;main.c: 60: uint8_t rxBuff[128];
+"62
+[; ;main.c: 62: uint8_t rxBuff[128];
 [v _rxBuff `uc ~T0 @X0 -> 128 `i e ]
-"65
-[; ;main.c: 65: static void Handle_UART_Data(void) {
+"67
+[; ;main.c: 67: static void Handle_UART_Data(void) {
 [v _Handle_UART_Data `(v ~T0 @X0 1 sf ]
 {
 [e :U _Handle_UART_Data ]
 [f ]
-"67
-[; ;main.c: 67:     while(EUSART_IsRxReady()) {
+"69
+[; ;main.c: 69:     while(EUSART_IsRxReady()) {
 [e $U 1622  ]
 [e :U 1623 ]
 {
-"68
-[; ;main.c: 68:         c = EUSART_Read();
-[e = _c -> ( _EUSART_Read ..  `uc ]
-"69
-[; ;main.c: 69:         rxBuff[index++] = c;
-[e = *U + &U _rxBuff * -> ++ _index -> -> 1 `i `uc `ux -> -> # *U &U _rxBuff `ui `ux -> _c `uc ]
 "70
-[; ;main.c: 70:         if (index > 128) {
+[; ;main.c: 70:         c = EUSART_Read();
+[e = _c -> ( _EUSART_Read ..  `uc ]
+"71
+[; ;main.c: 71:         rxBuff[index++] = c;
+[e = *U + &U _rxBuff * -> ++ _index -> -> 1 `i `uc `ux -> -> # *U &U _rxBuff `ui `ux -> _c `uc ]
+"72
+[; ;main.c: 72:         if (index > 128) {
 [e $ ! > -> _index `i -> 128 `i 1625  ]
 {
-"71
-[; ;main.c: 71:             index = 0;
+"73
+[; ;main.c: 73:             index = 0;
 [e = _index -> -> 0 `i `uc ]
-"72
-[; ;main.c: 72:         }
+"74
+[; ;main.c: 74:         }
 }
 [e :U 1625 ]
-"74
-[; ;main.c: 74:         if (c == '\n') {
+"76
+[; ;main.c: 76:         if (c == '\n') {
 [e $ ! == -> _c `ui -> 10 `ui 1626  ]
 {
-"75
-[; ;main.c: 75:             ws2812_uart_commands(rxBuff, index);
-[e ( _ws2812_uart_commands (2 , &U _rxBuff -> _index `us ]
-"76
-[; ;main.c: 76:             index = 0;
-[e = _index -> -> 0 `i `uc ]
 "77
-[; ;main.c: 77:             c = '\0';
-[e = _c -> -> 0 `ui `uc ]
+[; ;main.c: 77:             ws2812_uart_commands(rxBuff, index);
+[e ( _ws2812_uart_commands (2 , &U _rxBuff -> _index `us ]
 "78
-[; ;main.c: 78:         }
+[; ;main.c: 78:             index = 0;
+[e = _index -> -> 0 `i `uc ]
+"79
+[; ;main.c: 79:             c = '\0';
+[e = _c -> -> 0 `ui `uc ]
+"80
+[; ;main.c: 80:         }
 }
 [e :U 1626 ]
-"79
-[; ;main.c: 79:     }
+"81
+[; ;main.c: 81:     }
 }
 [e :U 1622 ]
-"67
-[; ;main.c: 67:     while(EUSART_IsRxReady()) {
+"69
+[; ;main.c: 69:     while(EUSART_IsRxReady()) {
 [e $ != -> ( _EUSART_IsRxReady ..  `i -> 0 `i 1623  ]
 [e :U 1624 ]
-"80
-[; ;main.c: 80: }
+"82
+[; ;main.c: 82: }
 [e :UE 1621 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"83
-[; ;main.c: 83: int main(void)
+"85
+[; ;main.c: 85: int main(void)
 [v _main `(i ~T0 @X0 1 ef ]
-"84
-[; ;main.c: 84: {
+"86
+[; ;main.c: 86: {
 {
 [e :U _main ]
 [f ]
-"85
-[; ;main.c: 85:     SYSTEM_Initialize();
+"87
+[; ;main.c: 87:     SYSTEM_Initialize();
 [e ( _SYSTEM_Initialize ..  ]
-"92
-[; ;main.c: 92:     (INTCONbits.GIE = 1);
+"94
+[; ;main.c: 94:     (INTCONbits.GIE = 1);
 [e = . . _INTCONbits 0 3 -> -> 1 `i `uc ]
-"98
-[; ;main.c: 98:     (INTCONbits.PEIE = 1);
+"100
+[; ;main.c: 100:     (INTCONbits.PEIE = 1);
 [e = . . _INTCONbits 0 2 -> -> 1 `i `uc ]
-"119
-[; ;main.c: 119:     while(1)
+"121
+[; ;main.c: 121:     while(1)
 [e :U 1629 ]
-"120
-[; ;main.c: 120:     {
+"122
+[; ;main.c: 122:     {
 {
-"135
-[; ;main.c: 135:     if (fade_flag) {
+"137
+[; ;main.c: 137:     if (fade_flag) {
 [e $ ! != -> _fade_flag `i -> 0 `i 1631  ]
 {
-"136
-[; ;main.c: 136:         ws2812_pwm_fade(&ws2812_pwm, fade_time);
+"138
+[; ;main.c: 138:         ws2812_pwm_fade(&ws2812_pwm, fade_time);
 [e ( _ws2812_pwm_fade (2 , &U _ws2812_pwm _fade_time ]
-"137
-[; ;main.c: 137:     }
+"139
+[; ;main.c: 139:     }
 }
 [e $U 1632  ]
-"138
-[; ;main.c: 138:     else {
+"140
+[; ;main.c: 140:     else {
 [e :U 1631 ]
 {
 "141
-[; ;main.c: 141:     }
+[; ;main.c: 141:         __asm("sleep");
+[; <" sleep ;# ">
+"142
+[; ;main.c: 142:         __nop();
+[e ( ___nop ..  ]
+"143
+[; ;main.c: 143:     }
 }
 [e :U 1632 ]
-"146
-[; ;main.c: 146:     CCP1_LoadDutyValue(0xA);
-[e ( _CCP1_LoadDutyValue (1 -> -> 10 `i `us ]
-"147
-[; ;main.c: 147:     T2CON |= 0x80;
-[e =| _T2CON -> -> 128 `i `Vuc ]
 "150
-[; ;main.c: 150:     }
+[; ;main.c: 150:      LATBbits.LATB3 = ~LATBbits.LATB3;
+[e = . . _LATBbits 0 3 -> ~ -> . . _LATBbits 0 3 `i `uc ]
+"153
+[; ;main.c: 153:     }
 }
 [e :U 1628 ]
 [e $U 1629  ]
 [e :U 1630 ]
-"151
-[; ;main.c: 151: }
+"154
+[; ;main.c: 154: }
 [e :UE 1627 ]
 }

@@ -1,13 +1,14 @@
 Version 4.0 HI-TECH Software Intermediate Code
 [v F12627 `(v ~T0 @X0 0 tf ]
-"26 ws2812/Src/../Inc/ws2812.h
-[; ;ws2812/Src/../Inc/ws2812.h: 26: typedef struct {
-[s S1618 `*v 1 `uc 1 `uc 1 `ui 1 `*v 1 `uc 1 ]
-[n S1618 . handle led_num brightness buffer_size buffer dma ]
-"19 ws2812/Src/ws2812.c
-[; ;ws2812/Src/ws2812.c: 19:     led_data[led][GREEN] = green;
-[c E12801 0 1 2 .. ]
-[n E12801 . GREEN RED BLUE  ]
+[v F12807 `uc ~T0 @X0 -> 3 `i t ]
+"19 ws2812/Src/../Inc/ws2812.h
+[; ;ws2812/Src/../Inc/ws2812.h: 19: typedef struct {
+[s S1618 `*v 1 `uc 1 `uc 1 `c 1 `*F12807 1 `uc 1 ]
+[n S1618 . handle led_num brightness fade led_data dma ]
+"18 ws2812/Src/ws2812.c
+[; ;ws2812/Src/ws2812.c: 18:     ws2812_conf->led_data[led][GREEN] = green;
+[c E12796 0 1 2 .. ]
+[n E12796 . GREEN RED BLUE  ]
 [v F202 `(v ~T0 @X0 1 tf1`ul ]
 "20 C:\Program Files\Microchip\xc8\v2.46\pic\include\builtins.h
 [v __delay `JF202 ~T0 @X0 0 e ]
@@ -1672,52 +1673,46 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;ws2812/Src/ws2812.c: 16:     }
 }
 [e :U 1620 ]
-[v F12829 `uc ~T0 @X0 -> 3 `i t ]
-"17
-[; ;ws2812/Src/ws2812.c: 17:     uint8_t (*led_data)[3] = ws2812_conf->buffer;
-[v _led_data `*F12829 ~T0 @X0 1 a ]
-[v F12830 `uc ~T0 @X0 -> 3 `i t ]
-[e = _led_data -> . *U _ws2812_conf 4 `*F12830 ]
+"18
+[; ;ws2812/Src/ws2812.c: 18:     ws2812_conf->led_data[led][GREEN] = green;
+[e = *U + &U *U + . *U _ws2812_conf 4 * -> _led `ux -> * -> # *U &U *U . *U _ws2812_conf 4 `ui -> -> 3 `i `ui `ux * -> . `E12796 0 `x -> -> # *U &U *U + . *U _ws2812_conf 4 * -> _led `ux -> * -> # *U &U *U . *U _ws2812_conf 4 `ui -> -> 3 `i `ui `ux `i `x _green ]
 "19
-[; ;ws2812/Src/ws2812.c: 19:     led_data[led][GREEN] = green;
-[e = *U + &U *U + _led_data * -> _led `ux -> * -> # *U &U *U _led_data `ui -> -> 3 `i `ui `ux * -> . `E12801 0 `x -> -> # *U &U *U + _led_data * -> _led `ux -> * -> # *U &U *U _led_data `ui -> -> 3 `i `ui `ux `i `x _green ]
+[; ;ws2812/Src/ws2812.c: 19:     ws2812_conf->led_data[led][RED] = red;
+[e = *U + &U *U + . *U _ws2812_conf 4 * -> _led `ux -> * -> # *U &U *U . *U _ws2812_conf 4 `ui -> -> 3 `i `ui `ux * -> . `E12796 1 `x -> -> # *U &U *U + . *U _ws2812_conf 4 * -> _led `ux -> * -> # *U &U *U . *U _ws2812_conf 4 `ui -> -> 3 `i `ui `ux `i `x _red ]
 "20
-[; ;ws2812/Src/ws2812.c: 20:     led_data[led][RED] = red;
-[e = *U + &U *U + _led_data * -> _led `ux -> * -> # *U &U *U _led_data `ui -> -> 3 `i `ui `ux * -> . `E12801 1 `x -> -> # *U &U *U + _led_data * -> _led `ux -> * -> # *U &U *U _led_data `ui -> -> 3 `i `ui `ux `i `x _red ]
+[; ;ws2812/Src/ws2812.c: 20:     ws2812_conf->led_data[led][BLUE] = blue;
+[e = *U + &U *U + . *U _ws2812_conf 4 * -> _led `ux -> * -> # *U &U *U . *U _ws2812_conf 4 `ui -> -> 3 `i `ui `ux * -> . `E12796 2 `x -> -> # *U &U *U + . *U _ws2812_conf 4 * -> _led `ux -> * -> # *U &U *U . *U _ws2812_conf 4 `ui -> -> 3 `i `ui `ux `i `x _blue ]
 "21
-[; ;ws2812/Src/ws2812.c: 21:     led_data[led][BLUE] = blue;
-[e = *U + &U *U + _led_data * -> _led `ux -> * -> # *U &U *U _led_data `ui -> -> 3 `i `ui `ux * -> . `E12801 2 `x -> -> # *U &U *U + _led_data * -> _led `ux -> * -> # *U &U *U _led_data `ui -> -> 3 `i `ui `ux `i `x _blue ]
-"22
-[; ;ws2812/Src/ws2812.c: 22: }
+[; ;ws2812/Src/ws2812.c: 21: }
 [e :UE 1619 ]
 }
-"25
-[; ;ws2812/Src/ws2812.c: 25: void ws2812_delay_ms(uint16_t ms) {
+"24
+[; ;ws2812/Src/ws2812.c: 24: void ws2812_delay_ms(uint16_t ms) {
 [v _ws2812_delay_ms `(v ~T0 @X0 1 ef1`us ]
 {
 [e :U _ws2812_delay_ms ]
 [v _ms `us ~T0 @X0 1 r1 ]
 [f ]
-"26
-[; ;ws2812/Src/ws2812.c: 26:     for (uint16_t i = 0; i < ms; i++) {
+"25
+[; ;ws2812/Src/ws2812.c: 25:     for (uint16_t i = 0; i < ms; i++) {
 {
 [v _i `us ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `us ]
 [e $U 1625  ]
 [e :U 1622 ]
 {
-"27
-[; ;ws2812/Src/ws2812.c: 27:         _delay((unsigned long)((1)*(32000000/4000.0)));
+"26
+[; ;ws2812/Src/ws2812.c: 26:         _delay((unsigned long)((1)*(32000000/4000.0)));
 [e ( __delay (1 -> * -> -> 1 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-"28
-[; ;ws2812/Src/ws2812.c: 28:     }
+"27
+[; ;ws2812/Src/ws2812.c: 27:     }
 }
 [e ++ _i -> -> 1 `i `us ]
 [e :U 1625 ]
 [e $ < -> _i `ui -> _ms `ui 1622  ]
 [e :U 1623 ]
 }
-"29
-[; ;ws2812/Src/ws2812.c: 29: }
+"28
+[; ;ws2812/Src/ws2812.c: 28: }
 [e :UE 1621 ]
 }

@@ -7,7 +7,7 @@
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "main.c" 2
-# 33 "main.c"
+# 35 "main.c"
 # 1 "./mcc_generated_files/system/system.h" 1
 # 39 "./mcc_generated_files/system/system.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\xc.h" 1 3
@@ -20742,7 +20742,7 @@ void CLOCK_Initialize(void);
 
 
 # 1 "./mcc_generated_files/system/../system/pins.h" 1
-# 116 "./mcc_generated_files/system/../system/pins.h"
+# 135 "./mcc_generated_files/system/../system/pins.h"
 void PIN_MANAGER_Initialize (void);
 
 
@@ -20760,11 +20760,11 @@ void PIN_MANAGER_IOC(void);
 
 
 void IO_RB2_ISR(void);
-# 142 "./mcc_generated_files/system/../system/pins.h"
+# 161 "./mcc_generated_files/system/../system/pins.h"
 void IO_RB2_SetInterruptHandler(void (* InterruptHandler)(void));
-# 153 "./mcc_generated_files/system/../system/pins.h"
+# 172 "./mcc_generated_files/system/../system/pins.h"
 extern void (*IO_RB2_InterruptHandler)(void);
-# 164 "./mcc_generated_files/system/../system/pins.h"
+# 183 "./mcc_generated_files/system/../system/pins.h"
 void IO_RB2_DefaultInterruptHandler(void);
 # 44 "./mcc_generated_files/system/system.h" 2
 
@@ -21517,7 +21517,7 @@ extern _Bool fade_flag;
 extern uint16_t fade_time;
 
 void SYSTEM_Initialize(void);
-# 33 "main.c" 2
+# 35 "main.c" 2
 
 
 
@@ -21526,17 +21526,10 @@ void SYSTEM_Initialize(void);
 # 1 "./ws2812/Inc/ws2812.h" 1
 # 13 "./ws2812/Inc/ws2812.h"
 typedef enum {
-    ws2812_ok,
-    ws2812_error,
-    ws2812_dma_error,
-} ws2812_status_t;
-
-typedef enum {
     GREEN,
     RED,
-    BLUE
-} ws2812_color;
-
+    BLUE,
+} ws2812_color_t;
 
 typedef struct {
 
@@ -21558,12 +21551,12 @@ typedef struct {
 
 
 
-    size_t buffer_size;
+    int8_t fade;
 
 
 
 
-    void* buffer;
+    uint8_t(*led_data)[3];
 
 
 
@@ -21571,7 +21564,7 @@ typedef struct {
     uint8_t dma;
 
 } ws2812_configuration;
-# 70 "./ws2812/Inc/ws2812.h"
+# 63 "./ws2812/Inc/ws2812.h"
 void ws2812_set_led(ws2812_configuration* ws2812_conf, uint8_t led, uint8_t red, uint8_t green, uint8_t blue);
 
 
@@ -21580,7 +21573,7 @@ void ws2812_set_led(ws2812_configuration* ws2812_conf, uint8_t led, uint8_t red,
 
 
 
-void ws2812_delay_ms(uint16_t ms);
+void ws2812_delay_ms(uint16_t us);
 # 11 "./ws2812/Inc/ws2812_uart.h" 2
 
 
@@ -21590,7 +21583,7 @@ typedef struct {
 } uart_data;
 
 void ws2812_uart_commands(uint8_t* data, uint16_t size);
-# 36 "main.c" 2
+# 38 "main.c" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\string.h" 1 3
 # 25 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\string.h" 3
@@ -21649,7 +21642,7 @@ size_t strxfrm_l (char *restrict, const char *restrict, size_t, locale_t);
 
 
 void *memccpy (void *restrict, const void *restrict, int, size_t);
-# 37 "main.c" 2
+# 39 "main.c" 2
 
 
 
@@ -21675,7 +21668,7 @@ void ws2812_pwm_fade(ws2812_configuration* ws2812_conf, uint16_t fade_time_ms);
 void ws2812_pwm_clear(ws2812_configuration* ws2812_conf);
 
 void ws2812_pwm_deinit(ws2812_configuration* ws2812_conf);
-# 45 "main.c" 2
+# 47 "main.c" 2
 
 
 
@@ -21730,23 +21723,24 @@ int main(void)
 
 
     (INTCONbits.PEIE = 1);
-# 119 "main.c"
+# 121 "main.c"
     while(1)
     {
-# 135 "main.c"
+# 137 "main.c"
     if (fade_flag) {
         ws2812_pwm_fade(&ws2812_pwm, fade_time);
     }
     else {
-
-
+        __asm("sleep");
+        __nop();
     }
 
 
 
 
-    CCP1_LoadDutyValue(0xA);
-    T2CON |= 0x80;
+
+
+     LATBbits.LATB3 = ~LATBbits.LATB3;
 
 
     }

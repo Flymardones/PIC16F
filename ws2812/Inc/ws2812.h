@@ -11,17 +11,10 @@
 #include "../../mcc_generated_files/system/system.h"
 
 typedef enum {
-    ws2812_ok,
-    ws2812_error,
-    ws2812_dma_error,
-} ws2812_status_t;
-
-typedef enum {
     GREEN,
     RED,
-    BLUE
-} ws2812_color;
-
+    BLUE,
+} ws2812_color_t;
 
 typedef struct {
 
@@ -41,17 +34,17 @@ typedef struct {
     uint8_t brightness;
 
     /*
-    * @member buffer_size is the size of the buffer
+    * @member fade is the fade for the leds
     */
-    size_t buffer_size;
+    int8_t fade;
 
     /*
-    * @member buffer is a pointer to the buffer storing the data for the leds
+    * @member buffer is the buffer for storing the data for the leds
     */
-    void* buffer;
+    uint8_t(*led_data)[3];
 
     /*
-    * @member dma is used for defining whether the dma should be used or not
+    * @member dma is used for defining whether the dma should be used of not
     */
     uint8_t dma;
 
@@ -75,8 +68,10 @@ void ws2812_set_led(ws2812_configuration* ws2812_conf, uint8_t led, uint8_t red,
  *
  * @param us the amount of microseconds to delay
  */
-void ws2812_delay_ms(uint16_t ms);
+void ws2812_delay_ms(uint16_t us);
 
 
 
 #endif /* WS2812_INC_WS2812_H_ */
+
+

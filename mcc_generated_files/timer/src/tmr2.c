@@ -59,8 +59,8 @@ void TMR2_Initialize(void){
     // Set TMR2 to the options selected in the User Interface
     // TCS FOSC/4; 
     T2CLKCON = 0x1;
-    // TMODE Software control One shot; TCKSYNC Synchronized; TCKPOL Rising Edge; TPSYNC Not Synchronized; 
-    T2HLT = 0x28;
+    // TMODE Software control One shot; TCKSYNC Synchronized; TCKPOL Rising Edge; TPSYNC Synchronized; 
+    T2HLT = 0xA8;
     // TRSEL T2CKIPPS pin; 
     T2RST = 0x0;
     // PR 9; 
