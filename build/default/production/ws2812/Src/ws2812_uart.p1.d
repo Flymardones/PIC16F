@@ -16,4 +16,4 @@ ws2812/Src/../Inc/../../mcc_generated_files/system/../spi/spi_interface.h  \
 ws2812/Src/../Inc/../../mcc_generated_files/system/../timer/tmr2.h  \
 ws2812/Src/../Inc/../../mcc_generated_files/system/../timer/timer_interface.h  \
 ws2812/Src/../Inc/../../mcc_generated_files/system/../system/interrupt.h  \
-ws2812/Src/../Inc/ws2812_spi.h 
+ws2812/Src/../Inc/ws2812_pwm.h 

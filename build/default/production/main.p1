@@ -39,12 +39,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "23391
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16F1xxxx_DFP/1.24.387/xc8\pic\include\proc\pic16f18877.h: 23391: extern volatile CPUDOZEbits_t CPUDOZEbits __attribute__((address(0x88C)));
 [v _CPUDOZEbits `VS1055 ~T0 @X0 0 e@2188 ]
-"144 ./mcc_generated_files/system/../spi/mssp1.h
-[; ;./mcc_generated_files/system/../spi/mssp1.h: 144: _Bool SPI1_Open(uint8_t spiConfigIndex);
-[v _SPI1_Open `(a ~T0 @X0 0 ef1`uc ]
-"21 ./ws2812/Inc/ws2812_spi.h
-[; ;./ws2812/Inc/ws2812_spi.h: 21: void ws2812_spi_fade(ws2812_configuration* ws2812_conf, uint16_t fade_time_ms);
-[v _ws2812_spi_fade `(v ~T0 @X0 0 ef2`*S1618`us ]
+"22 ./ws2812/Inc/ws2812_pwm.h
+[; ;./ws2812/Inc/ws2812_pwm.h: 22: void ws2812_pwm_fade(ws2812_configuration* ws2812_conf, uint16_t fade_time_ms);
+[v _ws2812_pwm_fade `(v ~T0 @X0 0 ef2`*S1618`us ]
 "8 C:\Program Files\Microchip\xc8\v2.46\pic\include\builtins.h
 [v ___nop `(v ~T0 @X0 0 ef ]
 [p i ___nop ]
@@ -1794,38 +1791,35 @@ Version 4.0 HI-TECH Software Intermediate Code
 "106
 [; ;main.c: 106:     CPUDOZEbits.IDLEN = 1;
 [e = . . _CPUDOZEbits 0 7 -> -> 1 `i `uc ]
-"109
-[; ;main.c: 109:     SPI1_Open((uint8_t)ws2812_spi.handle);
-[e ( _SPI1_Open (1 -> . _ws2812_spi 0 `uc ]
 "121
 [; ;main.c: 121:     while(1)
 [e :U 1629 ]
 "122
 [; ;main.c: 122:     {
 {
-"125
-[; ;main.c: 125:     if (fade_flag) {
+"137
+[; ;main.c: 137:     if (fade_flag) {
 [e $ ! != -> _fade_flag `i -> 0 `i 1631  ]
 {
-"126
-[; ;main.c: 126:         ws2812_spi_fade(&ws2812_spi, fade_time);
-[e ( _ws2812_spi_fade (2 , &U _ws2812_spi _fade_time ]
-"127
-[; ;main.c: 127:     }
+"138
+[; ;main.c: 138:         ws2812_pwm_fade(&ws2812_pwm, fade_time);
+[e ( _ws2812_pwm_fade (2 , &U _ws2812_pwm _fade_time ]
+"139
+[; ;main.c: 139:     }
 }
 [e $U 1632  ]
-"128
-[; ;main.c: 128:     else {
+"140
+[; ;main.c: 140:     else {
 [e :U 1631 ]
 {
-"129
-[; ;main.c: 129:         __asm("sleep");
+"141
+[; ;main.c: 141:         __asm("sleep");
 [; <" sleep ;# ">
-"130
-[; ;main.c: 130:         __nop();
+"142
+[; ;main.c: 142:         __nop();
 [e ( ___nop ..  ]
-"131
-[; ;main.c: 131:     }
+"143
+[; ;main.c: 143:     }
 }
 [e :U 1632 ]
 "148

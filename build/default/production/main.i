@@ -21647,25 +21647,36 @@ void *memccpy (void *restrict, const void *restrict, int, size_t);
 
 
 
-# 1 "./ws2812/Inc/ws2812_spi.h" 1
-# 13 "./ws2812/Inc/ws2812_spi.h"
-extern ws2812_configuration ws2812_spi;
 
-_Bool ws2812_spi_init(ws2812_configuration* ws2812_conf);
 
-void ws2812_spi_send(ws2812_configuration* ws2812_conf);
 
-void ws2812_spi_data(ws2812_configuration* ws2812_conf, uint8_t green, uint8_t red, uint8_t blue, uint8_t brightness);
 
-void ws2812_spi_fade(ws2812_configuration* ws2812_conf, uint16_t fade_time_ms);
+# 1 "./ws2812/Inc/ws2812_pwm.h" 1
+# 12 "./ws2812/Inc/ws2812_pwm.h"
+extern ws2812_configuration ws2812_pwm;
 
-void ws2812_spi_send_single(ws2812_configuration* ws2812_conf);
+void ws2812_pwm_send(ws2812_configuration* ws2812_conf);
 
-void ws2812_spi_clear(ws2812_configuration* ws2812_conf);
+_Bool ws2812_pwm_init(ws2812_configuration* ws2812_conf);
 
-void ws2812_spi_deinit(ws2812_configuration* ws2812_conf);
-# 43 "main.c" 2
-# 55 "main.c"
+void ws2812_pwm_send_single(ws2812_configuration* ws2812_conf);
+
+void ws2812_pwm_data(ws2812_configuration* ws2812_conf, uint8_t green, uint8_t red, uint8_t blue, uint8_t brightness);
+
+void ws2812_pwm_fade(ws2812_configuration* ws2812_conf, uint16_t fade_time_ms);
+
+void ws2812_pwm_clear(ws2812_configuration* ws2812_conf);
+
+void ws2812_pwm_deinit(ws2812_configuration* ws2812_conf);
+# 47 "main.c" 2
+
+
+
+
+
+
+
+
 ws2812_configuration ws2812_spi;
 ws2812_configuration ws2812_pwm;
 
@@ -21718,22 +21729,21 @@ int main(void)
 
 
     CPUDOZEbits.IDLEN = 1;
-
-
-    SPI1_Open((uint8_t)ws2812_spi.handle);
 # 121 "main.c"
     while(1)
     {
-
-
+# 137 "main.c"
     if (fade_flag) {
-        ws2812_spi_fade(&ws2812_spi, fade_time);
+        ws2812_pwm_fade(&ws2812_pwm, fade_time);
     }
     else {
         __asm("sleep");
         __nop();
     }
-# 148 "main.c"
+
+
+
+
     Handle_UART_Data();
 
     }

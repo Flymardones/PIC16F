@@ -116,7 +116,7 @@ void ws2812_uart_commands(uint8_t* data, uint16_t size) {
         for (uint8_t i = 0; i < ws2812_pwm.led_num; i++) {
             ws2812_set_led(&ws2812_pwm, i, (uint8_t)atoi(tokenizedInput[1]), (uint8_t)atoi(tokenizedInput[2]), (uint8_t)atoi(tokenizedInput[3]));
         }
-        ws2812_pwm_send(&ws2812_pwm);
+        ws2812_pwm_send_single(&ws2812_pwm);
         #endif
 
     }
